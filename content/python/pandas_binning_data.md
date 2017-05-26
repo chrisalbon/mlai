@@ -161,12 +161,13 @@ bins = [0, 25, 50, 75, 100]
 group_names = ['Low', 'Okay', 'Good', 'Great']
 ```
 
-### Cut postTestScore
+### Cut postTestScore and add scoresBinned column
 
 
 ```python
 categories = pd.cut(df['postTestScore'], bins, labels=group_names)
 df['categories'] = pd.cut(df['postTestScore'], bins, labels=group_names)
+df['scoresBinned'] = pd.cut(df['postTestScore'], bins)
 categories
 ```
 
