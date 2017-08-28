@@ -731,7 +731,7 @@ $$&lt;/div&gt;
 &lt;div class="math"&gt;$$error = \frac{FP+FN}{FP+FN+TP+TN} = \frac{\text{incorrect predictions}}{\text{all predictions}}$$&lt;/div&gt;
 &lt;h2&gt;Accuracy:&lt;/h2&gt;
 &lt;p&gt;Proportion of all predictions that are correct. Accuracy is a measurment of how good a model is.&lt;/p&gt;
-&lt;div class="math"&gt;$$accuracy = \frac{TP+FN}{TP+FN+TP+TN} = \frac{\text{correct predictions}}{\text{all predictions}}$$&lt;/div&gt;
+&lt;div class="math"&gt;$$accuracy = \frac{TP+TN}{TP+FN+TP+TN} = \frac{\text{correct predictions}}{\text{all predictions}}$$&lt;/div&gt;
 &lt;h2&gt;False Positive Rate:&lt;/h2&gt;
 &lt;p&gt;Proportion of all negative observation that are predicted incorrectly. False positive rate is a measure of how good a model is at predicting negative cases.&lt;/p&gt;
 &lt;div class="math"&gt;$$FPR = \frac{FP}{FP+TN} = \frac{FP}{N} = \frac{\text{predicted to be positive}}{\text{all negative observations}}$$&lt;/div&gt;

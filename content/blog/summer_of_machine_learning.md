@@ -17,7 +17,7 @@ From June 1st to September 30th I will make a four month sprint to become a bett
 1. Work through 200 machine learning tutorials online.
 2. Watch or listen to 100 hours of video lectures or podcast episodes on machine learning.
 3. Read 20 books on relevant machine learning topics.
-4. Create 300 [#machinelearningflashcards](https://twitter.com/hashtag/machinelearningflashcards?src=hash) to study and memorize.
+4. Create 400 [#machinelearningflashcards](https://twitter.com/hashtag/machinelearningflashcards?src=hash) to study and memorize.
 5. Create 504 [tutorials or posts](https://chrisalbon.com/#Machine_Learning) on my personal site.
 6. Create 100 "recipes" for a forthcoming machine learning book.
 7. Run 500 miles.

@@ -43,7 +43,7 @@
     <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" /> {% endif %} {% if TAG_FEED_ATOM and tag %}
     <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" /> {% endif %} {% if TAG_FEED_RSS and tag %}
     <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" /> {% endif %} {% endblock head %}
-
+    <meta name="google-site-verification" content="7RLmddm4HbzdQLpwH2LH94_vBNmcaMGZSEhmmF5n0NM" />
 </head>
 
 <body>
@@ -168,7 +168,8 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{{ SITEURL }}/theme/js/ie10-viewport-bug-workaround.js"></script>
     {% block extra_js %}{% endblock %}
-
+    <!-- Amazon OneLink -->
+    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=946c0716-c88a-4df0-8944-a058be8c1e86"></script>
 
 </body>
 

@@ -26,11 +26,12 @@ I am a data scientist. I founded the TechStars company [New Knowledge](http://ww
 
 ### Work Experience
 
+-   **Chief Data Scientist**, [BRCK](https://www.brck.com/), 2017 - Present
 -   **Author**, Python Machine Learning Cookbook, [O’Reilly Media](https://www.oreilly.com/), Forthcoming
--   **Co-founder & Chief Science Officer**, [New Knowledge](http://www.newknowledge.io), 2015 - 2016
-    -   In charge of everything data science and product.
 -   **Co-founder & Co-host**, [Partially Derivative](http://www.partiallyderivative.com), 2014 - Present
     -   Co-founded a podcast on data and data science.
+-   **Co-founder & Chief Science Officer**, [New Knowledge](http://www.newknowledge.io), 2015 - 2016
+    -   In charge of everything data science and product.
 -   **Director of CrisisNET**, [Ushahidi](http://www.ushahidi.com), 2014 - 2015
     -   Launched a pipeline for global humanitarian crisis data.
 -   **Director of Data Projects**, [Ushahidi](http://www.ushahidi.com), 2013 - 2014

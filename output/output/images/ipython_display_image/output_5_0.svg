@@ -1,0 +1,11 @@
+<svg height="650" width="1235" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<polygon fill="#FFF" id="pt" points="-0.1624598481164531,0 0,-0.5 0.1624598481164531,0" transform="scale(0.0616)"/>
+<g id="star"><use transform="rotate(-144)" xlink:href="#pt"/><use transform="rotate(-72)" xlink:href="#pt"/><use xlink:href="#pt"/><use transform="rotate(72)" xlink:href="#pt"/><use transform="rotate(144)" xlink:href="#pt"/></g>
+<g id="s5"><use x="-0.252" xlink:href="#star"/><use x="-0.126" xlink:href="#star"/><use xlink:href="#star"/><use x="0.126" xlink:href="#star"/><use x="0.252" xlink:href="#star"/></g>
+<g id="s6"><use x="-0.063" xlink:href="#s5"/><use x="0.315" xlink:href="#star"/></g>
+<g id="x4"><use xlink:href="#s6"/><use xlink:href="#s5" y="0.054"/><use xlink:href="#s6" y="0.108"/><use xlink:href="#s5" y="0.162"/></g>
+<g id="u"><use xlink:href="#x4" y="-0.216"/><use xlink:href="#x4"/><use xlink:href="#s6" y="0.216"/></g>
+<rect fill="#B22234" height="50" id="stripe" width="1235"/>
+</defs>
+<rect fill="#FFF" height="650" width="1235"/><use xlink:href="#stripe"/><use xlink:href="#stripe" y="100"/><use xlink:href="#stripe" y="200"/><use xlink:href="#stripe" y="300"/><use xlink:href="#stripe" y="400"/><use xlink:href="#stripe" y="500"/><use xlink:href="#stripe" y="600"/><rect fill="#3C3B6E" height="350" width="494"/><use transform="translate(247,175) scale(650)" xlink:href="#u"/></svg>
