@@ -108,14 +108,20 @@ Type 'yes' to agree
 to PATH in your /home/ubuntu/.bashrc ? [yes|no]
 [no] >>> yes`
 
-## Set Anaconda as the preferred environment
+If it doesn't allow you to answer yes, you can manually set it through the prompt they show: 
+
+```bash
+You may wish to edit your .bashrc or 
+prepend the Anaconda3 install location:
+
+$ export PATH=/home/ubuntu/anaconda3/bin:$PATH
+```
+
+## Check that Anaconda is the preferred environment
 
 `which python`
+`/home/ubuntu/anaconda3/bin/python`
 
-`[ubuntu@ip-172-31-43-70:~$ which python
-/usr/bin/python`
-
-`source .bashrc`
 
 ## Create a password for jupyter notebook
 
@@ -124,6 +130,9 @@ to PATH in your /home/ubuntu/.bashrc ? [yes|no]
 `from IPython.lib import passwd`
 
 `passwd()`
+
+`Enter password: [Create password and press enter]` 
+`Verify password: [Press enter]`
 
 `'sha1:98ff0e580111:12798c72623a6eecd54b51c006b1050f0ac1a62d'`
 
@@ -151,6 +160,7 @@ Answer questions
 
 ![Vim]({filename}/images/run_project_jupyter_on_amazon_ec2/vi.png)
 
+Insert this at the beginning of the document: 
 
 ```
 c = get_config()
@@ -163,7 +173,7 @@ c.NotebookApp.certfile = u'/home/ubuntu/certs/mycert.pem' #location of your cert
 c.NotebookApp.ip = '*'
 c.NotebookApp.open_browser = False  #so that the ipython notebook does not opens up a browser by default
 c.NotebookApp.password = u'sha1:98ff0e580111:12798c72623a6eecd54b51c006b1050f0ac1a62d'  #the encrypted password we generated above
-# It is a good idea to put it on a known, fixed port
+# Set the port to 8888, the port we set up in the AWS EC2 set-up
 c.NotebookApp.port = 8888
 ```
 
@@ -171,10 +181,8 @@ Remember to replace `sha1:98ff0e580111:12798c72623a6eecd54b51c006b1050f0ac1a62d`
 
 ![Vim]({filename}/images/run_project_jupyter_on_amazon_ec2/vi_2.png)
 
-
 Press `esc`
 
-Press `shift-z`
 Press `shift-z`
 
 ## Create folder for notebooks
@@ -186,6 +194,8 @@ Press `shift-z`
 `cd Notebooks`
 
 ## Create new screen
+
+This command allows you to create a separate screen for just your Jupyter process logs while you continue to do other work on the ec2 instance. 
 
 `screen`
 
@@ -205,6 +215,7 @@ Command: `Ctrl-a` and then `d`
 1. Create new window: `Ctrl-a` `c`.
 2. Switch windows: `Ctrl-a` `n`
 3. Reattach to Screen: `screen -r`
+4. See running screen processes `screen -ls`
 
 ## Visit Jupyter notebook in browser
 
@@ -212,7 +223,7 @@ Your EC2 instance will have a long url, like this:
 
 `ec2-52-39-239-66.us-west-2.compute.amazonaws.com`
 
-Visit that URL in your browser:
+Visit that URL in your browser: (make sure to include the **https** at the beginning, or you'll have access errors.) 
 
 `https://ec2-52-39-239-66.us-west-2.compute.amazonaws.com:8888/`
 
