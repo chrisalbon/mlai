@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Thu, 01 Jun 2017 12:00:00 -0700</lastBuildDate><item><title>Summer Of Machine Learning</title><link>http://chrisalbon.com/blog/summer_of_machine_learning.html</link><description>&lt;p&gt;&lt;img alt="Summer of Machine Learning" src="summer_of_machine_learning/summer_of_machine_learning.jpg" /&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Fri, 01 Sep 2017 12:00:00 -0700</lastBuildDate><item><title>Display Scientific Notation As Floats</title><link>http://chrisalbon.com/python/display_scientific_notation_as_floats.html</link><description>&lt;h2&gt;Create Values&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a numbers in scientific notation&lt;/span&gt;
+&lt;span class="n"&gt;value_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Create a vector of numbers in scientific notation&lt;/span&gt;
+&lt;span class="n"&gt;vector_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.80000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;2.31000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;0.00000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;5.38000000e-01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;6.57500000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;6.52000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;4.09000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.00000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;2.96000000e+02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.53000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;3.96900000e+02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;4.98000000e+00&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Display Values As Floats&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Display value as a float&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39;{:f}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value_scientific_notation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;0.006320&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Display vector values as floats&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{:f}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;vector_scientific_notation&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[&amp;#39;0.006320&amp;#39;,
+ &amp;#39;18.000000&amp;#39;,
+ &amp;#39;2.310000&amp;#39;,
+ &amp;#39;0.000000&amp;#39;,
+ &amp;#39;0.538000&amp;#39;,
+ &amp;#39;6.575000&amp;#39;,
+ &amp;#39;65.200000&amp;#39;,
+ &amp;#39;4.090000&amp;#39;,
+ &amp;#39;1.000000&amp;#39;,
+ &amp;#39;296.000000&amp;#39;,
+ &amp;#39;15.300000&amp;#39;,
+ &amp;#39;396.900000&amp;#39;,
+ &amp;#39;4.980000&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Fri, 01 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-01:python/display_scientific_notation_as_floats.html</guid><category>Basics</category></item><item><title>Summer Of Machine Learning</title><link>http://chrisalbon.com/blog/summer_of_machine_learning.html</link><description>&lt;p&gt;&lt;img alt="Summer of Machine Learning" src="summer_of_machine_learning/summer_of_machine_learning.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;I love summers, but not for the reason you'd think. I don't particularly like hot weather and prefer a good coffee shop to a beach resort. For me, a good summer will always mean what they meant during my Ph.D.: four months to grind your heart out -- to read 500 journal articles, submit five research papers, or finish that one big project. It is a time when the burden of daily responsibilities and thousand little emergencies lifts and you are free to work on big projects with big goals -- to enter the chill of fall better, smarter, and farther than before.&lt;/p&gt;
 &lt;p&gt;I left academia and if there is one thing I miss, it is the summers. The demand for new sales and product releases never lets up and nature of work makes August feel much like February. Over the years I have noticed that being in that environment has made me reach less in personal goals. I took on smaller personal projects, read fewer books, and slowly gained weight. I don't regret this drift. Effort is zero-sum and I was focused on other things including a starting an AI &lt;a href="http://newknowledge.io/"&gt;company&lt;/a&gt;. However, this summer I am going back to the summers of my Ph.D.: a summer of machine learning.&lt;/p&gt;
 &lt;p&gt;From June 1st to September 30th I will make a four month sprint to become a better data scientist and machine learning engineer, filling the dog days of summer with reading, writing, coding, and running. And the finish line? Eight concrete, quantifiable goals for the next 122 days:&lt;/p&gt;
@@ -460,82 +509,4 @@
 
     &lt;/script&gt;
 
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Wed, 22 Feb 2017 21:01:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-22:javascript/basic-mathematics.html</guid><category>Basics</category></item><item><title>Bubble Plot</title><link>http://chrisalbon.com/javascript/bubble-plot.html</link><description>
-&lt;p&gt;This code uses &lt;a href="https://d3js.org/"&gt;D3&lt;/a&gt; and &lt;a href="http://dimplejs.org/"&gt;Dimple.js&lt;/a&gt;.&lt;/p&gt;
-  &lt;div class="codehilite"&gt;
-    &lt;pre&gt;&lt;span class="c"&gt;&amp;lt;!-- Create an element for our chart --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"chart"&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"height: 400px; width: 100%;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Load D3 --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://d3js.org/d3.v4.min.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Load Dimple --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Create a dimble chart --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/javascript"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="c1"&gt;// Create a new svg variable&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;svg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;newSvg&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"#chart"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"100%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"100%"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="c1"&gt;// Create a url to the data&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"https://raw.githubusercontent.com/chrisalbon/learn_js/master/data/example_data.tsv"&lt;/span&gt;
-    &lt;span class="c1"&gt;// Load the data&lt;/span&gt;
-    &lt;span class="nx"&gt;d3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;tsv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="c1"&gt;// Create a new chart&lt;/span&gt;
-        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myChart&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;chart&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;svg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add a x-axis&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addMeasureAxis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Price Monthly Change"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add a y-axis&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addMeasureAxis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"y"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Operating Profit"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add a z-axis (which will determine marker size)&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addMeasureAxis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"z"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Unit Sales"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add the data to the chart, grouped by SKU and Channel&lt;/span&gt;
-        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;avg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addSeries&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;"SKU"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Channel"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;bubble&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add a legend&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addLegend&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;360&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"right"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add some margins&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setMargins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"20%"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Draw the chart&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-    &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
-  &lt;/div&gt;
-
-
-    &lt;!-- Create an element for our chart --&gt;
-    &lt;div id="chart" style="height: 400px; width: 100%;"&gt;&lt;/div&gt;
-
-    &lt;!-- Load D3 --&gt;
-    &lt;script src="https://d3js.org/d3.v4.min.js"&gt;&lt;/script&gt;
-
-    &lt;!-- Load Dimple --&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"&gt;&lt;/script&gt;
-
-    &lt;!-- Create a dimble chart --&gt;
-    &lt;script type="text/javascript"&gt;
-        // Create a new svg variable
-        var svg = dimple.newSvg("#chart", "100%", "100%");
-        // Create a url to the data
-        var url = "https://raw.githubusercontent.com/chrisalbon/learn_js/master/data/example_data.tsv"
-        // Load the data
-        d3.tsv(url, function(data) {
-            // Create a new chart
-            var myChart = new dimple.chart(svg, data);
-            // Add a x-axis
-            myChart.addMeasureAxis("x", "Price Monthly Change");
-            // Add a y-axis
-            myChart.addMeasureAxis("y", "Operating Profit");
-            // Add a z-axis (which will determine marker size)
-            myChart.addMeasureAxis("z", "Unit Sales");
-            // Add the data to the chart, grouped by SKU and Channel
-            var avg = myChart.addSeries(["SKU", "Channel"], dimple.plot.bubble);
-            // Add a legend
-            myChart.addLegend(5, 5, 360, 20, "right");
-            // Add some margins
-            myChart.setMargins("10%", "10%", "10%", "20%");
-            // Draw the chart
-            myChart.draw();
-        });
-    &lt;/script&gt;
-
-
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Wed, 22 Feb 2017 21:01:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-22:javascript/bubble-plot.html</guid><category>Data Visualization</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Wed, 22 Feb 2017 21:01:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-22:javascript/basic-mathematics.html</guid><category>Basics</category></item></channel></rss>

@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Thu, 02 Feb 2017 12:00:00 -0800</lastBuildDate><item><title>Add Padding Around String</title><link>http://chrisalbon.com/python/add_padding_around_string.html</link><description>&lt;h2&gt;Create Some Text&lt;/h2&gt;
+<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Fri, 01 Sep 2017 12:00:00 -0700</lastBuildDate><item><title>Display Scientific Notation As Floats</title><link>http://chrisalbon.com/python/display_scientific_notation_as_floats.html</link><description>&lt;h2&gt;Create Values&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a numbers in scientific notation&lt;/span&gt;
+&lt;span class="n"&gt;value_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Create a vector of numbers in scientific notation&lt;/span&gt;
+&lt;span class="n"&gt;vector_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.80000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;2.31000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;0.00000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;5.38000000e-01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;6.57500000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;6.52000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;4.09000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.00000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;2.96000000e+02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.53000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;3.96900000e+02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;4.98000000e+00&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Display Values As Floats&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Display value as a float&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39;{:f}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value_scientific_notation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;0.006320&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Display vector values as floats&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{:f}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;vector_scientific_notation&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[&amp;#39;0.006320&amp;#39;,
+ &amp;#39;18.000000&amp;#39;,
+ &amp;#39;2.310000&amp;#39;,
+ &amp;#39;0.000000&amp;#39;,
+ &amp;#39;0.538000&amp;#39;,
+ &amp;#39;6.575000&amp;#39;,
+ &amp;#39;65.200000&amp;#39;,
+ &amp;#39;4.090000&amp;#39;,
+ &amp;#39;1.000000&amp;#39;,
+ &amp;#39;296.000000&amp;#39;,
+ &amp;#39;15.300000&amp;#39;,
+ &amp;#39;396.900000&amp;#39;,
+ &amp;#39;4.980000&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Fri, 01 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-01:python/display_scientific_notation_as_floats.html</guid><category>Basics</category></item><item><title>Add Padding Around String</title><link>http://chrisalbon.com/python/add_padding_around_string.html</link><description>&lt;h2&gt;Create Some Text&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Chapter 1&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -305,22 +354,4 @@ sodden in the rain and the wind drove the rain
 against the big green autobus at the terminal and
 the Café des Amateurs was crowded and the windows
 misted over from the heat and the smoke inside.
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/hard_wrapping_text.html</guid><category>Basics</category></item><item><title>Iterate Over Multiple Lists Simultaneously</title><link>http://chrisalbon.com/python/iterate_over_multiple_lists_simultaneously.html</link><description>&lt;h2&gt;Create Two Lists&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;James&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Bob&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sarah&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Marco&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Nancy&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sally&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;ages&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;63&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Iterate Over Both Lists At Once&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ages&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-     &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;James 42
-Bob 13
-Sarah 14
-Marco 25
-Nancy 63
-Sally 23
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/iterate_over_multiple_lists_simultaneously.html</guid><category>Basics</category></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/hard_wrapping_text.html</guid><category>Basics</category></item></channel></rss>
