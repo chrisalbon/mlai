@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Albon - Data Science, Machine Learning, and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Mon, 03 Apr 2017 12:00:00 -0700</lastBuildDate><item><title>Find Largest Key Or Value In A Map</title><link>http://chrisalbon.com/scala/find_largest_key_or_value_in_a_map.html</link><description>&lt;p&gt;If you want to learn more, check out &lt;a href="http://amzn.to/2lxbrxN"&gt;Scala Cookbook&lt;/a&gt; and &lt;a href="http://amzn.to/2lEtsLt"&gt;Programming in Scala&lt;/a&gt;.&lt;/p&gt;
+<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Mon, 03 Apr 2017 12:00:00 -0700</lastBuildDate><item><title>Find Largest Key Or Value In A Map</title><link>http://chrisalbon.com/scala/find_largest_key_or_value_in_a_map.html</link><description>&lt;p&gt;If you want to learn more, check out &lt;a href="http://amzn.to/2lxbrxN"&gt;Scala Cookbook&lt;/a&gt; and &lt;a href="http://amzn.to/2lEtsLt"&gt;Programming in Scala&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Create A Map&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Create an immutable map with three key value pairs&lt;/span&gt;
-&lt;span class="k"&gt;val&lt;/span&gt; &lt;span class="n"&gt;numbers&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="nc"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;span class="k"&gt;val&lt;/span&gt; &lt;span class="n"&gt;numbers&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="nc"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; 
                   &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
                   &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -157,7 +157,7 @@
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Mon, 03 Apr 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-04-03:scala/n_dimension_arrays.html</guid><category>Basics</category></item><item><title>Search A Map</title><link>http://chrisalbon.com/scala/search_a_map.html</link><description>&lt;p&gt;If you want to learn more, check out &lt;a href="http://amzn.to/2lxbrxN"&gt;Scala Cookbook&lt;/a&gt; and &lt;a href="http://amzn.to/2lEtsLt"&gt;Programming in Scala&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Create A Map&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Create an immutable map with three key value pairs&lt;/span&gt;
-&lt;span class="k"&gt;val&lt;/span&gt; &lt;span class="n"&gt;staff&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="nc"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;CEO&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Judith Jackson&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;span class="k"&gt;val&lt;/span&gt; &lt;span class="n"&gt;staff&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="nc"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;CEO&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Judith Jackson&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; 
                 &lt;span class="s"&gt;&amp;quot;CFO&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Sally Shields&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
                 &lt;span class="s"&gt;&amp;quot;CTO&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Steven Miller&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -211,7 +211,7 @@
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;List(25, 63, 23, 2569, 25, 25)
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Tue, 03 Jan 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-01-03:scala/break_a_sequence_into_groups.html</guid><category>Basics</category></item><item><title>Change Data Type</title><link>http://chrisalbon.com/scala/change_data_type.html</link><description>&lt;p&gt;This tutorial was inspired by the awesome &lt;a href="http://amzn.to/2lxbrxN"&gt;Scala Cookbook&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Change To Integer&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Convert a float to an integer&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Convert a float to an integer &lt;/span&gt;
 &lt;span class="mf"&gt;32.34&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;toInt&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -378,7 +378,7 @@
 
 &lt;h2&gt;Use A Range In A For Loop&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// For each 1 in 1,2,3,4,5&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="k"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="k"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; 
     &lt;span class="c1"&gt;// Print i&lt;/span&gt;
     &lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;index: &amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;

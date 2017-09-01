@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Albon - Data Science, Machine Learning, and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Sun, 01 May 2016 12:00:00 -0700</lastBuildDate><item><title>Match A Symbol</title><link>http://chrisalbon.com/regex/match_a_symbol.html</link><description>&lt;p&gt;Based on: &lt;a href="http://shop.oreilly.com/product/0636920023630.do"&gt;Regular Expressions Cookbook&lt;/a&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Sun, 01 May 2016 12:00:00 -0700</lastBuildDate><item><title>Match A Symbol</title><link>http://chrisalbon.com/regex/match_a_symbol.html</link><description>&lt;p&gt;Based on: &lt;a href="http://shop.oreilly.com/product/0636920023630.do"&gt;Regular Expressions Cookbook&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Preliminaries&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load regex package&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;

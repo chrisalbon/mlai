@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Albon - Data Science, Machine Learning, and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Wed, 22 Feb 2017 21:01:00 -0800</lastBuildDate><item><title>Area Plot</title><link>http://chrisalbon.com/javascript/area-plot.html</link><description>
+<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Wed, 22 Feb 2017 21:01:00 -0800</lastBuildDate><item><title>Area Plot</title><link>http://chrisalbon.com/javascript/area-plot.html</link><description>
 
   &lt;p&gt;This code uses &lt;a href="https://d3js.org/"&gt;D3&lt;/a&gt; and &lt;a href="http://dimplejs.org/"&gt;Dimple.js&lt;/a&gt;.&lt;/p&gt;
 

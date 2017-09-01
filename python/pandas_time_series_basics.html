@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Categories RSS Feed" />    
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
     <meta name="tags" content="Data Wrangling" />
 
@@ -55,27 +55,20 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Table Of Contents<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
                           <li><a href="..#Python">Python</a></li>
-                          <li><a href="..#R_Stats">R Stats</a></li>
-                          <li><a href="..#Regex">Regex</a></li>
-                          <li><a href="..#Bash">Bash</a></li>
-                          <li><a href="..#Project_Juypter">Project Juypter</a></li>
-                          <li><a href="..#SQL">SQL</a></li>
-                          <li><a href="..#Mathematics">Mathematics</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
                           <li><a href="..#Javascript">Javascript</a></li>
-                          <li><a href="..#Probability">Probability</a></li>
-                          <li><a href="..#Frequentist_Statistics">Frequentist Statistics</a></li>
-                          <li><a href="..#Bayesian_Statistics">Bayesian Statistics</a></li>
-                          <li><a href="..#Machine_Learning">Machine Learning</a></li>
-                          <li><a href="..#GitHub">GitHub</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
                           <li><a href="..#Scala">Scala</a></li>
-                          <li><a href="..#Spark">Spark</a></li>
-                          <li><a href="..#Amazon_Web_Services">Amazon Web Services</a></li>
-                          <li><a href="..#Kaggle">Kaggle</a></li>
-                          <li><a href="..#Projects">Projects</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
                       </ul>
                   </li>
                     <li class="dropdown">
@@ -136,7 +129,6 @@
 </ol>
 </header>
 <div class='article_content'>
-<p>Want to learn more? I recommend these Python books: <a href="http://amzn.to/2ljV9wY">Python for Data Analysis</a>, <a href="http://amzn.to/2m0mgMB">Python Data Science Handbook</a>, and <a href="http://amzn.to/2mjYiwK">Introduction to Machine Learning with Python</a>.</p>
 <h3>Import modules</h3>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -146,7 +138,7 @@
 
 
 <h3>Create a dataframe</h3>
-<div class="codehilite"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2014-05-01 18:47:05.069722&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-01 18:47:05.119994&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-02 18:47:05.178768&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-02 18:47:05.230071&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-02 18:47:05.230071&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-02 18:47:05.280592&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-03 18:47:05.332662&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-03 18:47:05.385109&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-04 18:47:05.436523&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-04 18:47:05.486877&#39;</span><span class="p">],</span>
+<div class="codehilite"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2014-05-01 18:47:05.069722&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-01 18:47:05.119994&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-02 18:47:05.178768&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-02 18:47:05.230071&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-02 18:47:05.230071&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-02 18:47:05.280592&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-03 18:47:05.332662&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-03 18:47:05.385109&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-04 18:47:05.436523&#39;</span><span class="p">,</span> <span class="s1">&#39;2014-05-04 18:47:05.486877&#39;</span><span class="p">],</span> 
         <span class="s1">&#39;battle_deaths&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">41</span><span class="p">]}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;battle_deaths&#39;</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -164,8 +156,6 @@
 7  2014-05-03 18:47:05.385109             25
 8  2014-05-04 18:47:05.436523             62
 9  2014-05-04 18:47:05.486877             41
-
-[10 rows x 2 columns]
 </pre></div>
 
 
@@ -181,7 +171,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -196,47 +186,46 @@
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 1 columns</p>
 </div>
 
 <h3>View all observations that occured in 2014</h3>
@@ -244,7 +233,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -259,47 +248,46 @@
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 1 columns</p>
 </div>
 
 <h3>View all observations that occured in May 2014</h3>
@@ -307,7 +295,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -322,47 +310,46 @@
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 1 columns</p>
 </div>
 
 <h3>Observations after May 3rd, 2014</h3>
@@ -370,7 +357,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -385,23 +372,22 @@
   <tbody>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 1 columns</p>
 </div>
 
 <h3>Observations between May 3rd and May 4th</h3>
@@ -409,7 +395,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -424,23 +410,22 @@
   <tbody>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 1 columns</p>
 </div>
 
 <h3>Truncation observations after May 2nd 2014</h3>
@@ -448,7 +433,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -463,31 +448,30 @@
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
   </tbody>
 </table>
-<p>6 rows × 1 columns</p>
 </div>
 
 <h3>Observations of May 2014</h3>
@@ -495,7 +479,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -510,47 +494,46 @@
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 1 columns</p>
 </div>
 
 <h3>Count the number of observations per timestamp</h3>
@@ -558,7 +541,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -573,52 +556,51 @@
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>9 rows × 1 columns</p>
 </div>
 
 <h3></h3>
 <h3>Mean value of battle_deaths per day</h3>
-<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -633,31 +615,30 @@
   <tbody>
     <tr>
       <th>2014-05-01</th>
-      <td> 29.5</td>
+      <td>29.5</td>
     </tr>
     <tr>
       <th>2014-05-02</th>
-      <td> 17.5</td>
+      <td>17.5</td>
     </tr>
     <tr>
       <th>2014-05-03</th>
-      <td> 25.5</td>
+      <td>25.5</td>
     </tr>
     <tr>
       <th>2014-05-04</th>
-      <td> 51.5</td>
+      <td>51.5</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 1 columns</p>
 </div>
 
 <h3>Total value of battle_deaths per day</h3>
-<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -672,40 +653,39 @@
   <tbody>
     <tr>
       <th>2014-05-01</th>
-      <td>  59</td>
+      <td>59</td>
     </tr>
     <tr>
       <th>2014-05-02</th>
-      <td>  70</td>
+      <td>70</td>
     </tr>
     <tr>
       <th>2014-05-03</th>
-      <td>  51</td>
+      <td>51</td>
     </tr>
     <tr>
       <th>2014-05-04</th>
-      <td> 103</td>
+      <td>103</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 1 columns</p>
 </div>
 
 <h3>Plot of the total battle deaths per day</h3>
-<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>&lt;matplotlib.axes.AxesSubplot at 0x10809de50&gt;
+<div class="codehilite"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1148a9860&gt;
 </pre></div>
 
 
-<p><img alt="png" src="../images/pandas_time_series_basics/output_29_1.png" /></p>
+<p><img alt="png" src="pandas_time_series_basics_files/pandas_time_series_basics_29_1.png" /></p>
 </div>
     <aside>
     <div class="bug-reporting__panel">
-        <h3>Find an error or bug? Have a suggestion?</h3>
-        <p>Everything on this site is avaliable on GitHub. Head on over and <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>submit an issue.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change. Please mention the URL of the page.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
     </div>
     </aside>
 </section>
@@ -715,7 +695,7 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 496 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 332 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
                     <time datetime="2016">2017</time>.

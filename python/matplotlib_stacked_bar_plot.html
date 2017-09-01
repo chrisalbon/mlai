@@ -10,7 +10,7 @@
     <meta name="author" content="Chris Albon">
     <link rel="icon" href="../favicon.ico">
 
-    <title>Stacked Bar Plot In MatPlotLib - Python</title>
+    <title>Scatterplot In MatPlotLib - Python</title>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Categories RSS Feed" />    
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
     <meta name="tags" content="Data Visualization" />
 
@@ -55,27 +55,20 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Table Of Contents<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
                           <li><a href="..#Python">Python</a></li>
-                          <li><a href="..#R_Stats">R Stats</a></li>
-                          <li><a href="..#Regex">Regex</a></li>
-                          <li><a href="..#Bash">Bash</a></li>
-                          <li><a href="..#Project_Juypter">Project Juypter</a></li>
-                          <li><a href="..#SQL">SQL</a></li>
-                          <li><a href="..#Mathematics">Mathematics</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
                           <li><a href="..#Javascript">Javascript</a></li>
-                          <li><a href="..#Probability">Probability</a></li>
-                          <li><a href="..#Frequentist_Statistics">Frequentist Statistics</a></li>
-                          <li><a href="..#Bayesian_Statistics">Bayesian Statistics</a></li>
-                          <li><a href="..#Machine_Learning">Machine Learning</a></li>
-                          <li><a href="..#GitHub">GitHub</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
                           <li><a href="..#Scala">Scala</a></li>
-                          <li><a href="..#Spark">Spark</a></li>
-                          <li><a href="..#Amazon_Web_Services">Amazon Web Services</a></li>
-                          <li><a href="..#Kaggle">Kaggle</a></li>
-                          <li><a href="..#Projects">Projects</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
                       </ul>
                   </li>
                     <li class="dropdown">
@@ -123,7 +116,7 @@
 <section id="content" class="body">
     <header>
     <h1>
-      Stacked Bar Plot In MatPlotLib
+      Scatterplot In MatPlotLib
     </h1>
 <ol class="breadcrumb">
     <li>
@@ -136,10 +129,7 @@
 </ol>
 </header>
 <div class='article_content'>
-<ul>
-<li><strong>Note:</strong> Based on: <a href="http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb">Sebastian Raschka</a>.</li>
-</ul>
-<p>Want to learn more? I recommend these Python books: <a href="http://amzn.to/2ljV9wY">Python for Data Analysis</a>, <a href="http://amzn.to/2m0mgMB">Python Data Science Handbook</a>, and <a href="http://amzn.to/2mjYiwK">Introduction to Machine Learning with Python</a>.</p>
+<p>Based on: <a href="http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb">Sebastian Raschka</a>.</p>
 <h2>Preliminaries</h2>
 <div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -158,7 +148,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -172,38 +162,38 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 25</td>
-      <td>  5</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>25</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 94</td>
-      <td> 43</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>94</td>
+      <td>43</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 57</td>
-      <td> 23</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>57</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 62</td>
-      <td> 23</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>62</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 70</td>
-      <td> 51</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>70</td>
+      <td>51</td>
     </tr>
   </tbody>
 </table>
@@ -217,51 +207,51 @@
 <span class="n">bar_width</span> <span class="o">=</span> <span class="mf">0.75</span>
 
 <span class="c1"># positions of the left bar-boundaries</span>
-<span class="n">bar_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pre_score&#39;</span><span class="p">]))]</span>
+<span class="n">bar_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pre_score&#39;</span><span class="p">]))]</span> 
 
 <span class="c1"># positions of the x-axis ticks (center of the bars as bar labels)</span>
-<span class="n">tick_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="p">(</span><span class="n">bar_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bar_l</span><span class="p">]</span>
+<span class="n">tick_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="p">(</span><span class="n">bar_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bar_l</span><span class="p">]</span> 
 
 <span class="c1"># Create a bar plot, in position bar_1</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_l</span><span class="p">,</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_l</span><span class="p">,</span> 
         <span class="c1"># using the pre_score data</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pre_score&#39;</span><span class="p">],</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pre_score&#39;</span><span class="p">],</span> 
         <span class="c1"># set the width</span>
         <span class="n">width</span><span class="o">=</span><span class="n">bar_width</span><span class="p">,</span>
         <span class="c1"># with the label pre score</span>
-        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pre Score&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pre Score&#39;</span><span class="p">,</span> 
         <span class="c1"># with alpha 0.5</span>
-        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
         <span class="c1"># with color</span>
         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#F4561D&#39;</span><span class="p">)</span>
 
 <span class="c1"># Create a bar plot, in position bar_1</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_l</span><span class="p">,</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_l</span><span class="p">,</span> 
         <span class="c1"># using the mid_score data</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mid_score&#39;</span><span class="p">],</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mid_score&#39;</span><span class="p">],</span> 
         <span class="c1"># set the width</span>
         <span class="n">width</span><span class="o">=</span><span class="n">bar_width</span><span class="p">,</span>
         <span class="c1"># with pre_score on the bottom</span>
-        <span class="n">bottom</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pre_score&#39;</span><span class="p">],</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pre_score&#39;</span><span class="p">],</span> 
         <span class="c1"># with the label mid score</span>
-        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mid Score&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mid Score&#39;</span><span class="p">,</span> 
         <span class="c1"># with alpha 0.5</span>
-        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
         <span class="c1"># with color</span>
         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#F1911E&#39;</span><span class="p">)</span>
 
 <span class="c1"># Create a bar plot, in position bar_1</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_l</span><span class="p">,</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_l</span><span class="p">,</span> 
         <span class="c1"># using the post_score data</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;post_score&#39;</span><span class="p">],</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;post_score&#39;</span><span class="p">],</span> 
         <span class="c1"># set the width</span>
         <span class="n">width</span><span class="o">=</span><span class="n">bar_width</span><span class="p">,</span>
         <span class="c1"># with pre_score and mid_score on the bottom</span>
-        <span class="n">bottom</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pre_score&#39;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mid_score&#39;</span><span class="p">])],</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pre_score&#39;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mid_score&#39;</span><span class="p">])],</span> 
         <span class="c1"># with the label post score</span>
-        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Post Score&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Post Score&#39;</span><span class="p">,</span> 
         <span class="c1"># with alpha 0.5</span>
-        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
         <span class="c1"># with color</span>
         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#F1BD1A&#39;</span><span class="p">)</span>
 
@@ -282,12 +272,12 @@
 </pre></div>
 
 
-<p><img alt="png" src="../images/matplotlib_stacked_bar_plot/output_6_1.png" /></p>
+<p><img alt="png" src="matplotlib_stacked_bar_plot_files/matplotlib_stacked_bar_plot_6_1.png" /></p>
 </div>
     <aside>
     <div class="bug-reporting__panel">
-        <h3>Find an error or bug? Have a suggestion?</h3>
-        <p>Everything on this site is avaliable on GitHub. Head on over and <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>submit an issue.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change. Please mention the URL of the page.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
     </div>
     </aside>
 </section>
@@ -297,7 +287,7 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 496 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 332 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
                     <time datetime="2016">2017</time>.
