@@ -83,7 +83,88 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/deleting_missing_values.html</guid><category>Preprocessing Structured Data</category></item><item><title>Display Scientific Notation As Floats</title><link>http://chrisalbon.com/python/display_scientific_notation_as_floats.html</link><description>&lt;h2&gt;Create Values&lt;/h2&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/deleting_missing_values.html</guid><category>Preprocessing Structured Data</category></item><item><title>Find The Rank Of A Matrix</title><link>http://chrisalbon.com/machine-learning/find_the_rank_of_a_matrix.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load library&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Create Matrix&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create matrix&lt;/span&gt;
+&lt;span class="n"&gt;matrix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Find Rank Of Matrix&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Return matrix rank&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linalg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;matrix_rank&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;2
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/find_the_rank_of_a_matrix.html</guid><category>Vector Matrices Arrays</category></item><item><title>Flatten A Matrix</title><link>http://chrisalbon.com/machine-learning/flatten_a_matrix.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load library&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Create Matrix&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create matrix&lt;/span&gt;
+&lt;span class="n"&gt;matrix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Flatten Matrix&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Flatten matrix&lt;/span&gt;
+&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flatten&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/flatten_a_matrix.html</guid><category>Vector Matrices Arrays</category></item><item><title>Transpose A Vector Or Matrix</title><link>http://chrisalbon.com/machine-learning/transpose_a_vector_or_matrix.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load library&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Create Vector&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create vector&lt;/span&gt;
+&lt;span class="n"&gt;vector&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Create Matrix&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create matrix&lt;/span&gt;
+&lt;span class="n"&gt;matrix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Transpose Vector&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Tranpose vector&lt;/span&gt;
+&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([1, 2, 3, 4, 5, 6])
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Transpose Matrix&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Transpose matrix&lt;/span&gt;
+&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[1, 4, 7],
+       [2, 5, 8],
+       [3, 6, 9]])
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/transpose_a_vector_or_matrix.html</guid><category>Vector Matrices Arrays</category></item><item><title>Display Scientific Notation As Floats</title><link>http://chrisalbon.com/python/display_scientific_notation_as_floats.html</link><description>&lt;h2&gt;Create Values&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a numbers in scientific notation&lt;/span&gt;
 &lt;span class="n"&gt;value_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;
 
@@ -302,189 +383,4 @@
 
 
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Array(Array(1, 0), Array(0, 1))
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Mon, 03 Apr 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-04-03:scala/n_dimension_arrays.html</guid><category>Basics</category></item><item><title>Search A Map</title><link>http://chrisalbon.com/scala/search_a_map.html</link><description>&lt;p&gt;If you want to learn more, check out &lt;a href="http://amzn.to/2lxbrxN"&gt;Scala Cookbook&lt;/a&gt; and &lt;a href="http://amzn.to/2lEtsLt"&gt;Programming in Scala&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Create A Map&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Create an immutable map with three key value pairs&lt;/span&gt;
-&lt;span class="k"&gt;val&lt;/span&gt; &lt;span class="n"&gt;staff&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="nc"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;CEO&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Judith Jackson&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; 
-                &lt;span class="s"&gt;&amp;quot;CFO&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Sally Shields&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
-                &lt;span class="s"&gt;&amp;quot;CTO&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Steven Miller&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Test If Key Exists&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Test if key exists&lt;/span&gt;
-&lt;span class="n"&gt;staff&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;contains&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;CTO&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;true
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Test If Value Exists&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// Test is any value exists which contains part of a string&lt;/span&gt;
-&lt;span class="n"&gt;staff&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;valuesIterator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;_&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;contains&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Miller&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;true
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Mon, 03 Apr 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-04-03:scala/search_a_map.html</guid><category>Basics</category></item><item><title>Area Plot</title><link>http://chrisalbon.com/javascript/area-plot.html</link><description>
-
-  &lt;p&gt;This code uses &lt;a href="https://d3js.org/"&gt;D3&lt;/a&gt; and &lt;a href="http://dimplejs.org/"&gt;Dimple.js&lt;/a&gt;.&lt;/p&gt;
-
-    &lt;div class="codehilite"&gt;
-      &lt;pre&gt;&lt;span class="c"&gt;&amp;lt;!-- Create an element for our chart --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"chart"&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"height: 400px; width: 100%;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Load D3 --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://d3js.org/d3.v4.min.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Load Dimple --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Create a dimble chart --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/javascript"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="c1"&gt;// Create a new svg variable&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;svg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;newSvg&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"#chart"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"100%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"100%"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="c1"&gt;// Create a url to the data&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"https://raw.githubusercontent.com/chrisalbon/learn_js/master/data/example_data.tsv"&lt;/span&gt;
-    &lt;span class="c1"&gt;// Load the data&lt;/span&gt;
-    &lt;span class="nx"&gt;d3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;tsv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="c1"&gt;// Filter the data so we only see data where Owner = Aperture or Black Mesa&lt;/span&gt;
-        &lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;filterData&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Owner"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"Aperture"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Black Mesa"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-        &lt;span class="c1"&gt;// Create a chart&lt;/span&gt;
-        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myChart&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;chart&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;svg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add an x-axis of time, grouped by Month&lt;/span&gt;
-        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addCategoryAxis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Month"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Order the x-axis by date&lt;/span&gt;
-        &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addOrderRule&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Date"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add a y-axis&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addMeasureAxis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"y"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Unit Sales"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add the actual data&lt;/span&gt;
-        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addSeries&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;area&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add some margins&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setMargins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"20%"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Draw the chart&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-    &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;
-  &lt;/div&gt;
-
-    &lt;!-- Create an element for our chart --&gt;
-    &lt;div id="chart" style="height: 400px; width: 100%;"&gt;&lt;/div&gt;
-
-    &lt;!-- Load D3 --&gt;
-    &lt;script src="https://d3js.org/d3.v4.min.js"&gt;&lt;/script&gt;
-
-    &lt;!-- Load Dimple --&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"&gt;&lt;/script&gt;
-
-    &lt;!-- Create a dimble chart --&gt;
-    &lt;script type="text/javascript"&gt;
-        // Create a new svg variable
-        var svg = dimple.newSvg("#chart", "100%", "100%");
-        // Create a url to the data
-        var url = "https://raw.githubusercontent.com/chrisalbon/learn_js/master/data/example_data.tsv"
-        // Load the data
-        d3.tsv(url, function(data) {
-            // Filter the data so we only see data where Owner = Aperture or Black Mesa
-            data = dimple.filterData(data, "Owner", ["Aperture", "Black Mesa"])
-            // Create a chart
-            var myChart = new dimple.chart(svg, data);
-            // Add an x-axis of time, grouped by Month
-            var x = myChart.addCategoryAxis("x", "Month");
-            // Order the x-axis by date
-            x.addOrderRule("Date");
-            // Add a y-axis
-            myChart.addMeasureAxis("y", "Unit Sales");
-            // Add the actual data
-            var s = myChart.addSeries(null, dimple.plot.area);
-            // Add some margins
-            myChart.setMargins("10%", "10%", "10%", "20%");
-            // Draw the chart
-            myChart.draw();
-        });
-    &lt;/script&gt;
-
-
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Wed, 22 Feb 2017 21:01:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-22:javascript/area-plot.html</guid><category>Data Visualization</category></item><item><title>Bar Chart</title><link>http://chrisalbon.com/javascript/bar-chart.html</link><description>
-
-    &lt;p&gt;This code uses &lt;a href="https://d3js.org/"&gt;D3&lt;/a&gt; and &lt;a href="http://dimplejs.org/"&gt;Dimple.js&lt;/a&gt;.&lt;/p&gt;
-
-    &lt;div class="codehilite"&gt;
-      &lt;pre&gt;&lt;span class="c"&gt;&amp;lt;!-- Create an element for our chart --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"chart"&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"height: 400px; width: 100%;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Load D3 --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://d3js.org/d3.v4.min.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Load Dimple --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="c"&gt;&amp;lt;!-- Create a dimble chart --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/javascript"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="c1"&gt;// Create a new svg variable&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;svg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;newSvg&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"#chart"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"100%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"100%"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="c1"&gt;// Create a url to the data&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"https://raw.githubusercontent.com/chrisalbon/learn_js/master/data/example_data.tsv"&lt;/span&gt;
-    &lt;span class="c1"&gt;// Load the data&lt;/span&gt;
-    &lt;span class="nx"&gt;d3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;tsv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="c1"&gt;// Create a new chart&lt;/span&gt;
-        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myChart&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;chart&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;svg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add an x-axis that groups the data by month&lt;/span&gt;
-        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addCategoryAxis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Month"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Order the x axis by date&lt;/span&gt;
-        &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addOrderRule&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Date"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add a y-axis for the variable "Unit Sales"&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addMeasureAxis&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"y"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Unit Sales"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add the data to the chart&lt;/span&gt;
-        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;avg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addSeries&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Calculate the average Unit Sales&lt;/span&gt;
-        &lt;span class="nx"&gt;avg&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;aggregate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;dimple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;aggregateMethod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;avg&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-        &lt;span class="c1"&gt;// Add some margins&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setMargins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"10%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"20%"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;// Draw the chart&lt;/span&gt;
-        &lt;span class="nx"&gt;myChart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;draw&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-    &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;!-- Create an element for our chart --&gt;
-    &lt;div id="chart" style="height: 400px; width: 100%;"&gt;&lt;/div&gt;
-
-    &lt;!-- Load D3 --&gt;
-    &lt;script src="https://d3js.org/d3.v4.min.js"&gt;&lt;/script&gt;
-
-    &lt;!-- Load Dimple --&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"&gt;&lt;/script&gt;
-
-    &lt;!-- Create a dimble chart --&gt;
-    &lt;script type="text/javascript"&gt;
-        // Create a new svg variable
-        var svg = dimple.newSvg("#chart", "100%", "100%");
-        // Create a url to the data
-        var url = "https://raw.githubusercontent.com/chrisalbon/learn_js/master/data/example_data.tsv"
-        // Load the data
-        d3.tsv(url, function(data) {
-            // Create a new chart
-            var myChart = new dimple.chart(svg, data);
-            // Add an x-axis that groups the data by month
-            var x = myChart.addCategoryAxis("x", "Month");
-            // Order the x axis by date
-            x.addOrderRule("Date");
-            // Add a y-axis for the variable "Unit Sales"
-            myChart.addMeasureAxis("y", "Unit Sales");
-            // Add the data to the chart
-            var avg = myChart.addSeries(null, dimple.plot.bar);
-            // Calculate the average Unit Sales
-            avg.aggregate = dimple.aggregateMethod.avg;
-            // Add some margins
-            myChart.setMargins("10%", "10%", "10%", "20%");
-            // Draw the chart
-            myChart.draw();
-        });
-    &lt;/script&gt;
-
-
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Wed, 22 Feb 2017 21:01:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-22:javascript/bar-chart.html</guid><category>Data Visualization</category></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Mon, 03 Apr 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-04-03:scala/n_dimension_arrays.html</guid><category>Basics</category></item></channel></rss>
