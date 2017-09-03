@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Sat, 02 Sep 2017 12:00:00 -0700</lastBuildDate><item><title>Calculate Dot Product Of Two Vectors</title><link>http://chrisalbon.com/machine-learning/calculate_dot_product_of_two_vectors.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
+<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Sun, 03 Sep 2017 12:00:00 -0700</lastBuildDate><item><title>Adding And Subtracting Matrices</title><link>http://chrisalbon.com/machine-learning/adding_and_subtracting_matrices.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load library&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Create Matrices&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create matrix&lt;/span&gt;
+&lt;span class="n"&gt;matrix_a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                     &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                     &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Create matrix&lt;/span&gt;
+&lt;span class="n"&gt;matrix_b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                     &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                     &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Add Matrices&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Add two matrices&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;matrix_a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;matrix_b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 2,  4,  2],
+       [ 2,  4,  2],
+       [ 2,  4, 10]])
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Subtract Matrices&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Subtract two matrices&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subtract&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;matrix_a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;matrix_b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 0, -2,  0],
+       [ 0, -2,  0],
+       [ 0, -2, -6]])
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sun, 03 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-03:machine-learning/adding_and_subtracting_matrices.html</guid><category>Vectors Matrices Arrays</category></item><item><title>Calculate Dot Product Of Two Vectors</title><link>http://chrisalbon.com/machine-learning/calculate_dot_product_of_two_vectors.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load library&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -316,19 +356,4 @@
  &amp;#39;15.300000&amp;#39;,
  &amp;#39;396.900000&amp;#39;,
  &amp;#39;4.980000&amp;#39;]
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Fri, 01 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-01:python/display_scientific_notation_as_floats.html</guid><category>Basics</category></item><item><title>Summer Of Machine Learning</title><link>http://chrisalbon.com/blog/summer_of_machine_learning.html</link><description>&lt;p&gt;&lt;img alt="Summer of Machine Learning" src="summer_of_machine_learning/summer_of_machine_learning.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;I love summers, but not for the reason you'd think. I don't particularly like hot weather and prefer a good coffee shop to a beach resort. For me, a good summer will always mean what they meant during my Ph.D.: four months to grind your heart out -- to read 500 journal articles, submit five research papers, or finish that one big project. It is a time when the burden of daily responsibilities and thousand little emergencies lifts and you are free to work on big projects with big goals -- to enter the chill of fall better, smarter, and farther than before.&lt;/p&gt;
-&lt;p&gt;I left academia and if there is one thing I miss, it is the summers. The demand for new sales and product releases never lets up and nature of work makes August feel much like February. Over the years I have noticed that being in that environment has made me reach less in personal goals. I took on smaller personal projects, read fewer books, and slowly gained weight. I don't regret this drift. Effort is zero-sum and I was focused on other things including a starting an AI &lt;a href="http://newknowledge.io/"&gt;company&lt;/a&gt;. However, this summer I am going back to the summers of my Ph.D.: a summer of machine learning.&lt;/p&gt;
-&lt;p&gt;From June 1st to September 30th I will make a four month sprint to become a better data scientist and machine learning engineer, filling the dog days of summer with reading, writing, coding, and running. And the finish line? Eight concrete, quantifiable goals for the next 122 days:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Work through 200 machine learning tutorials online.&lt;/li&gt;
-&lt;li&gt;Watch or listen to 100 hours of video lectures or podcast episodes on machine learning.&lt;/li&gt;
-&lt;li&gt;Read 20 books on relevant machine learning topics.&lt;/li&gt;
-&lt;li&gt;Create 400 &lt;a href="https://twitter.com/hashtag/machinelearningflashcards?src=hash"&gt;#machinelearningflashcards&lt;/a&gt; to study and memorize.&lt;/li&gt;
-&lt;li&gt;Create 504 &lt;a href="https://chrisalbon.com/#Machine_Learning"&gt;tutorials or posts&lt;/a&gt; on my personal site.&lt;/li&gt;
-&lt;li&gt;Create 100 "recipes" for a forthcoming machine learning book.&lt;/li&gt;
-&lt;li&gt;Run 500 miles.&lt;/li&gt;
-&lt;li&gt;Lose 40lbs.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Want to cheer me on? I'm on &lt;a href="https://twitter.com/chrisalbon"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;iframe name="data" style="width:100%; height:800px" src="https://docs.google.com/spreadsheets/d/1py70JDmjR7XtWpLZqzAIug6EoGjZwpAsA-k8zKGZba4/pubhtml?gid=1997341574&amp;amp;single=true&amp;amp;widget=true&amp;amp;headers=false"&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 01 Jun 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-06-01:blog/summer_of_machine_learning.html</guid><category>Summer Of Machine Learning</category></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Fri, 01 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-01:python/display_scientific_notation_as_floats.html</guid><category>Basics</category></item></channel></rss>
