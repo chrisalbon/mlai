@@ -111,7 +111,24 @@
 
 
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;15
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/calculate_the_trace_of_a_matrix.html</guid><category>Vectors Matrices Arrays</category></item><item><title>Deleting Missing Values</title><link>http://chrisalbon.com/machine-learning/deleting_missing_values.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/calculate_the_trace_of_a_matrix.html</guid><category>Vectors Matrices Arrays</category></item><item><title>Create A Vector</title><link>http://chrisalbon.com/machine-learning/create_a_vector.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load library&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Create Row Vector&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a vector as a row&lt;/span&gt;
+&lt;span class="n"&gt;vector_row&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Create Column Vector&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a vector as a column&lt;/span&gt;
+&lt;span class="n"&gt;vector_column&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                          &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                          &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/create_a_vector.html</guid><category>Vectors Matrices Arrays</category></item><item><title>Deleting Missing Values</title><link>http://chrisalbon.com/machine-learning/deleting_missing_values.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load library&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
@@ -307,53 +324,4 @@
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[1, 4, 7],
        [2, 5, 8],
        [3, 6, 9]])
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/transpose_a_vector_or_matrix.html</guid><category>Vectors Matrices Arrays</category></item><item><title>Display Scientific Notation As Floats</title><link>http://chrisalbon.com/python/display_scientific_notation_as_floats.html</link><description>&lt;h2&gt;Create Values&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a numbers in scientific notation&lt;/span&gt;
-&lt;span class="n"&gt;value_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Create a vector of numbers in scientific notation&lt;/span&gt;
-&lt;span class="n"&gt;vector_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;1.80000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;2.31000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;0.00000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;5.38000000e-01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;6.57500000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;6.52000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;4.09000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;1.00000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;2.96000000e+02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;1.53000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;3.96900000e+02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="mf"&gt;4.98000000e+00&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Display Values As Floats&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Display value as a float&lt;/span&gt;
-&lt;span class="s1"&gt;&amp;#39;{:f}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value_scientific_notation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;0.006320&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Display vector values as floats&lt;/span&gt;
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{:f}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;vector_scientific_notation&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[&amp;#39;0.006320&amp;#39;,
- &amp;#39;18.000000&amp;#39;,
- &amp;#39;2.310000&amp;#39;,
- &amp;#39;0.000000&amp;#39;,
- &amp;#39;0.538000&amp;#39;,
- &amp;#39;6.575000&amp;#39;,
- &amp;#39;65.200000&amp;#39;,
- &amp;#39;4.090000&amp;#39;,
- &amp;#39;1.000000&amp;#39;,
- &amp;#39;296.000000&amp;#39;,
- &amp;#39;15.300000&amp;#39;,
- &amp;#39;396.900000&amp;#39;,
- &amp;#39;4.980000&amp;#39;]
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Fri, 01 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-01:python/display_scientific_notation_as_floats.html</guid><category>Basics</category></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sat, 02 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-02:machine-learning/transpose_a_vector_or_matrix.html</guid><category>Vectors Matrices Arrays</category></item></channel></rss>
