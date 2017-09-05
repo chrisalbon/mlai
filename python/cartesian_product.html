@@ -129,17 +129,20 @@
 </ol>
 </header>
 <div class='article_content'>
+<h2>Preliminaries</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># import pandas as pd</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 
 
+<h2>Create Data</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># Create two lists</span>
 <span class="n">i</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">j</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
 
+<h2>Calculate Cartesian Product (Method 1)</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># List every single x in i with every single y (i.e. Cartesian product)</span>
 <span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">i</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">j</span><span class="p">]</span>
 </pre></div>
@@ -173,6 +176,7 @@
 </pre></div>
 
 
+<h2>Calculate Cartesian Product (Method 2)</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># An alternative way to do the cartesian product</span>
 
 <span class="c1"># import itertools</span>
@@ -225,7 +229,7 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 354 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 357 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
                     <time datetime="2017">2017</time>.

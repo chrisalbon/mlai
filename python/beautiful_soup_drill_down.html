@@ -129,6 +129,7 @@
 </ol>
 </header>
 <div class='article_content'>
+<h2>Preliminaries</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># Import required modules</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -136,7 +137,7 @@
 </pre></div>
 
 
-<h3>Download the HTML and create a Beautiful Soup object</h3>
+<h2>Download the HTML and create a Beautiful Soup object</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># Create a variable with the URL to this tutorial</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://en.wikipedia.org/wiki/List_of_A_Song_of_Ice_and_Fire_characters&#39;</span>
 
@@ -160,13 +161,13 @@
 </li>
 </ul>
 <p>To get the CHARACTER NAMES, we are going to need to drill down to grap into loclevel-2 and grab the toctext</p>
-<h3>Setting up where to put the results</h3>
+<h2>Setting up where to put the results</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># Create a variable to score the scraped data in</span>
 <span class="n">character_name</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 
 
-<h3>Drilling down with a forloop</h3>
+<h2>Drilling down with a forloop</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># for each item in all the toclevel-2 li items</span>
 <span class="c1"># (except the last three because they are not character names), </span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;toclevel-2&#39;</span><span class="p">})[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]:</span> 
@@ -177,14 +178,14 @@
 </pre></div>
 
 
-<h3>The results</h3>
+<h2>Results</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># View all the character names</span>
 <span class="n">character_name</span>
 </pre></div>
 
 
 <div class="codehilite"><pre><span></span>[&#39;Eddard Stark&#39;,
- &#39;Catelyn Tully&#39;,
+ &#39;Catelyn Stark&#39;,
  &#39;Robb Stark&#39;,
  &#39;Sansa Stark&#39;,
  &#39;Arya Stark&#39;,
@@ -193,19 +194,21 @@
  &#39;Jon Snow&#39;,
  &#39;Benjen Stark&#39;,
  &#39;Lyanna Stark&#39;,
- &#39;Theon Greyjoy&#39;,
  &#39;Roose Bolton&#39;,
  &#39;Ramsay Bolton&#39;,
+ &#39;Rickard Karstark&#39;,
+ &#39;Alys Karstark&#39;,
+ &#39;Wyman Manderly&#39;,
  &#39;Hodor&#39;,
  &#39;Osha&#39;,
  &#39;Jeyne Poole&#39;,
  &#39;Jojen and Meera Reed&#39;,
  &#39;Jeyne Westerling&#39;,
- &#39;Daenerys Targaryen&#39;,
- &#39;Viserys Targaryen&#39;,
- &#39;Rhaegar Targaryen&#39;,
  &#39;Aegon V Targaryen&#39;,
  &#39;Aerys II Targaryen&#39;,
+ &#39;Rhaegar Targaryen&#39;,
+ &#39;Viserys Targaryen&#39;,
+ &#39;Daenerys Targaryen&#39;,
  &#39;Aegon VI Targaryen&#39;,
  &#39;Jon Connington&#39;,
  &#39;Jorah Mormont&#39;,
@@ -213,17 +216,15 @@
  &#39;Missandei&#39;,
  &#39;Daario Naharis&#39;,
  &#39;Grey Worm&#39;,
- &#39;Jon Arryn&#39;,
- &#39;Lysa Arryn&#39;,
- &#39;Robert Arryn&#39;,
- &#39;Yohn Royce&#39;,
+ &#39;Maekar I Targaryen&#39;,
+ &#39;House Blackfyre&#39;,
  &#39;Tywin Lannister&#39;,
  &#39;Cersei Lannister&#39;,
  &#39;Jaime Lannister&#39;,
+ &#39;Tyrion Lannister&#39;,
  &#39;Joffrey Baratheon&#39;,
  &#39;Myrcella Baratheon&#39;,
  &#39;Tommen Baratheon&#39;,
- &#39;Tyrion Lannister&#39;,
  &#39;Kevan Lannister&#39;,
  &#39;Lancel Lannister&#39;,
  &#39;Bronn&#39;,
@@ -232,19 +233,28 @@
  &#39;Podrick Payne&#39;,
  &#39;Robert Baratheon&#39;,
  &#39;Stannis Baratheon&#39;,
- &#39;Selyse Baratheon&#39;,
+ &#39;Selyse Florent&#39;,
+ &#39;Renly Baratheon&#39;,
  &#39;Shireen Baratheon&#39;,
  &#39;Melisandre&#39;,
  &#39;Davos Seaworth&#39;,
- &#39;Renly Baratheon&#39;,
  &#39;Brienne of Tarth&#39;,
  &#39;Beric Dondarrion&#39;,
  &#39;Gendry&#39;,
+ &#39;Edric Storm&#39;,
+ &#39;Jon Arryn&#39;,
+ &#39;Lysa Arryn&#39;,
+ &#39;Robert Arryn&#39;,
+ &#39;Yohn Royce&#39;,
+ &#39;Anya Waynwood&#39;,
+ &#39;Nestor Royce&#39;,
  &#39;Balon Greyjoy&#39;,
  &#39;Asha Greyjoy&#39;,
+ &#39;Theon Greyjoy&#39;,
  &#39;Euron Greyjoy&#39;,
  &#39;Victarion Greyjoy&#39;,
  &#39;Aeron Greyjoy&#39;,
+ &#39;Rodrik Harlaw&#39;,
  &#39;Doran Martell&#39;,
  &#39;Arianne Martell&#39;,
  &#39;Quentyn Martell&#39;,
@@ -278,6 +288,7 @@
  &#39;Bowen Marsh&#39;,
  &#39;Eddison Tollett&#39;,
  &#39;Tormund Giantsbane&#39;,
+ &#39;Varamyr Sixskins&#39;,
  &#39;Petyr Baelish&#39;,
  &#39;Varys&#39;,
  &#39;Pycelle&#39;,
@@ -286,6 +297,8 @@
  &#39;Ilyn Payne&#39;,
  &#39;Qyburn&#39;,
  &#39;The High Sparrow&#39;,
+ &#39;Meryn Trant&#39;,
+ &#39;Balon Swann&#39;,
  &#39;Khal Drogo&#39;,
  &#39;Syrio Forel&#39;,
  &quot;Jaqen H&#39;ghar&quot;,
@@ -296,6 +309,7 @@
  &#39;Yezzan zo Qaggaz&#39;,
  &#39;Tycho Nestoris&#39;,
  &#39;The Waif&#39;,
+ &#39;Meribald&#39;,
  &#39;Septa Unella&#39;]
 </pre></div>
 
@@ -324,68 +338,68 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>Baratheon     8
-Stark         8
-Targaryen     6
+<div class="codehilite"><pre><span></span>Stark         9
+Targaryen     7
+Baratheon     7
+Martell       6
 Greyjoy       6
 Lannister     6
-Martell       6
 Tyrell        4
-Tully         4
+Tully         3
 Arryn         3
-Clegane       2
+Tarly         2
 Bolton        2
 Mormont       2
+Royce         2
+Clegane       2
 Payne         2
-Tarly         2
-Melisandre    1
+Karstark      2
+Storm         1
+Poole         1
 Giantsbane    1
-Ygritte       1
-Bronn         1
+Connington    1
+Snakes        1
+Varys         1
 Westerling    1
-Sand          1
-Osha          1
-Gendry        1
-Sparrow       1
-Drogo         1
-Qyburn        1
+Rayder        1
 Gilly         1
 Pycelle       1
-Craster       1
-H&#39;ghar        1
-Oakheart      1
-             ..
-Rivers        1
-Seaworth      1
-Marsh         1
-Connington    1
+Sparrow       1
+Drogo         1
 Hodor         1
-Val           1
-Unella        1
-Aemon         1
-Myr           1
-Slynt         1
-Dondarrion    1
-Baelish       1
-Qaggaz        1
-Yoren         1
-Mopatis       1
 Worm          1
-Varys         1
-Royce         1
-Nestoris      1
+             ..
+Qaggaz        1
+Harlaw        1
+Forel         1
+Slynt         1
+Manderly      1
+Craster       1
+Frey          1
+Oakheart      1
 Tarth         1
-Naharis       1
-Snakes        1
-Reed          1
-Bones         1
-Tollett       1
-Rayder        1
-Tall          1
 Selmy         1
-Hotah         1
-Snow          1
-dtype: int64
+Trant         1
+Qyburn        1
+Rivers        1
+Tollett       1
+Reed          1
+Mopatis       1
+Dondarrion    1
+Florent       1
+Waynwood      1
+Yoren         1
+Baelish       1
+Osha          1
+Unella        1
+Bronn         1
+Gendry        1
+Myr           1
+Thorne        1
+Nestoris      1
+Tall          1
+H&#39;ghar        1
+Length: 78, dtype: int64
 </pre></div>
 </div>
     <aside>
@@ -401,7 +415,7 @@ dtype: int64
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 354 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 357 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
                     <time datetime="2017">2017</time>.
