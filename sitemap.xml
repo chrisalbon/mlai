@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/</loc>
-<lastmod>2017-09-06T09:22:29-00:00</lastmod>
+<lastmod>2017-09-06T10:49:25-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1040,6 +1040,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://chrisalbon.com/machine-learning/create_interaction_features.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://chrisalbon.com/machine-learning/cross_validation_parameter_tuning_grid_search.html</loc>
 <lastmod>2016-09-06T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -1047,7 +1054,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://chrisalbon.com/machine-learning/detecting_outliers.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/discretize_features.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://chrisalbon.com/python/exiting_a_loop_python.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/group_observations_using_clustering.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/handling_outliers.html</loc>
 <lastmod>2016-09-06T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
