@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/</loc>
-<lastmod>2017-09-06T11:15:21-00:00</lastmod>
+<lastmod>2017-09-06T11:53:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1040,6 +1040,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://chrisalbon.com/machine-learning/converting_a_dictionary_into_a_matrix.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://chrisalbon.com/machine-learning/create_interaction_features.html</loc>
 <lastmod>2016-09-06T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -1068,6 +1075,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://chrisalbon.com/machine-learning/encoding_ordinal_categorical_features.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://chrisalbon.com/python/exiting_a_loop_python.html</loc>
 <lastmod>2016-09-06T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -1090,6 +1104,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/machine-learning/impute_missing_values_with_k-nearest_neighbors.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/imputing_missing_class_labels.html</loc>
+<lastmod>2016-09-06T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/imputing_missing_class_labels_using_k-nearest_neighbors.html</loc>
 <lastmod>2016-09-06T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
