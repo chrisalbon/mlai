@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Notes on Data Science, Machine Learning, &amp; Artificial Intelligence">
+    <meta name="author" content="Chris Albon">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>My Data Science Reading List - Blog</title>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../theme/js/jquery.min.js"><\/script>')
+    </script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.css" />
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" type="text/css" href="../theme/css/ie10-viewport-bug-workaround.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../theme/css/notebooks.css" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/blog.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
+
+
+    <meta name="google-site-verification" content="7RLmddm4HbzdQLpwH2LH94_vBNmcaMGZSEhmmF5n0NM" />
+</head>
+
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="..">Chris Albon</a>
+            </div>
+            <div class="navbar-collapse collapse" id="searchbar">
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ML/AI Notes<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
+                          <li><a href="..#Python">Python</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
+                          <li><a href="..#Javascript">Javascript</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
+                          <li><a href="..#Scala">Scala</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
+                      </ul>
+                  </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../pages/about.html">About Chris</a></li>
+                            <li><a href="https://github.com/chrisalbon">GitHub</a></li>
+                            <li><a href="https://twitter.com/chrisalbon">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/chrisralbon">LinkedIn</a></li>
+                            <li><a href="https://pinboard.in/u:chrisalbon">Pinboard</a></li>
+                        </ul>
+                    </li>
+
+
+                    <!--<li class="dropdown">
+                        <a href="../feeds/blog.rss.xml">Blog RSS</a>
+                    </li>-->
+
+
+                </ul>
+
+                <form class="navbar-form" action="../search.html" onsubmit="return validateForm(this.elements['q'].value);">
+                    <div class="form-group" style="display:inline;">
+                        <div class="input-group" style="display:table;">
+                            <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
+                            <input class="form-control search-query" name="q" id="tipue_search_input" placeholder="e.g. scikit KNN, pandas merge" required autocomplete="off" type="text">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+
+
+    <!-- end of header section -->
+    <div class="container">
+<div class="alert alert-warning alert-dismissable" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    Interested in machine learning? Check out my <a href="https://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
+</div>
+
+<section id="content" class="body">
+    <header>
+    <h1>
+      My Data Science Reading List
+    </h1>
+<ol class="breadcrumb">
+    <li>
+        <time class="published" datetime="2016-05-01T12:00:00-07:00">
+            01 May 2016
+        </time>
+    </li>
+    <li>Blog</li>
+</ol>
+</header>
+<div class='article_content'>
+<p><img alt="Data Science Reading List" src="my_data_science_reading_list/my_data_science_reading_list.jpg" /></p>
+<p>Everyone has hobbies. My hobby is in a big red bookcase. Currently my big red bookcase contains around ~200 dead-tree books on statistics, data science, research, and mathematics. I rarely travel anywhere without at least one book from this bookcase and on a lazy Sunday afternoon you will likely see to working my way through one of it's members.</p>
+<hr />
+<h2>Mathematics</h2>
+<h3>Basics</h3>
+<ul>
+<li><a href="http://amzn.to/2iywWNs">Basic Math for Social Scientists: Concepts (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jR96gO">Mathematics for the Nonmathematician (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jR8Gaq">A Mathematics Course for Political and Social Research</a></li>
+<li><a href="http://amzn.to/2jRhEUU">Introduction to Mathematical Thinking</a></li>
+<li><a href="http://amzn.to/2izjyIF">Basic Math for Social Scientists: Problems and Solutions (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2iuJWZd">The Language of Mathematics: Making the Invisible Visible</a></li>
+<li><a href="http://amzn.to/2ize2Gc">The Joy of x: A Guided Tour of Math, from One to Infinity</a></li>
+<li><a href="http://amzn.to/2izjYPe">Here's Looking at Euclid: A Surprising Excursion Through the Astonishing World of Math</a></li>
+<li><a href="http://amzn.to/2jpahYi">Good Math: A Geek's Guide to the Beauty of Numbers, Logic, and Computation (Pragmatic Programmers)</a></li>
+<li><a href="http://amzn.to/2jR68ZE">Mathematics 1001: Absolutely Everything That Matters in Mathematics.</a></li>
+<li><a href="http://amzn.to/2izk3To">Essential Mathematics for Political and Social Research (Analytical Methods for Social Research)</a></li>
+<li><a href="http://amzn.to/2jp0ktO">Doing Math with Python: Use Programming to Explore Algebra, Statistics, Calculus, and More!</a></li>
+<li><a href="http://amzn.to/2jRgn0l">Mathematics and Python Programming</a></li>
+</ul>
+<h3>Algebra</h3>
+<ul>
+<li><a href="http://amzn.to/2jXG4jX">Linear Algebra (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jp8W3W">Basic Algebra I: Second Edition (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jpcqDv">Basic Algebra II: Second Edition (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2iuwh4l">Introduction to Linear Algebra and Differential Equations (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2iuwmFb">Coding the Matrix: Linear Algebra through Applications to Computer Science</a></li>
+</ul>
+<h3>Calculus</h3>
+<ul>
+<li><a href="http://amzn.to/2jpf0cp">Quick Calculus: A Self-Teaching Guide, 2nd Edition</a></li>
+<li><a href="http://amzn.to/2iuxcSr">Calculus: An Intuitive and Physical Approach (Second Edition) (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jpahaJ">Essential Calculus with Applications (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2iEyKb5">Introduction to Partial Differential Equations with Applications (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2iuDfpV">Partial Differential Equations for Scientists and Engineers (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jRajVl">Ordinary Differential Equations (Dover Books on Mathematics)</a></li>
+</ul>
+<h3>Probability</h3>
+<ul>
+<li><a href="http://amzn.to/2iEr8VK">Introduction to Probability (Chapman &amp; Hall/CRC Texts in Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jpar1P">Probability Theory: A Concise Course (Dover Books on Mathematics)</a></li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li><a href="http://amzn.to/2jRfPYh">Geometry: A Comprehensive Course (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jRczfd">Introduction to Stochastic Processes (Dover Books on Mathematics)</a></li>
+</ul>
+<hr />
+<h2>Traditional Statistics</h2>
+<h3>Basic Statistics</h3>
+<ul>
+<li><a href="http://amzn.to/2jpfMpZ">Statistics</a></li>
+<li><a href="http://amzn.to/2jXJy5F">Discovering Statistics Using R</a></li>
+<li><a href="http://amzn.to/2jp9Du4">Statistics: The Art and Science of Learning from Data (3rd Edition)</a></li>
+<li><a href="http://amzn.to/2izs62h">Principles of Statistics (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jRh9KG">All of Statistics: A Concise Course in Statistical Inference (Springer Texts in Statistics)</a></li>
+<li><a href="http://amzn.to/2jpfrU5">Mathematical Methods in Statistics a Workbook</a></li>
+<li><a href="http://amzn.to/2iEAcKh">Fundamental Statistics for the Behavioral Sciences</a></li>
+<li><a href="http://amzn.to/2jRfpkH">Statistics Made Simple</a></li>
+<li><a href="http://amzn.to/2jpcXVG">Using Basic Statistics in the Behavioral Sciences</a></li>
+<li><a href="http://amzn.to/2iuy4Xk">Statistical Rules of Thumb</a></li>
+<li><a href="http://amzn.to/2iuGa1O">Analysis of Longitudinal Data (Oxford Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jR6tvt">Practical Longitudinal Data Analysis (Chapman &amp; Hall/CRC Texts in Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jpatqD">The SAGE Handbook of Regression Analysis and Causal Inference</a></li>
+<li><a href="http://amzn.to/2jXHbjD">Statistical Modeling and Inference for Social Science (Analytical Methods for Social Research)</a></li>
+<li><a href="http://amzn.to/2iEwRv3">Statistical Models and Causal Inference: A Dialogue with the Social Sciences</a></li>
+<li><a href="http://amzn.to/2jXJxic">Statistics Done Wrong: The Woefully Complete Guide</a></li>
+<li><a href="http://amzn.to/2jRez7u">Even You Can Learn Statistics: A Guide for Everyone Who Has Ever Been Afraid of Statistics</a></li>
+<li><a href="http://amzn.to/2jphd7T">Practical Statistics Simply Explained (Dover Books on Mathematics)</a></li>
+</ul>
+<h3>Exploratory Data Analysis</h3>
+<ul>
+<li><a href="http://amzn.to/2iuxM2m">Exploratory Data Analysis (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2iuBwkH">Fundamentals of Exploratory Analysis of Variance</a></li>
+<li><a href="http://amzn.to/2iuDH7L">Practical Longitudinal Data Analysis (Chapman &amp; Hall/CRC Texts in Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jRknxS">Exploratory Data Analysis</a></li>
+<li><a href="http://amzn.to/2iuzFwg">Fundamentals of Exploratory Analysis of Variance</a></li>
+<li><a href="http://amzn.to/2jR8Sq2">Understanding Robust and Exploratory Data Analysis</a></li>
+</ul>
+<h3>Regression</h3>
+<ul>
+<li><a href="http://amzn.to/2iuBF7J">Multiple Regression in Practice (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jRjLrO">Understanding Regression Assumptions (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jRko4L">Understanding Regression Analysis: An Introductory Guide (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jRjOUw">Applied Regression: An Introduction (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2izefJC">Multiple Regression in Practice (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jRkzNC">Tests of Significance (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jpjz6R">Introduction to Multivariate Analysis (Chapman &amp; Hall/CRC Texts in Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jRbcgS">Multivariate Statistical Analysis: A Conceptual Introduction, 2nd Edition</a></li>
+<li><a href="http://amzn.to/2iuzYXW">What is a p-value anyway? 34 Stories to Help You Actually Understand Statistics</a></li>
+<li><a href="http://amzn.to/2jRm3Hz">Understanding Regression Assumptions (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jp5Gpc">Regression Analysis by Example</a></li>
+<li><a href="http://amzn.to/2jpaB9G">Applied Logistic Regression (Wiley Series in Probability and Statistics)</a></li>
+<li><a href="http://amzn.to/2izixAE">Statistics for the Social Sciences</a></li>
+<li><a href="http://amzn.to/2jp7gY8">Introduction to Linear Regression Analysis</a></li>
+<li><a href="http://amzn.to/2jRlGg8">Basic statistics: Tales of distributions</a></li>
+<li><a href="http://amzn.to/2jpfyz5">Analysis of Covariance (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2iuHh1u">Interpreting and Using Regression (Quantitative Applications in the Social Sciences, No. 29)</a></li>
+<li><a href="http://amzn.to/2jRilh8">Data Analysis and Regression: A Second Course in Statistics</a></li>
+<li><a href="http://amzn.to/2jRhcWJ">Understanding Significance Testing (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jRmly9">Loglinear Models with Latent Variables (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jRgmtd">Statistical Models: Theory and Practice</a></li>
+<li><a href="http://amzn.to/2jR9bRy">Permutation, Parametric, and Bootstrap Tests of Hypotheses (Springer Series in Statistics)</a></li>
+</ul>
+<h3>Advanced Regression</h3>
+<ul>
+<li><a href="http://amzn.to/2jRlTQs">Interpreting Probability Models: Logit, Probit, and Other Generalized Linear Models (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jXFbrB">Regression Models for Categorical and Limited Dependent Variables (Advanced Quantitative Techniques in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2izk35y">Analysis of Ordinal Data (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2izjV6c">Analysis of Nominal Data (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jR9lbC">Ordinal Log-Linear Models (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jXLzit">Analysis of Ordinal Categorical Data (Wiley Series in Probability and Statistics)</a></li>
+<li><a href="http://amzn.to/2jp6vyj">An Introduction to Categorical Data Analysis (Wiley Series in Probability and Statistics)</a></li>
+<li><a href="http://amzn.to/2iuHdPq">Regression with Dummy Variables (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jp6jPA">An Introduction to Generalized Linear Models, Third Edition (Chapman &amp; Hall/CRC Texts in Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jRcb0j">Modeling Count Data</a></li>
+<li><a href="http://amzn.to/2jRloGc">A Primer on Linear Models (Chapman &amp; Hall/CRC Texts in Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jXLlaU">Data Analysis Using Regression and Multilevel/Hierarchical Models</a></li>
+<li><a href="http://amzn.to/2jRdQDp">Statistical Methods for Categorical Data Analysis, 2nd Edition</a></li>
+<li><a href="http://amzn.to/2jR8RCm">Data Analysis Using Regression and Multilevel/Hierarchical Models</a></li>
+</ul>
+<h3>Non-Parametric</h3>
+<ul>
+<li><a href="http://amzn.to/2izn7P2">Nonparametric Statistics: An Introduction (Quantitative Applications in the Social Sciences)</a></li>
+</ul>
+<h3>Time Series</h3>
+<ul>
+<li><a href="http://amzn.to/2jpd3wG">The Analysis of Time Series: An Introduction, Sixth Edition (Chapman &amp; Hall/CRC Texts in Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jRmZM5">Time Series Analysis</a></li>
+<li><a href="http://amzn.to/2jpd6Zo">Interrupted Time Series Analysis (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jphg3n">Time Series Analysis for the Social Sciences (Analytical Methods for Social Research)</a></li>
+</ul>
+<h3>Event History</h3>
+<ul>
+<li><a href="http://amzn.to/2jRe2T9">Event History Modeling: A Guide for Social Scientists (Analytical Methods for Social Research)</a></li>
+</ul>
+<h3>Survival Analysis</h3>
+<ul>
+<li><a href="http://amzn.to/2iznk4M">Modelling Survival Data in Medical Research, Second Edition</a></li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li><a href="http://amzn.to/2jpcS4w">The Life and Times of the Central Limit Theorem (History of Mathematics)</a></li>
+<li><a href="http://amzn.to/2jRlFJ5">Introduction to Factor Analysis: What It Is and How To Do It (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jXJ8wj">Statistics on the Table: The History of Statistical Concepts and Methods</a></li>
+<li><a href="http://amzn.to/2izbs2X">Understanding The New Statistics: Effect Sizes, Confidence Intervals, and Meta-Analysis (Multivariate Applications Series)</a></li>
+<li><a href="http://amzn.to/2jRhi0H">Central Tendency and Variability (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jpclj9">Probability, Statistics and Truth (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jpmHPR">Applied Missing Data Analysis (Methodology in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jphB69">Thinking Statistically</a></li>
+<li><a href="http://www.amazon.com/Heteroskedasticity-Regression-Correction-Quantitative-Applications/dp/1452234957/">Heteroskedasticity in Regression: Detection and Correction (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jXQSP5">Statistical Analysis with Missing Data</a></li>
+<li><a href="http://amzn.to/2jRoSZ7">The Cult of Statistical Significance: How the Standard Error Costs Us Jobs, Justice, and Lives (Economics, Cognition, and Society)</a></li>
+<li><a href="http://amzn.to/2iznRUk">Statistics As Principled Argument</a></li>
+<li><a href="http://amzn.to/2jpcWRL">The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Second Edition (Springer Series in Statistics)</a></li>
+<li><a href="http://amzn.to/2jpmUm7">Probability, Statistics and Truth (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2izg2hA">Statistics, Data Mining, and Machine Learning in Astronomy: A Practical Python Guide for the Analysis of Survey Data</a></li>
+<li><a href="http://amzn.to/2izlJMH">Statistical Distributions</a></li>
+<li><a href="http://amzn.to/2izlEbH">Mathematical Methods of Statistics</a></li>
+</ul>
+<hr />
+<h2>Bayesian Statistics</h2>
+<ul>
+<li><a href="http://amzn.to/2jpa47j">Bayes' Rule: A Tutorial Introduction to Bayesian Analysis</a></li>
+<li><a href="http://amzn.to/2jRdeh4">Data Analysis: A Bayesian Tutorial</a></li>
+<li><a href="http://amzn.to/2izv72B">Introduction to Bayesian Statistics, 2nd Edition</a></li>
+<li><a href="http://amzn.to/2jpffEw">Bayesian Data Analysis, Second Edition (Chapman &amp; Hall/CRC Texts in Statistical Science)</a></li>
+<li><a href="http://amzn.to/2jRhTzt">Bayesian Statistics for the Social Sciences (Methodology in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jprelh">Bayesian Programming (Chapman &amp; Hall/CRC Machine Learning &amp; Pattern Recognition)</a></li>
+<li><a href="http://amzn.to/2izphOH">Bayesian Reasoning and Machine Learning</a></li>
+<li><a href="http://amzn.to/2jRdaxM">Bayesian Methods for Hackers: Probabilistic Programming and Bayesian Methods (Addison-Wesley Data &amp; Analytics Series)</a></li>
+<li><a href="http://amzn.to/2jRibq7">Bayesian Methods in Health Economics (Chapman &amp; Hall/CRC Biostatistics Series)</a></li>
+<li><a href="http://amzn.to/2izgqg2">Bayesian and Frequentist Regression Methods (Springer Series in Statistics)</a></li>
+</ul>
+<hr />
+<h2>Machine Learning</h2>
+<ul>
+<li><a href="http://amzn.to/2jpfQ9j">Machine Learning in Action</a></li>
+<li><a href="http://www.amazon.com/Learning-Data-Yaser-S-Abu-Mostafa/dp/1600490069/">Learning From Data</a></li>
+<li><a href="http://www.amazon.com/Machine-Learning-Algorithmic-Perspective-Recognition/dp/1466583282/">Machine Learning: An Algorithmic Perspective, Second Edition (Chapman &amp; Hall/Crc Machine Learning &amp; Pattern Recognition)</a></li>
+<li><a href="http://www.amazon.com/Pattern-Recognition-Machine-Learning-1st/dp/8132209060/">Pattern Recognition and Machine Learning 1st Edition</a></li>
+<li><a href="http://amzn.to/2iyMbpA">Python Machine Learning (Raschka)</a></li>
+<li><a href="http://amzn.to/2jQJqAY">Python Machine Learning (Bowles)</a></li>
+<li><a href="http://www.amazon.com/Introduction-Machine-Learning-Miroslav-Kubat/dp/3319200097/">An Introduction to Machine Learning</a></li>
+<li><a href="http://www.amazon.com/Boosting-Foundations-Algorithms-Adaptive-Computation/dp/0262526034/">Boosting: Foundations and Algorithms (Adaptive Computation and Machine Learning series)</a></li>
+<li><a href="http://www.amazon.com/Machine-Learning-Python-Techniques-Predictive/dp/1118961749/">Machine Learning in Python: Essential Techniques for Predictive Analysis</a></li>
+<li><a href="http://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020/">Machine Learning: A Probabilistic Perspective (Adaptive Computation and Machine Learning series)</a></li>
+<li><a href="http://www.amazon.com/Introduction-Machine-Learning-Adaptive-Computation/dp/0262028182/">Introduction to Machine Learning (Adaptive Computation and Machine Learning series)</a></li>
+</ul>
+<hr />
+<h2>Algorithims</h2>
+<ul>
+<li><a href="http://www.amazon.com/Introduction-Algorithms-3rd-Thomas-Cormen/dp/0262033844/">Introduction to Algorithms, 3rd Edition</a></li>
+<li><a href="http://amzn.to/2jpjwrz">Data Structures and Algorithms with Python (Undergraduate Topics in Computer Science)</a></li>
+<li><a href="http://amzn.to/2izvwC9">Python Algorithms: Mastering Basic Algorithms in the Python Language</a></li>
+<li><a href="http://amzn.to/2izkRaQ">Annotated Algorithms in Python: with Applications in Physics, Biology, and Finance</a></li>
+<li><a href="http://amzn.to/2jpfJu4">Data Structure and Algorithmic Thinking with Python: Data Structure and Algorithmic Puzzles</a></li>
+</ul>
+<hr />
+<h2>Other</h2>
+<ul>
+<li><a href="http://amzn.to/2izgWec">Data Analysis for Politics and Policy</a></li>
+<li><a href="http://amzn.to/2jprAID">Missing Data (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jpiThF">A Handbook of Small Data Sets (Chapman &amp; Hall Statistics Texts)</a></li>
+<li><a href="http://amzn.to/2izdOPn">The Statistical Analysis of Experimental Data (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jXG2s6">The Chicago Guide to Writing about Multivariate Analysis (Chicago Guides to Writing, Editing, and Publishing)</a></li>
+<li><a href="http://amzn.to/2jRamAu">Visual Explanations: Images and Quantities, Evidence and Narrative</a></li>
+<li><a href="http://amzn.to/2jp4bHi">Visual Storytelling with D3: An Introduction to Data Visualization in JavaScript (Addison-Wesley Data &amp; Analytics Series)</a></li>
+<li><a href="http://amzn.to/2jpgkfD">Cluster Analysis (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2izsjml">Best Practices in Data Cleaning: A Complete Guide to Everything You Need to Do Before and After Collecting Your Data</a></li>
+<li><a href="http://amzn.to/2izoQnv">The Visual Display of Quantitative Information</a></li>
+<li><a href="http://amzn.to/2jRfvJ9">Matched Sampling for Causal Effects</a></li>
+<li><a href="http://amzn.to/2jRpXjD">Beautiful Data: The Stories Behind Elegant Data Solutions</a></li>
+<li><a href="http://amzn.to/2jRn967">Sampling Techniques, 3rd Edition</a></li>
+<li><a href="http://amzn.to/2jRbPXE">Counterfactuals and Causal Inference: Methods and Principles for Social Research (Analytical Methods for Social Research)</a></li>
+<li><a href="http://amzn.to/2jpgaos">Introduction to Analysis (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jp9Xsw">An Introduction to Information Theory: Symbols, Signals and Noise (Dover Books on Mathematics)</a></li>
+<li><a href="http://amzn.to/2jphVSq">Monte Carlo Simulation and Resampling Methods for Social Science</a></li>
+<li><a href="http://amzn.to/2izl6lY">Neural Networks for Pattern Recognition (Advanced Texts in Econometrics)</a></li>
+<li><a href="http://amzn.to/2izl9ya">Causality: Models, Reasoning and Inference</a></li>
+<li><a href="http://amzn.to/2jXNW4R">Natural Experiments in the Social Sciences: A Design-Based Approach (Strategies for Social Inquiry)</a></li>
+<li><a href="http://amzn.to/2iuJsSQ">Game Theory: Concepts and Applications (Quantitative Applications in the Social Sciences)</a></li>
+<li><a href="http://amzn.to/2jpnfoZ">Web Scraping with Python: A Comprehensive Guide to Data Collection Solutions</a></li>
+<li><a href="http://amzn.to/2jRoyJW">Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications</a></li>
+<li><a href="http://amzn.to/2jRmWje">Running Randomized Evaluations: A Practical Guide</a></li>
+<li><a href="http://amzn.to/2jRjaXh">Python for Data Science For Dummies</a></li>
+<li><a href="http://amzn.to/2jRk06p">Counterfactuals and Causal Inference: Methods and Principles for Social Research (Analytical Methods for Social Research)</a></li>
+<li><a href="http://amzn.to/2jpgT9f">A Practical Introduction to Index Numbers</a></li>
+<li><a href="http://amzn.to/2jRf01s">Sampling</a></li>
+<li><a href="http://amzn.to/2jpgDXK">Data Mining for the Social Sciences: An Introduction</a></li>
+<li><a href="http://amzn.to/2izks8b">Beautiful Data: A History of Vision and Reason since 1945 (Experimental Futures)</a></li>
+<li><a href="http://amzn.to/2jXI6R8">Designing Social Inquiry: Scientific Inference in Qualitative Research</a></li>
+<li><a href="http://amzn.to/2izmdlW">Using Propensity Scores in Quasi-Experimental Designs</a></li>
+<li><a href="http://amzn.to/2jp8Jh8">Propensity Score Analysis: Statistical Methods and Applications (Advanced Quantitative Techniques in the Social Sciences)</a></li>
+</ul>
+</div>
+    <aside>
+    <div class="bug-reporting__panel">
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change. Please mention the URL of the page.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+    </div>
+    </aside>
+</section>
+
+    </div>
+    <!-- start of footer section -->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                <center>This project contains 377 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <br/>
+                Copyright &copy; Chris Albon,
+                    <time datetime="2017">2017</time>.
+                </center>
+            </p>
+        </div>
+    </footer>
+
+    <!-- This jQuery line finds any span that contains code highlighting classes and then selects the parent <pre> tag and adds a border. This is done as a workaround to visually distinguish the code inputs and outputs -->
+    <script>
+        $( ".hll, .n, .c, .err, .k, .o, .cm, .cp, .c1, .cs, .gd, .ge, .gr, .gh, .gi, .go, .gp, .gs, .gu, .gt, .kc, .kd, .kn, .kp, .kr, .kt, .m, .s, .na, .nb, .nc, .no, .nd, .ni, .ne, .nf, .nl, .nn, .nt, .nv, .ow, .w, .mf, .mh, .mi, .mo, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss, .bp, .vc, .vg, .vi, .il" ).parent( "pre" ).css( "border", "1px solid #DEDEDE" );
+    </script>
+
+    <!-- Load Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-66582-32', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics -->
+
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../theme/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Amazon OneLink -->
+    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=946c0716-c88a-4df0-8944-a058be8c1e86"></script>
+
+</body>
+
+</html>
