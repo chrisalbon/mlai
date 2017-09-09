@@ -131,29 +131,67 @@
 <div class='article_content'>
 <p>Authors: Chris Albon</p>
 <h2>Preliminaries</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Load library</span>
-<span class="kn">from</span> <span class="nn">nltk.stem.porter</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Load libraries</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
 </pre></div>
 
 
 <h2>Create Text Data</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Create word tokens</span>
-<span class="n">tokenized_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;humbled&#39;</span><span class="p">,</span> <span class="s1">&#39;by&#39;</span><span class="p">,</span> <span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;traditional&#39;</span><span class="p">,</span> <span class="s1">&#39;meeting&#39;</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Create text</span>
+<span class="n">text_data</span> <span class="o">=</span> <span class="s2">&quot;Chris loved outdoor running&quot;</span>
 </pre></div>
 
 
-<h2>Stem Words</h2>
-<p>Stemming reduces a word to its stem by identifying and removing affixes (e.g. gerunds) while keeping the root meaning of the word. NLTK's <code>PorterStemmer</code> implements the widely used Porter stemming algorithm.</p>
-<div class="codehilite"><pre><span></span><span class="c1"># Create stemmer</span>
-<span class="n">porter</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+<h2>Tag Parts Of Speech</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Use pre-trained part of speech tagger</span>
+<span class="n">text_tagged</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text_data</span><span class="p">))</span>
 
-<span class="c1"># Apply stemmer</span>
-<span class="p">[</span><span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_words</span><span class="p">]</span>
+<span class="c1"># Show parts of speech</span>
+<span class="n">text_tagged</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>[&#39;i&#39;, &#39;am&#39;, &#39;humbl&#39;, &#39;by&#39;, &#39;thi&#39;, &#39;tradit&#39;, &#39;meet&#39;]
+<div class="codehilite"><pre><span></span>[(&#39;Chris&#39;, &#39;NNP&#39;), (&#39;loved&#39;, &#39;VBD&#39;), (&#39;outdoor&#39;, &#39;RP&#39;), (&#39;running&#39;, &#39;VBG&#39;)]
 </pre></div>
+
+
+<h2>Common Penn Treebank Parts Of Speech Tags</h2>
+<p>The output is a list of tuples with the word and the tag of the part of speech. NLTK uses the Penn Treebank parts for speech tags.</p>
+<table>
+  <tr>
+    <th>Tag</th>
+    <th>Part Of Speech</th>
+  </tr>
+  <tr>
+    <td>NNP</td>
+    <td>Proper noun, singular</td>
+  </tr>
+    <tr>
+    <td>NN</td>
+    <td>Noun, singular or mass</td>
+  </tr>
+    <tr>
+    <td>RB</td>
+    <td>Adverb</td>
+  </tr>
+    <tr>
+    <td>VBD</td>
+    <td>Verb, past tense</td>
+  </tr>
+    <tr>
+    <td>VBG</td>
+    <td>Verb, gerund or present participle</td>
+  </tr>
+    <tr>
+    <td>JJ</td>
+    <td>Adjective</td>
+  </tr>
+      <tr>
+    <td>PRP</td>
+    <td>Personal pronoun</td>
+  </tr>
+</table>
 </div>
     <aside>
     <div class="bug-reporting__panel">
@@ -168,7 +206,7 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 383 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 382 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
                     <time datetime="2017">2017</time>.
