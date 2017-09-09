@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Notes on Data Science, Machine Learning, &amp; Artificial Intelligence">
+    <meta name="author" content="Chris Albon">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>What I Learned Tracking My Time At Techstars - Blog</title>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../theme/js/jquery.min.js"><\/script>')
+    </script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.css" />
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" type="text/css" href="../theme/css/ie10-viewport-bug-workaround.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../theme/css/notebooks.css" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/blog.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
+
+
+    <meta name="google-site-verification" content="7RLmddm4HbzdQLpwH2LH94_vBNmcaMGZSEhmmF5n0NM" />
+</head>
+
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="..">Chris Albon</a>
+            </div>
+            <div class="navbar-collapse collapse" id="searchbar">
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ML/AI Notes<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
+                          <li><a href="..#Python">Python</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
+                          <li><a href="..#Javascript">Javascript</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
+                          <li><a href="..#Scala">Scala</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
+                      </ul>
+                  </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../pages/about.html">About Chris</a></li>
+                            <li><a href="https://github.com/chrisalbon">GitHub</a></li>
+                            <li><a href="https://twitter.com/chrisalbon">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/chrisralbon">LinkedIn</a></li>
+                            <li><a href="https://pinboard.in/u:chrisalbon">Pinboard</a></li>
+                        </ul>
+                    </li>
+
+
+                    <!--<li class="dropdown">
+                        <a href="../feeds/blog.rss.xml">Blog RSS</a>
+                    </li>-->
+
+
+                </ul>
+
+                <form class="navbar-form" action="../search.html" onsubmit="return validateForm(this.elements['q'].value);">
+                    <div class="form-group" style="display:inline;">
+                        <div class="input-group" style="display:table;">
+                            <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
+                            <input class="form-control search-query" name="q" id="tipue_search_input" placeholder="e.g. scikit KNN, pandas merge" required autocomplete="off" type="text">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+
+
+    <!-- end of header section -->
+    <div class="container">
+<div class="alert alert-warning alert-dismissable" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    Interested in machine learning? Check out my <a href="https://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
+</div>
+
+<section id="content" class="body">
+    <header>
+    <h1>
+      What I Learned Tracking My Time At Techstars
+    </h1>
+<ol class="breadcrumb">
+    <li>
+        <time class="published" datetime="2016-02-01T22:28:00-08:00">
+            01 February 2016
+        </time>
+    </li>
+    <li>Blog</li>
+</ol>
+</header>
+<div class='article_content'>
+
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars//Popily-25.jpg" style="padding: 0 0 30px 0;">
+
+<p>In the fall of 2015, <a href="http://popily.com">Popily</a>, a data exploration company I cofounded with <a href="http://www.vidyaspandana.com/">two</a> <a href="http://goodattheinternet.com/">friends</a> was offered a slot in the 2016 class of <a href="http://www.techstars.com/programs/cloud-program/">Techstars Cloud</a>. Like most people in tech, I had heard about Techstars, but in truth I barely knew anything specific, particularly about the day-to-day of the program. Was Techstars a permanent hackathon fueled by Soylent and Adderall? Was it three months of guest speakers and sponsored happy hours? I watched Techstars's <a href="https://vimeo.com/techstars/videos">promotional videos</a>, but the only impression I could glean was that all the founders worked 36 hours per day while having ample spare time to ride bikes around downtown Boulder. I also found some <a href="https://www.quora.com/What-is-the-first-week-of-a-TechStars-program-like">posts</a> about people’s experiences, but overall I was in the dark. So, when we joined Techstars Cloud in November, I did what I was trained to do: gather data.</p>
+
+<p>For three months, from November 2nd, 2015 to January 31st, 2016, I tracked how I spent every 15 minutes of every day and categorized each into one of seven activities:</p>
+
+<ol>
+  <li><strong>Non-Technical Work:</strong> Email, writing, diagramming, project management, <a href="https://www.pivotaltracker.com/">PivotalTracker</a>, etc.</li>
+  <li><strong>Technical Work:</strong> Coding, designing, data analysis, etc.</li>
+  <li><strong>Discussion:</strong> Team meetings, speaking events, meeting with mentors or investors, Techstars happy hours, etc.</li>
+  <li><strong>Sleep</strong></li>
+  <li><strong>Travel:</strong> Driving or flying (when I couldn’t do any work)</li>
+  <li><strong>Exercise:</strong> Running (which basically never happened)</li>
+  <li><strong>Personal:</strong> Time with family, cooking, hobbies, reading, housework etc.</li>
+</ol>
+
+<p>The full data is <a href="https://github.com/chrisalbon/techstars_timesheet">available on Github</a>, however in this post I used <a href="http://popily.com">Popily.com</a> to explore the data and understand how I spent my time during Techstars and offer a few lessons learned along the way. I hope you find it useful.</p>
+
+<h4>Every Day At Techstars Cloud</h4>
+<img src="what_i_learned_from_tracking_my_time_at_techstars/1.png" style="padding: 0 0 30px 0;">
+
+<h2>Lesson 1: Techstars Is For Going All-In</h2>
+
+<p>If there was one description of my time at Techstars it was that I worked, a lot -- during evenings, lunches, and holidays; in offices, cars, and AirBnBs; alone, with my team, and while holding my daughter. The combination of the environment and the looming Demo Day made the work all-consuming. I was responsible for the product, so it is unsurprising that the largest number of my hours was spent on technical tasks. In truth, even non-technical tasks were almost always related to product development: UX testing, QAing, or PivotalTracker. My laser focus on the product was sometimes at odds with the myriad of guest speakers and mentor meetings that, while interesting and useful, could suck me in and stall development. As a company we started using two strategies to keep the product moving forward. First, most of the meetings and events were handled by my cofounders, which left me time to focus to a greater degree on the product. Second, when we had a product update or launch goal, I spent weeks away from the Techstars offices so I could get the most work done on the product as possible.</p>
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars/2.png" style="padding: 0 0 30px 0;">
+
+<p>On average, during Techstars I worked 91.6 hours per week. I worked the most hours during the first week of the program, where I averaged 17.4 hours of work per day. This number will be unsurprising to anyone who has going though Techstars. The first three weeks of Techstars are called Mentor Madness and can essentially be described as a full day of back to back 20 minute meetings with every fancy and impressive founder you can imagine. You walk into a room, give a five minute pitch to anyone from the CEO of a boutique ad agency to a founder of a technology giant and hear their take about you, your company, your product, your market, whatever. After 20 minutes you walk into the next room and repeat the entire process again.</p>
+
+<h4>Total Hours Spent On Tasks</h4>
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars/3.png" style="padding: 0 0 30px 0;">
+
+<p>Mentor Madness was a grueling experience for all of us, not only because it took up so much of our energy (it takes a lot of focus to be engaged after seven almost-back-to-back meetings), but more importantly it made us have to defend, explain, and face so many fundamental assumptions we implicitly and explicitly made about our company, product, and strategy. In one meeting a mentor would argue that the go-to-market strategy is flawed and 20 minutes later the next mentor is arguing that we need to change our company's name.</p>
+
+<p>Those weeks were brutal. However, it was also probably one of the most important few weeks of our company. Because at the end of all those meetings, our day would just begin; from the last meeting to late at night my cofounders and I would consider, discuss, and debate a hundred points that were brought in the day. Why did the mentor hate the pricing model? Was she right or just old-fashioned? Should we change our name? Who is our customer? All the meetings and all the challenging questions forced us to discuss things which might otherwise be assumed or left unsaid.</p>
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars/debrief-call.jpg" style="padding: 0 0 30px 0;">
+
+<p>For those first few weeks I would get up early, spend an hour emailing, discuss some point or another about strategy or product, take meetings with mentors, discuss more over lunch, take more meetings, discuss over dinner and into the evening, shower, sleep, and start the whole thing over again. Two days during Mentor Madness contained a massive 13 and 14 hours of discussions. Those conversations alone made Techstars worthwhile.</p>
+
+<p>Unsurprisingly, the week with the least work was Christmas when I was traveling with my family and would only be able to sneak in a few hours of work per day after everyone fell asleep.</p>
+
+<h2>Lesson 2: The Start Of Techstars Is About Strategy, The End Is About Execution</h2>
+
+<p>Our company was not alone is spending the first weeks of the program focusing on planning and strategy. I think most of the companies in our class spent the first few weeks either going back to the drawing board or mapping out a plan ahead. However, in December, the mid-point of the program there was a general shift from planning to execution.</p>
+
+<p>Looking at hours spent on between technical and non-technical tasks, Techstars could be divided into two periods, before Christmas and after Christmas. In the first half of the program it felt like I spent every moment I wasn’t in meetings writing, updating, or managing user stories. We had a few contract developers and I agonized over the ordering of user stories in PivotalTracker as to maximize the value we would get from every hour of their time. However, during the second half of the problem the planning took a back seat to building.</p>
+
+<h4>Hours Spent On Technical And Non-Technical Work During Techstars</h4>
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars/4.png" style="padding: 0 0 30px 0;">
+
+<p>Between Christmas and our <a href="http://venturebeat.com/2016/01/19/popily-launches-a-data-visualization-tool-thats-as-easy-to-use-as-three-clicks/">launch on January 19th</a> was probably my happiest in the program, because it was a wonderful coding crunchtime. I would get up, select the next user story in the queue, complete it, QA, and repeat. It was -- frankly -- just fun. All the discussions around marketing, fundraising, or ten thousand other things were put aside (i.e. handled by my cofounders), leaving me free to build.</p>
+
+<p>This switch from planning to building is beautifully seen in the data: in the first half of the program I spent almost all my time on planning and strategy and in the second half I spent almost all my time building.</p>
+
+<p>While non-technical and technical work peaked around the beginning and the end of the program, meetings, networking, and discussions continued throughout. As I said previously, the Mentor Madness of the first three weeks took up a massive amount of time at the start of the program, but after those weeks my cofounders and I actively tried to give each other the space to get stuff done. Our primary tactic was to have regular short(ish) “State Of The Union calls almost every day, leaving the major discussions to multi-day planning sessions every few weeks. These discussion can be easily seen as peaks in the chart below. This system might not work well for everyone, but it gave us the right balance of time to work out problems and time to get shit done.</p>
+
+<h4>Hours Spent At Discussions, Meetings, or Networking During Techstars</h4>
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars/5.png" style="padding: 0 0 30px 0;">
+
+<p>Did all those hours matter? Completely and absolutely. Over the course of the program the product went from a tricycle to a Harley Davidson. There is more to do, but the leaps and bounds made during Techstars has been incredible.</p>
+
+<h2>Lesson 3: Sleep Is Important! Kinda.</h2>
+
+<p>As soon as I started tracking my time, I knew the first question everyone was going to ask: “how much did you sleep?” and because of the power of data I can give you a real answer: 5.5 hours of sleep per night. I will admit I was pretty pleased when I saw that number because while everyone at Techstars works their asses off 4.5 to 6.5 hours of sleep was my normal amount prior to Techstars. That said, on those few nights I received far less sleep than I needed my productivity suffered the next day. </p>
+
+<p>Looking at the data below, it is also notable to see that the amount of sleep I got every night remained relatively stable throughout the program. The only two deviations are the two times I made the twelve hour drive from my house to the Techstars offices overnight and the moderate dip in sleep I got in early January when I was enjoying my late night coding sessions. </p>
+
+<h4>Hours Of Sleep During Techstars</h4>
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars/6.png" style="padding: 0 0 30px 0;">
+
+<h2>Lesson 4: There Is No Work-Life Balance</h2>
+
+<p>I would love to say there was great work-life balance, but in reality was not any sort of work-life balance. There was regular fun events (e.g. happy hours, runs, etc.) during the program, but that isn’t work-life balance, that is fun work events.</p>
+
+<p>The truth is that all the benefits of Techstars, the rapid advance of our product, the boost in users, the improved strategy, and everything else came at a price -- that for three months you lived your work and everything else from family to kids to friends took a backseat. During Techstars my average daily “free time” (i.e. not working or sleeping) was 2.7 hours. That is 2.7 hours per day for everything, from Christmas mornings to birthday parties to doctors appointments to cooking dinner.</p>
+
+<p>I am not complaining. I like working, and I am in a place in my life that I can let work take over for a while, but make no mistake: it did take over. I'd argue that to really get value from Techstars, it probably has to take over.</p>
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars/7.png" style="padding: 0 0 30px 0;">
+
+<p>As a more concrete example to the point above, of the three major holidays that took place during Techstars Cloud two of them were just a regular work day for me.</p>
+
+<h4>Hours Spent On Activities On Thanksgiving, Xmas, and NYE</h4>
+
+<img src="what_i_learned_from_tracking_my_time_at_techstars/8.png" style="padding: 0 0 30px 0;">
+
+<h2>Final Thoughts On Techstars</h2>
+
+<p>It has been incredibly valuable to every aspect of <a href="http://popily.com">Popily</a>, from product to strategy. The advice been useful, the connections have been valuable, and <a href="http://www.techstars.com/event/cloud/">Demo Day (February 11th)</a> will be awesome. However, at the end of the day none of that was why I enjoyed Techstars.</p>
+
+<p>The real reason is that for three months I worked with people I enjoy for long hours on hard problems -- and everything else took a back seat. That might not appeal to many people, but it appeals to me. In truth, not once during Techstars did I feel like I was “working”. Rather, I was with my friends, trying to do something genuinely hard -- and I can't ask for more than that.</p>
+
+
+</div>
+    <aside>
+    <div class="bug-reporting__panel">
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change. Please mention the URL of the page.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+    </div>
+    </aside>
+</section>
+
+    </div>
+    <!-- start of footer section -->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                <center>This project contains 383 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <br/>
+                Copyright &copy; Chris Albon,
+                    <time datetime="2017">2017</time>.
+                </center>
+            </p>
+        </div>
+    </footer>
+
+    <!-- This jQuery line finds any span that contains code highlighting classes and then selects the parent <pre> tag and adds a border. This is done as a workaround to visually distinguish the code inputs and outputs -->
+    <script>
+        $( ".hll, .n, .c, .err, .k, .o, .cm, .cp, .c1, .cs, .gd, .ge, .gr, .gh, .gi, .go, .gp, .gs, .gu, .gt, .kc, .kd, .kn, .kp, .kr, .kt, .m, .s, .na, .nb, .nc, .no, .nd, .ni, .ne, .nf, .nl, .nn, .nt, .nv, .ow, .w, .mf, .mh, .mi, .mo, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss, .bp, .vc, .vg, .vi, .il" ).parent( "pre" ).css( "border", "1px solid #DEDEDE" );
+    </script>
+
+    <!-- Load Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-66582-32', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics -->
+
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../theme/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Amazon OneLink -->
+    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=946c0716-c88a-4df0-8944-a058be8c1e86"></script>
+
+</body>
+
+</html>

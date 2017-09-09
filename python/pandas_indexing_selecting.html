@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Notes on Data Science, Machine Learning, &amp; Artificial Intelligence">
+    <meta name="author" content="Chris Albon">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>Indexing and Selecting Data With Pandas - Python</title>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../theme/js/jquery.min.js"><\/script>')
+    </script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.css" />
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" type="text/css" href="../theme/css/ie10-viewport-bug-workaround.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../theme/css/notebooks.css" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
+
+    <meta name="tags" content="Data Wrangling" />
+
+    <meta name="google-site-verification" content="7RLmddm4HbzdQLpwH2LH94_vBNmcaMGZSEhmmF5n0NM" />
+</head>
+
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="..">Chris Albon</a>
+            </div>
+            <div class="navbar-collapse collapse" id="searchbar">
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ML/AI Notes<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
+                          <li><a href="..#Python">Python</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
+                          <li><a href="..#Javascript">Javascript</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
+                          <li><a href="..#Scala">Scala</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
+                      </ul>
+                  </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../pages/about.html">About Chris</a></li>
+                            <li><a href="https://github.com/chrisalbon">GitHub</a></li>
+                            <li><a href="https://twitter.com/chrisalbon">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/chrisralbon">LinkedIn</a></li>
+                            <li><a href="https://pinboard.in/u:chrisalbon">Pinboard</a></li>
+                        </ul>
+                    </li>
+
+
+                    <!--<li class="dropdown">
+                        <a href="../feeds/blog.rss.xml">Blog RSS</a>
+                    </li>-->
+
+
+                </ul>
+
+                <form class="navbar-form" action="../search.html" onsubmit="return validateForm(this.elements['q'].value);">
+                    <div class="form-group" style="display:inline;">
+                        <div class="input-group" style="display:table;">
+                            <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
+                            <input class="form-control search-query" name="q" id="tipue_search_input" placeholder="e.g. scikit KNN, pandas merge" required autocomplete="off" type="text">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+
+
+    <!-- end of header section -->
+    <div class="container">
+<div class="alert alert-warning alert-dismissable" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    Interested in machine learning? Check out my <a href="https://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
+</div>
+
+<section id="content" class="body">
+    <header>
+    <h1>
+      Indexing and Selecting Data With Pandas
+    </h1>
+<ol class="breadcrumb">
+    <li>
+        <time class="published" datetime="2016-05-01T12:00:00-07:00">
+            01 May 2016
+        </time>
+    </li>
+    <li>Python</li>
+    <li>Data Wrangling</li>
+</ol>
+</header>
+<div class='article_content'>
+<div class="codehilite"><pre><span></span><span class="c1"># import the pandas module</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># Create data</span>
+<span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;regiment&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">],</span> 
+            <span class="s1">&#39;company&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;1st&#39;</span><span class="p">,</span> <span class="s1">&#39;1st&#39;</span><span class="p">,</span> <span class="s1">&#39;2nd&#39;</span><span class="p">,</span> <span class="s1">&#39;2nd&#39;</span><span class="p">,</span> <span class="s1">&#39;1st&#39;</span><span class="p">,</span> <span class="s1">&#39;1st&#39;</span><span class="p">,</span> <span class="s1">&#39;2nd&#39;</span><span class="p">,</span> <span class="s1">&#39;2nd&#39;</span><span class="p">,</span><span class="s1">&#39;1st&#39;</span><span class="p">,</span> <span class="s1">&#39;1st&#39;</span><span class="p">,</span> <span class="s1">&#39;2nd&#39;</span><span class="p">,</span> <span class="s1">&#39;2nd&#39;</span><span class="p">],</span> 
+            <span class="s1">&#39;deaths&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">523</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">616</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="mi">523</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> 
+            <span class="s1">&#39;battles&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> 
+            <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1045</span><span class="p">,</span> <span class="mi">957</span><span class="p">,</span> <span class="mi">1099</span><span class="p">,</span> <span class="mi">1400</span><span class="p">,</span> <span class="mi">1592</span><span class="p">,</span> <span class="mi">1006</span><span class="p">,</span> <span class="mi">987</span><span class="p">,</span> <span class="mi">849</span><span class="p">,</span> <span class="mi">973</span><span class="p">,</span> <span class="mi">1005</span><span class="p">,</span> <span class="mi">1099</span><span class="p">,</span> <span class="mi">1523</span><span class="p">],</span>
+            <span class="s1">&#39;veterans&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">949</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">435</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">345</span><span class="p">],</span>
+            <span class="s1">&#39;readiness&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+            <span class="s1">&#39;armored&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="s1">&#39;deserters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+            <span class="s1">&#39;origin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Arizona&#39;</span><span class="p">,</span> <span class="s1">&#39;California&#39;</span><span class="p">,</span> <span class="s1">&#39;Texas&#39;</span><span class="p">,</span> <span class="s1">&#39;Florida&#39;</span><span class="p">,</span> <span class="s1">&#39;Maine&#39;</span><span class="p">,</span> <span class="s1">&#39;Iowa&#39;</span><span class="p">,</span> <span class="s1">&#39;Alaska&#39;</span><span class="p">,</span> <span class="s1">&#39;Washington&#39;</span><span class="p">,</span> <span class="s1">&#39;Oregon&#39;</span><span class="p">,</span> <span class="s1">&#39;Wyoming&#39;</span><span class="p">,</span> <span class="s1">&#39;Louisana&#39;</span><span class="p">,</span> <span class="s1">&#39;Georgia&#39;</span><span class="p">]}</span>
+
+<span class="c1"># Create data frame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;regiment&#39;</span><span class="p">,</span> <span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="s1">&#39;deaths&#39;</span><span class="p">,</span> <span class="s1">&#39;battles&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;veterans&#39;</span><span class="p">,</span> <span class="s1">&#39;readiness&#39;</span><span class="p">,</span> <span class="s1">&#39;armored&#39;</span><span class="p">,</span> <span class="s1">&#39;deserters&#39;</span><span class="p">,</span> <span class="s1">&#39;origin&#39;</span><span class="p">])</span>
+
+<span class="c1"># Set index</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;origin&#39;</span><span class="p">)</span>
+
+<span class="c1"># View first few rows</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+      <th>deaths</th>
+      <th>battles</th>
+      <th>size</th>
+      <th>veterans</th>
+      <th>readiness</th>
+      <th>armored</th>
+      <th>deserters</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arizona</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Maine</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>43</td>
+      <td>4</td>
+      <td>1592</td>
+      <td>73</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Select a column</h3>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>origin
+Arizona       1045
+California     957
+Texas         1099
+Florida       1400
+Maine         1592
+Iowa          1006
+Alaska         987
+Washington     849
+Oregon         973
+Wyoming       1005
+Louisana      1099
+Georgia       1523
+Name: size, dtype: int64
+</pre></div>
+
+
+<h3>Select multiple columns</h3>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;veterans&#39;</span><span class="p">]]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>size</th>
+      <th>veterans</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arizona</th>
+      <td>1045</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>957</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>1099</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>1400</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>Maine</th>
+      <td>1592</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>Iowa</th>
+      <td>1006</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>987</td>
+      <td>949</td>
+    </tr>
+    <tr>
+      <th>Washington</th>
+      <td>849</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>Oregon</th>
+      <td>973</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>Wyoming</th>
+      <td>1005</td>
+      <td>435</td>
+    </tr>
+    <tr>
+      <th>Louisana</th>
+      <td>1099</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>1523</td>
+      <td>345</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Select all rows by index label</h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Select all rows with the index label &quot;Arizona&quot;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="s1">&#39;Arizona&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+      <th>deaths</th>
+      <th>battles</th>
+      <th>size</th>
+      <th>veterans</th>
+      <th>readiness</th>
+      <th>armored</th>
+      <th>deserters</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arizona</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Select rows by row number</h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Select every row up to 3</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+      <th>deaths</th>
+      <th>battles</th>
+      <th>size</th>
+      <th>veterans</th>
+      <th>readiness</th>
+      <th>armored</th>
+      <th>deserters</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arizona</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># Select the second and third row</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+      <th>deaths</th>
+      <th>battles</th>
+      <th>size</th>
+      <th>veterans</th>
+      <th>readiness</th>
+      <th>armored</th>
+      <th>deserters</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>California</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># Select every row beginning with the third row</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+      <th>deaths</th>
+      <th>battles</th>
+      <th>size</th>
+      <th>veterans</th>
+      <th>readiness</th>
+      <th>armored</th>
+      <th>deserters</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Texas</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Maine</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>43</td>
+      <td>4</td>
+      <td>1592</td>
+      <td>73</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Iowa</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>234</td>
+      <td>7</td>
+      <td>1006</td>
+      <td>37</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>523</td>
+      <td>8</td>
+      <td>987</td>
+      <td>949</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>Washington</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>62</td>
+      <td>3</td>
+      <td>849</td>
+      <td>48</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>Oregon</th>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>62</td>
+      <td>4</td>
+      <td>973</td>
+      <td>48</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Wyoming</th>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>73</td>
+      <td>7</td>
+      <td>1005</td>
+      <td>435</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Louisana</th>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>37</td>
+      <td>8</td>
+      <td>1099</td>
+      <td>63</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>35</td>
+      <td>9</td>
+      <td>1523</td>
+      <td>345</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Select columns by column position</h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Select the first 2 columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arizona</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+    </tr>
+    <tr>
+      <th>Maine</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+    </tr>
+    <tr>
+      <th>Iowa</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+    </tr>
+    <tr>
+      <th>Washington</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+    </tr>
+    <tr>
+      <th>Oregon</th>
+      <td>Scouts</td>
+      <td>1st</td>
+    </tr>
+    <tr>
+      <th>Wyoming</th>
+      <td>Scouts</td>
+      <td>1st</td>
+    </tr>
+    <tr>
+      <th>Louisana</th>
+      <td>Scouts</td>
+      <td>2nd</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>Scouts</td>
+      <td>2nd</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Select by conditionals (boolean)</h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Select rows where df.deaths is greater than 50</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;deaths&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+      <th>deaths</th>
+      <th>battles</th>
+      <th>size</th>
+      <th>veterans</th>
+      <th>readiness</th>
+      <th>armored</th>
+      <th>deserters</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arizona</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Iowa</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>234</td>
+      <td>7</td>
+      <td>1006</td>
+      <td>37</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>523</td>
+      <td>8</td>
+      <td>987</td>
+      <td>949</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>Washington</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>62</td>
+      <td>3</td>
+      <td>849</td>
+      <td>48</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>Oregon</th>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>62</td>
+      <td>4</td>
+      <td>973</td>
+      <td>48</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Wyoming</th>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>73</td>
+      <td>7</td>
+      <td>1005</td>
+      <td>435</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># Select rows where df.deaths is greater than 500 or less than 50</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;deaths&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;deaths&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">)]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+      <th>deaths</th>
+      <th>battles</th>
+      <th>size</th>
+      <th>veterans</th>
+      <th>readiness</th>
+      <th>armored</th>
+      <th>deserters</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arizona</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Maine</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>43</td>
+      <td>4</td>
+      <td>1592</td>
+      <td>73</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>523</td>
+      <td>8</td>
+      <td>987</td>
+      <td>949</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>Louisana</th>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>37</td>
+      <td>8</td>
+      <td>1099</td>
+      <td>63</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>35</td>
+      <td>9</td>
+      <td>1523</td>
+      <td>345</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># Select all the regiments not named &quot;Dragoons&quot;</span>
+<span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;regiment&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">)]</span>
+</pre></div>
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>regiment</th>
+      <th>company</th>
+      <th>deaths</th>
+      <th>battles</th>
+      <th>size</th>
+      <th>veterans</th>
+      <th>readiness</th>
+      <th>armored</th>
+      <th>deserters</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arizona</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Oregon</th>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>62</td>
+      <td>4</td>
+      <td>973</td>
+      <td>48</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Wyoming</th>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>73</td>
+      <td>7</td>
+      <td>1005</td>
+      <td>435</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Louisana</th>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>37</td>
+      <td>8</td>
+      <td>1099</td>
+      <td>63</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>35</td>
+      <td>9</td>
+      <td>1523</td>
+      <td>345</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+    <aside>
+    <div class="bug-reporting__panel">
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change. Please mention the URL of the page.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+    </div>
+    </aside>
+</section>
+
+    </div>
+    <!-- start of footer section -->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                <center>This project contains 383 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <br/>
+                Copyright &copy; Chris Albon,
+                    <time datetime="2017">2017</time>.
+                </center>
+            </p>
+        </div>
+    </footer>
+
+    <!-- This jQuery line finds any span that contains code highlighting classes and then selects the parent <pre> tag and adds a border. This is done as a workaround to visually distinguish the code inputs and outputs -->
+    <script>
+        $( ".hll, .n, .c, .err, .k, .o, .cm, .cp, .c1, .cs, .gd, .ge, .gr, .gh, .gi, .go, .gp, .gs, .gu, .gt, .kc, .kd, .kn, .kp, .kr, .kt, .m, .s, .na, .nb, .nc, .no, .nd, .ni, .ne, .nf, .nl, .nn, .nt, .nv, .ow, .w, .mf, .mh, .mi, .mo, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss, .bp, .vc, .vg, .vi, .il" ).parent( "pre" ).css( "border", "1px solid #DEDEDE" );
+    </script>
+
+    <!-- Load Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-66582-32', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics -->
+
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../theme/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Amazon OneLink -->
+    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=946c0716-c88a-4df0-8944-a058be8c1e86"></script>
+
+</body>
+
+</html>
