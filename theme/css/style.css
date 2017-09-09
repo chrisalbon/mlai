@@ -371,3 +371,10 @@ blockquote p {
   -moz-box-shadow: none !important;
   box-shadow: none !important;
 }
+
+img .flashcard {
+  max-height: 400px !important;
+  -webkit-box-shadow: 8px 8px 5px -4px rgba(140,140,140,0.8);
+  -moz-box-shadow: 8px 8px 5px -4px rgba(140,140,140,0.8);
+  box-shadow: 8px 8px 5px -4px rgba(140,140,140,0.8);
+}
