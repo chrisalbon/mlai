@@ -10,7 +10,7 @@
     <meta name="author" content="Chris Albon">
     <link rel="icon" href="../favicon.ico">
 
-    <title>Find The Maximum And Minimum - Machine Learning</title>
+    <title>Calculate The Average, Variance, And Standard Deviation - Machine Learning</title>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -116,12 +116,12 @@
 <section id="content" class="body">
     <header>
     <h1>
-      Find The Maximum And Minimum
+      Calculate The Average, Variance, And Standard Deviation
     </h1>
 <ol class="breadcrumb">
     <li>
-        <time class="published" datetime="2017-09-03T12:00:00-07:00">
-            03 September 2017
+        <time class="published" datetime="2017-09-04T12:00:00-07:00">
+            04 September 2017
         </time>
     </li>
     <li>Machine Learning</li>
@@ -143,43 +143,33 @@
 </pre></div>
 
 
-<h2>Find Maximum Element</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Return maximum element</span>
-<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<h2>Calculate Mean</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Return mean</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>9
+<div class="codehilite"><pre><span></span>5.0
 </pre></div>
 
 
-<h2>Find Minimum Element</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Return minimum element</span>
-<span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<h2>Calculate Variance</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Return variance</span>
+<span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>1
+<div class="codehilite"><pre><span></span>6.666666666666667
 </pre></div>
 
 
-<h2>Find Maximum Element By Column</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Find the maximum element in each column</span>
-<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<h2>Calculate Standard Deviation</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Return standard deviation</span>
+<span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>array([7, 8, 9])
-</pre></div>
-
-
-<h2>Find Maximum Element By Row</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Find the maximum element in each row</span>
-<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>array([3, 6, 9])
+<div class="codehilite"><pre><span></span>2.5819888974716112
 </pre></div>
 </div>
     <aside>
