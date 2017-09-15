@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/</loc>
-<lastmod>2017-09-15T09:23:07-00:00</lastmod>
+<lastmod>2017-09-15T10:31:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -32,7 +32,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://chrisalbon.com/machine-learning/custom_performance_metric.html</loc>
+<lastmod>2017-09-14T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://chrisalbon.com/machine-learning/drop_highly_correlated_features.html</loc>
+<lastmod>2017-09-14T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/evaluating_clustering.html</loc>
+<lastmod>2017-09-14T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/generate_text_reports_on_performance.html</loc>
+<lastmod>2017-09-14T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/plot_the_learning_curve.html</loc>
 <lastmod>2017-09-14T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
