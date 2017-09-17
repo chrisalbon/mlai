@@ -378,3 +378,7 @@ blockquote p {
   -moz-box-shadow: 8px 8px 5px -4px rgba(140,140,140,0.8);
   box-shadow: 8px 8px 5px -4px rgba(140,140,140,0.8);
 }
+
+.advert {
+  font-size: 1.1em;
+}
