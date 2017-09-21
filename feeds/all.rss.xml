@@ -152,7 +152,109 @@
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/handle_imbalanced_classes_in_random_forests.html</guid><category>Trees And Forests</category></item><item><title>Logistic Regression</title><link>http://chrisalbon.com/machine-learning/logistic_regression.html</link><description>&lt;p&gt;Despite having "regression" in its name, a logistic regression is actually a widely used binary classifier (i.e. the target vector can only take two values). In a logistic regression, a linear model (e.g. &lt;span class="math"&gt;\(\beta_{0}+\beta_{1}x\)&lt;/span&gt;) is included in a logistic (also called sigmoid) function, &lt;span class="math"&gt;\({\frac {1}{1+e^{-z}}}\)&lt;/span&gt;, such that:&lt;/p&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/handle_imbalanced_classes_in_random_forests.html</guid><category>Trees And Forests</category></item><item><title>Handling Imbalanced Classes In Logistic Regression</title><link>http://chrisalbon.com/machine-learning/handling_imbalanced_classes_in_logistic_regression.html</link><description>&lt;p&gt;Like many other learning algorithms in scikit-learn, &lt;code&gt;LogisticRegression&lt;/code&gt; comes with a built-in method of handling imbalanced classes. If we have highly imbalanced classes and have no addressed it during preprocessing, we have the option of using the &lt;code&gt;class_weight&lt;/code&gt; parameter to weight the classes to make certain we have a balanced mix of each class. Specifically, the &lt;code&gt;balanced&lt;/code&gt; argument will automatically weigh classes inversely proportional to their frequency:&lt;/p&gt;
+&lt;div class="math"&gt;$$w_j = \frac{n}{kn_{j}}$$&lt;/div&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(w_j\)&lt;/span&gt; is the weight to class &lt;span class="math"&gt;\(j\)&lt;/span&gt;, &lt;span class="math"&gt;\(n\)&lt;/span&gt; is the number of observations, &lt;span class="math"&gt;\(n_j\)&lt;/span&gt; is the number of observations in class &lt;span class="math"&gt;\(j\)&lt;/span&gt;, and &lt;span class="math"&gt;\(k\)&lt;/span&gt; is the total number of classes.&lt;/p&gt;
+&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load libraries&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.linear_model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.preprocessing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Load Iris Flower Dataset&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load data&lt;/span&gt;
+&lt;span class="n"&gt;iris&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_iris&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Make Classes Imbalanced&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Make class highly imbalanced by removing first 40 observations&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;:,:]&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Create target vector indicating if class 0, otherwise 1&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Standardize Features&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Standarize features&lt;/span&gt;
+&lt;span class="n"&gt;scaler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;X_std&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;scaler&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Train A Logistic Regression With Weighted Classes&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create decision tree classifer object&lt;/span&gt;
+&lt;span class="n"&gt;clf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;class_weight&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;balanced&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Train model&lt;/span&gt;
+&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_std&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/handling_imbalanced_classes_in_logistic_regression.html</guid><category>Logistic Regression</category></item><item><title>Logistic Regression</title><link>http://chrisalbon.com/machine-learning/logistic_regression.html</link><description>&lt;p&gt;Despite having "regression" in its name, a logistic regression is actually a widely used binary classifier (i.e. the target vector can only take two values). In a logistic regression, a linear model (e.g. &lt;span class="math"&gt;\(\beta_{0}+\beta_{1}x\)&lt;/span&gt;) is included in a logistic (also called sigmoid) function, &lt;span class="math"&gt;\({\frac {1}{1+e^{-z}}}\)&lt;/span&gt;, such that:&lt;/p&gt;
 &lt;div class="math"&gt;$$P(y_i=1 \mid X)={\frac {1}{1+e^{-(\beta_{0}+\beta_{1}x)}}}$$&lt;/div&gt;
 &lt;p&gt;where &lt;span class="math"&gt;\(P(y_i=1 \mid X)\)&lt;/span&gt; is the probability of the &lt;span class="math"&gt;\(i\)&lt;/span&gt;th observation's target value, &lt;span class="math"&gt;\(y_i\)&lt;/span&gt;, being class 1, &lt;span class="math"&gt;\(X\)&lt;/span&gt; is the training data, &lt;span class="math"&gt;\(\beta_0\)&lt;/span&gt; and &lt;span class="math"&gt;\(\beta_1\)&lt;/span&gt; are the parameters to be learned, and &lt;span class="math"&gt;\(e\)&lt;/span&gt; is Euler's number.&lt;/p&gt;
 &lt;h2&gt;Preliminaries&lt;/h2&gt;
@@ -272,7 +374,38 @@
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/logistic_regression.html</guid><category>Logistic Regression</category></item><item><title>Multinomial Logistic Regression</title><link>http://chrisalbon.com/machine-learning/multinomial_logistic_regression.html</link><description>&lt;p&gt;In multinomial logistic regression (MLR) the logistic function we saw in Recipe 15.1 is replaced with a softmax function:&lt;/p&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/logistic_regression.html</guid><category>Logistic Regression</category></item><item><title>Logistic Regression On Very Large Data</title><link>http://chrisalbon.com/machine-learning/logistic_regression_on_very_large_data.html</link><description>&lt;p&gt;scikit-learn's &lt;code&gt;LogisticRegression&lt;/code&gt; offers a number of techniques for training a logistic regression, called solvers. Most of the time scikit-learn will select the best solver automatically for us or warn us that you cannot do some thing with that solver. However, there is one particular case we should be aware of. &lt;/p&gt;
+&lt;p&gt;While an exact explanation is beyond the bounds of this book, stochastic average gradient descent allows us to train a model much faster than other solvers when our data is very large. However, it is also very sensitive to feature scaling to standardizing our features is particularly important. We can set our learning algorithm to use this solver by setting &lt;code&gt;solver='sag'&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load libraries&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.linear_model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.preprocessing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Load Iris Flower Data&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load data&lt;/span&gt;
+&lt;span class="n"&gt;iris&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_iris&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Standardize Features&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Standarize features&lt;/span&gt;
+&lt;span class="n"&gt;scaler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;X_std&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;scaler&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Train Logistic Regression Using SAG solver&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create logistic regression object using sag solver&lt;/span&gt;
+&lt;span class="n"&gt;clf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;solver&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sag&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Train model&lt;/span&gt;
+&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_std&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/logistic_regression_on_very_large_data.html</guid><category>Logistic Regression</category></item><item><title>Multinomial Logistic Regression</title><link>http://chrisalbon.com/machine-learning/multinomial_logistic_regression.html</link><description>&lt;p&gt;In multinomial logistic regression (MLR) the logistic function we saw in Recipe 15.1 is replaced with a softmax function:&lt;/p&gt;
 &lt;div class="math"&gt;$$P(y_i=k \mid X)={\frac {e^{\beta_{k}x_{i}}}{{\sum_{j=1}^{K}}e^{\beta_{j}x_{i}}}}$$&lt;/div&gt;
 &lt;p&gt;where &lt;span class="math"&gt;\(P(y_i=k \mid X)\)&lt;/span&gt; is the probability the &lt;span class="math"&gt;\(i\)&lt;/span&gt;th observation's target value, &lt;span class="math"&gt;\(y_i\)&lt;/span&gt;, is class &lt;span class="math"&gt;\(k\)&lt;/span&gt;, and &lt;span class="math"&gt;\(K\)&lt;/span&gt; is the total number of classes. One practical advantage of the MLR is that its predicted probabilities using the &lt;code&gt;predict_proba&lt;/code&gt; method are more reliable (i.e. better calibrated).&lt;/p&gt;
 &lt;h2&gt;Preliminaries&lt;/h2&gt;
@@ -557,106 +690,4 @@
 &lt;h2&gt;Train Random Forest Regressor&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Train model&lt;/span&gt;
 &lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;regr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/random_forest_regression.html</guid><category>Trees And Forests</category></item><item><title>Select Important Features In Random Forest</title><link>http://chrisalbon.com/machine-learning/select_important_features_in_random_forest.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load libraries&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.ensemble&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;RandomForestClassifier&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.feature_selection&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SelectFromModel&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Load Iris Flower Data&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load data&lt;/span&gt;
-&lt;span class="n"&gt;iris&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_iris&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
-&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Create Random Forest Classifier&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create random forest classifier&lt;/span&gt;
-&lt;span class="n"&gt;clf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;RandomForestClassifier&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n_jobs&lt;/span&gt;&lt;span class="o"&gt;=-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Select Features With Importance Greater Than Threshold&lt;/h2&gt;
-&lt;p&gt;The higher the number, the more important the feature (all importance scores sum to one). By plotting these values we can add interpretability to our random forest models.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create object that selects features with importance greater than or equal to a threshold&lt;/span&gt;
-&lt;span class="n"&gt;selector&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SelectFromModel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;clf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;threshold&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Feature new feature matrix using selector&lt;/span&gt;
-&lt;span class="n"&gt;X_important&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;selector&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;View Selected Important Features&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# View first five observations of the features&lt;/span&gt;
-&lt;span class="n"&gt;X_important&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 1.4,  0.2],
-       [ 1.4,  0.2],
-       [ 1.3,  0.2],
-       [ 1.5,  0.2],
-       [ 1.4,  0.2]])
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Train Model With Selected Important Features&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Train random forest using most important featres&lt;/span&gt;
-&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_important&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/select_important_features_in_random_forest.html</guid><category>Trees And Forests</category></item><item><title>Decision Tree Classifier</title><link>http://chrisalbon.com/machine-learning/decision_tree_classifier.html</link><description>&lt;p&gt;&lt;a alt="Gini Index" href="https://machinelearningflashcards.com"&gt;
-    &lt;img src="decision_tree_classifier/Gini_Index_print.png" class="flashcard center-block"&gt;
-&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Preliminaries&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load libraries&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.tree&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeClassifier&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Load Iris Dataset&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load data&lt;/span&gt;
-&lt;span class="n"&gt;iris&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_iris&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
-&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Create Decision Tree Using Gini Impurity&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create decision tree classifer object using gini&lt;/span&gt;
-&lt;span class="n"&gt;clf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeClassifier&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;criterion&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gini&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Train Model&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Train model&lt;/span&gt;
-&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Create Observation To Predict&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Make new observation&lt;/span&gt;
-&lt;span class="n"&gt;observation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Predict Observation&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Predict observation&amp;#39;s class    &lt;/span&gt;
-&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;observation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([1])
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;View Predicted Probabilities&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# View predicted class probabilities for the three classes&lt;/span&gt;
-&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict_proba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;observation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;array([[ 0.,  1.,  0.]])
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Tue, 19 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-19:machine-learning/decision_tree_classifier.html</guid><category>Trees And Forests</category></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 21 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-21:machine-learning/random_forest_regression.html</guid><category>Trees And Forests</category></item></channel></rss>
