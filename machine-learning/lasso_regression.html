@@ -34,7 +34,7 @@ v<!DOCTYPE html>
     <![endif]-->
      <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/machine-learning.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
-    <meta name="tags" content="Feature Selection" />
+    <meta name="tags" content="Linear Regression" />
 
     <meta name="google-site-verification" content="7RLmddm4HbzdQLpwH2LH94_vBNmcaMGZSEhmmF5n0NM" />
 </head>
@@ -119,180 +119,105 @@ v<!DOCTYPE html>
     </h1>
 <ol class="breadcrumb">
     <li>
-        <time class="published" datetime="2016-11-01T12:00:00-07:00">
-            01 November 2016
+        <time class="published" datetime="2017-09-18T12:00:00-07:00">
+            18 September 2017
         </time>
     </li>
     <li>Machine Learning</li>
-    <li>Feature Selection</li>
+    <li>Linear Regression</li>
 </ol>
 </header>
 <div class='article_content'>
-<p>Often we want conduct a process called <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">regularization</a>, wherein we penalize the number of features in a model in order to only keep the most important features. This can be particularly important when you have a dataset with 100,000+ features.</p>
-<p><a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">Lasso regression</a> is a common modeling technique to do regularization. The math behind it is pretty interesting, but practically, what you need to know is that Lasso regression comes with a parameter, <code>alpha</code>, and the higher the <code>alpha</code>, the most feature coefficients are zero.</p>
-<p>That is, when <code>alpha</code> is <code>0</code>, Lasso regression produces the same coefficients as a linear regression. When <code>alpha</code> is very very large, all coefficients are zero.</p>
-<p>In this tutorial, I run three lasso regressions, with varying levels of alpha, and show the resulting effect on the coefficients.</p>
 <h2>Preliminaries</h2>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Load library</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_boston</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 </pre></div>
 
 
-<h2>Load Data</h2>
-<div class="codehilite"><pre><span></span><span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span>
+<h2>Load Boston Housing Dataset</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Load data</span>
+<span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+
+
+<h2>Standardize Features</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Standarize features</span>
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">boston</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">boston</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
-<span class="n">names</span> <span class="o">=</span> <span class="n">boston</span><span class="p">[</span><span class="s2">&quot;feature_names&quot;</span><span class="p">]</span>
+<span class="n">X_std</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 
 
-<h2>Run Three Lasso Regressions, Varying Alpha Levels</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Create a function called lasso,</span>
-<span class="k">def</span> <span class="nf">lasso</span><span class="p">(</span><span class="n">alphas</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Takes in a list of alphas. Outputs a dataframe containing the coefficients of lasso regressions from each alpha.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1"># Create an empty data frame</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<h2>Fit Ridge Regression</h2>
+<p>The hyperparameter, <span class="math">\(\alpha\)</span>, lets us control how much we penalize the coefficients, with higher values of <span class="math">\(\alpha\)</span> creating simpler modelers. The ideal value of <span class="math">\(\alpha\)</span> should be tuned like any other hyperparameter. In scikit-learn, <span class="math">\(\alpha\)</span> is set using the <code>alpha</code> parameter.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Create lasso regression with alpha value</span>
+<span class="n">regr</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
-    <span class="c1"># Create a column of feature names</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Feature Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">names</span>
-
-    <span class="c1"># For each alpha value in the list of alpha values,</span>
-    <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alphas</span><span class="p">:</span>
-        <span class="c1"># Create a lasso regression with that alpha value,</span>
-        <span class="n">lasso</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
-
-        <span class="c1"># Fit the lasso regression</span>
-        <span class="n">lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
-
-        <span class="c1"># Create a column name for that alpha value</span>
-        <span class="n">column_name</span> <span class="o">=</span> <span class="s1">&#39;Alpha = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">alpha</span>
-
-        <span class="c1"># Create a column of coefficient values</span>
-        <span class="n">df</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">lasso</span><span class="o">.</span><span class="n">coef_</span>
-
-    <span class="c1"># Return the datafram    </span>
-    <span class="k">return</span> <span class="n">df</span>
+<span class="c1"># Fit the linear regression</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_std</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="c1"># Run the function called, Lasso</span>
-<span class="n">lasso</span><span class="p">([</span><span class="o">.</span><span class="mo">0001</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-</pre></div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
 
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
 
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Feature Name</th>
-      <th>Alpha = 0.000100</th>
-      <th>Alpha = 0.500000</th>
-      <th>Alpha = 10.000000</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>CRIM</td>
-      <td>-0.920130</td>
-      <td>-0.106977</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ZN</td>
-      <td>1.080498</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>INDUS</td>
-      <td>0.142027</td>
-      <td>-0.000000</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>CHAS</td>
-      <td>0.682235</td>
-      <td>0.397399</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NOX</td>
-      <td>-2.059250</td>
-      <td>-0.000000</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>RM</td>
-      <td>2.670814</td>
-      <td>2.973323</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>AGE</td>
-      <td>0.020680</td>
-      <td>-0.000000</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>DIS</td>
-      <td>-3.104070</td>
-      <td>-0.169378</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>RAD</td>
-      <td>2.656950</td>
-      <td>-0.000000</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>TAX</td>
-      <td>-2.074110</td>
-      <td>-0.000000</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>PTRATIO</td>
-      <td>-2.061921</td>
-      <td>-1.599574</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>B</td>
-      <td>0.856553</td>
-      <td>0.545715</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>LSTAT</td>
-      <td>-3.748470</td>
-      <td>-3.668884</td>
-      <td>-0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>Notice that as the alpha value increases, more features have a coefficient of 0.</p>
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
 </div>
     <aside>
     <div class="bug-reporting__panel">
@@ -307,7 +232,7 @@ v<!DOCTYPE html>
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 443 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 452 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
                     <time datetime="2017">2017</time>.
