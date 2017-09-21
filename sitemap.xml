@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/</loc>
-<lastmod>2017-09-21T09:57:45-00:00</lastmod>
+<lastmod>2017-09-21T11:02:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -19,6 +19,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/machine-learning/feature_importance.html</loc>
+<lastmod>2017-09-21T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/handle_imbalanced_classes_in_random_forests.html</loc>
 <lastmod>2017-09-21T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -54,6 +61,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/machine-learning/decision_tree_regression.html</loc>
+<lastmod>2017-09-19T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/find_nearest_neighbors.html</loc>
+<lastmod>2017-09-19T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/machine-learning/identifying_best_value_of_k.html</loc>
 <lastmod>2017-09-19T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
