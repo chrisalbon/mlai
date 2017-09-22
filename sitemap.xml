@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/</loc>
-<lastmod>2017-09-22T13:50:13-00:00</lastmod>
+<lastmod>2017-09-22T14:05:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1595,13 +1595,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://chrisalbon.com/cloud-computing/run_project_jupyter_on_amazon_ec2.html</loc>
 <lastmod>2016-11-10T12:00:00-08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://chrisalbon.com/deep-learning/perceptron_in_scikit.html</loc>
-<lastmod>2016-11-04T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
