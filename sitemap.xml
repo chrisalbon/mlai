@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/</loc>
-<lastmod>2017-09-25T11:59:05-00:00</lastmod>
+<lastmod>2017-09-25T16:14:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -25,7 +25,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://chrisalbon.com/deep-learning-keras/convolutional_neural_network.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/deep-learning-keras/feedforward_neural_network_for_binary_classification.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://chrisalbon.com/deep-learning-keras/k-fold_cross-validating_neural_networks.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/deep-learning-keras/lstm_recurrent_neural_network.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/deep-learning-keras/preprocessing_data_for_neural_networks.html</loc>
 <lastmod>2017-09-25T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
