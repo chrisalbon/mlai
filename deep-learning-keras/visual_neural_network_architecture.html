@@ -10,7 +10,7 @@ v<!DOCTYPE html>
     <meta name="author" content="Chris Albon">
     <link rel="icon" href="../favicon.ico">
 
-    <title>Find The Maximum, Minimum, And Average - Machine Learning</title>
+    <title>Visual Neural Network Architecutre - Deep Learning - Keras</title>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -32,9 +32,9 @@ v<!DOCTYPE html>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/machine-learning.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/deep-learning-keras.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
-    <meta name="tags" content="Vectors Matrices Arrays" />
+    <meta name="tags" content="Basics" />
 
     <meta name="google-site-verification" content="7RLmddm4HbzdQLpwH2LH94_vBNmcaMGZSEhmmF5n0NM" />
 </head>
@@ -115,80 +115,58 @@ v<!DOCTYPE html>
 <section id="content" class="body">
     <header>
     <h1>
-      Find The Maximum, Minimum, And Average
+      Visual Neural Network Architecutre
     </h1>
 <ol class="breadcrumb">
     <li>
-        <time class="published" datetime="2017-09-03T12:00:00-07:00">
-            03 September 2017
+        <time class="published" datetime="2017-09-25T12:00:00-07:00">
+            25 September 2017
         </time>
     </li>
-    <li>Machine Learning</li>
-    <li>Vectors Matrices Arrays</li>
+    <li>Deep Learning - Keras</li>
+    <li>Basics</li>
 </ol>
 </header>
 <div class='article_content'>
 <h2>Preliminaries</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Load library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Load libraries</span>
+<span class="kn">from</span> <span class="nn">keras</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">keras</span> <span class="kn">import</span> <span class="n">layers</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">SVG</span>
+<span class="kn">from</span> <span class="nn">keras.utils.vis_utils</span> <span class="kn">import</span> <span class="n">model_to_dot</span>
+<span class="kn">from</span> <span class="nn">keras.utils</span> <span class="kn">import</span> <span class="n">plot_model</span>
 </pre></div>
 
 
-<h2>Create Matrix</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Create matrix</span>
-<span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-                   <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-                   <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<div class="codehilite"><pre><span></span>Using TensorFlow backend.
 </pre></div>
 
 
-<h2>Find Maximum Element</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Return maximum element</span>
-<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<h2>Construct Neural Network Architecture</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Start neural network</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+
+<span class="c1"># Add fully connected layer with a ReLU activation function</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,)))</span>
+
+<span class="c1"># Add fully connected layer with a ReLU activation function</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+
+<span class="c1"># Add fully connected layer with a sigmoid activation function</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>9
+<h2>Visualize Network Architecture</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Visualize network architecture</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">model_to_dot</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">show_shapes</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;dot&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;svg&#39;</span><span class="p">))</span>
 </pre></div>
 
 
-<h2>Find Minimum Element</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Return minimum element</span>
-<span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>1
-</pre></div>
-
-
-<h2>Find Mean</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Return mean</span>
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>5.0
-</pre></div>
-
-
-<h2>Find Maximum Element By Column</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Find the maximum element in each column</span>
-<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>array([7, 8, 9])
-</pre></div>
-
-
-<h2>Find Maximum Element By Row</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Find the maximum element in each row</span>
-<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>array([3, 6, 9])
+<p><img alt="svg" src="visual_neural_network_architecture_files/visual_neural_network_architecture_6_0.svg" /></p>
+<h2>Save To File</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Save the visualization as a file</span>
+<span class="n">plot_model</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">show_shapes</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">to_file</span><span class="o">=</span><span class="s1">&#39;network.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
     <aside>
@@ -204,7 +182,7 @@ v<!DOCTYPE html>
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 475 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 478 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
                     <time datetime="2017">2017</time>.
