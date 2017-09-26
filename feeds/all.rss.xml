@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Mon, 25 Sep 2017 12:00:00 -0700</lastBuildDate><item><title>Adding Dropout</title><link>http://chrisalbon.com/deep-learning-keras/adding_dropout.html</link><description>&lt;p&gt;&lt;a alt="Dropout" href="https://machinelearningflashcards.com"&gt;
-    &lt;img src="adding_dropout/Dropout_print.png" class="flashcard center-block"&gt;
+    &lt;img src="adding_dropout/DropOut_print.png" class="flashcard center-block"&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Preliminaries&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load libraries&lt;/span&gt;
