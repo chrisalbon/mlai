@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/</loc>
-<lastmod>2017-09-25T19:43:01-00:00</lastmod>
+<lastmod>2017-09-28T14:36:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,6 +39,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://chrisalbon.com/deep-learning-keras/feedforward_neural_network_for_multiclass_classification.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/deep-learning-keras/feedforward_neural_network_for_regression.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://chrisalbon.com/deep-learning-keras/k-fold_cross-validating_neural_networks.html</loc>
 <lastmod>2017-09-25T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -47,6 +61,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/deep-learning-keras/lstm_recurrent_neural_network.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/deep-learning-keras/neural_network_early_stopping.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/deep-learning-keras/neural_network_weight_regularization.html</loc>
 <lastmod>2017-09-25T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -75,6 +103,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chrisalbon.com/deep-learning-keras/visual_neural_network_architecture.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/deep-learning-keras/visualize_loss_history.html</loc>
+<lastmod>2017-09-25T12:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chrisalbon.com/deep-learning-keras/visualize_performance_history.html</loc>
 <lastmod>2017-09-25T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
