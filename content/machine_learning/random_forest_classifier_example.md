@@ -1,3 +1,4 @@
+
 Title: Random Forest Classifier Example  
 Slug: random_forest_classifier_example_scikit  
 Summary: random_forest_classifier_example using Scikit.   
@@ -29,6 +30,9 @@ import pandas as pd
 
 # Load numpy
 import numpy as np
+
+# Set random seed
+np.random.seed(0)
 ```
 
 ## Load Data
@@ -49,6 +53,19 @@ df.head()
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -114,6 +131,19 @@ df.head()
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -190,6 +220,19 @@ df.head()
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -267,8 +310,8 @@ print('Number of observations in the training data:', len(train))
 print('Number of observations in the test data:',len(test))
 ```
 
-    Number of observations in the training data: 107
-    Number of observations in the test data: 43
+    Number of observations in the training data: 118
+    Number of observations in the test data: 32
 
 
 ## Preprocess Data
@@ -278,6 +321,7 @@ print('Number of observations in the test data:',len(test))
 # Create a list of the feature column's names
 features = df.columns[:4]
 
+# View features
 features
 ```
 
@@ -297,6 +341,7 @@ features
 # are three species, which have been coded as 0, 1, or 2.
 y = pd.factorize(train['species'])[0]
 
+# View target
 y
 ```
 
@@ -304,10 +349,11 @@ y
 
 
     array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-           0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,
+           0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-           1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-           2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
+           1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+           2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+           2, 2, 2])
 
 
 
@@ -315,10 +361,10 @@ y
 
 
 ```python
-# Create a random forest classifier. By convention, clf means 'classifier'
-clf = RandomForestClassifier(n_jobs=2)
+# Create a random forest Classifier. By convention, clf means 'Classifier'
+clf = RandomForestClassifier(n_jobs=2, random_state=0)
 
-# Train the classifier to take the training features and learn how they relate
+# Train the Classifier to take the training features and learn how they relate
 # to the training y (the species)
 clf.fit(train[features], y)
 ```
@@ -328,16 +374,16 @@ clf.fit(train[features], y)
 
     RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
                 max_depth=None, max_features='auto', max_leaf_nodes=None,
-                min_samples_leaf=1, min_samples_split=2,
-                min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=2,
-                oob_score=False, random_state=None, verbose=0,
-                warm_start=False)
+                min_impurity_split=1e-07, min_samples_leaf=1,
+                min_samples_split=2, min_weight_fraction_leaf=0.0,
+                n_estimators=10, n_jobs=2, oob_score=False, random_state=0,
+                verbose=0, warm_start=False)
 
 
 
-Huzzah! We have done it! We have officially trained our random forest classifier! Now let's play with it. The classifier model itself is stored in the `clf` variable.
+Huzzah! We have done it! We have officially trained our random forest Classifier! Now let's play with it. The Classifier model itself is stored in the `clf` variable.
 
-## Apply classifier To Test Data
+## Apply Classifier To Test Data
 
 If you have been following along, you will know we only trained our classifier on part of the data, leaving the rest out. This is, in my humble opinion, the most important part of machine learning. Why? Because by leaving out a portion of the data, we have a set of data to test the accuracy of our model!
 
@@ -345,15 +391,15 @@ Let's do that now.
 
 
 ```python
-# Apply the classifier we trained to the test data (which, remember, it has never seen before)
+# Apply the Classifier we trained to the test data (which, remember, it has never seen before)
 clf.predict(test[features])
 ```
 
 
 
 
-    array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1,
-           1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
+    array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 2, 2, 2,
+           2, 2, 2, 2, 2, 2, 2, 2, 2])
 
 
 
@@ -370,12 +416,12 @@ clf.predict_proba(test[features])[0:10]
 
     array([[ 1. ,  0. ,  0. ],
            [ 1. ,  0. ,  0. ],
+           [ 1. ,  0. ,  0. ],
+           [ 1. ,  0. ,  0. ],
+           [ 1. ,  0. ,  0. ],
+           [ 1. ,  0. ,  0. ],
+           [ 1. ,  0. ,  0. ],
            [ 0.9,  0.1,  0. ],
-           [ 1. ,  0. ,  0. ],
-           [ 1. ,  0. ,  0. ],
-           [ 1. ,  0. ,  0. ],
-           [ 1. ,  0. ,  0. ],
-           [ 1. ,  0. ,  0. ],
            [ 1. ,  0. ,  0. ],
            [ 1. ,  0. ,  0. ]])
 
@@ -383,7 +429,7 @@ clf.predict_proba(test[features])[0:10]
 
 There are three species of plant, thus `[ 1. ,  0. ,  0. ]` tells us that the classifier is certain that the plant is the first class. Taking another example, `[ 0.9,  0.1,  0. ]` tells us that the classifier gives a 90% probability the plant belongs to the first class and a 10% probability the plant belongs to the second class. Because 90 is greater than 10, the classifier predicts the plant is the first class.
 
-## Evaluate classifier
+## Evaluate Classifier
 
 Now that we have predicted the species of all plants in the test data, we can compare our predicted species with the that plant's actual species.
 
@@ -416,11 +462,11 @@ test['species'].head()
 
 
 
-    14    setosa
-    18    setosa
-    20    setosa
-    22    setosa
-    25    setosa
+    7     setosa
+    8     setosa
+    10    setosa
+    13    setosa
+    17    setosa
     Name: species, dtype: category
     Categories (3, object): [setosa, versicolor, virginica]
 
@@ -430,7 +476,7 @@ That looks pretty good! At least for the first five observations. Now let's use 
 
 ### Create a confusion matrix
 
-A [confusion matrix](https://en.wikipedia.org/wiki/Confusion_matrix) can be, no pun intended, a little confusing to interpret at first, but it is actually very straightforward. The columns are the species we predicted for the test data and the rows are the actual species for the test data. So, if we take the top row, we can wee that we predicted all 20 setosa plants in the test data perfectly. However, in the next row, we predicted 17 of the versicolor plants correctly, but mis-predicted two of the versicolor plants as virginica.
+A [confusion matrix](https://en.wikipedia.org/wiki/Confusion_matrix) can be, no pun intended, a little confusing to interpret at first, but it is actually very straightforward. The columns are the species we predicted for the test data and the rows are the actual species for the test data. So, if we take the top row, we can wee that we predicted all 13 setosa plants in the test data perfectly. However, in the next row, we predicted 5 of the versicolor plants correctly, but mis-predicted two of the versicolor plants as virginica.
 
 The short explanation of how to interpret a confusion matrix is: anything on the diagonal was classified correctly and anything off the diagonal was classified incorrectly.
 
@@ -444,6 +490,19 @@ pd.crosstab(test['species'], preds, rownames=['Actual Species'], colnames=['Pred
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -462,21 +521,21 @@ pd.crosstab(test['species'], preds, rownames=['Actual Species'], colnames=['Pred
   <tbody>
     <tr>
       <th>setosa</th>
-      <td>11</td>
+      <td>13</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>versicolor</th>
       <td>0</td>
-      <td>16</td>
-      <td>1</td>
+      <td>5</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>virginica</th>
       <td>0</td>
       <td>0</td>
-      <td>15</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
@@ -497,7 +556,9 @@ list(zip(train[features], clf.feature_importances_))
 
 
 
-    [('sepal length (cm)', 0.13356069065846765),
-     ('sepal width (cm)', 0.04486948688226873),
-     ('petal length (cm)', 0.37067096905488794),
-     ('petal width (cm)', 0.45089885340437574)]
+    [('sepal length (cm)', 0.11185992930506346),
+     ('sepal width (cm)', 0.016341813006098178),
+     ('petal length (cm)', 0.36439533040889194),
+     ('petal width (cm)', 0.5074029272799464)]
+
+

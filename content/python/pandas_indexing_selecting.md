@@ -1,16 +1,11 @@
-Title: Indexing and Selecting Data With Pandas
-Slug: pandas_indexing_selecting
-Summary: Indexing and Selecting Data With Pandas
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
-Short verison:
-
-- .iloc[**row**,**column**]
+Title: Indexing and Selecting Data With Pandas  
+Slug: pandas_indexing_selecting  
+Summary: Indexing and Selecting Data With Pandas  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 
 ```python
@@ -21,10 +16,10 @@ import pandas as pd
 
 ```python
 # Create an example dataframe about a fictional army
-raw_data = {'regiment': ['Nighthawks', 'Nighthawks', 'Nighthawks', 'Nighthawks', 'Dragoons', 'Dragoons', 'Dragoons', 'Dragoons', 'Scouts', 'Scouts', 'Scouts', 'Scouts'],
-            'company': ['1st', '1st', '2nd', '2nd', '1st', '1st', '2nd', '2nd','1st', '1st', '2nd', '2nd'],
-            'deaths': [523, 52, 25, 616, 43, 234, 523, 62, 62, 73, 37, 35],
-            'battles': [5, 42, 2, 2, 4, 7, 8, 3, 4, 7, 8, 9],
+raw_data = {'regiment': ['Nighthawks', 'Nighthawks', 'Nighthawks', 'Nighthawks', 'Dragoons', 'Dragoons', 'Dragoons', 'Dragoons', 'Scouts', 'Scouts', 'Scouts', 'Scouts'], 
+            'company': ['1st', '1st', '2nd', '2nd', '1st', '1st', '2nd', '2nd','1st', '1st', '2nd', '2nd'], 
+            'deaths': [523, 52, 25, 616, 43, 234, 523, 62, 62, 73, 37, 35], 
+            'battles': [5, 42, 2, 2, 4, 7, 8, 3, 4, 7, 8, 9], 
             'size': [1045, 957, 1099, 1400, 1592, 1006, 987, 849, 973, 1005, 1099, 1523],
             'veterans': [1, 5, 62, 26, 73, 37, 949, 48, 48, 435, 63, 345],
             'readiness': [1, 2, 3, 3, 2, 1, 2, 3, 2, 1, 2, 3],
@@ -42,7 +37,20 @@ df.head()
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -73,63 +81,63 @@ df.head()
   <tbody>
     <tr>
       <th>Arizona</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> 523</td>
-      <td>  5</td>
-      <td> 1045</td>
-      <td>  1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  4</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>California</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td>  52</td>
-      <td> 42</td>
-      <td>  957</td>
-      <td>  5</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> 24</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
     </tr>
     <tr>
       <th>Texas</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td>  25</td>
-      <td>  2</td>
-      <td> 1099</td>
-      <td> 62</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td> 31</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>Florida</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td> 616</td>
-      <td>  2</td>
-      <td> 1400</td>
-      <td> 26</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td>  2</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Maine</th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
-      <td>  43</td>
-      <td>  4</td>
-      <td> 1592</td>
-      <td> 73</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td>  3</td>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>43</td>
+      <td>4</td>
+      <td>1592</td>
+      <td>73</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -174,7 +182,20 @@ df[['size', 'veterans']]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -191,63 +212,63 @@ df[['size', 'veterans']]
   <tbody>
     <tr>
       <th>Arizona</th>
-      <td> 1045</td>
-      <td>   1</td>
+      <td>1045</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>California</th>
-      <td>  957</td>
-      <td>   5</td>
+      <td>957</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>Texas</th>
-      <td> 1099</td>
-      <td>  62</td>
+      <td>1099</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>Florida</th>
-      <td> 1400</td>
-      <td>  26</td>
+      <td>1400</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>Maine</th>
-      <td> 1592</td>
-      <td>  73</td>
+      <td>1592</td>
+      <td>73</td>
     </tr>
     <tr>
       <th>Iowa</th>
-      <td> 1006</td>
-      <td>  37</td>
+      <td>1006</td>
+      <td>37</td>
     </tr>
     <tr>
       <th>Alaska</th>
-      <td>  987</td>
-      <td> 949</td>
+      <td>987</td>
+      <td>949</td>
     </tr>
     <tr>
       <th>Washington</th>
-      <td>  849</td>
-      <td>  48</td>
+      <td>849</td>
+      <td>48</td>
     </tr>
     <tr>
       <th>Oregon</th>
-      <td>  973</td>
-      <td>  48</td>
+      <td>973</td>
+      <td>48</td>
     </tr>
     <tr>
       <th>Wyoming</th>
-      <td> 1005</td>
-      <td> 435</td>
+      <td>1005</td>
+      <td>435</td>
     </tr>
     <tr>
       <th>Louisana</th>
-      <td> 1099</td>
-      <td>  63</td>
+      <td>1099</td>
+      <td>63</td>
     </tr>
     <tr>
       <th>Georgia</th>
-      <td> 1523</td>
-      <td> 345</td>
+      <td>1523</td>
+      <td>345</td>
     </tr>
   </tbody>
 </table>
@@ -266,7 +287,20 @@ df.loc[:'Arizona']
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -297,15 +331,15 @@ df.loc[:'Arizona']
   <tbody>
     <tr>
       <th>Arizona</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> 523</td>
-      <td> 5</td>
-      <td> 1045</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 4</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
@@ -324,7 +358,20 @@ df.iloc[:2]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -355,27 +402,27 @@ df.iloc[:2]
   <tbody>
     <tr>
       <th>Arizona</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> 523</td>
-      <td>  5</td>
-      <td> 1045</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  4</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>California</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td>  52</td>
-      <td> 42</td>
-      <td>  957</td>
-      <td> 5</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> 24</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
     </tr>
   </tbody>
 </table>
@@ -392,7 +439,20 @@ df.iloc[1:2]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -423,15 +483,15 @@ df.iloc[1:2]
   <tbody>
     <tr>
       <th>California</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> 52</td>
-      <td> 42</td>
-      <td> 957</td>
-      <td> 5</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> 24</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
     </tr>
   </tbody>
 </table>
@@ -448,7 +508,20 @@ df.iloc[2:]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -479,123 +552,123 @@ df.iloc[2:]
   <tbody>
     <tr>
       <th>Texas</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td>  25</td>
-      <td> 2</td>
-      <td> 1099</td>
-      <td>  62</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td> 31</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>Florida</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td> 616</td>
-      <td> 2</td>
-      <td> 1400</td>
-      <td>  26</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td>  2</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Maine</th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
-      <td>  43</td>
-      <td> 4</td>
-      <td> 1592</td>
-      <td>  73</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td>  3</td>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>43</td>
+      <td>4</td>
+      <td>1592</td>
+      <td>73</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>Iowa</th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
-      <td> 234</td>
-      <td> 7</td>
-      <td> 1006</td>
-      <td>  37</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  4</td>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>234</td>
+      <td>7</td>
+      <td>1006</td>
+      <td>37</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>Alaska</th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
-      <td> 523</td>
-      <td> 8</td>
-      <td>  987</td>
-      <td> 949</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> 24</td>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>523</td>
+      <td>8</td>
+      <td>987</td>
+      <td>949</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
     </tr>
     <tr>
       <th>Washington</th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
-      <td>  62</td>
-      <td> 3</td>
-      <td>  849</td>
-      <td>  48</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td> 31</td>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>62</td>
+      <td>3</td>
+      <td>849</td>
+      <td>48</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>Oregon</th>
-      <td>     Scouts</td>
-      <td> 1st</td>
-      <td>  62</td>
-      <td> 4</td>
-      <td>  973</td>
-      <td>  48</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td>  2</td>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>62</td>
+      <td>4</td>
+      <td>973</td>
+      <td>48</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Wyoming</th>
-      <td>     Scouts</td>
-      <td> 1st</td>
-      <td>  73</td>
-      <td> 7</td>
-      <td> 1005</td>
-      <td> 435</td>
-      <td> 1</td>
-      <td> 0</td>
-      <td>  3</td>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>73</td>
+      <td>7</td>
+      <td>1005</td>
+      <td>435</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>Louisana</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
-      <td>  37</td>
-      <td> 8</td>
-      <td> 1099</td>
-      <td>  63</td>
-      <td> 2</td>
-      <td> 1</td>
-      <td>  2</td>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>37</td>
+      <td>8</td>
+      <td>1099</td>
+      <td>63</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Georgia</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
-      <td>  35</td>
-      <td> 9</td>
-      <td> 1523</td>
-      <td> 345</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td>  3</td>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>35</td>
+      <td>9</td>
+      <td>1523</td>
+      <td>345</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -614,7 +687,20 @@ df.iloc[:,:2]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -631,63 +717,63 @@ df.iloc[:,:2]
   <tbody>
     <tr>
       <th>Arizona</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
     </tr>
     <tr>
       <th>California</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
     </tr>
     <tr>
       <th>Texas</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
     </tr>
     <tr>
       <th>Florida</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
     </tr>
     <tr>
       <th>Maine</th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
+      <td>Dragoons</td>
+      <td>1st</td>
     </tr>
     <tr>
       <th>Iowa</th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
+      <td>Dragoons</td>
+      <td>1st</td>
     </tr>
     <tr>
       <th>Alaska</th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
+      <td>Dragoons</td>
+      <td>2nd</td>
     </tr>
     <tr>
       <th>Washington</th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
+      <td>Dragoons</td>
+      <td>2nd</td>
     </tr>
     <tr>
       <th>Oregon</th>
-      <td>     Scouts</td>
-      <td> 1st</td>
+      <td>Scouts</td>
+      <td>1st</td>
     </tr>
     <tr>
       <th>Wyoming</th>
-      <td>     Scouts</td>
-      <td> 1st</td>
+      <td>Scouts</td>
+      <td>1st</td>
     </tr>
     <tr>
       <th>Louisana</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
+      <td>Scouts</td>
+      <td>2nd</td>
     </tr>
     <tr>
       <th>Georgia</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
+      <td>Scouts</td>
+      <td>2nd</td>
     </tr>
   </tbody>
 </table>
@@ -706,7 +792,20 @@ df[df['deaths'] > 50]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -737,99 +836,99 @@ df[df['deaths'] > 50]
   <tbody>
     <tr>
       <th>Arizona</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> 523</td>
-      <td>  5</td>
-      <td> 1045</td>
-      <td>   1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  4</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>California</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td>  52</td>
-      <td> 42</td>
-      <td>  957</td>
-      <td>   5</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> 24</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
     </tr>
     <tr>
       <th>Florida</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td> 616</td>
-      <td>  2</td>
-      <td> 1400</td>
-      <td>  26</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td>  2</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Iowa</th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
-      <td> 234</td>
-      <td>  7</td>
-      <td> 1006</td>
-      <td>  37</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  4</td>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>234</td>
+      <td>7</td>
+      <td>1006</td>
+      <td>37</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>Alaska</th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
-      <td> 523</td>
-      <td>  8</td>
-      <td>  987</td>
-      <td> 949</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> 24</td>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>523</td>
+      <td>8</td>
+      <td>987</td>
+      <td>949</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
     </tr>
     <tr>
       <th>Washington</th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
-      <td>  62</td>
-      <td>  3</td>
-      <td>  849</td>
-      <td>  48</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td> 31</td>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>62</td>
+      <td>3</td>
+      <td>849</td>
+      <td>48</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>Oregon</th>
-      <td>     Scouts</td>
-      <td> 1st</td>
-      <td>  62</td>
-      <td>  4</td>
-      <td>  973</td>
-      <td>  48</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td>  2</td>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>62</td>
+      <td>4</td>
+      <td>973</td>
+      <td>48</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Wyoming</th>
-      <td>     Scouts</td>
-      <td> 1st</td>
-      <td>  73</td>
-      <td>  7</td>
-      <td> 1005</td>
-      <td> 435</td>
-      <td> 1</td>
-      <td> 0</td>
-      <td>  3</td>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>73</td>
+      <td>7</td>
+      <td>1005</td>
+      <td>435</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -846,7 +945,20 @@ df[(df['deaths'] > 500) | (df['deaths'] < 50)]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -877,87 +989,87 @@ df[(df['deaths'] > 500) | (df['deaths'] < 50)]
   <tbody>
     <tr>
       <th>Arizona</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> 523</td>
-      <td> 5</td>
-      <td> 1045</td>
-      <td>   1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  4</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>Texas</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td>  25</td>
-      <td> 2</td>
-      <td> 1099</td>
-      <td>  62</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td> 31</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>Florida</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td> 616</td>
-      <td> 2</td>
-      <td> 1400</td>
-      <td>  26</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td>  2</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Maine</th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
-      <td>  43</td>
-      <td> 4</td>
-      <td> 1592</td>
-      <td>  73</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td>  3</td>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>43</td>
+      <td>4</td>
+      <td>1592</td>
+      <td>73</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>Alaska</th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
-      <td> 523</td>
-      <td> 8</td>
-      <td>  987</td>
-      <td> 949</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> 24</td>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>523</td>
+      <td>8</td>
+      <td>987</td>
+      <td>949</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
     </tr>
     <tr>
       <th>Louisana</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
-      <td>  37</td>
-      <td> 8</td>
-      <td> 1099</td>
-      <td>  63</td>
-      <td> 2</td>
-      <td> 1</td>
-      <td>  2</td>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>37</td>
+      <td>8</td>
+      <td>1099</td>
+      <td>63</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Georgia</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
-      <td>  35</td>
-      <td> 9</td>
-      <td> 1523</td>
-      <td> 345</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td>  3</td>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>35</td>
+      <td>9</td>
+      <td>1523</td>
+      <td>345</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -974,7 +1086,20 @@ df[~(df['regiment'] == 'Dragoons')]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1005,199 +1130,102 @@ df[~(df['regiment'] == 'Dragoons')]
   <tbody>
     <tr>
       <th>Arizona</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> 523</td>
-      <td>  5</td>
-      <td> 1045</td>
-      <td>   1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  4</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>523</td>
+      <td>5</td>
+      <td>1045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>California</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td>  52</td>
-      <td> 42</td>
-      <td>  957</td>
-      <td>   5</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> 24</td>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>52</td>
+      <td>42</td>
+      <td>957</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
     </tr>
     <tr>
       <th>Texas</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td>  25</td>
-      <td>  2</td>
-      <td> 1099</td>
-      <td>  62</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td> 31</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>Florida</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td> 616</td>
-      <td>  2</td>
-      <td> 1400</td>
-      <td>  26</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td>  2</td>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>616</td>
+      <td>2</td>
+      <td>1400</td>
+      <td>26</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Oregon</th>
-      <td>     Scouts</td>
-      <td> 1st</td>
-      <td>  62</td>
-      <td>  4</td>
-      <td>  973</td>
-      <td>  48</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td>  2</td>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>62</td>
+      <td>4</td>
+      <td>973</td>
+      <td>48</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Wyoming</th>
-      <td>     Scouts</td>
-      <td> 1st</td>
-      <td>  73</td>
-      <td>  7</td>
-      <td> 1005</td>
-      <td> 435</td>
-      <td> 1</td>
-      <td> 0</td>
-      <td>  3</td>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>73</td>
+      <td>7</td>
+      <td>1005</td>
+      <td>435</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>Louisana</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
-      <td>  37</td>
-      <td>  8</td>
-      <td> 1099</td>
-      <td>  63</td>
-      <td> 2</td>
-      <td> 1</td>
-      <td>  2</td>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>37</td>
+      <td>8</td>
+      <td>1099</td>
+      <td>63</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Georgia</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
-      <td>  35</td>
-      <td>  9</td>
-      <td> 1523</td>
-      <td> 345</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td>  3</td>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>35</td>
+      <td>9</td>
+      <td>1523</td>
+      <td>345</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
 </div>
 
 
-
-## .ix
-
-.ix is the combination of both .loc and .iloc. Integers are first considered labels, but if not found, falls back on positional indexing
-
-
-```python
-# Select the rows called Texas and Arizona
-df.ix[['Arizona', 'Texas']]
-```
-
-
-
-
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>regiment</th>
-      <th>company</th>
-      <th>deaths</th>
-      <th>battles</th>
-      <th>size</th>
-      <th>veterans</th>
-      <th>readiness</th>
-      <th>armored</th>
-      <th>deserters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Arizona</th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> 523</td>
-      <td> 5</td>
-      <td> 1045</td>
-      <td>  1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  4</td>
-    </tr>
-    <tr>
-      <th>Texas</th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td>  25</td>
-      <td> 2</td>
-      <td> 1099</td>
-      <td> 62</td>
-      <td> 3</td>
-      <td> 1</td>
-      <td> 31</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-# Select the third cell in the row named Arizona
-df.ix['Arizona', 'deaths']
-```
-
-
-
-
-    523
-
-
-
-
-```python
-# Select the third cell in the row named Arizona
-df.ix['Arizona', 2]
-```
-
-
-
-
-    523
-
-
-
-
-```python
-# Select the third cell down in the column named deaths
-df.ix[2, 'deaths']
-```
-
-
-
-
-    25
