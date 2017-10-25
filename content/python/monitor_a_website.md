@@ -12,8 +12,6 @@ It should be noted that there are more efficient ways of setting scripts to run 
 
 _Note: I've commented out the last few lines of this tutorial, which attempts to send an email. Before running this code, uncomment those lines_
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -48,14 +46,14 @@ while True:
     response = requests.get(url, headers=headers)
     # parse the downloaded homepage and grab all text, then,
     soup = BeautifulSoup(response.text, "lxml")
-
+    
     # if the number of times the word "Google" occurs on the page is less than 1,
     if str(soup).find("Google") == -1:
         # wait 60 seconds,
         time.sleep(60)
         # continue with the script,
         continue
-
+        
     # but if the word "Google" occurs any other number of times,
     else:
         # create an email message with just a subject line,
@@ -64,26 +62,27 @@ while True:
         fromaddr = 'YOUR_EMAIL_ADDRESS'
         # set the 'to' addresses,
         toaddrs  = ['AN_EMAIL_ADDRESS','A_SECOND_EMAIL_ADDRESS', 'A_THIRD_EMAIL_ADDRESS']
-
+        
         # setup the email server,
         # server = smtplib.SMTP('smtp.gmail.com', 587)
         # server.starttls()
         # add my account login name and password,
         # server.login("YOUR_EMAIL_ADDRESS", "YOUR_PASSWORD")
-
+        
         # Print the email's contents
         print('From: ' + fromaddr)
         print('To: ' + str(toaddrs))
         print('Message: ' + msg)
-
+        
         # send the email
         # server.sendmail(fromaddr, toaddrs, msg)
         # disconnect from the server
         # server.quit()
-
+        
         break
 ```
 
     From: YOUR_EMAIL_ADDRESS
     To: ['AN_EMAIL_ADDRESS', 'A_SECOND_EMAIL_ADDRESS', 'A_THIRD_EMAIL_ADDRESS']
     Message: Subject: This is Chris's script talking, CHECK GOOGLE!
+

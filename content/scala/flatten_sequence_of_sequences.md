@@ -4,7 +4,7 @@ Summary: Flatten Sequence Of Sequences Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -21,7 +21,7 @@ val fullNames = Array(
 )
 ```
 
-## Flatten The Sequence
+## Flatten The Sequence 
 
 
 ```scala
@@ -48,3 +48,5 @@ fullNames.flatten.distinct
 
 
     Array(Jason, Miller, Sally, Fields, Betty, Johnson)
+
+

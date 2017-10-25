@@ -1,33 +1,50 @@
-Title: Moving Averages In Pandas
-Slug: pandas_moving_average
-Summary: Moving Averages In Pandas
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
+Title: Moving Averages In Pandas  
+Slug: pandas_moving_average  
+Summary: Moving Averages In Pandas  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
-### Import modules
+## Import Modules
 
 
 ```python
+# Import pandas
 import pandas as pd
 ```
 
-### Create a dataframe
+## Create Dataframe 
 
 
 ```python
+# Create data
 data = {'score': [1,1,1,2,2,2,3,3,3]}
+
+# Create dataframe
 df = pd.DataFrame(data)
+
+# View dataframe
 df
 ```
 
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -38,39 +55,39 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>5</th>
-      <td> 2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>6</th>
-      <td> 3</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>7</th>
-      <td> 3</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>8</th>
-      <td> 3</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -78,18 +95,33 @@ df
 
 
 
+## Calculate Rolling Mean
+
 
 ```python
 # Calculate the moving average. That is, take
-# the first two values, average them,
+# the first two values, average them, 
 # then drop the first and add the third, etc.
-pd.rolling_mean(df, 2)
+df.rolling(window=2).mean()
 ```
 
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -100,40 +132,42 @@ pd.rolling_mean(df, 2)
   <tbody>
     <tr>
       <th>0</th>
-      <td> NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 1.5</td>
+      <td>1.5</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 2.0</td>
+      <td>2.0</td>
     </tr>
     <tr>
       <th>5</th>
-      <td> 2.0</td>
+      <td>2.0</td>
     </tr>
     <tr>
       <th>6</th>
-      <td> 2.5</td>
+      <td>2.5</td>
     </tr>
     <tr>
       <th>7</th>
-      <td> 3.0</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>8</th>
-      <td> 3.0</td>
+      <td>3.0</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+

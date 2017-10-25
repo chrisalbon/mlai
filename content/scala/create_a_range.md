@@ -4,7 +4,7 @@ Summary: Create A Range Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 This tutorial was inspired by the awesome [Scala Cookbook](http://amzn.to/2lxbrxN).
 
@@ -43,7 +43,7 @@ This tutorial was inspired by the awesome [Scala Cookbook](http://amzn.to/2lxbrx
 
 ```scala
 // For each 1 in 1,2,3,4,5
-for (i <- 1 to 10)
+for (i <- 1 to 10) 
     // Print i
     println("index: "+ i)
 ```
@@ -58,3 +58,4 @@ for (i <- 1 to 10)
     index: 8
     index: 9
     index: 10
+

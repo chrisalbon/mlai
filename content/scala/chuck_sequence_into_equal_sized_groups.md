@@ -4,7 +4,7 @@ Summary: Chunk Sequence In Equal Sized Groups Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -43,3 +43,5 @@ ages.sliding(2,1).toArray
 
 
     Array(List(42, 25), List(25, 28), List(28, 38), List(38, 58), List(58, 63), List(63, 23), List(23, 458), List(458, 2569), List(2569, 584), List(584, 25), List(25, 25), List(25, 878))
+
+

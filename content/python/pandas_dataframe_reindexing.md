@@ -1,12 +1,10 @@
-Title: Reindexing pandas Series And Dataframes
-Slug: pandas_dataframe_reindexing
-Summary: Reindexing pandas Series And Dataframes
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Reindexing pandas Series And Dataframes  
+Slug: pandas_dataframe_reindexing  
+Summary: Reindexing pandas Series And Dataframes  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ## Series
 
@@ -45,12 +43,12 @@ brushFireRiskReindexed
 
 
 
-    Tombstone       23
-    Douglas         23
-    Bisbee          34
-    Sierra Vista    12
-    Barley         NaN
-    Tucson         NaN
+    Tombstone       23.0
+    Douglas         23.0
+    Bisbee          34.0
+    Sierra Vista    12.0
+    Barley           NaN
+    Tucson           NaN
     dtype: float64
 
 
@@ -80,8 +78,8 @@ brushFireRiskReindexed
 
 ```python
 # Create a dataframe
-data = {'county': ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'],
-        'year': [2012, 2012, 2013, 2014, 2014],
+data = {'county': ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'], 
+        'year': [2012, 2012, 2013, 2014, 2014], 
         'reports': [4, 24, 31, 2, 3]}
 df = pd.DataFrame(data)
 df
@@ -90,7 +88,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -103,37 +101,36 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td>    Cochice</td>
-      <td>  4</td>
-      <td> 2012</td>
+      <td>Cochice</td>
+      <td>4</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>       Pima</td>
-      <td> 24</td>
-      <td> 2012</td>
+      <td>Pima</td>
+      <td>24</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> Santa Cruz</td>
-      <td> 31</td>
-      <td> 2013</td>
+      <td>Santa Cruz</td>
+      <td>31</td>
+      <td>2013</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>   Maricopa</td>
-      <td>  2</td>
-      <td> 2014</td>
+      <td>Maricopa</td>
+      <td>2</td>
+      <td>2014</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>       Yuma</td>
-      <td>  3</td>
-      <td> 2014</td>
+      <td>Yuma</td>
+      <td>3</td>
+      <td>2014</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
 
 
@@ -147,7 +144,7 @@ df.reindex([4, 3, 2, 1, 0])
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -160,37 +157,36 @@ df.reindex([4, 3, 2, 1, 0])
   <tbody>
     <tr>
       <th>4</th>
-      <td>       Yuma</td>
-      <td>  3</td>
-      <td> 2014</td>
+      <td>Yuma</td>
+      <td>3</td>
+      <td>2014</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>   Maricopa</td>
-      <td>  2</td>
-      <td> 2014</td>
+      <td>Maricopa</td>
+      <td>2</td>
+      <td>2014</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> Santa Cruz</td>
-      <td> 31</td>
-      <td> 2013</td>
+      <td>Santa Cruz</td>
+      <td>31</td>
+      <td>2013</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>       Pima</td>
-      <td> 24</td>
-      <td> 2012</td>
+      <td>Pima</td>
+      <td>24</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>    Cochice</td>
-      <td>  4</td>
-      <td> 2012</td>
+      <td>Cochice</td>
+      <td>4</td>
+      <td>2012</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
 
 
@@ -205,7 +201,7 @@ df.reindex(columns=columnsTitles)
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -218,35 +214,36 @@ df.reindex(columns=columnsTitles)
   <tbody>
     <tr>
       <th>0</th>
-      <td> 2012</td>
-      <td>  4</td>
-      <td>    Cochice</td>
+      <td>2012</td>
+      <td>4</td>
+      <td>Cochice</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 2012</td>
-      <td> 24</td>
-      <td>       Pima</td>
+      <td>2012</td>
+      <td>24</td>
+      <td>Pima</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 2013</td>
-      <td> 31</td>
-      <td> Santa Cruz</td>
+      <td>2013</td>
+      <td>31</td>
+      <td>Santa Cruz</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 2014</td>
-      <td>  2</td>
-      <td>   Maricopa</td>
+      <td>2014</td>
+      <td>2</td>
+      <td>Maricopa</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 2014</td>
-      <td>  3</td>
-      <td>       Yuma</td>
+      <td>2014</td>
+      <td>3</td>
+      <td>Yuma</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
+
+

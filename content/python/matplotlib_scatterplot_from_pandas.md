@@ -1,16 +1,12 @@
-Title: Making A Matplotlib Scatterplot From A Pandas Dataframe
-Slug: matplotlib_scatterplot_from_pandas
-Summary: Making A Matplotlib Scatterplot From A Pandas Dataframe
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Visualization
-Authors: Chris Albon
+Title: Making A Matplotlib Scatterplot From A Pandas Dataframe  
+Slug: matplotlib_scatterplot_from_pandas  
+Summary: Making A Matplotlib Scatterplot From A Pandas Dataframe  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Visualization  
+Authors: Chris Albon  
 
-
-
-- **Note:** Based on: [StackOverflow](http://stackoverflow.com/questions/14300137/making-matplotlib-scatter-plots-from-dataframes-in-pythons-pandas).
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Based on: [StackOverflow](http://stackoverflow.com/questions/14300137/making-matplotlib-scatter-plots-from-dataframes-in-pythons-pandas).
 
 ### import modules
 
@@ -26,10 +22,10 @@ import numpy as np
 
 
 ```python
-raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'last_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze'],
+raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'last_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze'], 
         'female': [0, 1, 1, 0, 1],
-        'age': [42, 52, 36, 24, 73],
+        'age': [42, 52, 36, 24, 73], 
         'preTestScore': [4, 24, 31, 2, 3],
         'postTestScore': [25, 94, 57, 62, 70]}
 df = pd.DataFrame(raw_data, columns = ['first_name', 'last_name', 'age', 'female', 'preTestScore', 'postTestScore'])
@@ -39,7 +35,20 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -55,48 +64,48 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>   Miller</td>
-      <td> 42</td>
-      <td> 0</td>
-      <td>  4</td>
-      <td> 25</td>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>42</td>
+      <td>0</td>
+      <td>4</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> Jacobson</td>
-      <td> 52</td>
-      <td> 1</td>
-      <td> 24</td>
-      <td> 94</td>
+      <td>Molly</td>
+      <td>Jacobson</td>
+      <td>52</td>
+      <td>1</td>
+      <td>24</td>
+      <td>94</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td>      Ali</td>
-      <td> 36</td>
-      <td> 1</td>
-      <td> 31</td>
-      <td> 57</td>
+      <td>Tina</td>
+      <td>Ali</td>
+      <td>36</td>
+      <td>1</td>
+      <td>31</td>
+      <td>57</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>   Milner</td>
-      <td> 24</td>
-      <td> 0</td>
-      <td>  2</td>
-      <td> 62</td>
+      <td>Jake</td>
+      <td>Milner</td>
+      <td>24</td>
+      <td>0</td>
+      <td>2</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>    Cooze</td>
-      <td> 73</td>
-      <td> 1</td>
-      <td>  3</td>
-      <td> 70</td>
+      <td>Amy</td>
+      <td>Cooze</td>
+      <td>73</td>
+      <td>1</td>
+      <td>3</td>
+      <td>70</td>
     </tr>
   </tbody>
 </table>
@@ -115,26 +124,28 @@ plt.scatter(df.preTestScore, df.postTestScore
 
 
 
-    <matplotlib.collections.PathCollection at 0x10841df50>
+    <matplotlib.collections.PathCollection at 0x10ca42b00>
 
 
 
-![png]({filename}/images/matplotlib_scatterplot_from_pandas/output_6_1.png)
+
+![png](matplotlib_scatterplot_from_pandas_files/matplotlib_scatterplot_from_pandas_6_1.png)
 
 
 ### Scatterplot of preTestScore and postTestScore with the size = 300 and the color determined by sex
 
 
 ```python
-plt.scatter(df.preTestScore, df.postTestScore, s=300, c='m')
+plt.scatter(df.preTestScore, df.postTestScore, s=300, c=df.female)
 ```
 
 
 
 
-    <matplotlib.collections.PathCollection at 0x1086dcdd0>
+    <matplotlib.collections.PathCollection at 0x10cb90a90>
 
 
 
 
-![png]({filename}/images/matplotlib_scatterplot_from_pandas/output_8_1.png)
+![png](matplotlib_scatterplot_from_pandas_files/matplotlib_scatterplot_from_pandas_8_1.png)
+

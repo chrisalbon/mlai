@@ -1,12 +1,10 @@
-Title: Applying Functions To List Items
-Slug: applying_functions_to_list_items
-Summary: Applying Functions To List Items
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Applying Functions To List Items  
+Slug: applying_functions_to_list_items  
+Summary: Applying Functions To List Items  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ### Create a list of regiment names
 
@@ -28,7 +26,7 @@ regimentNamesCapitalized_f = []
 for i in regimentNames:
     # capitalize the item and add it to regimentNamesCapitalized_f
     regimentNamesCapitalized_f.append(i.upper())
-
+    
 # View the outcome
 regimentNamesCapitalized_f
 ```
@@ -88,3 +86,5 @@ regimentNamesCapitalized_l = [x.upper() for x in regimentNames]; regimentNamesCa
      'THE DRAGOONS',
      'MIDNIGHT REVENGENCE',
      'WILY WARRIORS']
+
+

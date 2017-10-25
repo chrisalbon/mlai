@@ -1,10 +1,10 @@
 Title: For Looping   
-Slug: for_loopsing      
-Summary: For Looping Using Scala.  
+Slug: for_looping       
+Summary: For Loops Using Scala.  
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 This tutorial was inspired by the awesome [Scala Cookbook](http://amzn.to/2lxbrxN).
 
@@ -96,3 +96,5 @@ staffNamesAndIndex
 
 
     Array((Jason,0), (Steve,1), (Sally,2))
+
+

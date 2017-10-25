@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 Title: Indexing and Selecting Data With Pandas  
 Slug: pandas_indexing_selecting  
 Summary: Indexing and Selecting Data With Pandas  
@@ -15,7 +18,11 @@ import pandas as pd
 
 
 ```python
+<<<<<<< Updated upstream
 # Create an example dataframe about a fictional army
+=======
+# Create data
+>>>>>>> Stashed changes
 raw_data = {'regiment': ['Nighthawks', 'Nighthawks', 'Nighthawks', 'Nighthawks', 'Dragoons', 'Dragoons', 'Dragoons', 'Dragoons', 'Scouts', 'Scouts', 'Scouts', 'Scouts'], 
             'company': ['1st', '1st', '2nd', '2nd', '1st', '1st', '2nd', '2nd','1st', '1st', '2nd', '2nd'], 
             'deaths': [523, 52, 25, 616, 43, 234, 523, 62, 62, 73, 37, 35], 
@@ -27,10 +34,13 @@ raw_data = {'regiment': ['Nighthawks', 'Nighthawks', 'Nighthawks', 'Nighthawks',
             'deserters': [4, 24, 31, 2, 3, 4, 24, 31, 2, 3, 2, 3],
             'origin': ['Arizona', 'California', 'Texas', 'Florida', 'Maine', 'Iowa', 'Alaska', 'Washington', 'Oregon', 'Wyoming', 'Louisana', 'Georgia']}
 
+# Create data frame
 df = pd.DataFrame(raw_data, columns = ['regiment', 'company', 'deaths', 'battles', 'size', 'veterans', 'readiness', 'armored', 'deserters', 'origin'])
 
+# Set index
 df = df.set_index('origin')
 
+# View first few rows
 df.head()
 ```
 
@@ -433,7 +443,7 @@ df.iloc[:2]
 
 ```python
 # Select the second and third row
-df.iloc[1:2]
+df.iloc[1:3]
 ```
 
 
@@ -492,6 +502,21 @@ df.iloc[1:2]
       <td>2</td>
       <td>0</td>
       <td>24</td>
+<<<<<<< Updated upstream
+=======
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1099</td>
+      <td>62</td>
+      <td>3</td>
+      <td>1</td>
+      <td>31</td>
+>>>>>>> Stashed changes
     </tr>
   </tbody>
 </table>
@@ -501,7 +526,7 @@ df.iloc[1:2]
 
 
 ```python
-# Select every row after the third row
+# Select every row beginning with the third row
 df.iloc[2:]
 ```
 

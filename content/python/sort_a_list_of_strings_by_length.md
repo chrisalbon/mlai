@@ -1,18 +1,16 @@
-Title: Sort A List Of Strings By Length
+Title: Sort A List Of Strings By Length 
 Slug: sort_a_list_of_strings_by_length
-Summary: Sort A List Of Strings By Length
+Summary: Sort A List Of Strings By Length 
 Date: 2016-06-25 12:00  
 Category: Python  
 Tags: Data Wrangling   
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Create a list of names
 
 
 ```python
-commander_names = ["Alan Brooke", "George Marshall", "Frank Jack Fletcher", "Conrad Helfrich", "Albert Kesselring"]
+commander_names = ["Alan Brooke", "George Marshall", "Frank Jack Fletcher", "Conrad Helfrich", "Albert Kesselring"] 
 ```
 
 ## Sort Alphabetically By Length
@@ -36,3 +34,5 @@ sorted(commander_names, key=lambda x: len(x))
      'Conrad Helfrich',
      'Albert Kesselring',
      'Frank Jack Fletcher']
+
+

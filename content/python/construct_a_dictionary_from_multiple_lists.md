@@ -1,12 +1,10 @@
 Title: Construct A Dictionary From Multiple Lists
 Slug: construct_a_dictionary_from_multiple_lists_python  
-Summary: Construct A Dictionary From Multiple Lists In Python
+Summary: Construct A Dictionary From Multiple Lists In Python 
 Date: 2016-09-06 12:00  
 Category: Python  
 Tags: Basics  
 Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ## Create Two Lists
 
@@ -35,3 +33,5 @@ dict(zip(officer_names, officer_armies))
      'Michael Mulligan': 'Red Army',
      'Sodoni Dogla': 'Purple Army',
      'Steven Johnson': 'Blue Army'}
+
+

@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### Import the pandas module
 
 
@@ -19,7 +17,7 @@ import pandas as pd
 
 
 ```python
-year = pd.Series([1875, 1876, 1877, 1878, 1879, 1880, 1881, 1882, 1883, 1884,
+year = pd.Series([1875, 1876, 1877, 1878, 1879, 1880, 1881, 1882, 1883, 1884, 
                   1885, 1886, 1887, 1888, 1889, 1890, 1891, 1892, 1893, 1894])
 guardCorps = pd.Series([0,2,2,1,0,0,1,1,0,3,0,2,1,0,0,1,0,1,0,1])
 corps1 = pd.Series([0,0,0,2,0,3,0,2,0,0,0,1,1,1,0,2,0,3,1,0])
@@ -41,10 +39,10 @@ corps15 = pd.Series([0,1,0,0,0,0,0,1,0,1,1,0,0,0,2,2,0,0,0,0])
 
 
 ```python
-variables = dict(guardCorps = guardCorps, corps1 = corps1,
-                 corps2 = corps2, corps3 = corps3, corps4 = corps4,
-                 corps5 = corps5, corps6 = corps6, corps7 = corps7,
-                 corps8 = corps8, corps9 = corps9, corps10 = corps10,
+variables = dict(guardCorps = guardCorps, corps1 = corps1, 
+                 corps2 = corps2, corps3 = corps3, corps4 = corps4, 
+                 corps5 = corps5, corps6 = corps6, corps7 = corps7, 
+                 corps8 = corps8, corps9 = corps9, corps10 = corps10, 
                  corps11 = corps11 , corps14 = corps14, corps15 = corps15)
 ```
 
@@ -52,13 +50,13 @@ variables = dict(guardCorps = guardCorps, corps1 = corps1,
 
 
 ```python
-horsekick = pd.DataFrame(variables, columns = ['guardCorps',
-                                                    'corps1', 'corps2',
-                                                    'corps3', 'corps4',
-                                                    'corps5', 'corps6',
-                                                    'corps7', 'corps8',
-                                                    'corps9', 'corps10',
-                                                    'corps11', 'corps14',
+horsekick = pd.DataFrame(variables, columns = ['guardCorps', 
+                                                    'corps1', 'corps2', 
+                                                    'corps3', 'corps4', 
+                                                    'corps5', 'corps6', 
+                                                    'corps7', 'corps8', 
+                                                    'corps9', 'corps10', 
+                                                    'corps11', 'corps14', 
                                                     'corps15'])
 ```
 
@@ -66,7 +64,7 @@ horsekick = pd.DataFrame(variables, columns = ['guardCorps',
 
 
 ```python
-horsekick.index = [1875, 1876, 1877, 1878, 1879, 1880, 1881, 1882, 1883, 1884,
+horsekick.index = [1875, 1876, 1877, 1878, 1879, 1880, 1881, 1882, 1883, 1884, 
                   1885, 1886, 1887, 1888, 1889, 1890, 1891, 1892, 1893, 1894]
 ```
 
@@ -600,3 +598,5 @@ horsekick['guardCorps'].unique()
 
 
     array([0, 2, 1, 3])
+
+

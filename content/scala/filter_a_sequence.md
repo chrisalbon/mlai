@@ -4,7 +4,7 @@ Summary: Filter A Sequence Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -55,3 +55,5 @@ ages.filter(_ % 2 == 0)
 
 
     Array(42, 28, 38, 58, 458, 584, 878)
+
+

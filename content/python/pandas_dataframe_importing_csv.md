@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### import modules
 
 
@@ -20,9 +18,9 @@ import numpy as np
 
 
 ```python
-raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'last_name': ['Miller', 'Jacobson', ".", 'Milner', 'Cooze'],
-        'age': [42, 52, 36, 24, 73],
+raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'last_name': ['Miller', 'Jacobson', ".", 'Milner', 'Cooze'], 
+        'age': [42, 52, 36, 24, 73], 
         'preTestScore': [4, 24, 31, ".", "."],
         'postTestScore': ["25,000", "94,000", 57, 62, 70]}
 df = pd.DataFrame(raw_data, columns = ['first_name', 'last_name', 'age', 'preTestScore', 'postTestScore'])
@@ -33,6 +31,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -95,14 +106,14 @@ df
 
 
 ```python
-df.to_csv('../data/example.csv')
+df.to_csv('pandas_dataframe_importing_csv/example.csv')
 ```
 
 ### Load a csv
 
 
 ```python
-df = pd.read_csv('../data/example.csv')
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv')
 df
 ```
 
@@ -110,6 +121,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -178,7 +202,7 @@ df
 
 
 ```python
-df = pd.read_csv('../data/example.csv', header=None)
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv', header=None)
 df
 ```
 
@@ -186,6 +210,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -263,7 +300,7 @@ df
 
 
 ```python
-df = pd.read_csv('../data/example.csv', names=['UID', 'First Name', 'Last Name', 'Age', 'Pre-Test Score', 'Post-Test Score'])
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv', names=['UID', 'First Name', 'Last Name', 'Age', 'Pre-Test Score', 'Post-Test Score'])
 df
 ```
 
@@ -271,6 +308,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -348,7 +398,7 @@ df
 
 
 ```python
-df = pd.read_csv('../data/example.csv', index_col='UID', names=['UID', 'First Name', 'Last Name', 'Age', 'Pre-Test Score', 'Post-Test Score'])
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv', index_col='UID', names=['UID', 'First Name', 'Last Name', 'Age', 'Pre-Test Score', 'Post-Test Score'])
 df
 ```
 
@@ -356,6 +406,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -434,7 +497,7 @@ df
 
 
 ```python
-df = pd.read_csv('../data/example.csv', index_col=['First Name', 'Last Name'], names=['UID', 'First Name', 'Last Name', 'Age', 'Pre-Test Score', 'Post-Test Score'])
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv', index_col=['First Name', 'Last Name'], names=['UID', 'First Name', 'Last Name', 'Age', 'Pre-Test Score', 'Post-Test Score'])
 df
 ```
 
@@ -442,6 +505,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -522,7 +598,7 @@ df
 
 
 ```python
-df = pd.read_csv('../data/example.csv', na_values=['.'])
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv', na_values=['.'])
 pd.isnull(df)
 ```
 
@@ -530,6 +606,19 @@ pd.isnull(df)
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -603,7 +692,7 @@ sentinels = {'Last Name': ['.', 'NA'], 'Pre-Test Score': ['.']}
 
 
 ```python
-df = pd.read_csv('../data/example.csv', na_values=sentinels)
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv', na_values=sentinels)
 df
 ```
 
@@ -611,6 +700,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -679,7 +781,7 @@ df
 
 
 ```python
-df = pd.read_csv('../data/example.csv', na_values=sentinels, skiprows=3)
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv', na_values=sentinels, skiprows=3)
 df
 ```
 
@@ -687,6 +789,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -728,7 +843,7 @@ df
 
 
 ```python
-df = pd.read_csv('../data/example.csv', thousands=',')
+df = pd.read_csv('pandas_dataframe_importing_csv/example.csv', thousands=',')
 df
 ```
 
@@ -736,6 +851,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -797,3 +925,5 @@ df
   </tbody>
 </table>
 </div>
+
+

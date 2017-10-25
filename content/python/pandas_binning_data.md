@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 Title: Binning Data In Pandas  
 Slug: pandas_binning_data  
 Summary: Binning Data In Pandas  
@@ -158,7 +161,7 @@ df
 
 
 
-### Define bins as 0 to 25, 25 to 50, 60 to 75, 75 to 100
+### Define bins as 0 to 25, 25 to 50, 50 to 75, 75 to 100
 
 
 ```python

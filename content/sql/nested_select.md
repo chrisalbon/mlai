@@ -1,12 +1,12 @@
 Title: Nested Select    
 Slug: nested_select
-Summary: Nested Select Based On Conditions in SQL.
+Summary: Nested Select Based On Conditions in SQL. 
 Date: 2017-01-16 12:00  
 Category: SQL  
 Tags: Basics  
 Authors: Chris Albon  
 
-Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, This tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
+Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, this tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
 
 For more, check out [Learning SQL](http://amzn.to/2jRriHj) by Alan Beaulieu.
 
@@ -56,7 +56,7 @@ SELECT name, age
 FROM criminals
 
 --  where age is greater than,
-WHERE age >
+WHERE age > 
      --  select age,
     (SELECT age
      --  from criminals
@@ -94,3 +94,5 @@ WHERE age >
         <td>21</td>
     </tr>
 </table>
+
+

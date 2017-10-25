@@ -1,12 +1,10 @@
-Title: All Combinations For A List Of Objects
-Slug: all_combinations_of_a_list_of_objects
-Summary: All Combinations For A List Of Objects
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: All Combinations For A List Of Objects  
+Slug: all_combinations_of_a_list_of_objects  
+Summary: All Combinations For A List Of Objects  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ## Preliminary
 
@@ -35,7 +33,7 @@ combinations = []
 for i in list(range(len(list_of_objects))):
     # Finds every combination (with replacement) for each object in the list
     combinations.append(list(combinations_with_replacement(list_of_objects, i+1)))
-
+    
 # View the results
 combinations
 ```
@@ -94,3 +92,5 @@ combinations
      ('armor', 'armor', 'infantry'),
      ('armor', 'infantry', 'infantry'),
      ('infantry', 'infantry', 'infantry')]
+
+

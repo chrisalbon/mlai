@@ -1,12 +1,10 @@
 Title: Generate Tweets Using Markov Chains  
 Slug: generate_tweets_using_markov_chain  
-Summary: Generate Tweets Using Markov Chains
+Summary: Generate Tweets Using Markov Chains 
 Date: 2016-11-01 12:00  
 Category: Python  
 Tags: Other  
 Authors: Chris Albon  
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ## Preliminaries
 
@@ -46,3 +44,4 @@ for i in range(3):
     Within a month, calls were still productive and most devotees of baseball attended the dozens of them.
     Even death, therefore, has a leather bolo drawn through a local rajah in 1949.
     He had a rather sharp and confident.
+

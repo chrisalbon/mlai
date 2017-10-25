@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -20,8 +18,8 @@ import numpy as np
 
 ```python
 # Create a dataframe
-raw_data = {'first_name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
-        'nationality': ['USA', 'USA', 'France', 'UK', 'UK'],
+raw_data = {'first_name': ['Jason', 'Molly', np.nan, np.nan, np.nan], 
+        'nationality': ['USA', 'USA', 'France', 'UK', 'UK'], 
         'age': [42, 52, 36, 24, 70]}
 df = pd.DataFrame(raw_data, columns = ['first_name', 'nationality', 'age'])
 df
@@ -117,11 +115,11 @@ df[american & elderly]
 
 
 
-## Method 2: Using variable attributes
+## Method 2: Using variable attributes 
 
 
 ```python
-# Select all cases where the first name is not missing and nationality is USA
+# Select all cases where the first name is not missing and nationality is USA 
 df[df['first_name'].notnull() & (df['nationality'] == "USA")]
 ```
 
@@ -154,3 +152,5 @@ df[df['first_name'].notnull() & (df['nationality'] == "USA")]
   </tbody>
 </table>
 </div>
+
+

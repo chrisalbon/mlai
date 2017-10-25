@@ -1,12 +1,10 @@
-Title: Breaking Up String Variables
-Slug: breaking_up_string_variables
-Summary: Breaking Up String Variables
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Breaking Up String Variables  
+Slug: breaking_up_string_variables  
+Summary: Breaking Up String Variables  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ### Basic name assignment
 
@@ -77,7 +75,7 @@ fourthLetter
 
 
 
-### Breaking up a number into seperate variables
+### Breaking up a number into separate variables
 
 
 ```python
@@ -86,49 +84,49 @@ firstNumber, secondNumber, thirdNumber, fourthNumber = '9485'
 
 
 ```python
-firstLetter
+firstNumber
 ```
 
 
 
 
-    'B'
+    '9'
 
 
 
 
 ```python
-secondLetter
+secondNumber
 ```
 
 
 
 
-    'a'
+    '4'
 
 
 
 
 ```python
-thirdLetter
+thirdNumber
 ```
 
 
 
 
-    'r'
+    '8'
 
 
 
 
 ```python
-fourthLetter
+fourthNumber
 ```
 
 
 
 
-    'k'
+    '5'
 
 
 
@@ -156,3 +154,5 @@ b
 
 
     ['p', 'a', 'm']
+
+

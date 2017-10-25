@@ -1,12 +1,10 @@
-Title: Apply Operations Over Items In A List
-Slug: apply_operations_over_items_in_lists
-Summary: Apply Operations Over Items In A List
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Apply Operations Over Items In A List  
+Slug: apply_operations_over_items_in_lists  
+Summary: Apply Operations Over Items In A List  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ## Method 1: map()
 
@@ -81,3 +79,5 @@ list(map((lambda x: x + 100), casualties))
 
 
     [582, 193, 492, 1020, 913, 299, 474, 337, 344]
+
+

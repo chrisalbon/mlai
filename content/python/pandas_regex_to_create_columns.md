@@ -8,8 +8,6 @@ Authors: Chris Albon
 
 Based on [this tutorial in nbviewer](http://nbviewer.ipython.org/github/swcarpentry/notebooks/blob/master/regex-intro.ipynb).
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### Import modules
 
 
@@ -258,3 +256,5 @@ df
   </tbody>
 </table>
 </div>
+
+

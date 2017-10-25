@@ -6,8 +6,6 @@ Category: Python
 Tags: Web Scraping    
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### Import the modules
 
 
@@ -165,3 +163,5 @@ soup.find_all('a')[0:5]
      <a href="./pages/about.html">About Chris</a>,
      <a href="https://github.com/chrisalbon">GitHub</a>,
      <a href="https://twitter.com/chrisalbon">Twitter</a>]
+
+

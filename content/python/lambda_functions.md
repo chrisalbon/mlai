@@ -1,12 +1,10 @@
-Title: Lambda Functions
-Slug: lambda_functions
-Summary: Lambda Functions
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Lambda Functions  
+Slug: lambda_functions  
+Summary: Lambda Functions  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 In Python it is possible to string lambda functions together.
 
@@ -30,3 +28,4 @@ for f in pipeline:
     13
     3486784402
     265613988875874769338781322035779626829233452653394495974574961739092490901302182994384699044004
+

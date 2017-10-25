@@ -1,16 +1,12 @@
-Title: Pie Chart In MatPlotLib
-Slug: matplotlib_pie_chart
-Summary: Pie Chart In MatPlotLib
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Visualization
-Authors: Chris Albon
+Title: Pie Chart In MatPlotLib  
+Slug: matplotlib_pie_chart  
+Summary: Pie Chart In MatPlotLib  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Visualization  
+Authors: Chris Albon  
 
-
-
-**Note:** Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
 
 ## Preliminaries
 
@@ -36,7 +32,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -50,38 +46,38 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 25</td>
-      <td>  5</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>25</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 94</td>
-      <td> 43</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>94</td>
+      <td>43</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 57</td>
-      <td> 23</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>57</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 62</td>
-      <td> 23</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>62</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 70</td>
-      <td> 51</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>70</td>
+      <td>51</td>
     </tr>
   </tbody>
 </table>
@@ -99,7 +95,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -114,43 +110,43 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 25</td>
-      <td>  5</td>
-      <td>  34</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>25</td>
+      <td>5</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 94</td>
-      <td> 43</td>
-      <td> 161</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>94</td>
+      <td>43</td>
+      <td>161</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 57</td>
-      <td> 23</td>
-      <td> 111</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>57</td>
+      <td>23</td>
+      <td>111</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 62</td>
-      <td> 23</td>
-      <td>  87</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>62</td>
+      <td>23</td>
+      <td>87</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 70</td>
-      <td> 51</td>
-      <td> 124</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>70</td>
+      <td>51</td>
+      <td>124</td>
     </tr>
   </tbody>
 </table>
@@ -192,4 +188,5 @@ plt.show()
 ```
 
 
-![png]({filename}/images/matplotlib_pie_chart/output_7_0.png)
+![png](matplotlib_pie_chart_files/matplotlib_pie_chart_7_0.png)
+

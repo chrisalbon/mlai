@@ -1,12 +1,11 @@
-Title: Enumerate A List
-Slug: enumerate_a_list
-Summary: Enumerate A List
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
+Title: Enumerate A List  
+Slug: enumerate_a_list  
+Summary: Enumerate A List  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ```python
 # Create a list of strings
@@ -33,3 +32,4 @@ for item in enumerate(data):
     Four
     (4, 'Five')
     Five
+

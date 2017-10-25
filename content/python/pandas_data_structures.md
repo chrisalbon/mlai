@@ -1,12 +1,10 @@
-Title: pandas Data Structures
-Slug: pandas_data_structures
-Summary: pandas Data Structures
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: pandas Data Structures  
+Slug: pandas_data_structures  
+Summary: pandas Data Structures  
+Date: 2016-05-01 12:00   
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ### Import modules
 
@@ -144,8 +142,8 @@ DataFrames are like R's Dataframes
 
 
 ```python
-data = {'county': ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'],
-        'year': [2012, 2012, 2013, 2014, 2014],
+data = {'county': ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'], 
+        'year': [2012, 2012, 2013, 2014, 2014], 
         'reports': [4, 24, 31, 2, 3]}
 df = pd.DataFrame(data)
 df
@@ -154,7 +152,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -167,37 +165,36 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td>    Cochice</td>
-      <td>  4</td>
-      <td> 2012</td>
+      <td>Cochice</td>
+      <td>4</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>       Pima</td>
-      <td> 24</td>
-      <td> 2012</td>
+      <td>Pima</td>
+      <td>24</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> Santa Cruz</td>
-      <td> 31</td>
-      <td> 2013</td>
+      <td>Santa Cruz</td>
+      <td>31</td>
+      <td>2013</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>   Maricopa</td>
-      <td>  2</td>
-      <td> 2014</td>
+      <td>Maricopa</td>
+      <td>2</td>
+      <td>2014</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>       Yuma</td>
-      <td>  3</td>
-      <td> 2014</td>
+      <td>Yuma</td>
+      <td>3</td>
+      <td>2014</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
 
 
@@ -213,7 +210,7 @@ dfColumnOrdered
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -226,37 +223,36 @@ dfColumnOrdered
   <tbody>
     <tr>
       <th>0</th>
-      <td>    Cochice</td>
-      <td> 2012</td>
-      <td>  4</td>
+      <td>Cochice</td>
+      <td>2012</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>       Pima</td>
-      <td> 2012</td>
-      <td> 24</td>
+      <td>Pima</td>
+      <td>2012</td>
+      <td>24</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> Santa Cruz</td>
-      <td> 2013</td>
-      <td> 31</td>
+      <td>Santa Cruz</td>
+      <td>2013</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>   Maricopa</td>
-      <td> 2014</td>
-      <td>  2</td>
+      <td>Maricopa</td>
+      <td>2014</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>       Yuma</td>
-      <td> 2014</td>
-      <td>  3</td>
+      <td>Yuma</td>
+      <td>2014</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
 
 
@@ -272,7 +268,7 @@ dfColumnOrdered
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -286,42 +282,41 @@ dfColumnOrdered
   <tbody>
     <tr>
       <th>0</th>
-      <td>    Cochice</td>
-      <td> 2012</td>
-      <td>  4</td>
-      <td> 42.3</td>
+      <td>Cochice</td>
+      <td>2012</td>
+      <td>4</td>
+      <td>42.3</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>       Pima</td>
-      <td> 2012</td>
-      <td> 24</td>
-      <td> 92.1</td>
+      <td>Pima</td>
+      <td>2012</td>
+      <td>24</td>
+      <td>92.1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> Santa Cruz</td>
-      <td> 2013</td>
-      <td> 31</td>
-      <td> 12.2</td>
+      <td>Santa Cruz</td>
+      <td>2013</td>
+      <td>31</td>
+      <td>12.2</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>   Maricopa</td>
-      <td> 2014</td>
-      <td>  2</td>
-      <td> 39.3</td>
+      <td>Maricopa</td>
+      <td>2014</td>
+      <td>2</td>
+      <td>39.3</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>       Yuma</td>
-      <td> 2014</td>
-      <td>  3</td>
-      <td> 30.2</td>
+      <td>Yuma</td>
+      <td>2014</td>
+      <td>3</td>
+      <td>30.2</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 4 columns</p>
 </div>
 
 
@@ -337,7 +332,7 @@ dfColumnOrdered
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -350,37 +345,36 @@ dfColumnOrdered
   <tbody>
     <tr>
       <th>0</th>
-      <td>    Cochice</td>
-      <td> 2012</td>
-      <td>  4</td>
+      <td>Cochice</td>
+      <td>2012</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>       Pima</td>
-      <td> 2012</td>
-      <td> 24</td>
+      <td>Pima</td>
+      <td>2012</td>
+      <td>24</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> Santa Cruz</td>
-      <td> 2013</td>
-      <td> 31</td>
+      <td>Santa Cruz</td>
+      <td>2013</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>   Maricopa</td>
-      <td> 2014</td>
-      <td>  2</td>
+      <td>Maricopa</td>
+      <td>2014</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>       Yuma</td>
-      <td> 2014</td>
-      <td>  3</td>
+      <td>Yuma</td>
+      <td>2014</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
 
 
@@ -395,7 +389,7 @@ dfColumnOrdered.T
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -410,29 +404,30 @@ dfColumnOrdered.T
   <tbody>
     <tr>
       <th>county</th>
-      <td> Cochice</td>
-      <td> Pima</td>
-      <td> Santa Cruz</td>
-      <td> Maricopa</td>
-      <td> Yuma</td>
+      <td>Cochice</td>
+      <td>Pima</td>
+      <td>Santa Cruz</td>
+      <td>Maricopa</td>
+      <td>Yuma</td>
     </tr>
     <tr>
       <th>year</th>
-      <td>    2012</td>
-      <td> 2012</td>
-      <td>       2013</td>
-      <td>     2014</td>
-      <td> 2014</td>
+      <td>2012</td>
+      <td>2012</td>
+      <td>2013</td>
+      <td>2014</td>
+      <td>2014</td>
     </tr>
     <tr>
       <th>reports</th>
-      <td>       4</td>
-      <td>   24</td>
-      <td>         31</td>
-      <td>        2</td>
-      <td>    3</td>
+      <td>4</td>
+      <td>24</td>
+      <td>31</td>
+      <td>2</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
-<p>3 rows × 5 columns</p>
 </div>
+
+

@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Chris Albon'
-SITENAME = 'Chris Albon - Data Science, Machine Learning, and Artificial Intelligence'
+SITENAME = 'Machine Learning and Artificial Intelligence'
 SITEURL = 'http://chrisalbon.com'
 THEME = 'theme/'
 
@@ -28,7 +28,21 @@ DEFAULT_PAGINATION = False
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-STATIC_PATHS = ['images', 'extra/CNAME', 'extra/favicon.ico']
+STATIC_PATHS = ['extra/CNAME',
+                'extra/favicon.ico',
+                'pages',
+                'blog',
+                'statistics',
+                'cloud-computing',
+                'javascript',
+                'sql',
+                'scala',
+                'deep-learning',
+                'machine-learning',
+                'python',
+                'mathematics',
+                'algorithms',
+                'regex']
 
 ARTICLE_URL = '{category}/{slug}.html'
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
@@ -54,6 +68,8 @@ AUTHORS_SAVE_AS = ''
 CATEGORIES_SAVE_AS = ''
 TAGS_SAVE_AS = ''
 ARCHIVES_SAVE_AS = ''
+
+DELETE_OUTPUT_DIRECTORY = True
 
 SITEMAP = {
     'format': 'xml',

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Albon - Data Science, Machine Learning, and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Thu, 01 Jun 2017 12:00:00 -0700</lastBuildDate><item><title>Summer Of Machine Learning</title><link>http://chrisalbon.com/blog/summer_of_machine_learning.html</link><description>&lt;p&gt;&lt;img alt="Summer of Machine Learning" src="http://chrisalbon.com/images/summer_of_machine_learning/summer_of_machine_learning.jpg" /&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Thu, 01 Jun 2017 12:00:00 -0700</lastBuildDate><item><title>Summer Of Machine Learning</title><link>http://chrisalbon.com/blog/summer_of_machine_learning.html</link><description>&lt;p&gt;&lt;img alt="Summer of Machine Learning" src="summer_of_machine_learning/summer_of_machine_learning.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;I love summers, but not for the reason you'd think. I don't particularly like hot weather and prefer a good coffee shop to a beach resort. For me, a good summer will always mean what they meant during my Ph.D.: four months to grind your heart out -- to read 500 journal articles, submit five research papers, or finish that one big project. It is a time when the burden of daily responsibilities and thousand little emergencies lifts and you are free to work on big projects with big goals -- to enter the chill of fall better, smarter, and farther than before.&lt;/p&gt;
 &lt;p&gt;I left academia and if there is one thing I miss, it is the summers. The demand for new sales and product releases never lets up and nature of work makes August feel much like February. Over the years I have noticed that being in that environment has made me reach less in personal goals. I took on smaller personal projects, read fewer books, and slowly gained weight. I don't regret this drift. Effort is zero-sum and I was focused on other things including a starting an AI &lt;a href="http://newknowledge.io/"&gt;company&lt;/a&gt;. However, this summer I am going back to the summers of my Ph.D.: a summer of machine learning.&lt;/p&gt;
 &lt;p&gt;From June 1st to September 30th I will make a four month sprint to become a better data scientist and machine learning engineer, filling the dog days of summer with reading, writing, coding, and running. And the finish line? Eight concrete, quantifiable goals for the next 122 days:&lt;/p&gt;
@@ -14,7 +14,7 @@
 &lt;li&gt;Lose 40lbs.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Want to cheer me on? I'm on &lt;a href="https://twitter.com/chrisalbon"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;iframe name="data" style="width:100%; height:800px" src="https://docs.google.com/spreadsheets/d/1py70JDmjR7XtWpLZqzAIug6EoGjZwpAsA-k8zKGZba4/pubhtml?gid=1997341574&amp;amp;single=true&amp;amp;widget=true&amp;amp;headers=false"&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 01 Jun 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-06-01:blog/summer_of_machine_learning.html</guid><category>Summer Of Machine Learning</category></item><item><title>The Probability An Economy Seat Is An Aisle?</title><link>http://chrisalbon.com/blog/aisle_seat_probabilities.html</link><description>&lt;p&gt;There are two types of people in the world, aisle seaters and window seaters. I am an aisle seater, nothing is worse than limited bathroom access on a long flight. The first thing I do when I get my ticket is check to see if I have a window seat. If not, I immediately head over to the airline counter and try to get one.&lt;/p&gt;
+&lt;iframe name="data" style="width:100%; height:800px" src="https://docs.google.com/spreadsheets/d/1py70JDmjR7XtWpLZqzAIug6EoGjZwpAsA-k8zKGZba4/pubhtml?gid=1997341574&amp;amp;single=true&amp;amp;widget=true&amp;amp;headers=false"&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 01 Jun 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-06-01:blog/summer_of_machine_learning.html</guid><category>Summer Of Machine Learning</category></item><item><title>What Is The Probability An Economy Class Seat Is An Aisle Seat?</title><link>http://chrisalbon.com/blog/aisle_seat_probabilities.html</link><description>&lt;p&gt;There are two types of people in the world, aisle seaters and window seaters. I am an aisle seater, nothing is worse than limited bathroom access on a long flight. The first thing I do when I get my ticket is check to see if I have a window seat. If not, I immediately head over to the airline counter and try to get one.&lt;/p&gt;
 &lt;p&gt;Last flight, on Turkish Airlines, I ran into a curious situation. I recieved my boarding pass with my seat number, 18C, but the ticket did not specify if C was an aisle seat or not. Making matters worse, the airline counter was swamped with a few dozen people. So I asked myself: &lt;strong&gt;given only the seat letter, C, what is the probability that it is an aisle seat?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Later, on the flight, I decided to find out.&lt;/p&gt;
 &lt;h2&gt;Preliminaries&lt;/h2&gt;
@@ -31,10 +31,10 @@
 &lt;p&gt;I am a pretty frequently flyer on a variety of airlines and aircraft. There are a variety of seating configurations out there, but typically they follow some basic rules:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;No window cluster of seats has more than three seats.&lt;/li&gt;
-&lt;li&gt;On small slights with three seats, the single seat is on the left side.&lt;/li&gt;
+&lt;li&gt;On small flights with three seats, the single seat is on the left side.&lt;/li&gt;
 &lt;li&gt;No flight has more than nine rows.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Based on these rules, here are the "typical" seating configurations from aircraft with between two and nine seats per row. A '1' codifies that a seat is an aisle seat, a '0' codifies that it is a non-aisle seat (i.e. window or middle), and 'np.nan' denotes that the aircraft has less than nine seats (this is so all the list lengths are the same).&lt;/p&gt;
+&lt;p&gt;Based on these rules, here are the "typical" seating configurations from aircraft with between two and nine seats per row. A '1' codifies that a seat is an aisle seat, a '0' codifies that it is a non-aisle seat (i.e. window or middle), and 'np.nan' denotes that the aircraft has less than nine seats (this is so all the list lengths are the same). &lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# An aircraft with two seats per row&lt;/span&gt;
 &lt;span class="n"&gt;rows2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
@@ -48,7 +48,7 @@
 &lt;span class="n"&gt;rows5&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
 &lt;span class="c1"&gt;# An aircraft with six seats per row&lt;/span&gt;
-&lt;span class="n"&gt;rows6&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;rows6&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
 &lt;span class="c1"&gt;# An aircraft with seven seats per row&lt;/span&gt;
 &lt;span class="n"&gt;rows7&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nan&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -80,7 +80,7 @@
 
 
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a dataframe from the seating_map variable&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seating_map&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seating_map&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
                   &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;D&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;E&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;F&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;G&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;H&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;I&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                   &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rows2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rows3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rows4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rows5&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rows6&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rows7&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rows8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rows9&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -92,7 +92,20 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div style="max-height:1000px;max-width:1500px;overflow:auto;"&gt;
+&lt;div&gt;
+&lt;style&gt;
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&lt;/style&gt;
 &lt;table border="1" class="dataframe"&gt;
   &lt;thead&gt;
     &lt;tr style="text-align: right;"&gt;
@@ -111,8 +124,8 @@
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;th&gt;rows2&lt;/th&gt;
-      &lt;td&gt; 1&lt;/td&gt;
-      &lt;td&gt; 1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
@@ -123,9 +136,9 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;rows3&lt;/th&gt;
-      &lt;td&gt; 1&lt;/td&gt;
-      &lt;td&gt; 1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
@@ -135,10 +148,10 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;rows4&lt;/th&gt;
-      &lt;td&gt; 0&lt;/td&gt;
-      &lt;td&gt; 1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
@@ -147,11 +160,11 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;rows5&lt;/th&gt;
-      &lt;td&gt; 0&lt;/td&gt;
-      &lt;td&gt; 1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
@@ -159,51 +172,51 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;rows6&lt;/th&gt;
-      &lt;td&gt; 0&lt;/td&gt;
-      &lt;td&gt; 1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;rows7&lt;/th&gt;
-      &lt;td&gt; 0&lt;/td&gt;
-      &lt;td&gt; 1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;rows8&lt;/th&gt;
-      &lt;td&gt; 0&lt;/td&gt;
-      &lt;td&gt; 0&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
       &lt;td&gt;NaN&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;rows9&lt;/th&gt;
-      &lt;td&gt; 0&lt;/td&gt;
-      &lt;td&gt; 0&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  1&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
-      &lt;td&gt;  0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -212,7 +225,7 @@
 &lt;h2&gt;Calculate aisle probability&lt;/h2&gt;
 &lt;p&gt;Because each aircraft seats-per-row configuration (i.e. row) is binary (1 if aisle, 0 if non-aisle), the probability that a seat is an aisle is simply the mean value of each seat letter (i.e. column).&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a list wherein each element is the mean value of a column&lt;/span&gt;
-&lt;span class="n"&gt;aisle_probability&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+&lt;span class="n"&gt;aisle_probability&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; 
                      &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
                      &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
                      &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;D&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
@@ -229,15 +242,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[0.25,
- 0.75,
- 0.8571428571428571,
- 0.33333333333333331,
- 0.59999999999999998,
- 0.75,
- 0.33333333333333331,
- 0.0,
- 0.0]
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[0.25, 0.75, 0.8571428571428571, 0.5, 0.6, 0.75, 0.3333333333333333, 0.0, 0.0]
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -245,7 +250,7 @@
 &lt;h2&gt;Visualize seat letter probabilities&lt;/h2&gt;
 &lt;p&gt;The most obvious visualization to convey the probabilities would be seat letters on the x-axis and probabilities on the y-axis. Panda's plot function makes that easy.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a list of strings to use as the x-axis labels&lt;/span&gt;
-&lt;span class="n"&gt;seats&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Seat A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat B&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat C&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat D&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="n"&gt;seats&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Seat A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat B&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat C&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat D&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
          &lt;span class="s1"&gt;&amp;#39;Seat E&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat F&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat G&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat H&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Seat I&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -260,13 +265,13 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1078300f0&amp;gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x10f1231d0&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="http://chrisalbon.com/images/aisle_seat_probabilities/output_20_1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="aisle_seat_probabilities_files/aisle_seat_probabilities_20_1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;So there we have it! If given a boarding pass with seat C you have a 86% probability of being in an aisle seat!&lt;/p&gt;
-&lt;p&gt;I hope this was helpful!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sun, 01 May 2016 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2016-05-01:blog/aisle_seat_probabilities.html</guid></item><item><title>My Data Science Reading List</title><link>http://chrisalbon.com/blog/data_science_reading_list.html</link><description>&lt;p&gt;&lt;img alt="Data Science Reading List" src="http://chrisalbon.com/images/my_data_science_reading_list/my_data_science_reading_list.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;I hope this was helpful!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sun, 01 May 2016 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2016-05-01:blog/aisle_seat_probabilities.html</guid></item><item><title>My Data Science Reading List</title><link>http://chrisalbon.com/blog/data_science_reading_list.html</link><description>&lt;p&gt;&lt;img alt="Data Science Reading List" src="my_data_science_reading_list/my_data_science_reading_list.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Everyone has hobbies. My hobby is in a big red bookcase. Currently my big red bookcase contains around ~200 dead-tree books on statistics, data science, research, and mathematics. I rarely travel anywhere without at least one book from this bookcase and on a lazy Sunday afternoon you will likely see to working my way through one of it's members.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;Mathematics&lt;/h2&gt;
@@ -502,7 +507,7 @@
 &lt;li&gt;&lt;a href="http://amzn.to/2jp8Jh8"&gt;Propensity Score Analysis: Statistical Methods and Applications (Advanced Quantitative Techniques in the Social Sciences)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Sun, 01 May 2016 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2016-05-01:blog/data_science_reading_list.html</guid></item><item><title>What I Learned Tracking My Time At Techstars</title><link>http://chrisalbon.com/blog/what-i-learned-tracking-my-time-at-techstars.html</link><description>
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars//Popily-25.jpg" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars//Popily-25.jpg" style="padding: 0 0 30px 0;"&gt;
 
 &lt;p&gt;In the fall of 2015, &lt;a href="http://popily.com"&gt;Popily&lt;/a&gt;, a data exploration company I cofounded with &lt;a href="http://www.vidyaspandana.com/"&gt;two&lt;/a&gt; &lt;a href="http://goodattheinternet.com/"&gt;friends&lt;/a&gt; was offered a slot in the 2016 class of &lt;a href="http://www.techstars.com/programs/cloud-program/"&gt;Techstars Cloud&lt;/a&gt;. Like most people in tech, I had heard about Techstars, but in truth I barely knew anything specific, particularly about the day-to-day of the program. Was Techstars a permanent hackathon fueled by Soylent and Adderall? Was it three months of guest speakers and sponsored happy hours? I watched Techstars's &lt;a href="https://vimeo.com/techstars/videos"&gt;promotional videos&lt;/a&gt;, but the only impression I could glean was that all the founders worked 36 hours per day while having ample spare time to ride bikes around downtown Boulder. I also found some &lt;a href="https://www.quora.com/What-is-the-first-week-of-a-TechStars-program-like"&gt;posts&lt;/a&gt; about people’s experiences, but overall I was in the dark. So, when we joined Techstars Cloud in November, I did what I was trained to do: gather data.&lt;/p&gt;
 
@@ -521,25 +526,25 @@
 &lt;p&gt;The full data is &lt;a href="https://github.com/chrisalbon/techstars_timesheet"&gt;available on Github&lt;/a&gt;, however in this post I used &lt;a href="http://popily.com"&gt;Popily.com&lt;/a&gt; to explore the data and understand how I spent my time during Techstars and offer a few lessons learned along the way. I hope you find it useful.&lt;/p&gt;
 
 &lt;h4&gt;Every Day At Techstars Cloud&lt;/h4&gt;
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/1.png" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/1.png" style="padding: 0 0 30px 0;"&gt;
 
 &lt;h2&gt;Lesson 1: Techstars Is For Going All-In&lt;/h2&gt;
 
 &lt;p&gt;If there was one description of my time at Techstars it was that I worked, a lot -- during evenings, lunches, and holidays; in offices, cars, and AirBnBs; alone, with my team, and while holding my daughter. The combination of the environment and the looming Demo Day made the work all-consuming. I was responsible for the product, so it is unsurprising that the largest number of my hours was spent on technical tasks. In truth, even non-technical tasks were almost always related to product development: UX testing, QAing, or PivotalTracker. My laser focus on the product was sometimes at odds with the myriad of guest speakers and mentor meetings that, while interesting and useful, could suck me in and stall development. As a company we started using two strategies to keep the product moving forward. First, most of the meetings and events were handled by my cofounders, which left me time to focus to a greater degree on the product. Second, when we had a product update or launch goal, I spent weeks away from the Techstars offices so I could get the most work done on the product as possible.&lt;/p&gt;
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/2.png" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/2.png" style="padding: 0 0 30px 0;"&gt;
 
 &lt;p&gt;On average, during Techstars I worked 91.6 hours per week. I worked the most hours during the first week of the program, where I averaged 17.4 hours of work per day. This number will be unsurprising to anyone who has going though Techstars. The first three weeks of Techstars are called Mentor Madness and can essentially be described as a full day of back to back 20 minute meetings with every fancy and impressive founder you can imagine. You walk into a room, give a five minute pitch to anyone from the CEO of a boutique ad agency to a founder of a technology giant and hear their take about you, your company, your product, your market, whatever. After 20 minutes you walk into the next room and repeat the entire process again.&lt;/p&gt;
 
 &lt;h4&gt;Total Hours Spent On Tasks&lt;/h4&gt;
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/3.png" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/3.png" style="padding: 0 0 30px 0;"&gt;
 
 &lt;p&gt;Mentor Madness was a grueling experience for all of us, not only because it took up so much of our energy (it takes a lot of focus to be engaged after seven almost-back-to-back meetings), but more importantly it made us have to defend, explain, and face so many fundamental assumptions we implicitly and explicitly made about our company, product, and strategy. In one meeting a mentor would argue that the go-to-market strategy is flawed and 20 minutes later the next mentor is arguing that we need to change our company's name.&lt;/p&gt;
 
 &lt;p&gt;Those weeks were brutal. However, it was also probably one of the most important few weeks of our company. Because at the end of all those meetings, our day would just begin; from the last meeting to late at night my cofounders and I would consider, discuss, and debate a hundred points that were brought in the day. Why did the mentor hate the pricing model? Was she right or just old-fashioned? Should we change our name? Who is our customer? All the meetings and all the challenging questions forced us to discuss things which might otherwise be assumed or left unsaid.&lt;/p&gt;
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/debrief-call.jpg" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/debrief-call.jpg" style="padding: 0 0 30px 0;"&gt;
 
 &lt;p&gt;For those first few weeks I would get up early, spend an hour emailing, discuss some point or another about strategy or product, take meetings with mentors, discuss more over lunch, take more meetings, discuss over dinner and into the evening, shower, sleep, and start the whole thing over again. Two days during Mentor Madness contained a massive 13 and 14 hours of discussions. Those conversations alone made Techstars worthwhile.&lt;/p&gt;
 
@@ -553,7 +558,7 @@
 
 &lt;h4&gt;Hours Spent On Technical And Non-Technical Work During Techstars&lt;/h4&gt;
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/4.png" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/4.png" style="padding: 0 0 30px 0;"&gt;
 
 &lt;p&gt;Between Christmas and our &lt;a href="http://venturebeat.com/2016/01/19/popily-launches-a-data-visualization-tool-thats-as-easy-to-use-as-three-clicks/"&gt;launch on January 19th&lt;/a&gt; was probably my happiest in the program, because it was a wonderful coding crunchtime. I would get up, select the next user story in the queue, complete it, QA, and repeat. It was -- frankly -- just fun. All the discussions around marketing, fundraising, or ten thousand other things were put aside (i.e. handled by my cofounders), leaving me free to build.&lt;/p&gt;
 
@@ -563,7 +568,7 @@
 
 &lt;h4&gt;Hours Spent At Discussions, Meetings, or Networking During Techstars&lt;/h4&gt;
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/5.png" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/5.png" style="padding: 0 0 30px 0;"&gt;
 
 &lt;p&gt;Did all those hours matter? Completely and absolutely. Over the course of the program the product went from a tricycle to a Harley Davidson. There is more to do, but the leaps and bounds made during Techstars has been incredible.&lt;/p&gt;
 
@@ -575,7 +580,7 @@
 
 &lt;h4&gt;Hours Of Sleep During Techstars&lt;/h4&gt;
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/6.png" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/6.png" style="padding: 0 0 30px 0;"&gt;
 
 &lt;h2&gt;Lesson 4: There Is No Work-Life Balance&lt;/h2&gt;
 
@@ -585,13 +590,13 @@
 
 &lt;p&gt;I am not complaining. I like working, and I am in a place in my life that I can let work take over for a while, but make no mistake: it did take over. I'd argue that to really get value from Techstars, it probably has to take over.&lt;/p&gt;
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/7.png" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/7.png" style="padding: 0 0 30px 0;"&gt;
 
 &lt;p&gt;As a more concrete example to the point above, of the three major holidays that took place during Techstars Cloud two of them were just a regular work day for me.&lt;/p&gt;
 
 &lt;h4&gt;Hours Spent On Activities On Thanksgiving, Xmas, and NYE&lt;/h4&gt;
 
-&lt;img src="../images/what_i_learned_from_tracking_my_time_at_techstars/8.png" style="padding: 0 0 30px 0;"&gt;
+&lt;img src="what_i_learned_from_tracking_my_time_at_techstars/8.png" style="padding: 0 0 30px 0;"&gt;
 
 &lt;h2&gt;Final Thoughts On Techstars&lt;/h2&gt;
 

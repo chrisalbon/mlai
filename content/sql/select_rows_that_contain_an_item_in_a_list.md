@@ -1,12 +1,12 @@
 Title: Select Rows That Contain An Item In A List  
-Slug: select_rows_that_contain_an_item_in_a_list
+Slug: select_rows_that_contain_an_item_in_a_list 
 Summary: Select rows that contain an item in a list.
 Date: 2016-05-01 12:00  
 Category: SQL  
 Tags: Basics  
 Authors: Chris Albon  
 
-Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, This tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
+Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, this tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
 
 For more, check out [Learning SQL](http://amzn.to/2jRriHj) by Alan Beaulieu.
 
@@ -120,3 +120,5 @@ WHERE city IN ('Santa Rosa', 'Petaluma');
         <td>0</td>
     </tr>
 </table>
+
+

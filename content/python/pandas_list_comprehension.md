@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling
 Authors: Chris Albon
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -26,8 +24,8 @@ pd.set_option('display.max_columns', 50)
 
 
 ```python
-data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'year': [2012, 2012, 2013, 2014, 2014],
+data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'year': [2012, 2012, 2013, 2014, 2014], 
         'reports': [4, 24, 31, 2, 3]}
 df = pd.DataFrame(data, index = ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'])
 df
@@ -36,7 +34,20 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -49,33 +60,33 @@ df
   <tbody>
     <tr>
       <th>Cochice</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 2012</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>Pima</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 2012</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>Santa Cruz</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 2013</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>2013</td>
     </tr>
     <tr>
       <th>Maricopa</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 2014</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>2014</td>
     </tr>
     <tr>
       <th>Yuma</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 2014</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>2014</td>
     </tr>
   </tbody>
 </table>
@@ -107,7 +118,20 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -116,49 +140,43 @@ df
       <th>reports</th>
       <th>year</th>
       <th>next_year</th>
-      <th>previous_year</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>Cochice</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 2012</td>
-      <td> 2013</td>
-      <td> 2011</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>2012</td>
+      <td>2013</td>
     </tr>
     <tr>
       <th>Pima</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 2012</td>
-      <td> 2013</td>
-      <td> 2011</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>2012</td>
+      <td>2013</td>
     </tr>
     <tr>
       <th>Santa Cruz</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 2013</td>
-      <td> 2014</td>
-      <td> 2012</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>2013</td>
+      <td>2014</td>
     </tr>
     <tr>
       <th>Maricopa</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 2014</td>
-      <td> 2015</td>
-      <td> 2013</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>2014</td>
+      <td>2015</td>
     </tr>
     <tr>
       <th>Yuma</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 2014</td>
-      <td> 2015</td>
-      <td> 2013</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>2014</td>
+      <td>2015</td>
     </tr>
   </tbody>
 </table>
@@ -182,7 +200,20 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -197,44 +228,46 @@ df
   <tbody>
     <tr>
       <th>Cochice</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 2012</td>
-      <td> 2013</td>
-      <td> 2011</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>2012</td>
+      <td>2013</td>
+      <td>2011</td>
     </tr>
     <tr>
       <th>Pima</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 2012</td>
-      <td> 2013</td>
-      <td> 2011</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>2012</td>
+      <td>2013</td>
+      <td>2011</td>
     </tr>
     <tr>
       <th>Santa Cruz</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 2013</td>
-      <td> 2014</td>
-      <td> 2012</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>2013</td>
+      <td>2014</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>Maricopa</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 2014</td>
-      <td> 2015</td>
-      <td> 2013</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>2014</td>
+      <td>2015</td>
+      <td>2013</td>
     </tr>
     <tr>
       <th>Yuma</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 2014</td>
-      <td> 2015</td>
-      <td> 2013</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>2014</td>
+      <td>2015</td>
+      <td>2013</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+

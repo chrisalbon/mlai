@@ -1,13 +1,10 @@
-Title: Applying Operations Over pandas Dataframes
-Slug: pandas_apply_operations_to_dataframes
-Summary: Applying Operations Over pandas Dataframes
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
+Title: Applying Operations Over pandas Dataframes  
+Slug: pandas_apply_operations_to_dataframes  
+Summary: Applying Operations Over pandas Dataframes  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ### Import Modules
 
@@ -21,8 +18,8 @@ import numpy as np
 
 
 ```python
-data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'year': [2012, 2012, 2013, 2014, 2014],
+data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'year': [2012, 2012, 2013, 2014, 2014], 
         'reports': [4, 24, 31, 2, 3],
         'coverage': [25, 94, 57, 62, 70]}
 df = pd.DataFrame(data, index = ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'])
@@ -32,7 +29,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -46,42 +43,41 @@ df
   <tbody>
     <tr>
       <th>Cochice</th>
-      <td> 25</td>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 2012</td>
+      <td>25</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>Pima</th>
-      <td> 94</td>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 2012</td>
+      <td>94</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>2012</td>
     </tr>
     <tr>
       <th>Santa Cruz</th>
-      <td> 57</td>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 2013</td>
+      <td>57</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>2013</td>
     </tr>
     <tr>
       <th>Maricopa</th>
-      <td> 62</td>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 2014</td>
+      <td>62</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>2014</td>
     </tr>
     <tr>
       <th>Yuma</th>
-      <td> 70</td>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 2014</td>
+      <td>70</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>2014</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 4 columns</p>
 </div>
 
 
@@ -151,7 +147,7 @@ df.applymap(np.sqrt)
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -164,37 +160,36 @@ df.applymap(np.sqrt)
   <tbody>
     <tr>
       <th>Cochice</th>
-      <td> 5.000000</td>
-      <td> 2.000000</td>
-      <td> 44.855323</td>
+      <td>5.000000</td>
+      <td>2.000000</td>
+      <td>44.855323</td>
     </tr>
     <tr>
       <th>Pima</th>
-      <td> 9.695360</td>
-      <td> 4.898979</td>
-      <td> 44.855323</td>
+      <td>9.695360</td>
+      <td>4.898979</td>
+      <td>44.855323</td>
     </tr>
     <tr>
       <th>Santa Cruz</th>
-      <td> 7.549834</td>
-      <td> 5.567764</td>
-      <td> 44.866469</td>
+      <td>7.549834</td>
+      <td>5.567764</td>
+      <td>44.866469</td>
     </tr>
     <tr>
       <th>Maricopa</th>
-      <td> 7.874008</td>
-      <td> 1.414214</td>
-      <td> 44.877611</td>
+      <td>7.874008</td>
+      <td>1.414214</td>
+      <td>44.877611</td>
     </tr>
     <tr>
       <th>Yuma</th>
-      <td> 8.366600</td>
-      <td> 1.732051</td>
-      <td> 44.877611</td>
+      <td>8.366600</td>
+      <td>1.732051</td>
+      <td>44.877611</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
 
 
@@ -229,7 +224,7 @@ df.applymap(times100)
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -242,35 +237,36 @@ df.applymap(times100)
   <tbody>
     <tr>
       <th>Cochice</th>
-      <td> 2500</td>
-      <td>  400</td>
-      <td> 201200</td>
+      <td>2500</td>
+      <td>400</td>
+      <td>201200</td>
     </tr>
     <tr>
       <th>Pima</th>
-      <td> 9400</td>
-      <td> 2400</td>
-      <td> 201200</td>
+      <td>9400</td>
+      <td>2400</td>
+      <td>201200</td>
     </tr>
     <tr>
       <th>Santa Cruz</th>
-      <td> 5700</td>
-      <td> 3100</td>
-      <td> 201300</td>
+      <td>5700</td>
+      <td>3100</td>
+      <td>201300</td>
     </tr>
     <tr>
       <th>Maricopa</th>
-      <td> 6200</td>
-      <td>  200</td>
-      <td> 201400</td>
+      <td>6200</td>
+      <td>200</td>
+      <td>201400</td>
     </tr>
     <tr>
       <th>Yuma</th>
-      <td> 7000</td>
-      <td>  300</td>
-      <td> 201400</td>
+      <td>7000</td>
+      <td>300</td>
+      <td>201400</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
+
+

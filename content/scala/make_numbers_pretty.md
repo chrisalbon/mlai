@@ -4,7 +4,7 @@ Summary: Make Numbers Pretty Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 This tutorial was inspired by the awesome [Scala Cookbook](http://amzn.to/2lxbrxN).
 
@@ -62,3 +62,5 @@ make_pretty_de.format(1000000)
 
 
     1.000.000
+
+

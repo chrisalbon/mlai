@@ -1,6 +1,6 @@
 Title: Testable Documentation  
 Slug: testable_documentation  
-Summary: Testable Documentation in Python.
+Summary: Testable Documentation in Python. 
 Date: 2016-01-23 12:00  
 Category: Python  
 Tags: Testing  
@@ -24,18 +24,18 @@ Note that our test cases are inside the function's documentation. Each test case
 def summation(a, b):
     """
     Takes two inputs and outputs their sum.
-
+    
     Tests:
-
+    
     >>> summation(5, 4)
     9
-
+    
     >>> summation(4, 3)
     7
-
+    
     >>> summation('foo','bar')
     'foobar'
-
+    
     >>> summation(3,'d')
     Traceback (most recent call last):
         ...
@@ -88,3 +88,5 @@ doctest.testmod(verbose=True)
 
 
     TestResults(failed=0, attempted=4)
+
+

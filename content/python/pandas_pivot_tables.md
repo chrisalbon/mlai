@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### import modules
 
 
@@ -19,8 +17,8 @@ import pandas as pd
 
 
 ```python
-raw_data = {'regiment': ['Nighthawks', 'Nighthawks', 'Nighthawks', 'Nighthawks', 'Dragoons', 'Dragoons', 'Dragoons', 'Dragoons', 'Scouts', 'Scouts', 'Scouts', 'Scouts'],
-        'company': ['1st', '1st', '2nd', '2nd', '1st', '1st', '2nd', '2nd','1st', '1st', '2nd', '2nd'],
+raw_data = {'regiment': ['Nighthawks', 'Nighthawks', 'Nighthawks', 'Nighthawks', 'Dragoons', 'Dragoons', 'Dragoons', 'Dragoons', 'Scouts', 'Scouts', 'Scouts', 'Scouts'], 
+        'company': ['1st', '1st', '2nd', '2nd', '1st', '1st', '2nd', '2nd','1st', '1st', '2nd', '2nd'], 
         'TestScore': [4, 24, 31, 2, 3, 4, 24, 31, 2, 3, 2, 3]}
 df = pd.DataFrame(raw_data, columns = ['regiment', 'company', 'TestScore'])
 df
@@ -231,3 +229,5 @@ df.pivot_table(index=['regiment','company'], aggfunc='count')
   </tbody>
 </table>
 </div>
+
+

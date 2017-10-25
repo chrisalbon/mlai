@@ -6,8 +6,6 @@ Category: Python
 Tags: Testing  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -44,10 +42,10 @@ unittest.main(argv=['ignored', '-v'], exit=False)
 ```
 
     test_input_string (__main__.TestAdd) ... ok
-
+    
     ----------------------------------------------------------------------
     Ran 1 test in 0.002s
-
+    
     OK
 
 
@@ -55,3 +53,5 @@ unittest.main(argv=['ignored', '-v'], exit=False)
 
 
     <unittest.main.TestProgram at 0x104855320>
+
+

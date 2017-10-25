@@ -1,12 +1,12 @@
-Title: Cartesian Product
-Slug: cartesian_product
-Summary: Cartesian Product
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
+Title: Cartesian Product  
+Slug: cartesian_product  
+Summary: Cartesian Product  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+## Preliminaries
 
 
 ```python
@@ -14,12 +14,16 @@ Want to learn more? I recommend these Python books: [Python for Data Analysis](h
 import pandas as pd
 ```
 
+## Create Data
+
 
 ```python
 # Create two lists
 i = [1,2,3,4,5]
 j = [1,2,3,4,5]
 ```
+
+## Calculate Cartesian Product (Method 1)
 
 
 ```python
@@ -57,6 +61,8 @@ j = [1,2,3,4,5]
      (5, 5)]
 
 
+
+## Calculate Cartesian Product (Method 2)
 
 
 ```python
@@ -96,3 +102,4 @@ for i in itertools.product([1,2,3,4,5], [1,2,3,4,5]):
     (5, 3)
     (5, 4)
     (5, 5)
+

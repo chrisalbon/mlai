@@ -4,7 +4,7 @@ Summary: Break A Sequence Into Groups Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -49,3 +49,5 @@ evensOdds(false)
 
 
     List(25, 63, 23, 2569, 25, 25)
+
+

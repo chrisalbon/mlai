@@ -1,12 +1,10 @@
-Title: if and if else
-Slug: if_and_if_else_statements
-Summary: if and if else
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: if and if else  
+Slug: if_and_if_else_statements  
+Summary: if and if else  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ### Create a variable with the status of the conflict.
 
@@ -56,3 +54,4 @@ else:
 ```
 
     The conflict is active.
+

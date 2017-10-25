@@ -1,12 +1,10 @@
-Title: Match Integers Of Any Length
-Slug: match_integers_of_any_length
-Summary: Match Integers Of Any Length
-Date: 2016-05-01 12:00
-Category: Regex
-Tags: Basics
-Authors: Chris Albon
-
-
+Title: Match Integers Of Any Length  
+Slug: match_integers_of_any_length  
+Summary: Match Integers Of Any Length  
+Date: 2016-05-01 12:00  
+Category: Regex  
+Tags: Basics  
+Authors: Chris Albon  
 
 Based on: [StackOverflow](http://stackoverflow.com/questions/5917082/regular-expression-to-match-numbers-with-or-without-commas-and-decimals-in-text)
 

@@ -4,7 +4,7 @@ Summary: Search A Map Using Scala.
 Date: 2017-04-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -13,7 +13,7 @@ If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) an
 
 ```scala
 // Create an immutable map with three key value pairs
-val staff = Map("CEO" -> "Judith Jackson",
+val staff = Map("CEO" -> "Judith Jackson", 
                 "CFO" -> "Sally Shields",
                 "CTO" -> "Steven Miller")
 ```
@@ -45,3 +45,5 @@ staff.valuesIterator.exists(_.contains("Miller"))
 
 
     true
+
+

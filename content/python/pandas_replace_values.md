@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### import modules
 
 
@@ -20,9 +18,9 @@ import numpy as np
 
 
 ```python
-raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'last_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze'],
-        'age': [42, 52, 36, 24, 73],
+raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'last_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze'], 
+        'age': [42, 52, 36, 24, 73], 
         'preTestScore': [-999, -999, -999, 2, 1],
         'postTestScore': [2, 2, -999, 2, -999]}
 df = pd.DataFrame(raw_data, columns = ['first_name', 'last_name', 'age', 'preTestScore', 'postTestScore'])
@@ -157,3 +155,5 @@ df.replace(-999, np.nan)
   </tbody>
 </table>
 </div>
+
+

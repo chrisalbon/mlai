@@ -6,7 +6,6 @@ Category: Python
 Tags: Basic  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ```python
 # Create two lists
@@ -32,3 +31,5 @@ regiments = ["51st Regiment", '15th Regiment', '12th Regiment']
      ('12th Regiment', '1st Squad'),
      ('12th Regiment', '2nd Squad'),
      ('12th Regiment', '3rd Squad')]
+
+

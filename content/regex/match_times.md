@@ -1,12 +1,10 @@
-Title: Match Times
-Slug: match_times
-Summary: Match Times
-Date: 2016-05-01 12:00
-Category: Regex
-Tags: Basics
-Authors: Chris Albon
-
-
+Title: Match Times  
+Slug: match_times  
+Summary: Match Times  
+Date: 2016-05-01 12:00  
+Category: Regex  
+Tags: Basics  
+Authors: Chris Albon  
 
 Based on: [StackOverflow](http://stackoverflow.com/questions/18715392/javascript-regex-validate-time-with-am-and-pm)
 

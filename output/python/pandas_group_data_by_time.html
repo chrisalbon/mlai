@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Categories RSS Feed" />    
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
     <meta name="tags" content="Data Wrangling" />
 
@@ -55,27 +55,20 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Table Of Contents<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ML/AI Notes<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
                           <li><a href="..#Python">Python</a></li>
-                          <li><a href="..#R_Stats">R Stats</a></li>
-                          <li><a href="..#Regex">Regex</a></li>
-                          <li><a href="..#Bash">Bash</a></li>
-                          <li><a href="..#Project_Juypter">Project Juypter</a></li>
-                          <li><a href="..#SQL">SQL</a></li>
-                          <li><a href="..#Mathematics">Mathematics</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
                           <li><a href="..#Javascript">Javascript</a></li>
-                          <li><a href="..#Probability">Probability</a></li>
-                          <li><a href="..#Frequentist_Statistics">Frequentist Statistics</a></li>
-                          <li><a href="..#Bayesian_Statistics">Bayesian Statistics</a></li>
-                          <li><a href="..#Machine_Learning">Machine Learning</a></li>
-                          <li><a href="..#GitHub">GitHub</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
                           <li><a href="..#Scala">Scala</a></li>
-                          <li><a href="..#Spark">Spark</a></li>
-                          <li><a href="..#Amazon_Web_Services">Amazon Web Services</a></li>
-                          <li><a href="..#Kaggle">Kaggle</a></li>
-                          <li><a href="..#Projects">Projects</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
                       </ul>
                   </li>
                     <li class="dropdown">
@@ -115,9 +108,8 @@
 
     <!-- end of header section -->
     <div class="container">
-<div class="alert alert-warning alert-dismissable" role="alert">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    Interested in machine learning? Check out my <a href="http://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
+<div class="alert alert-warning advert" role="alert">
+    Want to learn machine learning? Use my <a href="https://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
 </div>
 
 <section id="content" class="body">
@@ -136,9 +128,8 @@
 </ol>
 </header>
 <div class='article_content'>
-<p>On March 13, 2016, version 0.18.0 of pandas was released, with significant changes in how the resampling function operates. This tutorial follows v0.18.0 and will not work for previous versions of pandas.</p>
+<p>On March 13, 2016, version 0.18.0 of Pandas was released, with significant changes in how the resampling function operates. This tutorial follows v0.18.0 and will not work for previous versions of pandas.</p>
 <p>First let's load the modules we care about</p>
-<p>Want to learn more? I recommend these Python books: <a href="http://amzn.to/2ljV9wY">Python for Data Analysis</a>, <a href="http://amzn.to/2m0mgMB">Python Data Science Handbook</a>, and <a href="http://amzn.to/2mjYiwK">Introduction to Machine Learning with Python</a>.</p>
 <h2>Preliminaries</h2>
 <div class="codehilite"><pre><span></span><span class="c1"># Import required packages</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -169,7 +160,7 @@
 <span class="c1"># Convert that column into a datetime datatype</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">])</span>
 <span class="c1"># Set the datetime column as the index</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> 
 <span class="c1"># Create a column from the numeric score variable</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score_list</span>
 </pre></div>
@@ -196,36 +187,36 @@
   </thead>
   <tbody>
     <tr>
-      <th>2016-03-11 21:27:36.859714</th>
-      <td>2016-03-11 21:27:36.859714</td>
-      <td>459</td>
+      <th>2016-06-02 09:57:54.793972</th>
+      <td>2016-06-02 09:57:54.793972</td>
+      <td>900</td>
     </tr>
     <tr>
-      <th>2016-03-10 21:27:36.859714</th>
-      <td>2016-03-10 21:27:36.859714</td>
-      <td>153</td>
+      <th>2016-06-01 09:57:54.793972</th>
+      <td>2016-06-01 09:57:54.793972</td>
+      <td>121</td>
     </tr>
     <tr>
-      <th>2016-03-09 21:27:36.859714</th>
-      <td>2016-03-09 21:27:36.859714</td>
-      <td>458</td>
+      <th>2016-05-31 09:57:54.793972</th>
+      <td>2016-05-31 09:57:54.793972</td>
+      <td>547</td>
     </tr>
     <tr>
-      <th>2016-03-08 21:27:36.859714</th>
-      <td>2016-03-08 21:27:36.859714</td>
-      <td>310</td>
+      <th>2016-05-30 09:57:54.793972</th>
+      <td>2016-05-30 09:57:54.793972</td>
+      <td>504</td>
     </tr>
     <tr>
-      <th>2016-03-07 21:27:36.859714</th>
-      <td>2016-03-07 21:27:36.859714</td>
-      <td>376</td>
+      <th>2016-05-29 09:57:54.793972</th>
+      <td>2016-05-29 09:57:54.793972</td>
+      <td>304</td>
     </tr>
   </tbody>
 </table>
 </div>
 
 <h2>Group Data By Date</h2>
-<p>In pandas, the most common way to group by time is to use the <code>.resample()</code> function. In v0.18.0 this function is two-stage. This means that <code>df.resample('M')</code> creates an object to which we can apply other functions (<code>mean</code>, <code>count</code>, <code>sum</code>, etc.)</p>
+<p>In pandas, the most common way to group by time is to use the .resample() function. In v0.18.0 this function is two-stage. This means that 'df.resample('M')' creates an object to which we can apply other functions ('mean', 'count', 'sum', etc.)</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Group the data by month, and take the mean for each group (i.e. each month)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
@@ -245,56 +236,56 @@
   </thead>
   <tbody>
     <tr>
-      <th>2015-03-31</th>
-      <td>509.421053</td>
-    </tr>
-    <tr>
-      <th>2015-04-30</th>
-      <td>543.100000</td>
-    </tr>
-    <tr>
-      <th>2015-05-31</th>
-      <td>520.709677</td>
-    </tr>
-    <tr>
       <th>2015-06-30</th>
-      <td>473.100000</td>
+      <td>513.629630</td>
     </tr>
     <tr>
       <th>2015-07-31</th>
-      <td>521.677419</td>
+      <td>561.516129</td>
     </tr>
     <tr>
       <th>2015-08-31</th>
-      <td>410.580645</td>
+      <td>448.032258</td>
     </tr>
     <tr>
       <th>2015-09-30</th>
-      <td>491.933333</td>
+      <td>548.000000</td>
     </tr>
     <tr>
       <th>2015-10-31</th>
-      <td>447.322581</td>
+      <td>480.419355</td>
     </tr>
     <tr>
       <th>2015-11-30</th>
-      <td>488.166667</td>
+      <td>487.033333</td>
     </tr>
     <tr>
       <th>2015-12-31</th>
-      <td>473.193548</td>
+      <td>499.935484</td>
     </tr>
     <tr>
       <th>2016-01-31</th>
-      <td>444.129032</td>
+      <td>429.193548</td>
     </tr>
     <tr>
       <th>2016-02-29</th>
-      <td>555.965517</td>
+      <td>520.413793</td>
     </tr>
     <tr>
       <th>2016-03-31</th>
-      <td>445.545455</td>
+      <td>349.806452</td>
+    </tr>
+    <tr>
+      <th>2016-04-30</th>
+      <td>395.500000</td>
+    </tr>
+    <tr>
+      <th>2016-05-31</th>
+      <td>503.451613</td>
+    </tr>
+    <tr>
+      <th>2016-06-30</th>
+      <td>510.500000</td>
     </tr>
   </tbody>
 </table>
@@ -319,178 +310,95 @@
   </thead>
   <tbody>
     <tr>
-      <th>2015-03-31</th>
-      <td>9679</td>
-    </tr>
-    <tr>
-      <th>2015-04-30</th>
-      <td>16293</td>
-    </tr>
-    <tr>
-      <th>2015-05-31</th>
-      <td>16142</td>
-    </tr>
-    <tr>
       <th>2015-06-30</th>
-      <td>14193</td>
+      <td>13868</td>
     </tr>
     <tr>
       <th>2015-07-31</th>
-      <td>16172</td>
+      <td>17407</td>
     </tr>
     <tr>
       <th>2015-08-31</th>
-      <td>12728</td>
+      <td>13889</td>
     </tr>
     <tr>
       <th>2015-09-30</th>
-      <td>14758</td>
+      <td>16440</td>
     </tr>
     <tr>
       <th>2015-10-31</th>
-      <td>13867</td>
+      <td>14893</td>
     </tr>
     <tr>
       <th>2015-11-30</th>
-      <td>14645</td>
+      <td>14611</td>
     </tr>
     <tr>
       <th>2015-12-31</th>
-      <td>14669</td>
+      <td>15498</td>
     </tr>
     <tr>
       <th>2016-01-31</th>
-      <td>13768</td>
+      <td>13305</td>
     </tr>
     <tr>
       <th>2016-02-29</th>
-      <td>16123</td>
+      <td>15092</td>
     </tr>
     <tr>
       <th>2016-03-31</th>
-      <td>4901</td>
+      <td>10844</td>
+    </tr>
+    <tr>
+      <th>2016-04-30</th>
+      <td>11865</td>
+    </tr>
+    <tr>
+      <th>2016-05-31</th>
+      <td>15607</td>
+    </tr>
+    <tr>
+      <th>2016-06-30</th>
+      <td>1021</td>
     </tr>
   </tbody>
 </table>
 </div>
 
 <h2>Grouping Options</h2>
-<p>There are many options for grouping. You can learn more about them in <a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html">Pandas's timeseries docs</a>, however, I have also listed them below for your convenience.</p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>B</td>
-<td>business day frequency</td>
-</tr>
-<tr>
-<td>C</td>
-<td>custom business day frequency (experimental)</td>
-</tr>
-<tr>
-<td>D</td>
-<td>calendar day frequency</td>
-</tr>
-<tr>
-<td>W</td>
-<td>weekly frequency</td>
-</tr>
-<tr>
-<td>M</td>
-<td>month end frequency</td>
-</tr>
-<tr>
-<td>BM</td>
-<td>business month end frequency</td>
-</tr>
-<tr>
-<td>CBM</td>
-<td>custom business month end frequency</td>
-</tr>
-<tr>
-<td>MS</td>
-<td>month start frequency</td>
-</tr>
-<tr>
-<td>BMS</td>
-<td>business month start frequency</td>
-</tr>
-<tr>
-<td>CBMS</td>
-<td>custom business month start frequency</td>
-</tr>
-<tr>
-<td>Q</td>
-<td>quarter end frequency</td>
-</tr>
-<tr>
-<td>BQ</td>
-<td>business quarter endfrequency</td>
-</tr>
-<tr>
-<td>QS</td>
-<td>quarter start frequency</td>
-</tr>
-<tr>
-<td>BQS</td>
-<td>business quarter start frequency</td>
-</tr>
-<tr>
-<td>A</td>
-<td>year end frequency</td>
-</tr>
-<tr>
-<td>BA</td>
-<td>business year end frequency</td>
-</tr>
-<tr>
-<td>AS</td>
-<td>year start frequency</td>
-</tr>
-<tr>
-<td>BAS</td>
-<td>business year start frequency</td>
-</tr>
-<tr>
-<td>BH</td>
-<td>business hour frequency</td>
-</tr>
-<tr>
-<td>H</td>
-<td>hourly frequency</td>
-</tr>
-<tr>
-<td>T</td>
-<td>minutely frequency</td>
-</tr>
-<tr>
-<td>S</td>
-<td>secondly frequency</td>
-</tr>
-<tr>
-<td>L</td>
-<td>milliseconds</td>
-</tr>
-<tr>
-<td>U</td>
-<td>microseconds</td>
-</tr>
-<tr>
-<td>N</td>
-<td>nanoseconds</td>
-</tr>
-</tbody>
-</table>
+<p>There are many options for grouping. You can learn more about them in <a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html">Pandas's timeseries docs</a>, however, I have also listed them below for your convience.</p>
+<p>| Value | Description
+|---|
+|B   |    business day frequency
+|C   |    custom business day frequency (experimental)
+|D   |    calendar day frequency
+|W   |    weekly frequency
+|M   |    month end frequency
+|BM  |    business month end frequency
+|CBM |    custom business month end frequency
+|MS  |    month start frequency
+|BMS |    business month start frequency
+|CBMS|    custom business month start frequency
+|Q   |    quarter end frequency
+|BQ  |    business quarter endfrequency
+|QS  |    quarter start frequency
+|BQS |    business quarter start frequency
+|A   |    year end frequency
+|BA  |    business year end frequency
+|AS  |    year start frequency
+|BAS |    business year start frequency
+|BH  |    business hour frequency
+|H   |    hourly frequency
+|T   |    minutely frequency
+|S   |    secondly frequency
+|L   |    milliseonds
+|U   |    microseconds
+|N   |    nanosecondsa</p>
 </div>
     <aside>
     <div class="bug-reporting__panel">
-        <h3>Find an error or bug? Have a suggestion?</h3>
-        <p>Everything on this site is avaliable on GitHub. Head on over and <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>submit an issue.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change</a>. You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
     </div>
     </aside>
 </section>
@@ -500,10 +408,10 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 496 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 488 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
-                    <time datetime="2016">2017</time>.
+                    <time datetime="2017">2017</time>.
                 </center>
             </p>
         </div>

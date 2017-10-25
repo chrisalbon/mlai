@@ -10,8 +10,6 @@ This is a script which monitor's Twitter for tweets containing certain hashtags,
 
 To get the code below to run, you need to added your own Twitter API credentials.
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -31,7 +29,7 @@ import sys
 ```python
 # Create a streamer object
 class StdOutListener(StreamListener):
-
+    
     # Define a function that is initialized when the miner is called
     def __init__(self, api = None):
         # That sets the api
@@ -40,10 +38,10 @@ class StdOutListener(StreamListener):
         self.filename = 'data'+'_'+time.strftime('%Y%m%d-%H%M%S')+'.csv'
         # Create a new file with that filename
         csvFile = open(self.filename, 'w')
-
+        
         # Create a csv writer
         csvWriter = csv.writer(csvFile)
-
+        
         # Write a single row with the headers of the columns
         csvWriter.writerow(['text',
                             'created_at',
@@ -82,16 +80,16 @@ class StdOutListener(StreamListener):
 
     # When a tweet appears
     def on_status(self, status):
-
+        
         # Open the csv file created previously
         csvFile = open(self.filename, 'a')
-
+        
         # Create a csv writer
         csvWriter = csv.writer(csvFile)
-
+        
         # If the tweet is not a retweet
         if not 'RT @' in status.text:
-            # Try to
+            # Try to 
             try:
                 # Write the tweet's information to the csv file
                 csvWriter.writerow([status.text,
@@ -134,7 +132,7 @@ class StdOutListener(StreamListener):
                 print(e)
                 # and continue
                 pass
-
+            
         # Close the csv file
         csvFile.close()
 
@@ -145,7 +143,7 @@ class StdOutListener(StreamListener):
     def on_error(self, status_code):
         # Print the error code
         print('Encountered error with status code:', status_code)
-
+        
         # If the error code is 401, which is the error for bad credentials
         if status_code == 401:
             # End the stream
@@ -153,31 +151,31 @@ class StdOutListener(StreamListener):
 
     # When a deleted tweet appears
     def on_delete(self, status_id, user_id):
-
+        
         # Print message
         print("Delete notice")
-
+        
         # Return nothing
         return
 
     # When reach the rate limit
     def on_limit(self, track):
-
+        
         # Print rate limiting error
         print("Rate limited, continuing")
-
+        
         # Continue mining tweets
         return True
 
     # When timed out
     def on_timeout(self):
-
+        
         # Print timeout message
         print(sys.stderr, 'Timeout...')
-
+        
         # Wait 10 seconds
         time.sleep(10)
-
+        
         # Return nothing
         return
 ```
@@ -191,7 +189,7 @@ def start_mining(queries):
     '''
     Inputs list of strings. Returns tweets containing those strings.
     '''
-
+    
     #Variables that contains the user credentials to access Twitter API
     consumer_key = "YOUR_CREDENTIALS"
     consumer_secret = "YOUR_CREDENTIALS"
@@ -200,11 +198,11 @@ def start_mining(queries):
 
     # Create a listener
     l = StdOutListener()
-
+    
     # Create authorization info
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
-
+    
     # Create a stream object with listener and authorization
     stream = Stream(auth, l)
 
@@ -221,3 +219,4 @@ start_mining(['python', '#Python'])
 ```
 
     Encountered error with status code: 401
+

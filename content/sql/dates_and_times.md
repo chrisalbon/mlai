@@ -1,12 +1,12 @@
 Title: Dates And Times  
 Slug: dates_and_times
-Summary: Dates and times in SQL.
+Summary: Dates and times in SQL. 
 Date: 2016-05-01 12:00  
 Category: SQL  
 Tags: Basics  
 Authors: Chris Albon  
 
-Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, This tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
+Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, this tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
 
 For more, check out [Learning SQL](http://amzn.to/2jRriHj) by Alan Beaulieu.
 
@@ -135,3 +135,5 @@ SELECT strftime('%w','now');
         <td>4</td>
     </tr>
 </table>
+
+

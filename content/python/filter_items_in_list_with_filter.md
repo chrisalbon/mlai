@@ -1,12 +1,11 @@
-Title: Selecting Items In A List With Filters
-Slug: filter_items_in_list_with_filter
-Summary: Selecting Items In A List With Filters
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
+Title: Selecting Items In A List With Filters  
+Slug: filter_items_in_list_with_filter  
+Summary: Selecting Items In A List With Filters  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ```python
 # Create an list of items denoting the number of soldiers in each regiment, view the list
@@ -26,7 +25,7 @@ This line of code does the same thing as the multiline method below, it is just 
 
 
 ```python
-# Create a list called smallRegiments that filters regimentSize to
+# Create a list called smallRegiments that filters regimentSize to 
 # find all items that fulfill the lambda function (which looks for all items under 2500).
 smallRegiments = list(filter((lambda x: x < 2500), regimentSize)); smallRegiments
 ```
@@ -96,3 +95,5 @@ smallRegiments_2
 
 
     [2352, 2124, 1200, 1000, 1211]
+
+

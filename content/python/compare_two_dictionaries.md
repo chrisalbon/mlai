@@ -8,8 +8,6 @@ Authors: Chris Albon
 
 One of the great features of Python dictionaries is that they are hashtables, meaning we can do some operations at O(1) time-complexity.
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Make Two Dictionaries
 
 
@@ -67,3 +65,5 @@ importers.items() & exporters.items()
 
 
     {('Spain', 252)}
+
+

@@ -1,12 +1,10 @@
-Title: Convert A Categorical Variable Into Dummy Variables
-Slug: pandas_convert_categorical_to_dummies
-Summary: Convert A Categorical Variable Into Dummy Variables
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Convert A Categorical Variable Into Dummy Variables  
+Slug: pandas_convert_categorical_to_dummies  
+Summary: Convert A Categorical Variable Into Dummy Variables  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 
 ```python
@@ -17,8 +15,8 @@ import pandas as pd
 
 ```python
 # Create a dataframe
-raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'last_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze'],
+raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'last_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze'], 
         'sex': ['male', 'female', 'male', 'female', 'female']}
 df = pd.DataFrame(raw_data, columns = ['first_name', 'last_name', 'sex'])
 df
@@ -27,7 +25,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -40,37 +38,36 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>   Miller</td>
-      <td>   male</td>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>male</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> Jacobson</td>
-      <td> female</td>
+      <td>Molly</td>
+      <td>Jacobson</td>
+      <td>female</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td>      Ali</td>
-      <td>   male</td>
+      <td>Tina</td>
+      <td>Ali</td>
+      <td>male</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>   Milner</td>
-      <td> female</td>
+      <td>Jake</td>
+      <td>Milner</td>
+      <td>female</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>    Cooze</td>
-      <td> female</td>
+      <td>Amy</td>
+      <td>Cooze</td>
+      <td>female</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 3 columns</p>
 </div>
 
 
@@ -91,7 +88,7 @@ df_new
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -106,47 +103,46 @@ df_new
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>   Miller</td>
-      <td>   male</td>
-      <td> 0</td>
-      <td> 1</td>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>male</td>
+      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> Jacobson</td>
-      <td> female</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>Molly</td>
+      <td>Jacobson</td>
+      <td>female</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td>      Ali</td>
-      <td>   male</td>
-      <td> 0</td>
-      <td> 1</td>
+      <td>Tina</td>
+      <td>Ali</td>
+      <td>male</td>
+      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>   Milner</td>
-      <td> female</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>Jake</td>
+      <td>Milner</td>
+      <td>female</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>    Cooze</td>
-      <td> female</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>Amy</td>
+      <td>Cooze</td>
+      <td>female</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 5 columns</p>
 </div>
 
 
@@ -161,7 +157,7 @@ df_new
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -176,45 +172,46 @@ df_new
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>   Miller</td>
-      <td>   male</td>
-      <td> 0</td>
-      <td> 1</td>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>male</td>
+      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> Jacobson</td>
-      <td> female</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>Molly</td>
+      <td>Jacobson</td>
+      <td>female</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td>      Ali</td>
-      <td>   male</td>
-      <td> 0</td>
-      <td> 1</td>
+      <td>Tina</td>
+      <td>Ali</td>
+      <td>male</td>
+      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>   Milner</td>
-      <td> female</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>Jake</td>
+      <td>Milner</td>
+      <td>female</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>    Cooze</td>
-      <td> female</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>Amy</td>
+      <td>Cooze</td>
+      <td>female</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 5 columns</p>
 </div>
+
+

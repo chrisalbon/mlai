@@ -1,12 +1,10 @@
-Title: Creating A Time Series Plot With Seaborn And Pandas
-Slug: seaborn_pandas_timeseries_plot
-Summary: Creating A Time Series Plot With Seaborn And Pandas
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Visualization
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Creating A Time Series Plot With Seaborn And Pandas  
+Slug: seaborn_pandas_timeseries_plot  
+Summary: Creating A Time Series Plot With Seaborn And Pandas  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Visualization  
+Authors: Chris Albon  
 
 ## Preliminaries
 
@@ -20,7 +18,7 @@ import seaborn as sns
 
 
 ```python
-data = {'date': ['2014-05-01 18:47:05.069722', '2014-05-01 18:47:05.119994', '2014-05-02 18:47:05.178768', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.280592', '2014-05-03 18:47:05.332662', '2014-05-03 18:47:05.385109', '2014-05-04 18:47:05.436523', '2014-05-04 18:47:05.486877'],
+data = {'date': ['2014-05-01 18:47:05.069722', '2014-05-01 18:47:05.119994', '2014-05-02 18:47:05.178768', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.280592', '2014-05-03 18:47:05.332662', '2014-05-03 18:47:05.385109', '2014-05-04 18:47:05.436523', '2014-05-04 18:47:05.486877'], 
         'deaths_regiment_1': [34, 43, 14, 15, 15, 14, 31, 25, 62, 41],
         'deaths_regiment_2': [52, 66, 78, 15, 15, 5, 25, 25, 86, 1],
         'deaths_regiment_3': [13, 73, 82, 58, 52, 87, 26, 5, 56, 75],
@@ -45,12 +43,12 @@ sns.tsplot([df.deaths_regiment_1, df.deaths_regiment_2, df.deaths_regiment_3, df
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10bd2c350>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1140be780>
 
 
 
 
-![png]({filename}/images/seaborn_pandas_timeseries_plot/output_5_1.png)
+![png](seaborn_pandas_timeseries_plot_files/seaborn_pandas_timeseries_plot_5_1.png)
 
 
 ## Time Series Splot With Confidence Interval Lines But No Lines
@@ -64,9 +62,10 @@ sns.tsplot([df.deaths_regiment_1, df.deaths_regiment_2, df.deaths_regiment_3, df
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10c9b7b50>
+    <matplotlib.axes._subplots.AxesSubplot at 0x116400668>
 
 
 
 
-![png]({filename}/images/seaborn_pandas_timeseries_plot/output_7_1.png)
+![png](seaborn_pandas_timeseries_plot_files/seaborn_pandas_timeseries_plot_7_1.png)
+

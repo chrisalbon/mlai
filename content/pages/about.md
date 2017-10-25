@@ -5,9 +5,11 @@ Date: 2016-05-01 12:00
 Authors: Chris Albon
 
 
-<img src="{filename}/images/chris_albon_banner.jpg"></img>
+<img src="about/chris_albon_banner.jpg"></img>
 
-I am a data scientist. I founded the TechStars company [New Knowledge](http://www.newknowledge.io) and am also the co-host of the data science podcast, [Partially Derivative](http://www.partiallyderivative.com). Previously, I led [Ushahidi's](http://www.ushahidi.com) work on crisis and humanitarian data and launched [CrisisNET](https://www.ushahidi.com/blog/2014/06/09/introducing-crisisnet). Prior to Ushahidi, I was Director of the Governance Project at [FrontlineSMS](http://www.frontlinesms.com). I am also known for my [machine learning flashcards](https://twitter.com/hashtag/machinelearningflashcards?src=hash). I earned a Ph.D. in Political Science from the University of California, Davis researching the quantitative impact of civil wars on health care systems. I earned a B.A. from the University of Miami, where I triple majored in political science, international studies, and religious studies.
+I am a data scientist and machine learning engineer formally trained as a quantitative political scientist. Currently I am Chief Data Scientist at the Kenyan startup [BRCK](https://www.brck.com/). Previously, I founded [New Knowledge](http://www.newknowledge.io) and the data science podcast, [Partially Derivative](http://www.partiallyderivative.com). Prior to New Knowledge, I led [Ushahidi's](http://www.ushahidi.com) work on crisis and humanitarian data and launched [CrisisNET](https://www.ushahidi.com/blog/2014/06/09/introducing-crisisnet). I was also the Director of the low-resource technology Governance Project at [FrontlineSMS](http://www.frontlinesms.com).
+
+I earned a Ph.D. in Political Science from the University of California, Davis researching the quantitative impact of civil wars on health care systems. I earned a B.A. from the University of Miami, where I triple majored in political science, international studies, and religious studies.
 
 -   Email: &#099;&#114;&#097;&#108;&#098;&#111;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
 -   Twitter: [@chrisalbon](https://twitter.com/chrisalbon)
@@ -27,8 +29,9 @@ I am a data scientist. I founded the TechStars company [New Knowledge](http://ww
 ### Work Experience
 
 -   **Chief Data Scientist**, [BRCK](https://www.brck.com/), 2017 - Present
+-   **Creator**, [Machine Learning Flashcards](http://machinelearningflashcards.com/), 2017 - Present
 -   **Author**, Python Machine Learning Cookbook, [O’Reilly Media](https://www.oreilly.com/), Forthcoming
--   **Co-founder & Co-host**, [Partially Derivative](http://www.partiallyderivative.com), 2014 - Present
+-   **Co-founder & Co-host**, [Partially Derivative](http://www.partiallyderivative.com), 2014 - 2017
     -   Co-founded a podcast on data and data science.
 -   **Co-founder & Chief Science Officer**, [New Knowledge](http://www.newknowledge.io), 2015 - 2016
     -   In charge of everything data science and product.
@@ -37,7 +40,7 @@ I am a data scientist. I founded the TechStars company [New Knowledge](http://ww
 -   **Director of Data Projects**, [Ushahidi](http://www.ushahidi.com), 2013 - 2014
     -   The non-profit's first data science hire; led all data science efforts.
 -   **Project Director**, [FrontlineSMS](http://www.frontlinesms.com), 2012 - 2013
-    -   Led FrontlineSMS's Governance Project, an effort improve the transparency and accountability of governments through mobile technology
+    -   Led FrontlineSMS's Governance Project, an effort improve the transparency and accountability of governments through low resource mobile technology
 
 
 ### Other Experience

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Categories RSS Feed" />    
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
     <meta name="tags" content="Other" />
 
@@ -55,27 +55,20 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Table Of Contents<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ML/AI Notes<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
                           <li><a href="..#Python">Python</a></li>
-                          <li><a href="..#R_Stats">R Stats</a></li>
-                          <li><a href="..#Regex">Regex</a></li>
-                          <li><a href="..#Bash">Bash</a></li>
-                          <li><a href="..#Project_Juypter">Project Juypter</a></li>
-                          <li><a href="..#SQL">SQL</a></li>
-                          <li><a href="..#Mathematics">Mathematics</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
                           <li><a href="..#Javascript">Javascript</a></li>
-                          <li><a href="..#Probability">Probability</a></li>
-                          <li><a href="..#Frequentist_Statistics">Frequentist Statistics</a></li>
-                          <li><a href="..#Bayesian_Statistics">Bayesian Statistics</a></li>
-                          <li><a href="..#Machine_Learning">Machine Learning</a></li>
-                          <li><a href="..#GitHub">GitHub</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
                           <li><a href="..#Scala">Scala</a></li>
-                          <li><a href="..#Spark">Spark</a></li>
-                          <li><a href="..#Amazon_Web_Services">Amazon Web Services</a></li>
-                          <li><a href="..#Kaggle">Kaggle</a></li>
-                          <li><a href="..#Projects">Projects</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
                       </ul>
                   </li>
                     <li class="dropdown">
@@ -115,9 +108,8 @@
 
     <!-- end of header section -->
     <div class="container">
-<div class="alert alert-warning alert-dismissable" role="alert">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    Interested in machine learning? Check out my <a href="http://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
+<div class="alert alert-warning advert" role="alert">
+    Want to learn machine learning? Use my <a href="https://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
 </div>
 
 <section id="content" class="body">
@@ -136,7 +128,6 @@
 </ol>
 </header>
 <div class='article_content'>
-<p>Want to learn more? I recommend these Python books: <a href="http://amzn.to/2ljV9wY">Python for Data Analysis</a>, <a href="http://amzn.to/2m0mgMB">Python Data Science Handbook</a>, and <a href="http://amzn.to/2mjYiwK">Introduction to Machine Learning with Python</a>.</p>
 <h3>Import modules</h3>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -164,15 +155,15 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>year 1 battles: [[ 3.87032104  4.93418141]
- [ 4.47603646  3.23230121]
- [ 6.15905943  4.55274026]]
-year 2 battles: [[-3.55642932 -3.13125097]
- [-5.83295449 -5.75787649]
- [-5.12144789 -5.00466761]]
-year 3 battles: [[-0.27557365 -0.65002898]
- [ 0.94593878 -0.46056352]
- [ 0.91003511  0.27888337]]
+<div class="codehilite"><pre><span></span>year 1 battles: [[ 5.25720722  4.78051294]
+ [ 4.11980541  6.24062638]
+ [ 4.04612449  5.23819217]]
+year 2 battles: [[-3.90607071 -5.20880154]
+ [-4.14244415 -4.52520445]
+ [-6.01162308 -5.53489708]]
+year 3 battles: [[-0.54820297 -0.97483204]
+ [ 0.12813873  0.55198748]
+ [-0.55677223 -0.68900608]]
 </pre></div>
 
 
@@ -183,7 +174,7 @@ year 3 battles: [[-0.27557365 -0.65002898]
 
 
 <h3>Cluster the battle locations into three groups</h3>
-<div class="codehilite"><pre><span></span><span class="c1"># calculate the centroid coordinates of each cluster</span>
+<div class="codehilite"><pre><span></span><span class="c1"># calculate the centroid coordinates of each cluster </span>
 <span class="c1"># and the variance of all the clusters</span>
 <span class="n">centroids</span><span class="p">,</span> <span class="n">variance</span>  <span class="o">=</span> <span class="n">vq</span><span class="o">.</span><span class="n">kmeans</span><span class="p">(</span><span class="n">battles</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -194,9 +185,9 @@ year 3 battles: [[-0.27557365 -0.65002898]
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>array([[ 4.89478443,  5.00806609],
-       [ 0.16770004,  0.01639683],
-       [-5.06447231, -4.99956259]])
+<div class="codehilite"><pre><span></span>array([[ 5.02707263,  5.03041508],
+       [-0.05392784,  0.12892838],
+       [-4.88957266, -4.85051116]])
 </pre></div>
 
 
@@ -205,7 +196,7 @@ year 3 battles: [[-0.27557365 -0.65002898]
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>1.2382236882037887
+<div class="codehilite"><pre><span></span>1.2948126660038406
 </pre></div>
 
 
@@ -219,8 +210,58 @@ year 3 battles: [[-0.27557365 -0.65002898]
 </pre></div>
 
 
+<div class="codehilite"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype=int32)
+</pre></div>
+
+
 <h3>View the distance of each individual battle from their cluster's centroid</h3>
 <div class="codehilite"><pre><span></span><span class="n">distance</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>array([ 0.3397249 ,  1.51252941,  1.00271161,  0.7583883 ,  0.58103782,
+        1.81905849,  1.45452846,  1.34523274,  0.69254441,  3.32123157,
+        1.73900653,  1.01999434,  1.5392708 ,  0.64417605,  1.25822142,
+        1.68913457,  1.09543587,  0.20750281,  2.90778804,  1.62549404,
+        1.0224336 ,  1.05196193,  0.98434964,  0.25634371,  1.19779956,
+        1.73517217,  2.69339667,  1.32792584,  0.97809768,  1.52654056,
+        2.20554365,  1.0403091 ,  0.93698624,  1.53359041,  0.91717984,
+        0.3008527 ,  0.42901893,  0.95824461,  1.93321831,  1.89139314,
+        1.49982335,  0.63265951,  1.48579627,  1.04574742,  0.83477916,
+        2.80489932,  1.50671741,  0.35230994,  1.18607368,  1.36078497,
+        1.17298152,  0.95961251,  0.95348923,  1.41903574,  1.7816999 ,
+        1.32087763,  0.94807163,  2.22741733,  0.66198152,  0.97404075,
+        0.24009773,  1.22021557,  1.36298565,  1.77358477,  0.62586652,
+        1.45234278,  1.87925214,  2.18673534,  0.97113871,  1.0436524 ,
+        1.63491437,  1.43922603,  1.8066756 ,  2.55661988,  0.64905457,
+        0.6939938 ,  1.41183181,  2.72140674,  1.70390906,  3.53986459,
+        1.52044903,  1.98702847,  1.2488108 ,  2.61774172,  2.66067284,
+        0.80078946,  0.79648259,  2.72215296,  1.26904383,  1.16048896,
+        1.42571458,  1.18519189,  0.46592397,  0.63831379,  0.2294296 ,
+        0.90199062,  0.99296186,  1.79154225,  0.23854105,  1.19095902,
+        1.0467321 ,  0.81487758,  1.31429876,  0.14625493,  1.04421102,
+        0.72132375,  2.2209666 ,  1.00145286,  1.30465026,  1.57217776,
+        1.31999891,  0.80321763,  2.12942642,  0.81168612,  1.40294667,
+        0.89994242,  1.70402817,  0.79621269,  1.29554062,  1.87340273,
+        2.40582742,  2.99089606,  1.01348705,  0.54974364,  0.39367389,
+        2.28343779,  1.51924388,  0.52095884,  1.54219385,  0.62972955,
+        1.20937793,  0.46057272,  0.96014023,  0.2287637 ,  0.84009151,
+        1.34393522,  1.5983523 ,  0.46066181,  0.49504327,  2.22788557,
+        1.74688212,  1.99998478,  0.25864751,  1.06955924,  1.68029793,
+        3.41862662,  1.9273365 ,  0.91580509,  0.94390424,  1.42991149,
+        0.64314749,  0.26250126,  1.09000179,  0.42658645,  0.40866344,
+        0.47829004,  0.47718204,  0.53641019,  1.42037169,  2.20413065,
+        1.85270104,  1.9544685 ,  1.40727147,  0.85730366,  1.63316935,
+        1.09642325,  1.36490331,  1.307389  ,  1.9727463 ,  1.35859479,
+        2.43699622,  0.80833152,  2.50758584,  0.95216108,  0.16936114,
+        0.98714981,  0.19962377,  1.13262204,  2.47056129,  2.00154513])
 </pre></div>
 
 
@@ -238,15 +279,15 @@ year 3 battles: [[-0.27557365 -0.65002898]
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>[[ 3.87032104  4.93418141]
- [ 4.47603646  3.23230121]
- [ 6.15905943  4.55274026]]
-[[-0.27557365 -0.65002898]
- [ 0.94593878 -0.46056352]
- [ 0.91003511  0.27888337]]
-[[-3.55642932 -3.13125097]
- [-5.83295449 -5.75787649]
- [-5.12144789 -5.00466761]]
+<div class="codehilite"><pre><span></span>[[ 5.25720722  4.78051294]
+ [ 4.11980541  6.24062638]
+ [ 4.04612449  5.23819217]]
+[[-0.54820297 -0.97483204]
+ [ 0.12813873  0.55198748]
+ [-0.55677223 -0.68900608]]
+[[-3.90607071 -5.20880154]
+ [-4.14244415 -4.52520445]
+ [-6.01162308 -5.53489708]]
 </pre></div>
 
 
@@ -258,16 +299,16 @@ year 3 battles: [[-0.27557365 -0.65002898]
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x10771b890&gt;
+<div class="codehilite"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x10d43f588&gt;
 </pre></div>
 
 
-<p><img alt="png" src="../images/scipy_simple_clustering/output_26_1.png" /></p>
+<p><img alt="png" src="scipy_simple_clustering_files/scipy_simple_clustering_26_1.png" /></p>
 </div>
     <aside>
     <div class="bug-reporting__panel">
-        <h3>Find an error or bug? Have a suggestion?</h3>
-        <p>Everything on this site is avaliable on GitHub. Head on over and <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>submit an issue.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change</a>. You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
     </div>
     </aside>
 </section>
@@ -277,10 +318,10 @@ year 3 battles: [[-0.27557365 -0.65002898]
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 496 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 488 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
-                    <time datetime="2016">2017</time>.
+                    <time datetime="2017">2017</time>.
                 </center>
             </p>
         </div>

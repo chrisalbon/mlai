@@ -1,12 +1,10 @@
-Title: String Indexing
-Slug: string_indexing
-Summary: String Indexing
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: String Indexing  
+Slug: string_indexing  
+Summary: String Indexing  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ### Create a string
 
@@ -33,13 +31,13 @@ string[:]
 
 
 ```python
-string[0:2]
+string[0:3]
 ```
 
 
 
 
-    'St'
+    'Str'
 
 
 
@@ -47,13 +45,13 @@ string[0:2]
 
 
 ```python
-string[:2]
+string[:3]
 ```
 
 
 
 
-    'St'
+    'Str'
 
 
 
@@ -75,13 +73,13 @@ string[-3:]
 
 
 ```python
-string[2:4]
+string[2:5]
 ```
 
 
 
 
-    'ri'
+    'rin'
 
 
 
@@ -89,7 +87,7 @@ string[2:4]
 
 
 ```python
-string[0:9:2]
+string[0:10:2]
 ```
 
 
@@ -110,3 +108,5 @@ string[::-1]
 
 
     '.sretcarahc fo snoitcelloc deredro sa denifed era sgnirtS'
+
+

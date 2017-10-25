@@ -4,7 +4,7 @@ Summary: For Loop A Map Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -12,7 +12,7 @@ If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) an
 
 
 ```scala
-val vehicles = Map("vehicle_type" -> "Tank",
+val vehicles = Map("vehicle_type" -> "Tank", 
                    "number" -> 21)
 ```
 
@@ -37,3 +37,5 @@ numberOfVehicles
 
 
     List(Tank, 21)
+
+

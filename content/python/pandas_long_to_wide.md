@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### import modules
 
 
@@ -19,10 +17,10 @@ import pandas as pd
 
 
 ```python
-raw_data = {'patient': [1, 1, 1, 2, 2],
-        'obs': [1, 2, 3, 1, 2],
+raw_data = {'patient': [1, 1, 1, 2, 2], 
+        'obs': [1, 2, 3, 1, 2], 
         'treatment': [0, 1, 0, 1, 0],
-        'score': [6252, 24243, 2345, 2342, 23525]}
+        'score': [6252, 24243, 2345, 2342, 23525]} 
 df = pd.DataFrame(raw_data, columns = ['patient', 'obs', 'treatment', 'score'])
 df
 ```
@@ -127,3 +125,5 @@ df.pivot(index='patient', columns='obs', values='score')
   </tbody>
 </table>
 </div>
+
+

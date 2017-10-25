@@ -13,12 +13,12 @@ Authors: Chris Albon
 import pandas as pd
 ```
 
-### Create a dataframe
+### Create a dataframe 
 
 
 ```python
-data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'year': [2012, 2012, 2013, 2014, 2014],
+data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'year': [2012, 2012, 2013, 2014, 2014], 
         'reports': [4, 24, 31, 2, 3]}
 df = pd.DataFrame(data, index = ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'])
 df
@@ -28,6 +28,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -85,6 +98,19 @@ df.drop(['Cochice', 'Pima'])
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -132,6 +158,19 @@ df.drop('reports', axis=1)
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -185,6 +224,19 @@ df[df.name != 'Tina']
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -227,7 +279,7 @@ df[df.name != 'Tina']
 
 ### Drop a row by row number (in this case, row 3)
 
-Note that Pandas uses zero based numbering, so 0 is the first row, 1 is the second row, etc.
+Note that Pandas uses zero based numbering, so 0 is the first row, 1 is the second row, etc. 
 
 
 
@@ -239,6 +291,19 @@ df.drop(df.index[2])
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -290,6 +355,19 @@ df.drop(df.index[[2,3]])
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -324,7 +402,7 @@ df.drop(df.index[[2,3]])
 
 
 
-or dropping relative to the end of the DF.
+or dropping relative to the end of the DF. 
 
 
 ```python
@@ -335,6 +413,19 @@ df.drop(df.index[-2])
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -386,6 +477,19 @@ df[:3] #keep top 3
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -422,13 +526,26 @@ df[:3] #keep top 3
 
 
 ```python
-df[:-3] #drop bottom 3
+df[:-3] #drop bottom 3 
 ```
 
 
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -456,8 +573,3 @@ df[:-3] #drop bottom 3
 </div>
 
 
-
-
-```python
-
-```

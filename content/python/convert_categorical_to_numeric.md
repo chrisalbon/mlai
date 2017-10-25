@@ -1,14 +1,12 @@
 Title: Convert A String Categorical Variable To A Numeric Variable
 Slug: convert_categorical_to_numeric  
-Summary: Convert A String Categorical Variable To A Numeric Variable
+Summary: Convert A String Categorical Variable To A Numeric Variable 
 Date: 2016-05-01 12:00  
 Category: Python  
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
 Originally from: [Data Origami](https://dataorigami.net/).
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ### import modules
 
@@ -21,10 +19,10 @@ import pandas as pd
 
 
 ```python
-raw_data = {'patient': [1, 1, 1, 2, 2],
-        'obs': [1, 2, 3, 1, 2],
+raw_data = {'patient': [1, 1, 1, 2, 2], 
+        'obs': [1, 2, 3, 1, 2], 
         'treatment': [0, 1, 0, 1, 0],
-        'score': ['strong', 'weak', 'normal', 'weak', 'strong']}
+        'score': ['strong', 'weak', 'normal', 'weak', 'strong']} 
 df = pd.DataFrame(raw_data, columns = ['patient', 'obs', 'treatment', 'score'])
 df
 ```
@@ -165,3 +163,5 @@ df
   </tbody>
 </table>
 </div>
+
+

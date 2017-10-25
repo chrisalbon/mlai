@@ -1,15 +1,13 @@
-Title: Quickly Change A Column Of Strings In Pandas
-Slug: pandas_change_column_of_strings
-Summary: Quickly Change A Column Of Strings In Pandas
-Date: 2016-04-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
+Title: Quickly Change A Column Of Strings In Pandas  
+Slug: pandas_change_column_of_strings  
+Summary: Quickly Change A Column Of Strings In Pandas  
+Date: 2016-04-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 Often I need or want to change the case of all items in a column of strings (e.g. BRAZIL to Brazil, etc.). There are many ways to accomplish this but I have settled on this one as the easiest and quickest.
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ```python
 # Import pandas

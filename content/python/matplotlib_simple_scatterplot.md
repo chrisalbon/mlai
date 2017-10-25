@@ -8,8 +8,6 @@ Authors: Chris Albon
 
 Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -225,11 +223,11 @@ plt.figure(figsize=(10,8))
 
 # Create a scatterplot of,
             # attacker size in year 298 as the x axis
-plt.scatter(df['attacker_size'][df['year'] == 298],
+plt.scatter(df['attacker_size'][df['year'] == 298], 
             # attacker size in year 298 as the y axis
-            df['defender_size'][df['year'] == 298],
+            df['defender_size'][df['year'] == 298], 
             # the marker as
-            marker='x',
+            marker='x', 
             # the color
             color='b',
             # the alpha
@@ -238,15 +236,15 @@ plt.scatter(df['attacker_size'][df['year'] == 298],
             s = 124,
             # labelled this
             label='Year 298')
-
+            
             # attacker size in year 299 as the x axis
-plt.scatter(df['attacker_size'][df['year'] == 299],
+plt.scatter(df['attacker_size'][df['year'] == 299], 
             # defender size in year 299 as the y axis
-            df['defender_size'][df['year'] == 299],
+            df['defender_size'][df['year'] == 299], 
             # the marker as
-            marker='o',
+            marker='o', 
             # the color
-            color='r',
+            color='r', 
             # the alpha
             alpha=0.7,
             # with size
@@ -255,15 +253,15 @@ plt.scatter(df['attacker_size'][df['year'] == 299],
             label='Year 299')
 
             # attacker size in year 300 as the x axis
-plt.scatter(df['attacker_size'][df['year'] == 300],
+plt.scatter(df['attacker_size'][df['year'] == 300], 
             # defender size in year 300 as the y axis
-            df['defender_size'][df['year'] == 300],
+            df['defender_size'][df['year'] == 300], 
             # the marker as
-            marker='^',
+            marker='^', 
             # the color
-            color='g',
+            color='g', 
             # the alpha
-            alpha=0.7,
+            alpha=0.7, 
             # with size
             s = 124,
             # labelled this
@@ -289,4 +287,5 @@ plt.show()
 ```
 
 
-![png]({filename}/images/matplotlib_simple_scatterplot/output_6_0.png)
+![png](matplotlib_simple_scatterplot_files/matplotlib_simple_scatterplot_6_0.png)
+

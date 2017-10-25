@@ -1,12 +1,10 @@
-Title: Data Structure Basics
-Slug: data_structure_basics
-Summary: Data Structure Basics
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Data Structure Basics  
+Slug: data_structure_basics  
+Summary: Data Structure Basics  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ## Lists
 
@@ -84,20 +82,20 @@ allies.sort(); allies
 
 ```python
 # Reverse sort list, then print the results
-allies.sort(); allies
+allies.reverse(); allies
 ```
 
 
 
 
-    ['Australia',
-     'Canada',
-     'China',
-     'France',
-     'New Zealand',
-     'Poland',
+    ['USA',
      'UK',
-     'USA']
+     'Poland',
+     'New Zealand',
+     'France',
+     'China',
+     'Canada',
+     'Australia']
 
 
 
@@ -110,7 +108,7 @@ allies[0]
 
 
 
-    'Australia'
+    'USA'
 
 
 
@@ -123,7 +121,7 @@ allies[-1]
 
 
 
-    'USA'
+    'Australia'
 
 
 
@@ -136,7 +134,7 @@ del allies[0]; allies
 
 
 
-    ['Canada', 'China', 'France', 'New Zealand', 'Poland', 'UK', 'USA']
+    ['UK', 'Poland', 'New Zealand', 'France', 'China', 'Canada', 'Australia']
 
 
 
@@ -149,7 +147,7 @@ allies.append(3442); allies
 
 
 
-    ['Canada', 'China', 'France', 'New Zealand', 'Poland', 'UK', 'USA', 3442]
+    ['UK', 'Poland', 'New Zealand', 'France', 'China', 'Canada', 'Australia', 3442]
 
 
 
@@ -250,8 +248,8 @@ del staff['Chris']; staff
 
 
 
-    {'Jake': 'jake@stater.org',
-     'Ashley': 'ashley@stater.org',
+    {'Ashley': 'ashley@stater.org',
+     'Jake': 'jake@stater.org',
      'Shelly': 'shelly@stater.org'}
 
 
@@ -265,9 +263,9 @@ staff['Guido'] = 'guido@python.org'; staff
 
 
 
-    {'Jake': 'jake@stater.org',
-     'Ashley': 'ashley@stater.org',
+    {'Ashley': 'ashley@stater.org',
      'Guido': 'guido@python.org',
+     'Jake': 'jake@stater.org',
      'Shelly': 'shelly@stater.org'}
 
 
@@ -349,3 +347,5 @@ BRI & BRIC
 
 
     {'brazil', 'india'}
+
+

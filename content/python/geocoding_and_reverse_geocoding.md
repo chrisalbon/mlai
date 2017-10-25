@@ -1,20 +1,18 @@
-Title: Geocoding And Reverse Geocoding
-Slug: geocoding_and_reverse_geocoding
-Summary: Geocoding And Reverse Geocoding
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
+Title: Geocoding And Reverse Geocoding  
+Slug: geocoding_and_reverse_geocoding  
+Summary: Geocoding And Reverse Geocoding  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
-Geocoding (converting a phyiscal address or location into latitude/longitude) and reverse geocoding (converting a lat/long to a phyiscal address or location) are common tasks when working with geo-data.
+Geocoding (converting a physical address or location into latitude/longitude) and reverse geocoding (converting a lat/long to a physical address or location) are common tasks when working with geo-data.
 
 Python offers a number of packages to make the task incredibly easy. In the tutorial below, I use pygeocoder, a wrapper for Google's geo-API, to both geocode and reverse geocode.
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
-First we want to load the packages we will want to use in the script. Specifically, I am loading pygeocoder for its geo-functionality, pandas for it's dataframe structures, and numpy for it's missing value (np.nan) functionality.
+First we want to load the packages we will want to use in the script. Specifically, I am loading pygeocoder for its geo-functionality, pandas for its dataframe structures, and numpy for its missing value (np.nan) functionality.
 
 
 ```python
@@ -26,7 +24,7 @@ import numpy as np
 
 ## Create some simulated geo data
 
-Geo-data comes in a wide variety of forms, in this case we have a Python dictionary of five latitude and longitude strings, with each coordinate in a coordinate pair seperated by a comma.
+Geo-data comes in a wide variety of forms, in this case we have a Python dictionary of five latitude and longitude strings, with each coordinate in a coordinate pair separated by a comma.
 
 
 ```python
@@ -38,7 +36,7 @@ data = {'Site 1': '31.336968, -109.560959',
         'Site 5': '30.295053, -104.014528'}
 ```
 
-While technically unneccesary, because I originally come from R, I am a big fan of dataframes, so let us turn the dictionary of simulated data into a dataframe.
+While technically unnecessary, because I originally come from R, I am a big fan of dataframes, so let us turn the dictionary of simulated data into a dataframe.
 
 
 ```python
@@ -55,7 +53,20 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -65,24 +76,24 @@ df
   </thead>
   <tbody>
     <tr>
-      <th>Site 5</th>
-      <td> 30.295053, -104.014528</td>
-    </tr>
-    <tr>
-      <th>Site 1</th>
-      <td> 31.336968, -109.560959</td>
+      <th>Site 4</th>
+      <td>31.655494, -106.420484</td>
     </tr>
     <tr>
       <th>Site 3</th>
-      <td> 32.277621, -107.734724</td>
+      <td>32.277621, -107.734724</td>
     </tr>
     <tr>
-      <th>Site 4</th>
-      <td> 31.655494, -106.420484</td>
+      <th>Site 1</th>
+      <td>31.336968, -109.560959</td>
+    </tr>
+    <tr>
+      <th>Site 5</th>
+      <td>30.295053, -104.014528</td>
     </tr>
     <tr>
       <th>Site 2</th>
-      <td> 31.347745, -108.229963</td>
+      <td>31.347745, -108.229963</td>
     </tr>
   </tbody>
 </table>
@@ -131,7 +142,20 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -143,33 +167,33 @@ df
   </thead>
   <tbody>
     <tr>
-      <th>Site 5</th>
-      <td> 30.295053, -104.014528</td>
-      <td> 30.295053</td>
-      <td>-104.014528</td>
-    </tr>
-    <tr>
-      <th>Site 1</th>
-      <td> 31.336968, -109.560959</td>
-      <td> 31.336968</td>
-      <td>-109.560959</td>
-    </tr>
-    <tr>
-      <th>Site 3</th>
-      <td> 32.277621, -107.734724</td>
-      <td> 32.277621</td>
-      <td>-107.734724</td>
-    </tr>
-    <tr>
       <th>Site 4</th>
-      <td> 31.655494, -106.420484</td>
-      <td> 31.655494</td>
+      <td>31.655494, -106.420484</td>
+      <td>31.655494</td>
       <td>-106.420484</td>
     </tr>
     <tr>
+      <th>Site 3</th>
+      <td>32.277621, -107.734724</td>
+      <td>32.277621</td>
+      <td>-107.734724</td>
+    </tr>
+    <tr>
+      <th>Site 1</th>
+      <td>31.336968, -109.560959</td>
+      <td>31.336968</td>
+      <td>-109.560959</td>
+    </tr>
+    <tr>
+      <th>Site 5</th>
+      <td>30.295053, -104.014528</td>
+      <td>30.295053</td>
+      <td>-104.014528</td>
+    </tr>
+    <tr>
       <th>Site 2</th>
-      <td> 31.347745, -108.229963</td>
-      <td> 31.347745</td>
+      <td>31.347745, -108.229963</td>
+      <td>31.347745</td>
       <td>-108.229963</td>
     </tr>
   </tbody>
@@ -182,7 +206,7 @@ Awesome. This is exactly what we want to see, one column of floats for latitude 
 
 ## Reverse Geocoding
 
-To reverse geocode, we feed a specific latitude and longitude pair, in this case the first row (indexed as '0') into pygeocoder's reverse_geocoder function.
+To reverse geocode, we feed a specific latitude and longitude pair, in this case the first row (indexed as '0') into pygeocoder's reverse_geocoder function. 
 
 
 ```python
@@ -201,7 +225,7 @@ results.coordinates
 
 
 
-    (30.30077769999999, -104.0129162)
+    (31.6556534, -106.4204309)
 
 
 
@@ -214,7 +238,7 @@ results.city
 
 
 
-    'Marfa'
+    'Ciudad Juárez'
 
 
 
@@ -227,7 +251,7 @@ results.country
 
 
 
-    'United States'
+    'Mexico'
 
 
 
@@ -246,7 +270,7 @@ results.administrative_area_level_1
 
 
 
-    'Texas'
+    'Chihuahua'
 
 
 
@@ -257,7 +281,7 @@ For geocoding, we need to submit a string containing an address or location (suc
 
 ```python
 # Verify that an address is valid (i.e. in Google's system)
-Geocoder.geocode("7250 South Tucson Boulevard, Tucson, AZ 85756").valid_address
+Geocoder.geocode("4207 N Washington Ave, Douglas, AZ 85607").valid_address
 ```
 
 
@@ -278,11 +302,11 @@ results.coordinates
 
 
 
-    (30.30077769999999, -104.0129162)
+    (31.6556534, -106.4204309)
 
 
 
-But even more interesting, once the address is processed by the Google geo API, we can parse it and easily seperate street numbers, street names, etc.
+But even more interesting, once the address is processed by the Google geo API, we can parse it and easily separate street numbers, street names, etc. 
 
 
 ```python

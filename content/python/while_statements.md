@@ -1,30 +1,28 @@
-Title: while Statement
-Slug: while_statements
-Summary: while Statement
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
+Title: while Statement  
+Slug: while_statements  
+Summary: while Statement  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+## A while loop loops while a condition is true, stops when the condition becomes false
 
-## While loops until a condition is true.
-
-### Import the random module.
+### Import the random module
 
 
 ```python
 import random
 ```
 
-### Create a variable of the true number of deaths of an event.
+### Create a variable of the true number of deaths of an event
 
 
 ```python
 deaths = 6
 ```
 
-### Create a variable that is denotes if the while loop for keep running.
+## Create a variable that is denotes if the while loop should keep running
 
 
 ```python
@@ -55,7 +53,7 @@ while running:
         print('No, it is lower')
 ```
 
-    No, it is lower
+    No, it is higher.
     No, it is higher.
     Correct!
 

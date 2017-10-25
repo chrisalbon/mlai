@@ -46,7 +46,7 @@ def argmin(f, xs):
 
     # Finds index of the smallest output of f(x)
     index_of_min = data.index(min(data))
-
+        
     # Returns the x that produced that output
     return xs[index_of_min]
 ```
@@ -82,3 +82,4 @@ for x in xs:
     4 | -0.99748150191
     5 | 7.31053968522
     6 | -12.360844257
+

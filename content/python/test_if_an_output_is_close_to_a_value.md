@@ -1,6 +1,6 @@
 Title: Test If Output Is Close To A Value  
 Slug: test_if_an_output_is_close_to_a_value  
-Summary: Test if an output is close to a value in Python.
+Summary: Test if an output is close to a value in Python. 
 Date: 2016-01-23 12:00  
 Category: Python  
 Tags: Testing  
@@ -45,10 +45,10 @@ unittest.main(argv=['ignored', '-v'], exit=False)
 ```
 
     test_add_two_floats_roughly_equals_11 (__main__.TestAdd) ... ok
-
+    
     ----------------------------------------------------------------------
     Ran 1 test in 0.001s
-
+    
     OK
 
 
@@ -56,3 +56,5 @@ unittest.main(argv=['ignored', '-v'], exit=False)
 
 
     <unittest.main.TestProgram at 0x1049191d0>
+
+

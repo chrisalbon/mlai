@@ -1,13 +1,11 @@
-Title: Find Unique Values In Pandas Dataframes
-Slug: pandas_find_unique_values
-Summary: Find Unique Values In Pandas Dataframes
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
+Title: Find Unique Values In Pandas Dataframes  
+Slug: pandas_find_unique_values  
+Summary: Find Unique Values In Pandas Dataframes  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ```python
 import pandas as pd
@@ -16,7 +14,7 @@ import numpy as np
 
 
 ```python
-raw_data = {'regiment': ['51st', '29th', '2nd', '19th', '12th', '101st', '90th', '30th', '193th', '1st', '94th', '91th'],
+raw_data = {'regiment': ['51st', '29th', '2nd', '19th', '12th', '101st', '90th', '30th', '193th', '1st', '94th', '91th'], 
             'trucks': ['MAZ-7310', np.nan, 'MAZ-7310', 'MAZ-7310', 'Tatra 810', 'Tatra 810', 'Tatra 810', 'Tatra 810', 'ZIS-150', 'Tatra 810', 'ZIS-150', 'ZIS-150'],
             'tanks': ['Merkava Mark 4', 'Merkava Mark 4', 'Merkava Mark 4', 'Leopard 2A6M', 'Leopard 2A6M', 'Leopard 2A6M', 'Arjun MBT', 'Leopard 2A6M', 'Arjun MBT', 'Arjun MBT', 'Arjun MBT', 'Arjun MBT'],
             'aircraft': ['none', 'none', 'none', 'Harbin Z-9', 'Harbin Z-9', 'none', 'Harbin Z-9', 'SH-60B Seahawk', 'SH-60B Seahawk', 'SH-60B Seahawk', 'SH-60B Seahawk', 'SH-60B Seahawk']}
@@ -33,7 +31,7 @@ df.head()
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -47,38 +45,38 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td> 51st</td>
-      <td>  MAZ-7310</td>
-      <td> Merkava Mark 4</td>
-      <td>       none</td>
+      <td>51st</td>
+      <td>MAZ-7310</td>
+      <td>Merkava Mark 4</td>
+      <td>none</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 29th</td>
-      <td>       NaN</td>
-      <td> Merkava Mark 4</td>
-      <td>       none</td>
+      <td>29th</td>
+      <td>NaN</td>
+      <td>Merkava Mark 4</td>
+      <td>none</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  2nd</td>
-      <td>  MAZ-7310</td>
-      <td> Merkava Mark 4</td>
-      <td>       none</td>
+      <td>2nd</td>
+      <td>MAZ-7310</td>
+      <td>Merkava Mark 4</td>
+      <td>none</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 19th</td>
-      <td>  MAZ-7310</td>
-      <td>   Leopard 2A6M</td>
-      <td> Harbin Z-9</td>
+      <td>19th</td>
+      <td>MAZ-7310</td>
+      <td>Leopard 2A6M</td>
+      <td>Harbin Z-9</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 12th</td>
-      <td> Tatra 810</td>
-      <td>   Leopard 2A6M</td>
-      <td> Harbin Z-9</td>
+      <td>12th</td>
+      <td>Tatra 810</td>
+      <td>Leopard 2A6M</td>
+      <td>Harbin Z-9</td>
     </tr>
   </tbody>
 </table>
@@ -96,7 +94,7 @@ list(set(df.trucks))
 
 
 
-    [nan, 'MAZ-7310', 'ZIS-150', 'Tatra 810']
+    [nan, 'Tatra 810', 'MAZ-7310', 'ZIS-150']
 
 
 
@@ -110,3 +108,5 @@ list(df['trucks'].unique())
 
 
     ['MAZ-7310', nan, 'Tatra 810', 'ZIS-150']
+
+

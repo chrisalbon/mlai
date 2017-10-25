@@ -1,12 +1,10 @@
-Title: Pandas Time Series Basics
-Slug: pandas_time_series_basics
-Summary: Pandas Time Series Basics
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Pandas Time Series Basics  
+Slug: pandas_time_series_basics  
+Summary: Pandas Time Series Basics  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ### Import modules
 
@@ -22,7 +20,7 @@ import matplotlib.pyplot as pyplot
 
 
 ```python
-data = {'date': ['2014-05-01 18:47:05.069722', '2014-05-01 18:47:05.119994', '2014-05-02 18:47:05.178768', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.280592', '2014-05-03 18:47:05.332662', '2014-05-03 18:47:05.385109', '2014-05-04 18:47:05.436523', '2014-05-04 18:47:05.486877'],
+data = {'date': ['2014-05-01 18:47:05.069722', '2014-05-01 18:47:05.119994', '2014-05-02 18:47:05.178768', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.280592', '2014-05-03 18:47:05.332662', '2014-05-03 18:47:05.385109', '2014-05-04 18:47:05.436523', '2014-05-04 18:47:05.486877'], 
         'battle_deaths': [34, 25, 26, 15, 15, 14, 26, 25, 62, 41]}
 df = pd.DataFrame(data, columns = ['date', 'battle_deaths'])
 print(df)
@@ -39,8 +37,6 @@ print(df)
     7  2014-05-03 18:47:05.385109             25
     8  2014-05-04 18:47:05.436523             62
     9  2014-05-04 18:47:05.486877             41
-
-    [10 rows x 2 columns]
 
 
 ### Convert df['date'] from string to datetime
@@ -62,7 +58,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -77,47 +73,46 @@ df
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 1 columns</p>
 </div>
 
 
@@ -132,7 +127,7 @@ df['2014']
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -147,47 +142,46 @@ df['2014']
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 1 columns</p>
 </div>
 
 
@@ -202,7 +196,7 @@ df['2014-05']
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -217,47 +211,46 @@ df['2014-05']
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 1 columns</p>
 </div>
 
 
@@ -272,7 +265,7 @@ df[datetime(2014, 5, 3):]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -287,23 +280,22 @@ df[datetime(2014, 5, 3):]
   <tbody>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 1 columns</p>
 </div>
 
 
@@ -318,7 +310,7 @@ df['5/3/2014':'5/4/2014']
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -333,23 +325,22 @@ df['5/3/2014':'5/4/2014']
   <tbody>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 1 columns</p>
 </div>
 
 
@@ -364,7 +355,7 @@ df.truncate(after='5/3/2014')
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -379,31 +370,30 @@ df.truncate(after='5/3/2014')
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
   </tbody>
 </table>
-<p>6 rows × 1 columns</p>
 </div>
 
 
@@ -418,7 +408,7 @@ df.ix['5-2014']
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -433,47 +423,46 @@ df.ix['5-2014']
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 34</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 15</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 14</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 26</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 62</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 41</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 1 columns</p>
 </div>
 
 
@@ -488,7 +477,7 @@ df.groupby(level=0).count()
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -503,60 +492,59 @@ df.groupby(level=0).count()
   <tbody>
     <tr>
       <th>2014-05-01 18:47:05.069722</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-01 18:47:05.119994</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.178768</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.230071</th>
-      <td> 2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2014-05-02 18:47:05.280592</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.332662</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-03 18:47:05.385109</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.436523</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2014-05-04 18:47:05.486877</th>
-      <td> 1</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>9 rows × 1 columns</p>
 </div>
 
 
 
-###
+### 
 
 ### Mean value of battle_deaths per day
 
 
 ```python
-df.resample('D', how='mean')
+df.resample('D').mean()
 ```
 
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -571,23 +559,22 @@ df.resample('D', how='mean')
   <tbody>
     <tr>
       <th>2014-05-01</th>
-      <td> 29.5</td>
+      <td>29.5</td>
     </tr>
     <tr>
       <th>2014-05-02</th>
-      <td> 17.5</td>
+      <td>17.5</td>
     </tr>
     <tr>
       <th>2014-05-03</th>
-      <td> 25.5</td>
+      <td>25.5</td>
     </tr>
     <tr>
       <th>2014-05-04</th>
-      <td> 51.5</td>
+      <td>51.5</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 1 columns</p>
 </div>
 
 
@@ -596,13 +583,13 @@ df.resample('D', how='mean')
 
 
 ```python
-df.resample('D', how='sum')
+df.resample('D').sum()
 ```
 
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -617,23 +604,22 @@ df.resample('D', how='sum')
   <tbody>
     <tr>
       <th>2014-05-01</th>
-      <td>  59</td>
+      <td>59</td>
     </tr>
     <tr>
       <th>2014-05-02</th>
-      <td>  70</td>
+      <td>70</td>
     </tr>
     <tr>
       <th>2014-05-03</th>
-      <td>  51</td>
+      <td>51</td>
     </tr>
     <tr>
       <th>2014-05-04</th>
-      <td> 103</td>
+      <td>103</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 1 columns</p>
 </div>
 
 
@@ -642,15 +628,16 @@ df.resample('D', how='sum')
 
 
 ```python
-df.resample('D', how='sum').plot()
+df.resample('D').sum().plot()
 ```
 
 
 
 
-    <matplotlib.axes.AxesSubplot at 0x10809de50>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1148a9860>
 
 
 
 
-![png]({filename}/images/pandas_time_series_basics/output_29_1.png)
+![png](pandas_time_series_basics_files/pandas_time_series_basics_29_1.png)
+

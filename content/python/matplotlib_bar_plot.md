@@ -1,14 +1,12 @@
-Title: Bar Plot In MatPlotLib
-Slug: matplotlib_bar_plot
-Summary: Bar Plot In MatPlotLib
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Visualization
-Authors: Chris Albon
+Title: Bar Plot In MatPlotLib  
+Slug: matplotlib_bar_plot  
+Summary: Bar Plot In MatPlotLib  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Visualization  
+Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
-**Note:** Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
+Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
 
 ## Preliminaries
 
@@ -35,7 +33,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -49,38 +47,38 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 25</td>
-      <td>  5</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>25</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 94</td>
-      <td> 43</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>94</td>
+      <td>43</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 57</td>
-      <td> 23</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>57</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 62</td>
-      <td> 23</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>62</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 70</td>
-      <td> 51</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>70</td>
+      <td>51</td>
     </tr>
   </tbody>
 </table>
@@ -108,9 +106,9 @@ x_pos = list(range(len(bar_labels)))
 # In x position
 plt.bar(x_pos,
         # using the data from the mean_values
-        mean_values,
+        mean_values, 
         # with a y-error lines set at variance
-        yerr=variance,
+        yerr=variance, 
         # aligned in the center
         align='center',
         # with color
@@ -134,4 +132,5 @@ plt.show()
 ```
 
 
-![png]({filename}/images/matplotlib_bar_plot/output_6_0.png)
+![png](matplotlib_bar_plot_files/matplotlib_bar_plot_6_0.png)
+

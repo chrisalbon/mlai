@@ -8,8 +8,6 @@ Authors: Chris Albon
 
 This tutorial creates a function that attempts to take a city and country and return its latitude and longitude. But when the city is unavailable (which is often be the case), the returns the latitude and longitude of the center of the country.
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -25,10 +23,10 @@ import numpy as np
 ```python
 def geolocate(city=None, country=None):
     '''
-    Inputs city and country, or just country. Returns the lat/long coordinates of
+    Inputs city and country, or just country. Returns the lat/long coordinates of 
     either the city if possible, if not, then returns lat/long of the center of the country.
     '''
-
+    
     # If the city exists,
     if city != None:
         # Try
@@ -47,7 +45,7 @@ def geolocate(city=None, country=None):
         try:
             # Geolocate the center of the country
             loc = geolocator.geocode(country)
-            # And return latitude and longitude
+            # And return latitude and longitude 
             return (loc.latitude, loc.longitude)
         # Otherwise
         except:
@@ -82,3 +80,5 @@ geolocate(country='USA')
 
 
     (39.7837304, -100.4458824)
+
+

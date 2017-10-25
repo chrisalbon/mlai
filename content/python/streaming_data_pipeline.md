@@ -6,8 +6,6 @@ Category: Python
 Tags: Basics  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Create Some Raw Data
 
 
@@ -30,7 +28,7 @@ def subtract_2(numbers):
     for x in numbers:
         output = x-2
         yield output
-
+        
 # Define a generator that yields input*100        
 def multiply_by_100(numbers):
     for x in numbers:
@@ -97,3 +95,4 @@ for raw_data in pipeline:
     1200
     1300
     1400
+

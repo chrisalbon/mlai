@@ -4,7 +4,7 @@ Summary: Split Strings Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want a deeper guide to Scala, when I was learning I used [Programming Scala](http://amzn.to/2lV1Ioz) and [Scala for Data Science](http://amzn.to/2mG99OG).
 
@@ -41,3 +41,5 @@ csv_row.split(",")
 
 
     Array(Billy, " Miller", " 22", " Baker", " High School")
+
+

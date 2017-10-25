@@ -1,12 +1,12 @@
 Title: Merge Tables  
 Slug: merge_tables  
-Summary: Merge tables in SQL.
+Summary: Merge tables in SQL. 
 Date: 2016-05-01 12:00  
 Category: SQL  
 Tags: Basics  
 Authors: Chris Albon  
 
-Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, This tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
+Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, this tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
 
 For more, check out [Learning SQL](http://amzn.to/2jRriHj) by Alan Beaulieu.
 
@@ -40,13 +40,13 @@ CREATE TABLE crimes (cid, crime, city, pid_arrested, cash_stolen);
 INSERT INTO crimes VALUES (1, 'fraud', 'Santa Rosa', 412, 40000);
 INSERT INTO crimes VALUES (2, 'burglary', 'Petaluma', 234, 2000);
 INSERT INTO crimes VALUES (3, 'burglary', 'Santa Rosa', 632, 2000);
-INSERT INTO crimes VALUES (4, NULL, NULL, 621, 3500);
-INSERT INTO crimes VALUES (5, 'burglary', 'Santa Rosa', 162, 1000);
-INSERT INTO crimes VALUES (6, NULL, 'Petaluma', 901, 50000);
-INSERT INTO crimes VALUES (7, 'fraud', 'San Francisco', 412, 60000);
-INSERT INTO crimes VALUES (8, 'burglary', 'Santa Rosa', 512, 7000);
-INSERT INTO crimes VALUES (9, 'burglary', 'San Francisco', 411, 3000);
-INSERT INTO crimes VALUES (10, 'robbery', 'Santa Rosa', 632, 2500);
+INSERT INTO crimes VALUES (4, NULL, NULL, 621, 3500); 
+INSERT INTO crimes VALUES (5, 'burglary', 'Santa Rosa', 162, 1000); 
+INSERT INTO crimes VALUES (6, NULL, 'Petaluma', 901, 50000); 
+INSERT INTO crimes VALUES (7, 'fraud', 'San Francisco', 412, 60000); 
+INSERT INTO crimes VALUES (8, 'burglary', 'Santa Rosa', 512, 7000); 
+INSERT INTO crimes VALUES (9, 'burglary', 'San Francisco', 411, 3000); 
+INSERT INTO crimes VALUES (10, 'robbery', 'Santa Rosa', 632, 2500); 
 INSERT INTO crimes VALUES (11, 'robbery', 'Santa Rosa', 512, 3000);
 ```
 

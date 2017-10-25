@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Albon - Data Science, Machine Learning, and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Thu, 02 Feb 2017 12:00:00 -0800</lastBuildDate><item><title>Add Padding Around String</title><link>http://chrisalbon.com/python/add_padding_around_string.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Create Some Text&lt;/h2&gt;
+<rss version="2.0"><channel><title>Machine Learning and Artificial Intelligence</title><link>http://chrisalbon.com/</link><description></description><lastBuildDate>Fri, 01 Sep 2017 12:00:00 -0700</lastBuildDate><item><title>Display Scientific Notation As Floats</title><link>http://chrisalbon.com/python/display_scientific_notation_as_floats.html</link><description>&lt;h2&gt;Create Values&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a numbers in scientific notation&lt;/span&gt;
+&lt;span class="n"&gt;value_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Create a vector of numbers in scientific notation&lt;/span&gt;
+&lt;span class="n"&gt;vector_scientific_notation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;6.32000000e-03&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.80000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;2.31000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;0.00000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;5.38000000e-01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;6.57500000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;6.52000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;4.09000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.00000000e+00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;2.96000000e+02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;1.53000000e+01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;3.96900000e+02&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="mf"&gt;4.98000000e+00&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Display Values As Floats&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Display value as a float&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39;{:f}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value_scientific_notation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;0.006320&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Display vector values as floats&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{:f}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;vector_scientific_notation&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[&amp;#39;0.006320&amp;#39;,
+ &amp;#39;18.000000&amp;#39;,
+ &amp;#39;2.310000&amp;#39;,
+ &amp;#39;0.000000&amp;#39;,
+ &amp;#39;0.538000&amp;#39;,
+ &amp;#39;6.575000&amp;#39;,
+ &amp;#39;65.200000&amp;#39;,
+ &amp;#39;4.090000&amp;#39;,
+ &amp;#39;1.000000&amp;#39;,
+ &amp;#39;296.000000&amp;#39;,
+ &amp;#39;15.300000&amp;#39;,
+ &amp;#39;396.900000&amp;#39;,
+ &amp;#39;4.980000&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Fri, 01 Sep 2017 12:00:00 -0700</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-09-01:python/display_scientific_notation_as_floats.html</guid><category>Basics</category></item><item><title>Add Padding Around String</title><link>http://chrisalbon.com/python/add_padding_around_string.html</link><description>&lt;h2&gt;Create Some Text&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Chapter 1&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -39,8 +87,7 @@
 
 
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;*****Chapter 1******&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/add_padding_around_string.html</guid><category>Basics</category></item><item><title>Chain Together Lists</title><link>http://chrisalbon.com/python/chain_together_lists.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;. &lt;/p&gt;
-&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/add_padding_around_string.html</guid><category>Basics</category></item><item><title>Chain Together Lists</title><link>http://chrisalbon.com/python/chain_together_lists.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;chain&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -70,7 +117,6 @@ Mexico
 United Kingdom
 France
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/chain_together_lists.html</guid><category>Basics</category></item><item><title>Compare Two Dictionaries</title><link>http://chrisalbon.com/python/compare_two_dictionaries.html</link><description>&lt;p&gt;One of the great features of Python dictionaries is that they are hashtables, meaning we can do some operations at O(1) time-complexity.&lt;/p&gt;
-&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Make Two Dictionaries&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;importers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;El Salvador&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
              &lt;span class="s1"&gt;&amp;#39;Nicaragua&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;152&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -111,8 +157,7 @@ France
 
 
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{(&amp;#39;Spain&amp;#39;, 252)}
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/compare_two_dictionaries.html</guid><category>Basics</category></item><item><title>Convert HTML Characters To Strings</title><link>http://chrisalbon.com/python/convert_html_symbols_to_strings.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;## Preliminaries&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/compare_two_dictionaries.html</guid><category>Basics</category></item><item><title>Convert HTML Characters To Strings</title><link>http://chrisalbon.com/python/convert_html_symbols_to_strings.html</link><description>&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;## Preliminaries&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -149,8 +194,7 @@ France
 
 
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;This item costs &amp;amp;amp;#165;400 or &amp;amp;amp;#163;4.&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/convert_html_symbols_to_strings.html</guid><category>Basics</category></item><item><title>Create A New File Then Write To It</title><link>http://chrisalbon.com/python/create_a_new_file_and_the_write_to_it.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Create A New File And Write To It&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/convert_html_symbols_to_strings.html</guid><category>Basics</category></item><item><title>Create A New File Then Write To It</title><link>http://chrisalbon.com/python/create_a_new_file_and_the_write_to_it.html</link><description>&lt;h2&gt;Create A New File And Write To It&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a file if it doesn&amp;#39;t already exist&lt;/span&gt;
 &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;file.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="c1"&gt;# Write to the file&lt;/span&gt;
@@ -186,8 +230,7 @@ France
 
 &lt;span class="c1"&gt;# Delete the file&lt;/span&gt;
 &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;file.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/create_a_new_file_and_the_write_to_it.html</guid><category>Basics</category></item><item><title>Create A Temporary File</title><link>http://chrisalbon.com/python/create_a_temporary_file.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/create_a_new_file_and_the_write_to_it.html</guid><category>Basics</category></item><item><title>Create A Temporary File</title><link>http://chrisalbon.com/python/create_a_temporary_file.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;tempfile&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;NamedTemporaryFile&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -231,8 +274,7 @@ France
 
 &lt;h2&gt;Close (And Thus Delete) The File&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/create_a_temporary_file.html</guid><category>Basics</category></item><item><title>Find The Max Value In A Dictionary</title><link>http://chrisalbon.com/python/find_the_max_value_in_a_dictionary.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Create A Dictionary&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/create_a_temporary_file.html</guid><category>Basics</category></item><item><title>Find The Max Value In A Dictionary</title><link>http://chrisalbon.com/python/find_the_max_value_in_a_dictionary.html</link><description>&lt;h2&gt;Create A Dictionary&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ages&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;John&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;21&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="s1"&gt;&amp;#39;Mike&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;52&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="s1"&gt;&amp;#39;Sarah&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -247,8 +289,7 @@ France
 
 
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(52, &amp;#39;Mike&amp;#39;)
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/find_the_max_value_in_a_dictionary.html</guid><category>Basics</category></item><item><title>Formatting Numbers</title><link>http://chrisalbon.com/python/formatting_numbers.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Create A Long Number&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/find_the_max_value_in_a_dictionary.html</guid><category>Basics</category></item><item><title>Formatting Numbers</title><link>http://chrisalbon.com/python/formatting_numbers.html</link><description>&lt;h2&gt;Create A Long Number&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;annual_revenue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;9282904.9282872782&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -287,8 +328,7 @@ France
 
 
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;9.28E+06&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/formatting_numbers.html</guid><category>Basics</category></item><item><title>Hard Wrapping Text</title><link>http://chrisalbon.com/python/hard_wrapping_text.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Preliminaries&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/formatting_numbers.html</guid><category>Basics</category></item><item><title>Hard Wrapping Text</title><link>http://chrisalbon.com/python/hard_wrapping_text.html</link><description>&lt;h2&gt;Preliminaries&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;textwrap&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -314,23 +354,4 @@ sodden in the rain and the wind drove the rain
 against the big green autobus at the terminal and
 the Café des Amateurs was crowded and the windows
 misted over from the heat and the smoke inside.
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/hard_wrapping_text.html</guid><category>Basics</category></item><item><title>Iterate Over Multiple Lists Simultaneously</title><link>http://chrisalbon.com/python/iterate_over_multiple_lists_simultaneously.html</link><description>&lt;p&gt;Want to learn more? I recommend these Python books: &lt;a href="http://amzn.to/2ljV9wY"&gt;Python for Data Analysis&lt;/a&gt;, &lt;a href="http://amzn.to/2m0mgMB"&gt;Python Data Science Handbook&lt;/a&gt;, and &lt;a href="http://amzn.to/2mjYiwK"&gt;Introduction to Machine Learning with Python&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Create Two Lists&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;James&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Bob&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sarah&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Marco&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Nancy&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sally&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;ages&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;63&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Iterate Over Both Lists At Once&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ages&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-     &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;James 42
-Bob 13
-Sarah 14
-Marco 25
-Nancy 63
-Sally 23
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/iterate_over_multiple_lists_simultaneously.html</guid><category>Basics</category></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Albon</dc:creator><pubDate>Thu, 02 Feb 2017 12:00:00 -0800</pubDate><guid isPermaLink="false">tag:chrisalbon.com,2017-02-02:python/hard_wrapping_text.html</guid><category>Basics</category></item></channel></rss>

@@ -1,12 +1,12 @@
 Title: Sort By Multiple Columns   
 Slug: sort_by_multiple_columns  
-Summary: Sort By Multiple Columns in SQL.
+Summary: Sort By Multiple Columns in SQL. 
 Date: 2017-01-16 12:00  
 Category: SQL  
 Tags: Basics  
 Authors: Chris Albon  
 
-Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, This tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
+Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, this tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
 
 For more, check out [Learning SQL](http://amzn.to/2jRriHj) by Alan Beaulieu.
 
@@ -109,3 +109,5 @@ ORDER BY age ASC, name
         <td>0</td>
     </tr>
 </table>
+
+

@@ -1,12 +1,12 @@
 Title: Simple Unit Test  
 Slug: simple_unit_test  
-Summary: A simple unit test in Python.
+Summary: A simple unit test in Python. 
 Date: 2016-01-23 12:00  
 Category: Python  
 Tags: Testing  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Interesting in learning more? Here are some good books on unit testing in Python: [Python Testing: Beginner's Guide](http://amzn.to/2j6dHLc) and [Python Testing Cookbook](http://amzn.to/2j6hubL).
 
 ## Preliminaries
 
@@ -47,10 +47,10 @@ unittest.main(argv=['ignored', '-v'], exit=False)
 ```
 
     test_multiply_two_integers_together (__main__.TestMultiply) ... ok
-
+    
     ----------------------------------------------------------------------
     Ran 1 test in 0.001s
-
+    
     OK
 
 
@@ -58,3 +58,5 @@ unittest.main(argv=['ignored', '-v'], exit=False)
 
 
     <unittest.main.TestProgram at 0x104919128>
+
+

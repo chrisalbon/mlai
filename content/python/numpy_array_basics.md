@@ -1,12 +1,10 @@
-Title: Numpy Array Basics
-Slug: numpy_array_basics
-Summary: Numpy Array Basics
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Numpy Array Basics  
+Slug: numpy_array_basics  
+Summary: Numpy Array Basics  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 
 ```python
@@ -105,3 +103,5 @@ zero_to_1
             0.85858586,  0.86868687,  0.87878788,  0.88888889,  0.8989899 ,
             0.90909091,  0.91919192,  0.92929293,  0.93939394,  0.94949495,
             0.95959596,  0.96969697,  0.97979798,  0.98989899,  1.        ])
+
+

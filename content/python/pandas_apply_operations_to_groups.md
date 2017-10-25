@@ -1,12 +1,10 @@
-Title: Apply Operations To Groups In Pandas
-Slug: pandas_apply_operations_to_groups
-Summary: Apply Operations To Groups In Pandas
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Apply Operations To Groups In Pandas  
+Slug: pandas_apply_operations_to_groups  
+Summary: Apply Operations To Groups In Pandas  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ## Preliminaries
 
@@ -19,9 +17,9 @@ import pandas as pd
 
 ```python
 # Create dataframe
-raw_data = {'regiment': ['Nighthawks', 'Nighthawks', 'Nighthawks', 'Nighthawks', 'Dragoons', 'Dragoons', 'Dragoons', 'Dragoons', 'Scouts', 'Scouts', 'Scouts', 'Scouts'],
-        'company': ['1st', '1st', '2nd', '2nd', '1st', '1st', '2nd', '2nd','1st', '1st', '2nd', '2nd'],
-        'name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze', 'Jacon', 'Ryaner', 'Sone', 'Sloan', 'Piger', 'Riani', 'Ali'],
+raw_data = {'regiment': ['Nighthawks', 'Nighthawks', 'Nighthawks', 'Nighthawks', 'Dragoons', 'Dragoons', 'Dragoons', 'Dragoons', 'Scouts', 'Scouts', 'Scouts', 'Scouts'], 
+        'company': ['1st', '1st', '2nd', '2nd', '1st', '1st', '2nd', '2nd','1st', '1st', '2nd', '2nd'], 
+        'name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze', 'Jacon', 'Ryaner', 'Sone', 'Sloan', 'Piger', 'Riani', 'Ali'], 
         'preTestScore': [4, 24, 31, 2, 3, 4, 24, 31, 2, 3, 2, 3],
         'postTestScore': [25, 94, 57, 62, 70, 25, 94, 57, 62, 70, 62, 70]}
 df = pd.DataFrame(raw_data, columns = ['regiment', 'company', 'name', 'preTestScore', 'postTestScore'])
@@ -31,7 +29,20 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -45,104 +56,103 @@ df
   </thead>
   <tbody>
     <tr>
-      <th>0 </th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td>   Miller</td>
-      <td>  4</td>
-      <td> 25</td>
+      <th>0</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>Miller</td>
+      <td>4</td>
+      <td>25</td>
     </tr>
     <tr>
-      <th>1 </th>
-      <td> Nighthawks</td>
-      <td> 1st</td>
-      <td> Jacobson</td>
-      <td> 24</td>
-      <td> 94</td>
+      <th>1</th>
+      <td>Nighthawks</td>
+      <td>1st</td>
+      <td>Jacobson</td>
+      <td>24</td>
+      <td>94</td>
     </tr>
     <tr>
-      <th>2 </th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td>      Ali</td>
-      <td> 31</td>
-      <td> 57</td>
+      <th>2</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>Ali</td>
+      <td>31</td>
+      <td>57</td>
     </tr>
     <tr>
-      <th>3 </th>
-      <td> Nighthawks</td>
-      <td> 2nd</td>
-      <td>   Milner</td>
-      <td>  2</td>
-      <td> 62</td>
+      <th>3</th>
+      <td>Nighthawks</td>
+      <td>2nd</td>
+      <td>Milner</td>
+      <td>2</td>
+      <td>62</td>
     </tr>
     <tr>
-      <th>4 </th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
-      <td>    Cooze</td>
-      <td>  3</td>
-      <td> 70</td>
+      <th>4</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>Cooze</td>
+      <td>3</td>
+      <td>70</td>
     </tr>
     <tr>
-      <th>5 </th>
-      <td>   Dragoons</td>
-      <td> 1st</td>
-      <td>    Jacon</td>
-      <td>  4</td>
-      <td> 25</td>
+      <th>5</th>
+      <td>Dragoons</td>
+      <td>1st</td>
+      <td>Jacon</td>
+      <td>4</td>
+      <td>25</td>
     </tr>
     <tr>
-      <th>6 </th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
-      <td>   Ryaner</td>
-      <td> 24</td>
-      <td> 94</td>
+      <th>6</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>Ryaner</td>
+      <td>24</td>
+      <td>94</td>
     </tr>
     <tr>
-      <th>7 </th>
-      <td>   Dragoons</td>
-      <td> 2nd</td>
-      <td>     Sone</td>
-      <td> 31</td>
-      <td> 57</td>
+      <th>7</th>
+      <td>Dragoons</td>
+      <td>2nd</td>
+      <td>Sone</td>
+      <td>31</td>
+      <td>57</td>
     </tr>
     <tr>
-      <th>8 </th>
-      <td>     Scouts</td>
-      <td> 1st</td>
-      <td>    Sloan</td>
-      <td>  2</td>
-      <td> 62</td>
+      <th>8</th>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>Sloan</td>
+      <td>2</td>
+      <td>62</td>
     </tr>
     <tr>
-      <th>9 </th>
-      <td>     Scouts</td>
-      <td> 1st</td>
-      <td>    Piger</td>
-      <td>  3</td>
-      <td> 70</td>
+      <th>9</th>
+      <td>Scouts</td>
+      <td>1st</td>
+      <td>Piger</td>
+      <td>3</td>
+      <td>70</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
-      <td>    Riani</td>
-      <td>  2</td>
-      <td> 62</td>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>Riani</td>
+      <td>2</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>     Scouts</td>
-      <td> 2nd</td>
-      <td>      Ali</td>
-      <td>  3</td>
-      <td> 70</td>
+      <td>Scouts</td>
+      <td>2nd</td>
+      <td>Ali</td>
+      <td>3</td>
+      <td>70</td>
     </tr>
   </tbody>
 </table>
-<p>12 rows × 5 columns</p>
 </div>
 
 
@@ -150,14 +160,14 @@ df
 
 ```python
 # Create a groupby variable that groups preTestScores by regiment
-groupby_regiment = df['preTestScore'].groupby(df['company'])
+groupby_regiment = df['preTestScore'].groupby(df['regiment'])
 groupby_regiment
 ```
 
 
 
 
-    <pandas.core.groupby.SeriesGroupBy object at 0x1075fb610>
+    <pandas.core.groupby.SeriesGroupBy object at 0x113ddb550>
 
 
 
@@ -169,24 +179,24 @@ Use list() to show what a grouping looks like
 
 
 ```python
-list(df['preTestScore'].groupby(df['company']))
+list(df['preTestScore'].groupby(df['regiment']))
 ```
 
 
 
 
-    [('1st', 0     4
-      1    24
-      4     3
+    [('Dragoons', 4     3
       5     4
-      8     2
+      6    24
+      7    31
+      Name: preTestScore, dtype: int64), ('Nighthawks', 0     4
+      1    24
+      2    31
+      3     2
+      Name: preTestScore, dtype: int64), ('Scouts', 8     2
       9     3
-      Name: preTestScore, dtype: int64), ('2nd', 2     31
-      3      2
-      6     24
-      7     31
-      10     2
-      11     3
+      10    2
+      11    3
       Name: preTestScore, dtype: int64)]
 
 
@@ -195,30 +205,88 @@ list(df['preTestScore'].groupby(df['company']))
 
 
 ```python
-df['preTestScore'].groupby(df['company']).describe()
+df['preTestScore'].groupby(df['regiment']).describe()
 ```
 
 
 
 
-    company       
-    1st      count     6.000000
-             mean      6.666667
-             std       8.524475
-             min       2.000000
-             25%       3.000000
-             50%       3.500000
-             75%       4.000000
-             max      24.000000
-    2nd      count     6.000000
-             mean     15.500000
-             std      14.652645
-             min       2.000000
-             25%       2.250000
-             50%      13.500000
-             75%      29.250000
-             max      31.000000
-    dtype: float64
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>regiment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Dragoons</th>
+      <td>4.0</td>
+      <td>15.50</td>
+      <td>14.153916</td>
+      <td>3.0</td>
+      <td>3.75</td>
+      <td>14.0</td>
+      <td>25.75</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>Nighthawks</th>
+      <td>4.0</td>
+      <td>15.25</td>
+      <td>14.453950</td>
+      <td>2.0</td>
+      <td>3.50</td>
+      <td>14.0</td>
+      <td>25.75</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>Scouts</th>
+      <td>4.0</td>
+      <td>2.50</td>
+      <td>0.577350</td>
+      <td>2.0</td>
+      <td>2.00</td>
+      <td>2.5</td>
+      <td>3.00</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 
@@ -232,10 +300,11 @@ groupby_regiment.mean()
 
 
 
-    company
-    1st         6.666667
-    2nd        15.500000
-    dtype: float64
+    regiment
+    Dragoons      15.50
+    Nighthawks    15.25
+    Scouts         2.50
+    Name: preTestScore, dtype: float64
 
 
 
@@ -256,7 +325,7 @@ df['preTestScore'].groupby([df['regiment'], df['company']]).mean()
                 2nd        16.5
     Scouts      1st         2.5
                 2nd         2.5
-    dtype: float64
+    Name: preTestScore, dtype: float64
 
 
 
@@ -270,7 +339,20 @@ df['preTestScore'].groupby([df['regiment'], df['company']]).mean().unstack()
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -287,22 +369,21 @@ df['preTestScore'].groupby([df['regiment'], df['company']]).mean().unstack()
   <tbody>
     <tr>
       <th>Dragoons</th>
-      <td>  3.5</td>
-      <td> 27.5</td>
+      <td>3.5</td>
+      <td>27.5</td>
     </tr>
     <tr>
       <th>Nighthawks</th>
-      <td> 14.0</td>
-      <td> 16.5</td>
+      <td>14.0</td>
+      <td>16.5</td>
     </tr>
     <tr>
       <th>Scouts</th>
-      <td>  2.5</td>
-      <td>  2.5</td>
+      <td>2.5</td>
+      <td>2.5</td>
     </tr>
   </tbody>
 </table>
-<p>3 rows × 2 columns</p>
 </div>
 
 
@@ -317,7 +398,20 @@ df.groupby(['regiment', 'company']).mean()
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -337,39 +431,38 @@ df.groupby(['regiment', 'company']).mean()
     <tr>
       <th rowspan="2" valign="top">Dragoons</th>
       <th>1st</th>
-      <td>  3.5</td>
-      <td> 47.5</td>
+      <td>3.5</td>
+      <td>47.5</td>
     </tr>
     <tr>
       <th>2nd</th>
-      <td> 27.5</td>
-      <td> 75.5</td>
+      <td>27.5</td>
+      <td>75.5</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Nighthawks</th>
       <th>1st</th>
-      <td> 14.0</td>
-      <td> 59.5</td>
+      <td>14.0</td>
+      <td>59.5</td>
     </tr>
     <tr>
       <th>2nd</th>
-      <td> 16.5</td>
-      <td> 59.5</td>
+      <td>16.5</td>
+      <td>59.5</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Scouts</th>
       <th>1st</th>
-      <td>  2.5</td>
-      <td> 66.0</td>
+      <td>2.5</td>
+      <td>66.0</td>
     </tr>
     <tr>
       <th>2nd</th>
-      <td>  2.5</td>
-      <td> 66.0</td>
+      <td>2.5</td>
+      <td>66.0</td>
     </tr>
   </tbody>
 </table>
-<p>6 rows × 2 columns</p>
 </div>
 
 
@@ -400,7 +493,7 @@ df.groupby(['regiment', 'company']).size()
 
 ```python
 # Group the dataframe by regiment, and for each regiment,
-for name, group in df.groupby('regiment'):
+for name, group in df.groupby('regiment'): 
     # print the name of the regiment
     print(name)
     # print the data of that regiment
@@ -413,24 +506,18 @@ for name, group in df.groupby('regiment'):
     5  Dragoons     1st   Jacon             4             25
     6  Dragoons     2nd  Ryaner            24             94
     7  Dragoons     2nd    Sone            31             57
-
-    [4 rows x 5 columns]
     Nighthawks
          regiment company      name  preTestScore  postTestScore
     0  Nighthawks     1st    Miller             4             25
     1  Nighthawks     1st  Jacobson            24             94
     2  Nighthawks     2nd       Ali            31             57
     3  Nighthawks     2nd    Milner             2             62
-
-    [4 rows x 5 columns]
     Scouts
        regiment company   name  preTestScore  postTestScore
     8    Scouts     1st  Sloan             2             62
     9    Scouts     1st  Piger             3             70
     10   Scouts     2nd  Riani             2             62
     11   Scouts     2nd    Ali             3             70
-
-    [4 rows x 5 columns]
 
 
 ### Group by columns
@@ -457,9 +544,8 @@ list(df.groupby(df.dtypes, axis=1))
       8              2             62
       9              3             70
       10             2             62
-      11             3             70
-
-      [12 rows x 2 columns]), (dtype('O'),       regiment company      name
+      11             3             70),
+     (dtype('O'),       regiment company      name
       0   Nighthawks     1st    Miller
       1   Nighthawks     1st  Jacobson
       2   Nighthawks     2nd       Ali
@@ -471,9 +557,7 @@ list(df.groupby(df.dtypes, axis=1))
       8       Scouts     1st     Sloan
       9       Scouts     1st     Piger
       10      Scouts     2nd     Riani
-      11      Scouts     2nd       Ali
-
-      [12 rows x 3 columns])]
+      11      Scouts     2nd       Ali)]
 
 
 
@@ -487,7 +571,20 @@ df.groupby('regiment').mean().add_prefix('mean_')
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -504,22 +601,21 @@ df.groupby('regiment').mean().add_prefix('mean_')
   <tbody>
     <tr>
       <th>Dragoons</th>
-      <td> 15.50</td>
-      <td> 61.5</td>
+      <td>15.50</td>
+      <td>61.5</td>
     </tr>
     <tr>
       <th>Nighthawks</th>
-      <td> 15.25</td>
-      <td> 59.5</td>
+      <td>15.25</td>
+      <td>59.5</td>
     </tr>
     <tr>
       <th>Scouts</th>
-      <td>  2.50</td>
-      <td> 66.0</td>
+      <td>2.50</td>
+      <td>66.0</td>
     </tr>
   </tbody>
 </table>
-<p>3 rows × 2 columns</p>
 </div>
 
 
@@ -551,7 +647,20 @@ df['postTestScore'].groupby(df['categories']).apply(get_stats).unstack()
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -572,26 +681,34 @@ df['postTestScore'].groupby(df['categories']).apply(get_stats).unstack()
   <tbody>
     <tr>
       <th>Good</th>
-      <td> 8</td>
-      <td> 70</td>
-      <td> 63.75</td>
-      <td> 57</td>
+      <td>8.0</td>
+      <td>70.0</td>
+      <td>63.75</td>
+      <td>57.0</td>
     </tr>
     <tr>
       <th>Great</th>
-      <td> 2</td>
-      <td> 94</td>
-      <td> 94.00</td>
-      <td> 94</td>
+      <td>2.0</td>
+      <td>94.0</td>
+      <td>94.00</td>
+      <td>94.0</td>
     </tr>
     <tr>
       <th>Low</th>
-      <td> 2</td>
-      <td> 25</td>
-      <td> 25.00</td>
-      <td> 25</td>
+      <td>2.0</td>
+      <td>25.0</td>
+      <td>25.00</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>Okay</th>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>3 rows × 4 columns</p>
 </div>
+
+

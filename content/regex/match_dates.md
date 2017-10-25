@@ -1,12 +1,10 @@
-Title: Match Dates
-Slug: match_dates
-Summary: Match Dates
-Date: 2016-05-01 12:00
-Category: Regex
-Tags: Basics
-Authors: Chris Albon
-
-
+Title: Match Dates  
+Slug: match_dates  
+Summary: Match Dates  
+Date: 2016-05-01 12:00  
+Category: Regex  
+Tags: Basics  
+Authors: Chris Albon  
 
 Based on: [Regular Expressions Cookbook](http://shop.oreilly.com/product/0636920023630.do)
 

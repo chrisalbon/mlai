@@ -1,14 +1,10 @@
-Title: Convert A String Categorical Variable With Patsy
-Slug: pandas_convert_string_categorical_to_numeric_with_patsy
-Summary: Convert A String Categorical Variable With Patsy
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
-Originally from: Data Origami.
+Title: Convert A String Categorical Variable With Patsy  
+Slug: pandas_convert_string_categorical_to_numeric_with_patsy  
+Summary: Convert A String Categorical Variable With Patsy  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ### import modules
 
@@ -22,10 +18,10 @@ import patsy
 
 
 ```python
-raw_data = {'patient': [1, 1, 1, 0, 0],
-        'obs': [1, 2, 3, 1, 2],
+raw_data = {'patient': [1, 1, 1, 0, 0], 
+        'obs': [1, 2, 3, 1, 2], 
         'treatment': [0, 1, 0, 1, 0],
-        'score': ['strong', 'weak', 'normal', 'weak', 'strong']}
+        'score': ['strong', 'weak', 'normal', 'weak', 'strong']} 
 df = pd.DataFrame(raw_data, columns = ['patient', 'obs', 'treatment', 'score'])
 df
 ```
@@ -33,7 +29,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -47,38 +43,38 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 0</td>
-      <td> strong</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>strong</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 1</td>
-      <td> 2</td>
-      <td> 1</td>
-      <td>   weak</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>weak</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 1</td>
-      <td> 3</td>
-      <td> 0</td>
-      <td> normal</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>normal</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 0</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>   weak</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>weak</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 0</td>
-      <td> 2</td>
-      <td> 0</td>
-      <td> strong</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>strong</td>
     </tr>
   </tbody>
 </table>
@@ -97,7 +93,7 @@ patsy.dmatrix('score', df, return_type='dataframe')
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -110,33 +106,33 @@ patsy.dmatrix('score', df, return_type='dataframe')
   <tbody>
     <tr>
       <th>0</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 1</td>
-      <td> 0</td>
-      <td> 1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 1</td>
-      <td> 0</td>
-      <td> 0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 1</td>
-      <td> 0</td>
-      <td> 1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -157,7 +153,7 @@ patsy.dmatrix('score - 1', df, return_type='dataframe')
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -170,33 +166,33 @@ patsy.dmatrix('score - 1', df, return_type='dataframe')
   <tbody>
     <tr>
       <th>0</th>
-      <td> 0</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 0</td>
-      <td> 0</td>
-      <td> 1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 1</td>
-      <td> 0</td>
-      <td> 0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 0</td>
-      <td> 0</td>
-      <td> 1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 0</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -214,7 +210,7 @@ patsy.dmatrix('patient + treatment + patient:treatment-1', df, return_type='data
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -227,34 +223,36 @@ patsy.dmatrix('patient + treatment + patient:treatment-1', df, return_type='data
   <tbody>
     <tr>
       <th>0</th>
-      <td> 1</td>
-      <td> 0</td>
-      <td> 0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 1</td>
-      <td> 0</td>
-      <td> 0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 0</td>
-      <td> 1</td>
-      <td> 0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 0</td>
-      <td> 0</td>
-      <td> 0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+

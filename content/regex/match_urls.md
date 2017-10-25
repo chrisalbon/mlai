@@ -1,14 +1,12 @@
-Title: Match URLs
-Slug: match_urls
-Summary: Match URLs
-Date: 2016-05-01 12:00
-Category: Regex
-Tags: Basics
-Authors: Chris Albon
+Title: Match URLs  
+Slug: match_urls  
+Summary: Match URLs  
+Date: 2016-05-01 12:00  
+Category: Regex  
+Tags: Basics  
+Authors: Chris Albon  
 
-
-
-[StackOverflow](http://stackoverflow.com/questions/6038061/regular-expression-to-find-urls-within-a-string)
+Source: [StackOverflow](http://stackoverflow.com/questions/6038061/regular-expression-to-find-urls-within-a-string)
 
 ## Preliminaries
 

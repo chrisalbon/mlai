@@ -6,7 +6,7 @@ Category: Python
 Tags: Basics    
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Interesting in learning more? Check out [Fluent Python](http://amzn.to/2jYU506)
 
 ## Preliminaries
 
@@ -22,7 +22,7 @@ Default Dicts work just like regular dictionaries, except a key is called that d
 
 ```python
 # Create a defaultdict with the default value of 0 (int's default value is 0)
-arrests = collections.defaultdict(int)
+arrests = collections.defaultdict(int) 
 ```
 
 ## Add A New Key With A Value
@@ -72,3 +72,5 @@ arrests
 
 
     defaultdict(int, {'Bill James': 0, 'Sarah Miller': 10})
+
+

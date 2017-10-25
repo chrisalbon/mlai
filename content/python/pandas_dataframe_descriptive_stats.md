@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### Import modules
 
 
@@ -19,8 +17,8 @@ import pandas as pd
 
 
 ```python
-data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'age': [42, 52, 36, 24, 73],
+data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'age': [42, 52, 36, 24, 73], 
         'preTestScore': [4, 24, 31, 2, 3],
         'postTestScore': [25, 94, 57, 62, 70]}
 df = pd.DataFrame(data, columns = ['name', 'age', 'preTestScore', 'postTestScore'])
@@ -354,3 +352,5 @@ df.cov()
 </table>
 <p>3 rows × 3 columns</p>
 </div>
+
+

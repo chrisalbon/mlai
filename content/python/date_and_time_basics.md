@@ -1,12 +1,11 @@
-Title: Date And Time Basics
-Slug: date_and_time_basics
-Summary: Date And Time Basics
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
+Title: Date And Time Basics  
+Slug: date_and_time_basics  
+Summary: Date And Time Basics  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ```python
 # Import modules
@@ -149,3 +148,5 @@ start + timedelta(12)
 
 
     datetime.datetime(2011, 1, 19, 0, 0)
+
+

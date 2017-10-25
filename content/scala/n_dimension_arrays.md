@@ -4,7 +4,7 @@ Summary: N Dimension Arrays Using Scala.
 Date: 2017-04-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -60,3 +60,5 @@ matrix
 
 
     Array(Array(1, 0), Array(0, 1))
+
+

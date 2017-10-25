@@ -1,14 +1,12 @@
-Title: Back To Back Bar Plot In MatPlotLib
-Slug: matplotlib_back_to_back_bar_plot
-Summary: Back To Back Bar Plot In MatPlotLib
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Visualization
-Authors: Chris Albon
+Title: Back To Back Bar Plot In MatPlotLib  
+Slug: matplotlib_back_to_back_bar_plot  
+Summary: Back To Back Bar Plot In MatPlotLib  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Visualization  
+Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
-**Note:** Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
+Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
 
 ## Preliminaries
 
@@ -35,7 +33,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -49,38 +47,38 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 25</td>
-      <td>  5</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>25</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 94</td>
-      <td> 43</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>94</td>
+      <td>43</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 57</td>
-      <td> 23</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>57</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 62</td>
-      <td> 23</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>62</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 70</td>
-      <td> 51</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>70</td>
+      <td>51</td>
     </tr>
   </tbody>
 </table>
@@ -92,7 +90,7 @@ df
 
 
 ```python
-# input data, specifically the second and
+# input data, specifically the second and 
 # third rows, skipping the first column
 x1 = df.ix[1, 1:]
 x2 = df.ix[2, 1:]
@@ -109,24 +107,24 @@ y_pos = [x for x in y_pos]
 plt.yticks(y_pos, bar_labels, fontsize=10)
 
 # Create a horizontal bar in the position y_pos
-plt.barh(y_pos,
+plt.barh(y_pos, 
          # using x1 data
-         x1,
+         x1, 
          # that is centered
-         align='center',
+         align='center', 
          # with alpha 0.4
-         alpha=0.4,
+         alpha=0.4, 
          # and color green
          color='#263F13')
 
 # Create a horizontal bar in the position y_pos
-plt.barh(y_pos,
+plt.barh(y_pos, 
          # using NEGATIVE x2 data
          -x2,
          # that is centered
-         align='center',
+         align='center', 
          # with alpha 0.4
-         alpha=0.4,
+         alpha=0.4, 
          # and color green
          color='#77A61D')
 
@@ -141,4 +139,5 @@ plt.show()
 ```
 
 
-![png]({filename}/images/matplotlib_back_to_back_bar_plot/output_6_0.png)
+![png](matplotlib_back_to_back_bar_plot_files/matplotlib_back_to_back_bar_plot_6_0.png)
+

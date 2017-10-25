@@ -1,12 +1,10 @@
-Title: Indexing And Slicing Numpy Arrays
-Slug: indexing_and_slicing_numpy_arrays
-Summary: Indexing And Slicing Numpy Arrays
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Indexing And Slicing Numpy Arrays  
+Slug: indexing_and_slicing_numpy_arrays  
+Summary: Indexing And Slicing Numpy Arrays  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ## Slicing Arrays
 
@@ -93,7 +91,7 @@ regiments
     array([['Nighthawks', 'Sky Warriors', 'Rough Riders', 'New Birds'],
            ['1', '2', '3', '4'],
            ['1092', '2039', '3011', '4099'],
-           ['Mitchell', 'Blackthorn', 'Baker', 'Miller']],
+           ['Mitchell', 'Blackthorn', 'Baker', 'Miller']], 
           dtype='<U12')
 
 
@@ -107,7 +105,7 @@ regiments[:,0]
 
 
 
-    array(['Nighthawks', '1', '1092', 'Mitchell'],
+    array(['Nighthawks', '1', '1092', 'Mitchell'], 
           dtype='<U12')
 
 
@@ -121,7 +119,7 @@ regiments[1,]
 
 
 
-    array(['1', '2', '3', '4'],
+    array(['1', '2', '3', '4'], 
           dtype='<U12')
 
 
@@ -136,5 +134,7 @@ regiments[:2,2:]
 
 
     array([['Rough Riders', 'New Birds'],
-           ['3', '4']],
+           ['3', '4']], 
           dtype='<U12')
+
+

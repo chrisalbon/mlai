@@ -6,7 +6,7 @@ Category: Python
 Tags: Basics    
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Interesting in learning more? Check out [Fluent Python](http://amzn.to/2jYU506)
 
 ## Preliminaries
 
@@ -22,7 +22,7 @@ from collections import deque
 # Option 1: Make a queue
 queue = deque(range(10))
 
-# Option 2: Make a queue that, if full, discards any item at the
+# Option 2: Make a queue that, if full, discards any item at the 
 # opposite end to where you added an item.
 queue = deque(range(10), maxlen=10)
 ```
@@ -157,3 +157,5 @@ queue
 
 
     deque([])
+
+

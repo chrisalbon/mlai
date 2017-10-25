@@ -8,8 +8,6 @@ Authors: Chris Albon
 
 Partial function application allows us to create "functions" from other functions with pre-filled arguments. This can be very useful when we want to pipe the output of one function into a function requiring two functions.
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -43,3 +41,5 @@ double(3)
 
 
     6
+
+

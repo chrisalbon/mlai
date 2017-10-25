@@ -1,14 +1,12 @@
-Title: Match Words With A Certain Ending
-Slug: match_words_with_certain_ending
-Summary: Match Words With A Certain Ending
-Date: 2016-05-01 12:00
-Category: Regex
-Tags: Basics
-Authors: Chris Albon
+Title: Match Words With A Certain Ending  
+Slug: match_words_with_certain_ending  
+Summary: Match Words With A Certain Ending  
+Date: 2016-05-01 12:00  
+Category: Regex  
+Tags: Basics  
+Authors: Chris Albon  
 
-
-
-[Regular Expressions Cookbook](http://shop.oreilly.com/product/0636920023630.do)
+Source: [Regular Expressions Cookbook](http://shop.oreilly.com/product/0636920023630.do)
 
 ## Preliminaries
 

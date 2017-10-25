@@ -1,12 +1,10 @@
-Title: Split Combined Lat/Long Coordinate Variables Into Seperate Variables In Pandas
-Slug: pandas_split_lat_and_long_into_variables
-Summary: Split Combined Lat/Long Coordinate Variables Into Seperate Variables In Pandas
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Split Combined Lat/Long Coordinate Variables Into Seperate Variables In Pandas  
+Slug: pandas_split_lat_and_long_into_variables  
+Summary: Split Combined Lat/Long Coordinate Variables Into Seperate Variables In Pandas  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ## Preliminaries
 
@@ -28,7 +26,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -39,19 +37,19 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> 40.0024, -105.4102</td>
+      <td>40.0024, -105.4102</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>  40.0068, -105.266</td>
+      <td>40.0068, -105.266</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 39.9318, -105.2813</td>
+      <td>39.9318, -105.2813</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>                NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -99,7 +97,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -112,28 +110,30 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> 40.0024, -105.4102</td>
-      <td> 40.0024</td>
-      <td>  -105.4102</td>
+      <td>40.0024, -105.4102</td>
+      <td>40.0024</td>
+      <td>-105.4102</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>  40.0068, -105.266</td>
-      <td> 40.0068</td>
-      <td>   -105.266</td>
+      <td>40.0068, -105.266</td>
+      <td>40.0068</td>
+      <td>-105.266</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 39.9318, -105.2813</td>
-      <td> 39.9318</td>
-      <td>  -105.2813</td>
+      <td>39.9318, -105.2813</td>
+      <td>39.9318</td>
+      <td>-105.2813</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>                NaN</td>
-      <td>     NaN</td>
-      <td>        NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+

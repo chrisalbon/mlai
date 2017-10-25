@@ -1,12 +1,10 @@
-Title: Match Email Addresses
-Slug: match_email_addresses
-Summary: Match Email Addresses
-Date: 2016-05-01 12:00
-Category: Regex
-Tags: Basics
-Authors: Chris Albon
-
-
+Title: Match Email Addresses  
+Slug: match_email_addresses  
+Summary: Match Email Addresses  
+Date: 2016-05-01 12:00  
+Category: Regex  
+Tags: Basics  
+Authors: Chris Albon  
 
 Based on: [StackOverflow](http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address)
 

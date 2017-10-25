@@ -4,7 +4,7 @@ Summary: Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 This tutorial was inspired by the awesome [Scala Cookbook](http://amzn.to/2lxbrxN).
 
@@ -57,3 +57,5 @@ vehicle_type
 
 
     aircraft
+
+

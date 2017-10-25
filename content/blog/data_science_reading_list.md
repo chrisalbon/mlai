@@ -6,7 +6,7 @@ Category: Blog
 Tags:
 Authors: Chris Albon
 
-![Data Science Reading List]({filename}/images/my_data_science_reading_list/my_data_science_reading_list.jpg)
+![Data Science Reading List](my_data_science_reading_list/my_data_science_reading_list.jpg)
 
 Everyone has hobbies. My hobby is in a big red bookcase. Currently my big red bookcase contains around ~200 dead-tree books on statistics, data science, research, and mathematics. I rarely travel anywhere without at least one book from this bookcase and on a lazy Sunday afternoon you will likely see to working my way through one of it's members.
 

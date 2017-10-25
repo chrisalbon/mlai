@@ -1,20 +1,18 @@
-Title: Cleaning Text
-Slug: cleaning_text
-Summary: Cleaning Text
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Cleaning Text  
+Slug: cleaning_text  
+Summary: Cleaning Text  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ## Create some raw text
 
 
 ```python
 # Create a list of three strings.
-incoming_reports = ["We are attacking on their left flank but are losing many men.",
-               "We cannot see the enemy army. Nothing else to report.",
+incoming_reports = ["We are attacking on their left flank but are losing many men.", 
+               "We cannot see the enemy army. Nothing else to report.", 
                "We are ready to attack but are waiting for your orders."]
 ```
 
@@ -90,15 +88,15 @@ regex = re.compile('[%s]' % re.escape(string.punctuation)) #see documentation he
 tokenized_reports_no_punctuation = []
 
 for review in tokenized_reports:
-
+    
     new_review = []
-    for token in review:
+    for token in review: 
         new_token = regex.sub(u'', token)
         if not new_token == u'':
             new_review.append(new_token)
-
+    
     tokenized_reports_no_punctuation.append(new_review)
-
+    
 tokenized_reports_no_punctuation
 ```
 
@@ -155,7 +153,7 @@ for report in tokenized_reports_no_punctuation:
         if not word in stopwords.words('english'):
             new_term_vector.append(word)
     tokenized_reports_no_stopwords.append(new_term_vector)
-
+            
 tokenized_reports_no_stopwords
 ```
 
@@ -165,3 +163,5 @@ tokenized_reports_no_stopwords
     [['We', 'attacking', 'left', 'flank', 'losing', 'many', 'men'],
      ['We', 'see', 'enemy', 'army', 'Nothing', 'else', 'report'],
      ['We', 'ready', 'attack', 'waiting', 'orders']]
+
+

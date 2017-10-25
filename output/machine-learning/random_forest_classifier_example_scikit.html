@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,9 +32,9 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/machine-learning.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Categories RSS Feed" />    
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/machine-learning.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
-    <meta name="tags" content="Supervised Learning - Classification" />
+    <meta name="tags" content="Trees And Forests" />
 
     <meta name="google-site-verification" content="7RLmddm4HbzdQLpwH2LH94_vBNmcaMGZSEhmmF5n0NM" />
 </head>
@@ -55,27 +55,20 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Table Of Contents<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ML/AI Notes<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
                           <li><a href="..#Python">Python</a></li>
-                          <li><a href="..#R_Stats">R Stats</a></li>
-                          <li><a href="..#Regex">Regex</a></li>
-                          <li><a href="..#Bash">Bash</a></li>
-                          <li><a href="..#Project_Juypter">Project Juypter</a></li>
-                          <li><a href="..#SQL">SQL</a></li>
-                          <li><a href="..#Mathematics">Mathematics</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
                           <li><a href="..#Javascript">Javascript</a></li>
-                          <li><a href="..#Probability">Probability</a></li>
-                          <li><a href="..#Frequentist_Statistics">Frequentist Statistics</a></li>
-                          <li><a href="..#Bayesian_Statistics">Bayesian Statistics</a></li>
-                          <li><a href="..#Machine_Learning">Machine Learning</a></li>
-                          <li><a href="..#GitHub">GitHub</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
                           <li><a href="..#Scala">Scala</a></li>
-                          <li><a href="..#Spark">Spark</a></li>
-                          <li><a href="..#Amazon_Web_Services">Amazon Web Services</a></li>
-                          <li><a href="..#Kaggle">Kaggle</a></li>
-                          <li><a href="..#Projects">Projects</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
                       </ul>
                   </li>
                     <li class="dropdown">
@@ -115,9 +108,8 @@
 
     <!-- end of header section -->
     <div class="container">
-<div class="alert alert-warning alert-dismissable" role="alert">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    Interested in machine learning? Check out my <a href="http://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
+<div class="alert alert-warning advert" role="alert">
+    Want to learn machine learning? Use my <a href="https://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
 </div>
 
 <section id="content" class="body">
@@ -132,7 +124,7 @@
         </time>
     </li>
     <li>Machine Learning</li>
-    <li>Supervised Learning - Classification</li>
+    <li>Trees And Forests</li>
 </ol>
 </header>
 <div class='article_content'>
@@ -152,6 +144,9 @@
 
 <span class="c1"># Load numpy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># Set random seed</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
 
@@ -168,6 +163,19 @@
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -227,6 +235,19 @@
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -296,6 +317,19 @@
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -369,8 +403,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>Number of observations in the training data: 107
-Number of observations in the test data: 43
+<div class="codehilite"><pre><span></span>Number of observations in the training data: 118
+Number of observations in the test data: 32
 </pre></div>
 
 
@@ -378,6 +412,7 @@ Number of observations in the test data: 43
 <div class="codehilite"><pre><span></span><span class="c1"># Create a list of the feature column&#39;s names</span>
 <span class="n">features</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
 
+<span class="c1"># View features</span>
 <span class="n">features</span>
 </pre></div>
 
@@ -393,23 +428,25 @@ Number of observations in the test data: 43
 <span class="c1"># are three species, which have been coded as 0, 1, or 2.</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 
+<span class="c1"># View target</span>
 <span class="n">y</span>
 </pre></div>
 
 
 <div class="codehilite"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2])
 </pre></div>
 
 
 <h2>Train The Random Forest Classifier</h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Create a random forest classifier. By convention, clf means &#39;classifier&#39;</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Create a random forest Classifier. By convention, clf means &#39;Classifier&#39;</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># Train the classifier to take the training features and learn how they relate</span>
+<span class="c1"># Train the Classifier to take the training features and learn how they relate</span>
 <span class="c1"># to the training y (the species)</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">features</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -417,24 +454,24 @@ Number of observations in the test data: 43
 
 <div class="codehilite"><pre><span></span>RandomForestClassifier(bootstrap=True, class_weight=None, criterion=&#39;gini&#39;,
             max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
-            min_samples_leaf=1, min_samples_split=2,
-            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=2,
-            oob_score=False, random_state=None, verbose=0,
-            warm_start=False)
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=10, n_jobs=2, oob_score=False, random_state=0,
+            verbose=0, warm_start=False)
 </pre></div>
 
 
-<p>Huzzah! We have done it! We have officially trained our random forest classifier! Now let's play with it. The classifier model itself is stored in the <code>clf</code> variable.</p>
-<h2>Apply classifier To Test Data</h2>
+<p>Huzzah! We have done it! We have officially trained our random forest Classifier! Now let's play with it. The Classifier model itself is stored in the <code>clf</code> variable.</p>
+<h2>Apply Classifier To Test Data</h2>
 <p>If you have been following along, you will know we only trained our classifier on part of the data, leaving the rest out. This is, in my humble opinion, the most important part of machine learning. Why? Because by leaving out a portion of the data, we have a set of data to test the accuracy of our model!</p>
 <p>Let's do that now.</p>
-<div class="codehilite"><pre><span></span><span class="c1"># Apply the classifier we trained to the test data (which, remember, it has never seen before)</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Apply the Classifier we trained to the test data (which, remember, it has never seen before)</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">features</span><span class="p">])</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1,
-       1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
+<div class="codehilite"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2])
 </pre></div>
 
 
@@ -446,19 +483,19 @@ Number of observations in the test data: 43
 
 <div class="codehilite"><pre><span></span>array([[ 1. ,  0. ,  0. ],
        [ 1. ,  0. ,  0. ],
+       [ 1. ,  0. ,  0. ],
+       [ 1. ,  0. ,  0. ],
+       [ 1. ,  0. ,  0. ],
+       [ 1. ,  0. ,  0. ],
+       [ 1. ,  0. ,  0. ],
        [ 0.9,  0.1,  0. ],
-       [ 1. ,  0. ,  0. ],
-       [ 1. ,  0. ,  0. ],
-       [ 1. ,  0. ,  0. ],
-       [ 1. ,  0. ,  0. ],
-       [ 1. ,  0. ,  0. ],
        [ 1. ,  0. ,  0. ],
        [ 1. ,  0. ,  0. ]])
 </pre></div>
 
 
 <p>There are three species of plant, thus <code>[ 1. ,  0. ,  0. ]</code> tells us that the classifier is certain that the plant is the first class. Taking another example, <code>[ 0.9,  0.1,  0. ]</code> tells us that the classifier gives a 90% probability the plant belongs to the first class and a 10% probability the plant belongs to the second class. Because 90 is greater than 10, the classifier predicts the plant is the first class.</p>
-<h2>Evaluate classifier</h2>
+<h2>Evaluate Classifier</h2>
 <p>Now that we have predicted the species of all plants in the test data, we can compare our predicted species with the that plant's actual species.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Create actual english names for the plants for each predicted plant class</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">[</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">features</span><span class="p">])]</span>
@@ -480,11 +517,11 @@ Number of observations in the test data: 43
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>14    setosa
-18    setosa
-20    setosa
-22    setosa
-25    setosa
+<div class="codehilite"><pre><span></span>7     setosa
+8     setosa
+10    setosa
+13    setosa
+17    setosa
 Name: species, dtype: category
 Categories (3, object): [setosa, versicolor, virginica]
 </pre></div>
@@ -492,7 +529,7 @@ Categories (3, object): [setosa, versicolor, virginica]
 
 <p>That looks pretty good! At least for the first five observations. Now let's use look at all the data.</p>
 <h3>Create a confusion matrix</h3>
-<p>A <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a> can be, no pun intended, a little confusing to interpret at first, but it is actually very straightforward. The columns are the species we predicted for the test data and the rows are the actual species for the test data. So, if we take the top row, we can wee that we predicted all 20 setosa plants in the test data perfectly. However, in the next row, we predicted 17 of the versicolor plants correctly, but mis-predicted two of the versicolor plants as virginica.</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a> can be, no pun intended, a little confusing to interpret at first, but it is actually very straightforward. The columns are the species we predicted for the test data and the rows are the actual species for the test data. So, if we take the top row, we can wee that we predicted all 13 setosa plants in the test data perfectly. However, in the next row, we predicted 5 of the versicolor plants correctly, but mis-predicted two of the versicolor plants as virginica.</p>
 <p>The short explanation of how to interpret a confusion matrix is: anything on the diagonal was classified correctly and anything off the diagonal was classified incorrectly.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Create confusion matrix</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">],</span> <span class="n">preds</span><span class="p">,</span> <span class="n">rownames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Actual Species&#39;</span><span class="p">],</span> <span class="n">colnames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Predicted Species&#39;</span><span class="p">])</span>
@@ -500,6 +537,19 @@ Categories (3, object): [setosa, versicolor, virginica]
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -518,21 +568,21 @@ Categories (3, object): [setosa, versicolor, virginica]
   <tbody>
     <tr>
       <th>setosa</th>
-      <td>11</td>
+      <td>13</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>versicolor</th>
       <td>0</td>
-      <td>16</td>
-      <td>1</td>
+      <td>5</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>virginica</th>
       <td>0</td>
       <td>0</td>
-      <td>15</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
@@ -545,16 +595,16 @@ Categories (3, object): [setosa, versicolor, virginica]
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>[(&#39;sepal length (cm)&#39;, 0.13356069065846765),
- (&#39;sepal width (cm)&#39;, 0.04486948688226873),
- (&#39;petal length (cm)&#39;, 0.37067096905488794),
- (&#39;petal width (cm)&#39;, 0.45089885340437574)]
+<div class="codehilite"><pre><span></span>[(&#39;sepal length (cm)&#39;, 0.11185992930506346),
+ (&#39;sepal width (cm)&#39;, 0.016341813006098178),
+ (&#39;petal length (cm)&#39;, 0.36439533040889194),
+ (&#39;petal width (cm)&#39;, 0.5074029272799464)]
 </pre></div>
 </div>
     <aside>
     <div class="bug-reporting__panel">
-        <h3>Find an error or bug? Have a suggestion?</h3>
-        <p>Everything on this site is avaliable on GitHub. Head on over and <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>submit an issue.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change</a>. You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
     </div>
     </aside>
 </section>
@@ -564,10 +614,10 @@ Categories (3, object): [setosa, versicolor, virginica]
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 496 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 488 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
-                    <time datetime="2016">2017</time>.
+                    <time datetime="2017">2017</time>.
                 </center>
             </p>
         </div>

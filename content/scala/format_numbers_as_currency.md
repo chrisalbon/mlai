@@ -4,7 +4,7 @@ Summary: Format Numbers As Currency Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 This tutorial was inspired by the awesome [Scala Cookbook](http://amzn.to/2lxbrxN).
 
@@ -61,3 +61,5 @@ format_as_afghan.format(123456.789)
 
 
     AFN123,456.79
+
+

@@ -1,6 +1,6 @@
 Title: Test Code Speed  
 Slug: test_code_speed  
-Summary: Test Code Speed in Python.
+Summary: Test Code Speed in Python. 
 Date: 2016-01-23 12:00  
 Category: Python  
 Tags: Testing  
@@ -21,9 +21,9 @@ import cProfile
 ```python
 def slow_function():
     total = 0.0
-
+    
     for i, _ in enumerate(range(10000)):
-
+        
         for j, _ in enumerate(range(1, 10000)):
             total += (i * j)
 
@@ -38,16 +38,16 @@ cProfile.run('slow_function()', sort='time')
 ```
 
              4 function calls in 13.291 seconds
-
+    
        Ordered by: internal time
-
+    
        ncalls  tottime  percall  cumtime  percall filename:lineno(function)
             1   13.291   13.291   13.291   13.291 <ipython-input-2-64fc1cd43878>:1(slow_function)
             1    0.000    0.000   13.291   13.291 {built-in method builtins.exec}
             1    0.000    0.000   13.291   13.291 <string>:1(<module>)
             1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
-
-
+    
+    
 
 
 ## How To Read cProfile's Output
@@ -69,3 +69,4 @@ slow_function()
 ```
 
     1 loop, best of 3: 12.9 s per loop
+

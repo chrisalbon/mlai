@@ -3,12 +3,10 @@ Slug: pandas_rename_column_headers
 Summary: Rename Column Headers In Pandas  
 Date: 2016-06-17 12:00  
 Category: Python  
-Tags: Data Wrangling
+Tags: Data Wrangling 
 Authors: Chris Albon  
 
 Originally from [rgalbo](http://stackoverflow.com/users/3291077/rgalbo) on [StackOverflow](http://stackoverflow.com/questions/31328861/python-pandas-replacing-header-with-top-row).
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ## Preliminaries
 
@@ -23,9 +21,9 @@ import pandas as pd
 
 ```python
 # Create a values as dictionary of lists
-raw_data = {'0': ['first_name', 'Molly', 'Tina', 'Jake', 'Amy'],
-        '1': ['last_name', 'Jacobson', 'Ali', 'Milner', 'Cooze'],
-        '2': ['age', 52, 36, 24, 73],
+raw_data = {'0': ['first_name', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        '1': ['last_name', 'Jacobson', 'Ali', 'Milner', 'Cooze'], 
+        '2': ['age', 52, 36, 24, 73], 
         '3': ['preTestScore', 24, 31, 2, 3]}
 
 # Create a dataframe
@@ -168,3 +166,5 @@ df.rename(columns = header)
   </tbody>
 </table>
 </div>
+
+

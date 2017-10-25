@@ -4,9 +4,7 @@ Summary: Function Annotation Examples in Python.
 Date: 2016-01-23 12:00     
 Category: Python    
 Tags: Basics    
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK). 
+Authors: Chris Albon  
 
 Interesting in learning more? Check out [Fluent Python](http://amzn.to/2jYU506)
 
@@ -14,13 +12,13 @@ Interesting in learning more? Check out [Fluent Python](http://amzn.to/2jYU506)
 
 
 ```python
-'''
-Create a function.
+''' 
+Create a function. 
 
 The argument 'text' is the string to print with the default value 'default string'
-and the argument
+and the argument 
 
-The argument 'n' is an integer of times to print with the default value of 1.
+The argument 'n' is an integer of times to print with the default value of 1. 
 
 The function should return a string.
 '''
@@ -53,3 +51,5 @@ print_text()
 
 
     'default string'
+
+

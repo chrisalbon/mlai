@@ -4,7 +4,7 @@ Summary: Set Operations On Sequences Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -89,10 +89,12 @@ teacher_ages.union(student_ages).distinct
 
 ```scala
 // Elements in student_ages but not in teacher_ages
-student_ages diff teacher_ages
+student_ages diff teacher_ages 
 ```
 
 
 
 
     ArrayBuffer(42, 28, 63, 458, 2569, 584, 25)
+
+

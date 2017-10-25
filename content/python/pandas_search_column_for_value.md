@@ -1,12 +1,10 @@
-Title: Search A Pandas Column For A Value
-Slug: pandas_search_column_for_value
-Summary: Search A Pandas Column For A Value
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Search A Pandas Column For A Value  
+Slug: pandas_search_column_for_value  
+Summary: Search A Pandas Column For A Value  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 
 ```python
@@ -16,9 +14,9 @@ import pandas as pd
 
 
 ```python
-raw_data = {'first_name': ['Jason', 'Jason', 'Tina', 'Jake', 'Amy'],
-        'last_name': ['Miller', 'Miller', 'Ali', 'Milner', 'Cooze'],
-        'age': [42, 42, 36, 24, 73],
+raw_data = {'first_name': ['Jason', 'Jason', 'Tina', 'Jake', 'Amy'], 
+        'last_name': ['Miller', 'Miller', 'Ali', 'Milner', 'Cooze'], 
+        'age': [42, 42, 36, 24, 73], 
         'preTestScore': [4, 4, 31, 2, 3],
         'postTestScore': [25, 25, 57, 62, 70]}
 df = pd.DataFrame(raw_data, columns = ['first_name', 'last_name', 'age', 'preTestScore', 'postTestScore'])
@@ -28,7 +26,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -43,43 +41,43 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td> Miller</td>
-      <td> 42</td>
-      <td>  4</td>
-      <td> 25</td>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>42</td>
+      <td>4</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Jason</td>
-      <td> Miller</td>
-      <td> 42</td>
-      <td>  4</td>
-      <td> 25</td>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>42</td>
+      <td>4</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td>    Ali</td>
-      <td> 36</td>
-      <td> 31</td>
-      <td> 57</td>
+      <td>Tina</td>
+      <td>Ali</td>
+      <td>36</td>
+      <td>31</td>
+      <td>57</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td> Milner</td>
-      <td> 24</td>
-      <td>  2</td>
-      <td> 62</td>
+      <td>Jake</td>
+      <td>Milner</td>
+      <td>24</td>
+      <td>2</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>  Cooze</td>
-      <td> 73</td>
-      <td>  3</td>
-      <td> 70</td>
+      <td>Amy</td>
+      <td>Cooze</td>
+      <td>73</td>
+      <td>3</td>
+      <td>70</td>
     </tr>
   </tbody>
 </table>
@@ -98,9 +96,11 @@ df['preTestScore'].where(df['postTestScore'] > 50)
 
 
 
-    0   NaN
-    1   NaN
-    2    31
-    3     2
-    4     3
+    0     NaN
+    1     NaN
+    2    31.0
+    3     2.0
+    4     3.0
     Name: preTestScore, dtype: float64
+
+

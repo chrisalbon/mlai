@@ -1,12 +1,10 @@
-Title: Creating Scatterplots with Seaborn
-Slug: seaborn_scatterplot
-Summary: Creating Scatterplots with Seaborn
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Visualization
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Creating Scatterplots with Seaborn  
+Slug: seaborn_scatterplot  
+Summary: Creating Scatterplots with Seaborn  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Visualization  
+Authors: Chris Albon  
 
 ## Preliminaries
 
@@ -19,10 +17,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 ```
 
+## Create data
+
 
 ```python
+# Create empty dataframe
 df = pd.DataFrame()
 
+# Add columns
 df['x'] = random.sample(range(1, 1000), 5)
 df['y'] = random.sample(range(1, 1000), 5)
 df['z'] = [1,0,0,1,0]
@@ -31,13 +33,27 @@ df['k'] = ['male','male','male','female','female']
 
 
 ```python
+# View first few rows of data
 df.head()
 ```
 
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -51,38 +67,38 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td> 859</td>
-      <td> 714</td>
-      <td> 1</td>
-      <td>   male</td>
+      <td>466</td>
+      <td>948</td>
+      <td>1</td>
+      <td>male</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>  70</td>
-      <td> 321</td>
-      <td> 0</td>
-      <td>   male</td>
+      <td>832</td>
+      <td>481</td>
+      <td>0</td>
+      <td>male</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 378</td>
-      <td>  12</td>
-      <td> 0</td>
-      <td>   male</td>
+      <td>978</td>
+      <td>465</td>
+      <td>0</td>
+      <td>male</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 737</td>
-      <td>  93</td>
-      <td> 1</td>
-      <td> female</td>
+      <td>510</td>
+      <td>206</td>
+      <td>1</td>
+      <td>female</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 375</td>
-      <td> 956</td>
-      <td> 0</td>
-      <td> female</td>
+      <td>848</td>
+      <td>357</td>
+      <td>0</td>
+      <td>female</td>
     </tr>
   </tbody>
 </table>
@@ -94,28 +110,36 @@ df.head()
 
 
 ```python
+# Set style of scatterplot
 sns.set_context("notebook", font_scale=1.1)
 sns.set_style("ticks")
 
+# Create scatterplot of dataframe
+sns.lmplot('x', # Horizontal axis
+           'y', # Vertical axis
+           data=df, # Data source
+           fit_reg=False, # Don't fix a regression line
+           hue="z", # Set color
+           scatter_kws={"marker": "D", # Set marker style
+                        "s": 100}) # S marker size
 
-sns.lmplot('x', 'y',
-           data=df,
-           fit_reg=False,
-           dropna=True,
-           hue="z",  
-           scatter_kws={"marker": "D",
-                        "s": 100})
+# Set title
 plt.title('Histogram of IQ')
+
+# Set x-axis label
 plt.xlabel('Time')
+
+# Set y-axis label
 plt.ylabel('Deaths')
 ```
 
 
 
 
-    <matplotlib.text.Text at 0x10b4a0850>
+    <matplotlib.text.Text at 0x112b7bb70>
 
 
 
 
-![png]({filename}/images/seaborn_scatterplot/output_6_1.png)
+![png](seaborn_scatterplot_files/seaborn_scatterplot_7_1.png)
+

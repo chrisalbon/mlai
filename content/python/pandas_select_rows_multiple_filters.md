@@ -1,13 +1,11 @@
-Title: Select Rows With Multiple Filters
-Slug: pandas_select_rows_multiple_filters
-Summary: Select Rows With Multiple Filters
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
+Title: Select Rows With Multiple Filters  
+Slug: pandas_select_rows_multiple_filters  
+Summary: Select Rows With Multiple Filters  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ```python
 # import pandas as pd
@@ -17,7 +15,7 @@ import pandas as pd
 
 ```python
 # Create an example dataframe
-data = {'name': ['A', 'B', 'C', 'D', 'E'],
+data = {'name': ['A', 'B', 'C', 'D', 'E'], 
         'score': [1,2,3,4,5]}
 df = pd.DataFrame(data)
 df
@@ -26,7 +24,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -38,28 +36,28 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> A</td>
-      <td> 1</td>
+      <td>A</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> B</td>
-      <td> 2</td>
+      <td>B</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> C</td>
-      <td> 3</td>
+      <td>C</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> D</td>
-      <td> 4</td>
+      <td>D</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> E</td>
-      <td> 5</td>
+      <td>E</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -76,7 +74,7 @@ df[(df['score'] > 1) & (df['score'] < 5)]
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -88,19 +86,21 @@ df[(df['score'] > 1) & (df['score'] < 5)]
   <tbody>
     <tr>
       <th>1</th>
-      <td> B</td>
-      <td> 2</td>
+      <td>B</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> C</td>
-      <td> 3</td>
+      <td>C</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> D</td>
-      <td> 4</td>
+      <td>D</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+

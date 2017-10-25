@@ -6,7 +6,7 @@ Category: Blog
 Tags: Summer Of Machine Learning
 Authors: Chris Albon
 
-![Summer of Machine Learning]({filename}/images/summer_of_machine_learning/summer_of_machine_learning.jpg)
+![Summer of Machine Learning](summer_of_machine_learning/summer_of_machine_learning.jpg)
 
 I love summers, but not for the reason you'd think. I don't particularly like hot weather and prefer a good coffee shop to a beach resort. For me, a good summer will always mean what they meant during my Ph.D.: four months to grind your heart out -- to read 500 journal articles, submit five research papers, or finish that one big project. It is a time when the burden of daily responsibilities and thousand little emergencies lifts and you are free to work on big projects with big goals -- to enter the chill of fall better, smarter, and farther than before.
 

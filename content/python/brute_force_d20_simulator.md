@@ -1,30 +1,28 @@
-Title: Brute Force D20 Roll Simulator
-Slug: brute_force_d20_simulator
-Summary: Brute Force D20 Roll Simulator
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Brute Force D20 Roll Simulator  
+Slug: brute_force_d20_simulator  
+Summary: Brute Force D20 Roll Simulator  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 This snippet is a completely inefficient simulator of a 20 sided dice. To create a "successful roll" the snippet has to generate  dozens of random numbers.
 
-### Import random module
+## Import random module
 
 
 ```python
 import random
 ```
 
-### Create a variable with a TRUE value
+## Create a variable with a TRUE value
 
 
 ```python
 rolling = True
 ```
 
-### Create a while loop that rolls until the first digit is 2 or less and the second digit is 10 or less
+## Create a while loop that rolls until the first digit is 2 or less and the second digit is 10 or less
 
 
 ```python
@@ -402,175 +400,5 @@ while rolling:
     Trying again.
     Trying again.
     Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    Trying again.
-    You rolled a 13.
+    You rolled a 16.
+

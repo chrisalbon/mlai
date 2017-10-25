@@ -6,8 +6,6 @@ Category: Python
 Tags: Basics  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### Import the regex (re) package
 
 
@@ -33,7 +31,7 @@ text = 'The quick brown fox jumped over the lazy black bear.'
 
 
 ```python
-three_letter_word = '...'
+three_letter_word = '\w{3}'
 ```
 
 ### Convert the string into a regex object
@@ -46,7 +44,7 @@ pattern_re = re.compile(three_letter_word); pattern_re
 
 
 
-    re.compile(r'...', re.UNICODE)
+    re.compile(r'\w{3}', re.UNICODE)
 
 
 
@@ -126,3 +124,4 @@ re_sub = re.sub('e', 'E', text, 3); print(re_sub)
 ```
 
     ThE quick brown fox jumpEd ovEr the lazy black bear.
+

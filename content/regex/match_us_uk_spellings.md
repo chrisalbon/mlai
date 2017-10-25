@@ -1,14 +1,12 @@
-Title: Match US and UK Spellings
-Slug: match_us_uk_spellings
-Summary: Match US and UK Spellings
-Date: 2016-05-01 12:00
-Category: Regex
-Tags: Basics
-Authors: Chris Albon
+Title: Match US and UK Spellings  
+Slug: match_us_uk_spellings  
+Summary: Match US and UK Spellings  
+Date: 2016-05-01 12:00  
+Category: Regex  
+Tags: Basics  
+Authors: Chris Albon  
 
-
-
-[Regular Expressions Cookbook](http://shop.oreilly.com/product/0636920023630.do)
+Source: [Regular Expressions Cookbook](http://shop.oreilly.com/product/0636920023630.do)
 
 ## Preliminaries
 

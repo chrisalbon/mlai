@@ -6,7 +6,8 @@ Category: Python
 Tags: Web Scraping  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+## Preliminaries
+
 
 ```python
 # Import required modules
@@ -15,7 +16,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 ```
 
-### Download the HTML and create a Beautiful Soup object
+## Download the HTML and create a Beautiful Soup object
 
 
 ```python
@@ -37,10 +38,10 @@ If we looked at the soup object, we'd see that the names we want are in a heirar
     - class=toclevel-2 span=toctext CHARACTER NAMES
     - class=toclevel-2 span=toctext CHARACTER NAMES
     - class=toclevel-2 span=toctext CHARACTER NAMES
-
+    
 To get the CHARACTER NAMES, we are going to need to drill down to grap into loclevel-2 and grab the toctext
 
-### Setting up where to put the results
+## Setting up where to put the results
 
 
 ```python
@@ -48,20 +49,20 @@ To get the CHARACTER NAMES, we are going to need to drill down to grap into locl
 character_name = []
 ```
 
-### Drilling down with a forloop
+## Drilling down with a forloop
 
 
 ```python
 # for each item in all the toclevel-2 li items
-# (except the last three because they are not character names),
-for item in soup.find_all('li',{'class':'toclevel-2'})[:-3]:
+# (except the last three because they are not character names), 
+for item in soup.find_all('li',{'class':'toclevel-2'})[:-3]: 
     # find each span with class=toctext,
-    for post in item.find_all('span',{'class':'toctext'}):
+    for post in item.find_all('span',{'class':'toctext'}): 
         # add the stripped string of each to character_name, one by one
         character_name.append(post.string.strip())
 ```
 
-### The results
+## Results
 
 
 ```python
@@ -73,7 +74,7 @@ character_name
 
 
     ['Eddard Stark',
-     'Catelyn Tully',
+     'Catelyn Stark',
      'Robb Stark',
      'Sansa Stark',
      'Arya Stark',
@@ -82,19 +83,21 @@ character_name
      'Jon Snow',
      'Benjen Stark',
      'Lyanna Stark',
-     'Theon Greyjoy',
      'Roose Bolton',
      'Ramsay Bolton',
+     'Rickard Karstark',
+     'Alys Karstark',
+     'Wyman Manderly',
      'Hodor',
      'Osha',
      'Jeyne Poole',
      'Jojen and Meera Reed',
      'Jeyne Westerling',
-     'Daenerys Targaryen',
-     'Viserys Targaryen',
-     'Rhaegar Targaryen',
      'Aegon V Targaryen',
      'Aerys II Targaryen',
+     'Rhaegar Targaryen',
+     'Viserys Targaryen',
+     'Daenerys Targaryen',
      'Aegon VI Targaryen',
      'Jon Connington',
      'Jorah Mormont',
@@ -102,17 +105,15 @@ character_name
      'Missandei',
      'Daario Naharis',
      'Grey Worm',
-     'Jon Arryn',
-     'Lysa Arryn',
-     'Robert Arryn',
-     'Yohn Royce',
+     'Maekar I Targaryen',
+     'House Blackfyre',
      'Tywin Lannister',
      'Cersei Lannister',
      'Jaime Lannister',
+     'Tyrion Lannister',
      'Joffrey Baratheon',
      'Myrcella Baratheon',
      'Tommen Baratheon',
-     'Tyrion Lannister',
      'Kevan Lannister',
      'Lancel Lannister',
      'Bronn',
@@ -121,19 +122,28 @@ character_name
      'Podrick Payne',
      'Robert Baratheon',
      'Stannis Baratheon',
-     'Selyse Baratheon',
+     'Selyse Florent',
+     'Renly Baratheon',
      'Shireen Baratheon',
      'Melisandre',
      'Davos Seaworth',
-     'Renly Baratheon',
      'Brienne of Tarth',
      'Beric Dondarrion',
      'Gendry',
+     'Edric Storm',
+     'Jon Arryn',
+     'Lysa Arryn',
+     'Robert Arryn',
+     'Yohn Royce',
+     'Anya Waynwood',
+     'Nestor Royce',
      'Balon Greyjoy',
      'Asha Greyjoy',
+     'Theon Greyjoy',
      'Euron Greyjoy',
      'Victarion Greyjoy',
      'Aeron Greyjoy',
+     'Rodrik Harlaw',
      'Doran Martell',
      'Arianne Martell',
      'Quentyn Martell',
@@ -167,6 +177,7 @@ character_name
      'Bowen Marsh',
      'Eddison Tollett',
      'Tormund Giantsbane',
+     'Varamyr Sixskins',
      'Petyr Baelish',
      'Varys',
      'Pycelle',
@@ -175,6 +186,8 @@ character_name
      'Ilyn Payne',
      'Qyburn',
      'The High Sparrow',
+     'Meryn Trant',
+     'Balon Swann',
      'Khal Drogo',
      'Syrio Forel',
      "Jaqen H'ghar",
@@ -185,6 +198,7 @@ character_name
      'Yezzan zo Qaggaz',
      'Tycho Nestoris',
      'The Waif',
+     'Meribald',
      'Septa Unella']
 
 
@@ -202,7 +216,7 @@ houses = []
 # For each element in the character_name list,
 for name in character_name:
     # split up the names by a blank space and select the last element
-    # this works because it is the last name if they are a house,
+    # this works because it is the last name if they are a house, 
     # but the first name if they only have one name,
     # Then append each last name to the houses list
     houses.append(name.split(' ')[-1])
@@ -220,65 +234,67 @@ houses.value_counts()
 
 
 
-    Baratheon     8
-    Stark         8
-    Targaryen     6
+    Stark         9
+    Targaryen     7
+    Baratheon     7
+    Martell       6
     Greyjoy       6
     Lannister     6
-    Martell       6
     Tyrell        4
-    Tully         4
+    Tully         3
     Arryn         3
-    Clegane       2
+    Tarly         2
     Bolton        2
     Mormont       2
+    Royce         2
+    Clegane       2
     Payne         2
-    Tarly         2
-    Melisandre    1
+    Karstark      2
+    Storm         1
+    Poole         1
     Giantsbane    1
-    Ygritte       1
-    Bronn         1
+    Connington    1
+    Snakes        1
+    Varys         1
     Westerling    1
-    Sand          1
-    Osha          1
-    Gendry        1
-    Sparrow       1
-    Drogo         1
-    Qyburn        1
+    Rayder        1
     Gilly         1
     Pycelle       1
-    Craster       1
-    H'ghar        1
-    Oakheart      1
-                 ..
-    Rivers        1
-    Seaworth      1
-    Marsh         1
-    Connington    1
+    Sparrow       1
+    Drogo         1
     Hodor         1
-    Val           1
-    Unella        1
-    Aemon         1
-    Myr           1
-    Slynt         1
-    Dondarrion    1
-    Baelish       1
-    Qaggaz        1
-    Yoren         1
-    Mopatis       1
     Worm          1
-    Varys         1
-    Royce         1
-    Nestoris      1
+                 ..
+    Qaggaz        1
+    Harlaw        1
+    Forel         1
+    Slynt         1
+    Manderly      1
+    Craster       1
+    Frey          1
+    Oakheart      1
     Tarth         1
-    Naharis       1
-    Snakes        1
-    Reed          1
-    Bones         1
-    Tollett       1
-    Rayder        1
-    Tall          1
     Selmy         1
-    Hotah         1
-    Snow          1
-    dtype: int64
+    Trant         1
+    Qyburn        1
+    Rivers        1
+    Tollett       1
+    Reed          1
+    Mopatis       1
+    Dondarrion    1
+    Florent       1
+    Waynwood      1
+    Yoren         1
+    Baelish       1
+    Osha          1
+    Unella        1
+    Bronn         1
+    Gendry        1
+    Myr           1
+    Thorne        1
+    Nestoris      1
+    Tall          1
+    H'ghar        1
+    Length: 78, dtype: int64
+
+

@@ -6,8 +6,6 @@ Category: Python
 Tags: Basics  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Create A Long Number
 
 
@@ -66,3 +64,5 @@ format(annual_revenue, '0.2E')
 
 
     '9.28E+06'
+
+

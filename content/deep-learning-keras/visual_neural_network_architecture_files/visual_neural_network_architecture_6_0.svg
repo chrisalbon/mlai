@@ -1,0 +1,73 @@
+<svg height="296pt" viewBox="0.00 0.00 307.56 296.00" width="308pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 292)">
+<title>G</title>
+<polygon fill="white" points="-4,4 -4,-292 303.556,-292 303.556,4 -4,4" stroke="none"/>
+<!-- 4920138832 -->
+<g class="node" id="node1"><title>4920138832</title>
+<polygon fill="none" points="0,-243.5 0,-287.5 299.556,-287.5 299.556,-243.5 0,-243.5" stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="83.6191" y="-261.3">dense_1_input: InputLayer</text>
+<polyline fill="none" points="167.238,-243.5 167.238,-287.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="195.073" y="-272.3">input:</text>
+<polyline fill="none" points="167.238,-265.5 222.907,-265.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="195.073" y="-250.3">output:</text>
+<polyline fill="none" points="222.907,-243.5 222.907,-287.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="261.231" y="-272.3">(None, 10)</text>
+<polyline fill="none" points="222.907,-265.5 299.556,-265.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="261.231" y="-250.3">(None, 10)</text>
+</g>
+<!-- 4920138440 -->
+<g class="node" id="node2"><title>4920138440</title>
+<polygon fill="none" points="31.4932,-162.5 31.4932,-206.5 268.062,-206.5 268.062,-162.5 31.4932,-162.5" stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="83.6191" y="-180.3">dense_1: Dense</text>
+<polyline fill="none" points="135.745,-162.5 135.745,-206.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="163.58" y="-191.3">input:</text>
+<polyline fill="none" points="135.745,-184.5 191.414,-184.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="163.58" y="-169.3">output:</text>
+<polyline fill="none" points="191.414,-162.5 191.414,-206.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="229.738" y="-191.3">(None, 10)</text>
+<polyline fill="none" points="191.414,-184.5 268.062,-184.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="229.738" y="-169.3">(None, 16)</text>
+</g>
+<!-- 4920138832&#45;&gt;4920138440 -->
+<g class="edge" id="edge1"><title>4920138832-&gt;4920138440</title>
+<path d="M149.778,-243.329C149.778,-235.183 149.778,-225.699 149.778,-216.797" fill="none" stroke="black"/>
+<polygon fill="black" points="153.278,-216.729 149.778,-206.729 146.278,-216.729 153.278,-216.729" stroke="black"/>
+</g>
+<!-- 4920138496 -->
+<g class="node" id="node3"><title>4920138496</title>
+<polygon fill="none" points="31.4932,-81.5 31.4932,-125.5 268.062,-125.5 268.062,-81.5 31.4932,-81.5" stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="83.6191" y="-99.3">dense_2: Dense</text>
+<polyline fill="none" points="135.745,-81.5 135.745,-125.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="163.58" y="-110.3">input:</text>
+<polyline fill="none" points="135.745,-103.5 191.414,-103.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="163.58" y="-88.3">output:</text>
+<polyline fill="none" points="191.414,-81.5 191.414,-125.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="229.738" y="-110.3">(None, 16)</text>
+<polyline fill="none" points="191.414,-103.5 268.062,-103.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="229.738" y="-88.3">(None, 16)</text>
+</g>
+<!-- 4920138440&#45;&gt;4920138496 -->
+<g class="edge" id="edge2"><title>4920138440-&gt;4920138496</title>
+<path d="M149.778,-162.329C149.778,-154.183 149.778,-144.699 149.778,-135.797" fill="none" stroke="black"/>
+<polygon fill="black" points="153.278,-135.729 149.778,-125.729 146.278,-135.729 153.278,-135.729" stroke="black"/>
+</g>
+<!-- 4920281016 -->
+<g class="node" id="node4"><title>4920281016</title>
+<polygon fill="none" points="31.4932,-0.5 31.4932,-44.5 268.062,-44.5 268.062,-0.5 31.4932,-0.5" stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="83.6191" y="-18.3">dense_3: Dense</text>
+<polyline fill="none" points="135.745,-0.5 135.745,-44.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="163.58" y="-29.3">input:</text>
+<polyline fill="none" points="135.745,-22.5 191.414,-22.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="163.58" y="-7.3">output:</text>
+<polyline fill="none" points="191.414,-0.5 191.414,-44.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="229.738" y="-29.3">(None, 16)</text>
+<polyline fill="none" points="191.414,-22.5 268.062,-22.5 " stroke="black"/>
+<text font-family="Times,serif" font-size="14.00" text-anchor="middle" x="229.738" y="-7.3">(None, 1)</text>
+</g>
+<!-- 4920138496&#45;&gt;4920281016 -->
+<g class="edge" id="edge3"><title>4920138496-&gt;4920281016</title>
+<path d="M149.778,-81.3294C149.778,-73.1826 149.778,-63.6991 149.778,-54.7971" fill="none" stroke="black"/>
+<polygon fill="black" points="153.278,-54.729 149.778,-44.729 146.278,-54.729 153.278,-54.729" stroke="black"/>
+</g>
+</g>
+</svg>

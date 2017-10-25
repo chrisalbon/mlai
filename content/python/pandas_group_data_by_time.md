@@ -1,16 +1,14 @@
-Title: Group Data By Time
-Slug: pandas_group_data_by_time
-Summary: Group Data By Time
-Date: 2016-03-11 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
+Title: Group Data By Time  
+Slug: pandas_group_data_by_time  
+Summary: Group Data By Time  
+Date: 2016-03-11 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
-On March 13, 2016, version 0.18.0 of pandas was released, with significant changes in how the resampling function operates. This tutorial follows v0.18.0 and will not work for previous versions of pandas.
+On March 13, 2016, version 0.18.0 of Pandas was released, with significant changes in how the resampling function operates. This tutorial follows v0.18.0 and will not work for previous versions of pandas.
 
 First let's load the modules we care about
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ## Preliminaries
 
@@ -50,7 +48,7 @@ df['datetime'] = date_list
 # Convert that column into a datetime datatype
 df['datetime'] = pd.to_datetime(df['datetime'])
 # Set the datetime column as the index
-df.index = df['datetime']
+df.index = df['datetime'] 
 # Create a column from the numeric score variable
 df['score'] = score_list
 ```
@@ -80,29 +78,29 @@ df.head()
   </thead>
   <tbody>
     <tr>
-      <th>2016-03-11 21:27:36.859714</th>
-      <td>2016-03-11 21:27:36.859714</td>
-      <td>459</td>
+      <th>2016-06-02 09:57:54.793972</th>
+      <td>2016-06-02 09:57:54.793972</td>
+      <td>900</td>
     </tr>
     <tr>
-      <th>2016-03-10 21:27:36.859714</th>
-      <td>2016-03-10 21:27:36.859714</td>
-      <td>153</td>
+      <th>2016-06-01 09:57:54.793972</th>
+      <td>2016-06-01 09:57:54.793972</td>
+      <td>121</td>
     </tr>
     <tr>
-      <th>2016-03-09 21:27:36.859714</th>
-      <td>2016-03-09 21:27:36.859714</td>
-      <td>458</td>
+      <th>2016-05-31 09:57:54.793972</th>
+      <td>2016-05-31 09:57:54.793972</td>
+      <td>547</td>
     </tr>
     <tr>
-      <th>2016-03-08 21:27:36.859714</th>
-      <td>2016-03-08 21:27:36.859714</td>
-      <td>310</td>
+      <th>2016-05-30 09:57:54.793972</th>
+      <td>2016-05-30 09:57:54.793972</td>
+      <td>504</td>
     </tr>
     <tr>
-      <th>2016-03-07 21:27:36.859714</th>
-      <td>2016-03-07 21:27:36.859714</td>
-      <td>376</td>
+      <th>2016-05-29 09:57:54.793972</th>
+      <td>2016-05-29 09:57:54.793972</td>
+      <td>304</td>
     </tr>
   </tbody>
 </table>
@@ -112,7 +110,7 @@ df.head()
 
 ## Group Data By Date
 
-In pandas, the most common way to group by time is to use the `.resample()` function. In v0.18.0 this function is two-stage. This means that `df.resample('M')` creates an object to which we can apply other functions (`mean`, `count`, `sum`, etc.)
+In pandas, the most common way to group by time is to use the .resample() function. In v0.18.0 this function is two-stage. This means that 'df.resample('M')' creates an object to which we can apply other functions ('mean', 'count', 'sum', etc.)
 
 
 ```python
@@ -137,56 +135,56 @@ df.resample('M').mean()
   </thead>
   <tbody>
     <tr>
-      <th>2015-03-31</th>
-      <td>509.421053</td>
-    </tr>
-    <tr>
-      <th>2015-04-30</th>
-      <td>543.100000</td>
-    </tr>
-    <tr>
-      <th>2015-05-31</th>
-      <td>520.709677</td>
-    </tr>
-    <tr>
       <th>2015-06-30</th>
-      <td>473.100000</td>
+      <td>513.629630</td>
     </tr>
     <tr>
       <th>2015-07-31</th>
-      <td>521.677419</td>
+      <td>561.516129</td>
     </tr>
     <tr>
       <th>2015-08-31</th>
-      <td>410.580645</td>
+      <td>448.032258</td>
     </tr>
     <tr>
       <th>2015-09-30</th>
-      <td>491.933333</td>
+      <td>548.000000</td>
     </tr>
     <tr>
       <th>2015-10-31</th>
-      <td>447.322581</td>
+      <td>480.419355</td>
     </tr>
     <tr>
       <th>2015-11-30</th>
-      <td>488.166667</td>
+      <td>487.033333</td>
     </tr>
     <tr>
       <th>2015-12-31</th>
-      <td>473.193548</td>
+      <td>499.935484</td>
     </tr>
     <tr>
       <th>2016-01-31</th>
-      <td>444.129032</td>
+      <td>429.193548</td>
     </tr>
     <tr>
       <th>2016-02-29</th>
-      <td>555.965517</td>
+      <td>520.413793</td>
     </tr>
     <tr>
       <th>2016-03-31</th>
-      <td>445.545455</td>
+      <td>349.806452</td>
+    </tr>
+    <tr>
+      <th>2016-04-30</th>
+      <td>395.500000</td>
+    </tr>
+    <tr>
+      <th>2016-05-31</th>
+      <td>503.451613</td>
+    </tr>
+    <tr>
+      <th>2016-06-30</th>
+      <td>510.500000</td>
     </tr>
   </tbody>
 </table>
@@ -217,56 +215,56 @@ df.resample('M').sum()
   </thead>
   <tbody>
     <tr>
-      <th>2015-03-31</th>
-      <td>9679</td>
-    </tr>
-    <tr>
-      <th>2015-04-30</th>
-      <td>16293</td>
-    </tr>
-    <tr>
-      <th>2015-05-31</th>
-      <td>16142</td>
-    </tr>
-    <tr>
       <th>2015-06-30</th>
-      <td>14193</td>
+      <td>13868</td>
     </tr>
     <tr>
       <th>2015-07-31</th>
-      <td>16172</td>
+      <td>17407</td>
     </tr>
     <tr>
       <th>2015-08-31</th>
-      <td>12728</td>
+      <td>13889</td>
     </tr>
     <tr>
       <th>2015-09-30</th>
-      <td>14758</td>
+      <td>16440</td>
     </tr>
     <tr>
       <th>2015-10-31</th>
-      <td>13867</td>
+      <td>14893</td>
     </tr>
     <tr>
       <th>2015-11-30</th>
-      <td>14645</td>
+      <td>14611</td>
     </tr>
     <tr>
       <th>2015-12-31</th>
-      <td>14669</td>
+      <td>15498</td>
     </tr>
     <tr>
       <th>2016-01-31</th>
-      <td>13768</td>
+      <td>13305</td>
     </tr>
     <tr>
       <th>2016-02-29</th>
-      <td>16123</td>
+      <td>15092</td>
     </tr>
     <tr>
       <th>2016-03-31</th>
-      <td>4901</td>
+      <td>10844</td>
+    </tr>
+    <tr>
+      <th>2016-04-30</th>
+      <td>11865</td>
+    </tr>
+    <tr>
+      <th>2016-05-31</th>
+      <td>15607</td>
+    </tr>
+    <tr>
+      <th>2016-06-30</th>
+      <td>1021</td>
     </tr>
   </tbody>
 </table>
@@ -276,32 +274,32 @@ df.resample('M').sum()
 
 ## Grouping Options
 
-There are many options for grouping. You can learn more about them in [Pandas's timeseries docs](http://pandas.pydata.org/pandas-docs/stable/timeseries.html), however, I have also listed them below for your convenience.
+There are many options for grouping. You can learn more about them in [Pandas's timeseries docs](http://pandas.pydata.org/pandas-docs/stable/timeseries.html), however, I have also listed them below for your convience.
 
-| Value | Description |
-|---|---|
-|B   |    business day frequency |
-|C   |    custom business day frequency (experimental) |
-|D   |    calendar day frequency |
-|W   |    weekly frequency |
-|M   |    month end frequency |
-|BM  |    business month end frequency |
-|CBM |    custom business month end frequency | |
-|MS  |    month start frequency |
-|BMS |    business month start frequency |
-|CBMS|    custom business month start frequency |
-|Q   |    quarter end frequency |
-|BQ  |    business quarter endfrequency |
-|QS  |    quarter start frequency |
-|BQS |    business quarter start frequency |
-|A   |    year end frequency |
-|BA  |    business year end frequency |
-|AS  |    year start frequency |
-|BAS |    business year start frequency |
-|BH  |    business hour frequency |
-|H   |    hourly frequency |
-|T   |    minutely frequency |
-|S   |    secondly frequency |
-|L   |    milliseconds |
-|U   |    microseconds |
-|N   |    nanoseconds |
+| Value | Description
+|---|
+|B   |    business day frequency
+|C   |    custom business day frequency (experimental)
+|D   |    calendar day frequency
+|W   |    weekly frequency
+|M   |    month end frequency
+|BM  |    business month end frequency
+|CBM |    custom business month end frequency
+|MS  |    month start frequency
+|BMS |    business month start frequency
+|CBMS|    custom business month start frequency
+|Q   |    quarter end frequency
+|BQ  |    business quarter endfrequency
+|QS  |    quarter start frequency
+|BQS |    business quarter start frequency
+|A   |    year end frequency
+|BA  |    business year end frequency
+|AS  |    year start frequency
+|BAS |    business year start frequency
+|BH  |    business hour frequency
+|H   |    hourly frequency
+|T   |    minutely frequency
+|S   |    secondly frequency
+|L   |    milliseonds
+|U   |    microseconds
+|N   |    nanosecondsa

@@ -6,8 +6,6 @@ Category: Python
 Tags: Basics  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### Import modules
 
 
@@ -113,7 +111,7 @@ parse(war_start, dayfirst=True)
 
 
 ```python
-data = {'date': ['2014-05-01 18:47:05.069722', '2014-05-01 18:47:05.119994', '2014-05-02 18:47:05.178768', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.280592', '2014-05-03 18:47:05.332662', '2014-05-03 18:47:05.385109', '2014-05-04 18:47:05.436523', '2014-05-04 18:47:05.486877'],
+data = {'date': ['2014-05-01 18:47:05.069722', '2014-05-01 18:47:05.119994', '2014-05-02 18:47:05.178768', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.230071', '2014-05-02 18:47:05.280592', '2014-05-03 18:47:05.332662', '2014-05-03 18:47:05.385109', '2014-05-04 18:47:05.436523', '2014-05-04 18:47:05.486877'], 
         'value': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
 df = pd.DataFrame(data, columns = ['date', 'value'])
 print(df)
@@ -153,3 +151,5 @@ pd.to_datetime(df['date'])
     8   2014-05-04 18:47:05.436523
     9   2014-05-04 18:47:05.486877
     Name: date, dtype: datetime64[ns]
+
+

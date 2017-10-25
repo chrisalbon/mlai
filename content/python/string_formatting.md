@@ -1,12 +1,10 @@
-Title: String Formatting
-Slug: string_formatting
-Summary: String Formatting
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: String Formatting  
+Slug: string_formatting  
+Summary: String Formatting  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ### Import the sys module
 
@@ -25,7 +23,7 @@ import sys
 
 
 
-    'This is 1dead bird!'
+    'This is 1 dead bird!'
 
 
 
@@ -57,7 +55,7 @@ import sys
 
 
 
-# Codes
+## String Formatting Codes
 - %s string
 - %r repr string
 - %c character (integer or string)

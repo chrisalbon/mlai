@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Categories RSS Feed" />    
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
     <meta name="tags" content="Data Wrangling" />
 
@@ -55,27 +55,20 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Table Of Contents<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ML/AI Notes<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
                           <li><a href="..#Python">Python</a></li>
-                          <li><a href="..#R_Stats">R Stats</a></li>
-                          <li><a href="..#Regex">Regex</a></li>
-                          <li><a href="..#Bash">Bash</a></li>
-                          <li><a href="..#Project_Juypter">Project Juypter</a></li>
-                          <li><a href="..#SQL">SQL</a></li>
-                          <li><a href="..#Mathematics">Mathematics</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
                           <li><a href="..#Javascript">Javascript</a></li>
-                          <li><a href="..#Probability">Probability</a></li>
-                          <li><a href="..#Frequentist_Statistics">Frequentist Statistics</a></li>
-                          <li><a href="..#Bayesian_Statistics">Bayesian Statistics</a></li>
-                          <li><a href="..#Machine_Learning">Machine Learning</a></li>
-                          <li><a href="..#GitHub">GitHub</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
                           <li><a href="..#Scala">Scala</a></li>
-                          <li><a href="..#Spark">Spark</a></li>
-                          <li><a href="..#Amazon_Web_Services">Amazon Web Services</a></li>
-                          <li><a href="..#Kaggle">Kaggle</a></li>
-                          <li><a href="..#Projects">Projects</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
                       </ul>
                   </li>
                     <li class="dropdown">
@@ -115,9 +108,8 @@
 
     <!-- end of header section -->
     <div class="container">
-<div class="alert alert-warning alert-dismissable" role="alert">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    Interested in machine learning? Check out my <a href="http://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
+<div class="alert alert-warning advert" role="alert">
+    Want to learn machine learning? Use my <a href="https://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
 </div>
 
 <section id="content" class="body">
@@ -136,16 +128,15 @@
 </ol>
 </header>
 <div class='article_content'>
-<p>Want to learn more? I recommend these Python books: <a href="http://amzn.to/2ljV9wY">Python for Data Analysis</a>, <a href="http://amzn.to/2m0mgMB">Python Data Science Handbook</a>, and <a href="http://amzn.to/2mjYiwK">Introduction to Machine Learning with Python</a>.</p>
 <h3>Import pandas</h3>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;regiment&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;company&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span><span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">],</span>
+<div class="codehilite"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;regiment&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Nighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Dragoons&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">,</span> <span class="s1">&#39;Scouts&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;company&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span><span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">,</span> <span class="s1">&#39;cavalry&#39;</span><span class="p">],</span> 
         <span class="s1">&#39;experience&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;veteran&#39;</span><span class="p">,</span> <span class="s1">&#39;rookie&#39;</span><span class="p">,</span> <span class="s1">&#39;veteran&#39;</span><span class="p">,</span> <span class="s1">&#39;rookie&#39;</span><span class="p">,</span> <span class="s1">&#39;veteran&#39;</span><span class="p">,</span> <span class="s1">&#39;rookie&#39;</span><span class="p">,</span> <span class="s1">&#39;veteran&#39;</span><span class="p">,</span> <span class="s1">&#39;rookie&#39;</span><span class="p">,</span><span class="s1">&#39;veteran&#39;</span><span class="p">,</span> <span class="s1">&#39;rookie&#39;</span><span class="p">,</span> <span class="s1">&#39;veteran&#39;</span><span class="p">,</span> <span class="s1">&#39;rookie&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Miller&#39;</span><span class="p">,</span> <span class="s1">&#39;Jacobson&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Milner&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooze&#39;</span><span class="p">,</span> <span class="s1">&#39;Jacon&#39;</span><span class="p">,</span> <span class="s1">&#39;Ryaner&#39;</span><span class="p">,</span> <span class="s1">&#39;Sone&#39;</span><span class="p">,</span> <span class="s1">&#39;Sloan&#39;</span><span class="p">,</span> <span class="s1">&#39;Piger&#39;</span><span class="p">,</span> <span class="s1">&#39;Riani&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Miller&#39;</span><span class="p">,</span> <span class="s1">&#39;Jacobson&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Milner&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooze&#39;</span><span class="p">,</span> <span class="s1">&#39;Jacon&#39;</span><span class="p">,</span> <span class="s1">&#39;Ryaner&#39;</span><span class="p">,</span> <span class="s1">&#39;Sone&#39;</span><span class="p">,</span> <span class="s1">&#39;Sloan&#39;</span><span class="p">,</span> <span class="s1">&#39;Piger&#39;</span><span class="p">,</span> <span class="s1">&#39;Riani&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">],</span> 
         <span class="s1">&#39;preTestScore&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
         <span class="s1">&#39;postTestScore&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">]}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;regiment&#39;</span><span class="p">,</span> <span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="s1">&#39;experience&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;preTestScore&#39;</span><span class="p">,</span> <span class="s1">&#39;postTestScore&#39;</span><span class="p">])</span>
@@ -153,7 +144,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -168,116 +159,115 @@
   </thead>
   <tbody>
     <tr>
-      <th>0 </th>
-      <td> Nighthawks</td>
-      <td> infantry</td>
-      <td> veteran</td>
-      <td>   Miller</td>
-      <td>  4</td>
-      <td> 25</td>
+      <th>0</th>
+      <td>Nighthawks</td>
+      <td>infantry</td>
+      <td>veteran</td>
+      <td>Miller</td>
+      <td>4</td>
+      <td>25</td>
     </tr>
     <tr>
-      <th>1 </th>
-      <td> Nighthawks</td>
-      <td> infantry</td>
-      <td>  rookie</td>
-      <td> Jacobson</td>
-      <td> 24</td>
-      <td> 94</td>
+      <th>1</th>
+      <td>Nighthawks</td>
+      <td>infantry</td>
+      <td>rookie</td>
+      <td>Jacobson</td>
+      <td>24</td>
+      <td>94</td>
     </tr>
     <tr>
-      <th>2 </th>
-      <td> Nighthawks</td>
-      <td>  cavalry</td>
-      <td> veteran</td>
-      <td>      Ali</td>
-      <td> 31</td>
-      <td> 57</td>
+      <th>2</th>
+      <td>Nighthawks</td>
+      <td>cavalry</td>
+      <td>veteran</td>
+      <td>Ali</td>
+      <td>31</td>
+      <td>57</td>
     </tr>
     <tr>
-      <th>3 </th>
-      <td> Nighthawks</td>
-      <td>  cavalry</td>
-      <td>  rookie</td>
-      <td>   Milner</td>
-      <td>  2</td>
-      <td> 62</td>
+      <th>3</th>
+      <td>Nighthawks</td>
+      <td>cavalry</td>
+      <td>rookie</td>
+      <td>Milner</td>
+      <td>2</td>
+      <td>62</td>
     </tr>
     <tr>
-      <th>4 </th>
-      <td>   Dragoons</td>
-      <td> infantry</td>
-      <td> veteran</td>
-      <td>    Cooze</td>
-      <td>  3</td>
-      <td> 70</td>
+      <th>4</th>
+      <td>Dragoons</td>
+      <td>infantry</td>
+      <td>veteran</td>
+      <td>Cooze</td>
+      <td>3</td>
+      <td>70</td>
     </tr>
     <tr>
-      <th>5 </th>
-      <td>   Dragoons</td>
-      <td> infantry</td>
-      <td>  rookie</td>
-      <td>    Jacon</td>
-      <td>  4</td>
-      <td> 25</td>
+      <th>5</th>
+      <td>Dragoons</td>
+      <td>infantry</td>
+      <td>rookie</td>
+      <td>Jacon</td>
+      <td>4</td>
+      <td>25</td>
     </tr>
     <tr>
-      <th>6 </th>
-      <td>   Dragoons</td>
-      <td>  cavalry</td>
-      <td> veteran</td>
-      <td>   Ryaner</td>
-      <td> 24</td>
-      <td> 94</td>
+      <th>6</th>
+      <td>Dragoons</td>
+      <td>cavalry</td>
+      <td>veteran</td>
+      <td>Ryaner</td>
+      <td>24</td>
+      <td>94</td>
     </tr>
     <tr>
-      <th>7 </th>
-      <td>   Dragoons</td>
-      <td>  cavalry</td>
-      <td>  rookie</td>
-      <td>     Sone</td>
-      <td> 31</td>
-      <td> 57</td>
+      <th>7</th>
+      <td>Dragoons</td>
+      <td>cavalry</td>
+      <td>rookie</td>
+      <td>Sone</td>
+      <td>31</td>
+      <td>57</td>
     </tr>
     <tr>
-      <th>8 </th>
-      <td>     Scouts</td>
-      <td> infantry</td>
-      <td> veteran</td>
-      <td>    Sloan</td>
-      <td>  2</td>
-      <td> 62</td>
+      <th>8</th>
+      <td>Scouts</td>
+      <td>infantry</td>
+      <td>veteran</td>
+      <td>Sloan</td>
+      <td>2</td>
+      <td>62</td>
     </tr>
     <tr>
-      <th>9 </th>
-      <td>     Scouts</td>
-      <td> infantry</td>
-      <td>  rookie</td>
-      <td>    Piger</td>
-      <td>  3</td>
-      <td> 70</td>
+      <th>9</th>
+      <td>Scouts</td>
+      <td>infantry</td>
+      <td>rookie</td>
+      <td>Piger</td>
+      <td>3</td>
+      <td>70</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>     Scouts</td>
-      <td>  cavalry</td>
-      <td> veteran</td>
-      <td>    Riani</td>
-      <td>  2</td>
-      <td> 62</td>
+      <td>Scouts</td>
+      <td>cavalry</td>
+      <td>veteran</td>
+      <td>Riani</td>
+      <td>2</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>     Scouts</td>
-      <td>  cavalry</td>
-      <td>  rookie</td>
-      <td>      Ali</td>
-      <td>  3</td>
-      <td> 70</td>
+      <td>Scouts</td>
+      <td>cavalry</td>
+      <td>rookie</td>
+      <td>Ali</td>
+      <td>3</td>
+      <td>70</td>
     </tr>
   </tbody>
 </table>
-<p>12 rows × 6 columns</p>
 </div>
 
 <h3>Create a crosstab table by company and regiment</h3>
@@ -286,7 +276,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -305,31 +295,30 @@
   <tbody>
     <tr>
       <th>Dragoons</th>
-      <td> 2</td>
-      <td> 2</td>
-      <td>  4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>Nighthawks</th>
-      <td> 2</td>
-      <td> 2</td>
-      <td>  4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>Scouts</th>
-      <td> 2</td>
-      <td> 2</td>
-      <td>  4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>All</th>
-      <td> 6</td>
-      <td> 6</td>
-      <td> 12</td>
+      <td>6</td>
+      <td>6</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 3 columns</p>
 </div>
 
 <h3>Create a crosstab of the number of rookie and veteran cavalry and infantry soldiers per regiment</h3>
@@ -337,7 +326,7 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -361,50 +350,49 @@
     <tr>
       <th rowspan="2" valign="top">cavalry</th>
       <th>rookie</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>veteran</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">infantry</th>
       <th>rookie</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>veteran</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>All</th>
       <th></th>
-      <td> 4</td>
-      <td> 4</td>
-      <td> 4</td>
-      <td> 12</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 4 columns</p>
 </div>
 </div>
     <aside>
     <div class="bug-reporting__panel">
-        <h3>Find an error or bug? Have a suggestion?</h3>
-        <p>Everything on this site is avaliable on GitHub. Head on over and <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>submit an issue.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change</a>. You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
     </div>
     </aside>
 </section>
@@ -414,10 +402,10 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 496 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 488 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
-                    <time datetime="2016">2017</time>.
+                    <time datetime="2017">2017</time>.
                 </center>
             </p>
         </div>

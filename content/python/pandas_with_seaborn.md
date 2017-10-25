@@ -1,12 +1,10 @@
-Title: Using Seaborn To Visualize A Pandas Dataframe
-Slug: pandas_with_seaborn
-Summary: Using Seaborn To Visualize A Pandas Dataframe
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Using Seaborn To Visualize A Pandas Dataframe  
+Slug: pandas_with_seaborn  
+Summary: Using Seaborn To Visualize A Pandas Dataframe  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ## Preliminaries
 
@@ -35,7 +33,7 @@ df.head()
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -47,28 +45,28 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td> 14</td>
-      <td> 52</td>
+      <td>18</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 88</td>
-      <td> 92</td>
+      <td>42</td>
+      <td>67</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 39</td>
-      <td> 69</td>
+      <td>52</td>
+      <td>77</td>
     </tr>
     <tr>
       <th>3</th>
-      <td> 19</td>
-      <td> 98</td>
+      <td>4</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>4</th>
-      <td> 60</td>
-      <td> 76</td>
+      <td>14</td>
+      <td>69</td>
     </tr>
   </tbody>
 </table>
@@ -86,12 +84,12 @@ sns.lmplot('x', 'y', data=df, fit_reg=False)
 
 
 
-    <seaborn.axisgrid.FacetGrid at 0x10dc2b1d0>
+    <seaborn.axisgrid.FacetGrid at 0x114563b00>
 
 
 
 
-![png]({filename}/images/pandas_with_seaborn/output_6_1.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_6_1.png)
 
 
 ## Density Plot
@@ -104,12 +102,12 @@ sns.kdeplot(df.y)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10c30e050>
+    <matplotlib.axes._subplots.AxesSubplot at 0x113ea2ef0>
 
 
 
 
-![png]({filename}/images/pandas_with_seaborn/output_8_1.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_8_1.png)
 
 
 
@@ -120,12 +118,12 @@ sns.kdeplot(df.y, df.x)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10c5536d0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x113d7fef0>
 
 
 
 
-![png]({filename}/images/pandas_with_seaborn/output_9_1.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_9_1.png)
 
 
 
@@ -136,12 +134,12 @@ sns.distplot(df.x)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10b669550>
+    <matplotlib.axes._subplots.AxesSubplot at 0x114294160>
 
 
 
 
-![png]({filename}/images/pandas_with_seaborn/output_10_1.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_10_1.png)
 
 
 ## Histogram
@@ -153,10 +151,10 @@ sns.rugplot(df.x);
 ```
 
 
-![png]({filename}/images/pandas_with_seaborn/output_12_0.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_12_0.png)
 
 
-## Boxplot
+## Boxplot 
 
 
 ```python
@@ -166,12 +164,12 @@ sns.boxplot([df.y, df.x])
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10a5c9b50>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1142b8b38>
 
 
 
 
-![png]({filename}/images/pandas_with_seaborn/output_14_1.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_14_1.png)
 
 
 ## Violin Plot
@@ -184,12 +182,12 @@ sns.violinplot([df.y, df.x])
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10dca4b50>
+    <matplotlib.axes._subplots.AxesSubplot at 0x114444a58>
 
 
 
 
-![png]({filename}/images/pandas_with_seaborn/output_16_1.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_16_1.png)
 
 
 ## Heatmap
@@ -202,12 +200,12 @@ sns.heatmap([df.y, df.x], annot=True, fmt="d")
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x10dab5110>
+    <matplotlib.axes._subplots.AxesSubplot at 0x114530c88>
 
 
 
 
-![png]({filename}/images/pandas_with_seaborn/output_18_1.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_18_1.png)
 
 
 ## Clustermap
@@ -220,9 +218,10 @@ sns.clustermap(df)
 
 
 
-    <seaborn.matrix.ClusterGrid at 0x10de304d0>
+    <seaborn.matrix.ClusterGrid at 0x116f313c8>
 
 
 
 
-![png]({filename}/images/pandas_with_seaborn/output_20_1.png)
+![png](pandas_with_seaborn_files/pandas_with_seaborn_20_1.png)
+

@@ -8,14 +8,12 @@ Authors: Chris Albon
 
 This tutorial is inspired by Chris Kiehl's [great post on multiprocessing](http://chriskiehl.com/article/parallelism-in-one-line/).
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
 ```python
 from multiprocessing import Pool
-from multiprocessing.dummy import Pool as ThreadPool
+from multiprocessing.dummy import Pool as ThreadPool 
 ```
 
 ## Create Some Data
@@ -43,7 +41,7 @@ def some_function(datum):
 %%time
 
 # Create an empty for the results
-results = []
+results = [] 
 
 # For each value in the data
 for datum in data:
@@ -60,7 +58,7 @@ for datum in data:
 
 ```python
 # Create a pool of workers equaling cores on the machine
-pool = ThreadPool()
+pool = ThreadPool() 
 ```
 
 
@@ -71,11 +69,12 @@ pool = ThreadPool()
 results = pool.map(some_function, data)
 
 # Close the pool
-pool.close()
+pool.close() 
 
 # Combine the results of the workers
-pool.join()
+pool.join() 
 ```
 
     CPU times: user 1min 56s, sys: 1.59 s, total: 1min 57s
     Wall time: 1min 57s
+

@@ -1,12 +1,10 @@
-Title: Create A Pandas Column With A For Loop
-Slug: pandas_create_column_with_loop
-Summary: Create A Pandas Column With A For Loop
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Create A Pandas Column With A For Loop  
+Slug: pandas_create_column_with_loop  
+Summary: Create A Pandas Column With A For Loop  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ## Preliminaries
 
@@ -20,7 +18,7 @@ import numpy as np
 
 
 ```python
-raw_data = {'student_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze', 'Jacon', 'Ryaner', 'Sone', 'Sloan', 'Piger', 'Riani', 'Ali'],
+raw_data = {'student_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze', 'Jacon', 'Ryaner', 'Sone', 'Sloan', 'Piger', 'Riani', 'Ali'], 
         'test_score': [76, 88, 84, 67, 53, 96, 64, 91, 77, 73, 52, np.NaN]}
 df = pd.DataFrame(raw_data, columns = ['student_name', 'test_score'])
 ```
@@ -70,7 +68,7 @@ for row in df['test_score']:
     else:
         # Append a failing grade
         grades.append('Failed')
-
+        
 # Create a column from the list
 df['grades'] = grades
 ```
@@ -84,7 +82,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -96,77 +94,79 @@ df
   </thead>
   <tbody>
     <tr>
-      <th>0 </th>
-      <td>   Miller</td>
-      <td> 76</td>
-      <td>      C</td>
+      <th>0</th>
+      <td>Miller</td>
+      <td>76.0</td>
+      <td>C</td>
     </tr>
     <tr>
-      <th>1 </th>
-      <td> Jacobson</td>
-      <td> 88</td>
-      <td>      B</td>
+      <th>1</th>
+      <td>Jacobson</td>
+      <td>88.0</td>
+      <td>B</td>
     </tr>
     <tr>
-      <th>2 </th>
-      <td>      Ali</td>
-      <td> 84</td>
-      <td>     B-</td>
+      <th>2</th>
+      <td>Ali</td>
+      <td>84.0</td>
+      <td>B-</td>
     </tr>
     <tr>
-      <th>3 </th>
-      <td>   Milner</td>
-      <td> 67</td>
-      <td>      D</td>
+      <th>3</th>
+      <td>Milner</td>
+      <td>67.0</td>
+      <td>D</td>
     </tr>
     <tr>
-      <th>4 </th>
-      <td>    Cooze</td>
-      <td> 53</td>
-      <td> Failed</td>
+      <th>4</th>
+      <td>Cooze</td>
+      <td>53.0</td>
+      <td>Failed</td>
     </tr>
     <tr>
-      <th>5 </th>
-      <td>    Jacon</td>
-      <td> 96</td>
-      <td>      A</td>
+      <th>5</th>
+      <td>Jacon</td>
+      <td>96.0</td>
+      <td>A</td>
     </tr>
     <tr>
-      <th>6 </th>
-      <td>   Ryaner</td>
-      <td> 64</td>
-      <td>     D-</td>
+      <th>6</th>
+      <td>Ryaner</td>
+      <td>64.0</td>
+      <td>D-</td>
     </tr>
     <tr>
-      <th>7 </th>
-      <td>     Sone</td>
-      <td> 91</td>
-      <td>     A-</td>
+      <th>7</th>
+      <td>Sone</td>
+      <td>91.0</td>
+      <td>A-</td>
     </tr>
     <tr>
-      <th>8 </th>
-      <td>    Sloan</td>
-      <td> 77</td>
-      <td>      C</td>
+      <th>8</th>
+      <td>Sloan</td>
+      <td>77.0</td>
+      <td>C</td>
     </tr>
     <tr>
-      <th>9 </th>
-      <td>    Piger</td>
-      <td> 73</td>
-      <td>     C-</td>
+      <th>9</th>
+      <td>Piger</td>
+      <td>73.0</td>
+      <td>C-</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>    Riani</td>
-      <td> 52</td>
-      <td> Failed</td>
+      <td>Riani</td>
+      <td>52.0</td>
+      <td>Failed</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>      Ali</td>
+      <td>Ali</td>
       <td>NaN</td>
-      <td> Failed</td>
+      <td>Failed</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+

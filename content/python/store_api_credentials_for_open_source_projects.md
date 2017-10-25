@@ -8,8 +8,6 @@ Authors: Chris Albon
 
 One issue which repeated comes up is how to manage private API credentials when the project is available on GitHub. This is the method I use for my own projects. I store all credentials in a JSON file and tell [gitignore](https://git-scm.com/docs/gitignore) to not upload that file. Then when I am running that code locally, load the API credentials from the JSON file.
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ## Preliminaries
 
 
@@ -63,3 +61,5 @@ credentials['consumer_key']
 
 
     'sdf3223'
+
+

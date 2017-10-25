@@ -6,7 +6,6 @@ Category: Python
 Tags: Basics  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ```python
 # Import required modules
@@ -32,7 +31,7 @@ def print_some_times():
     # the function called 'print_time'
     # after 10 seconds, and with priority 1.
     s.enter(10, 1, print_time)
-
+    
     # Run the scheduler
     s.run()
 ```
@@ -44,3 +43,4 @@ print_some_times()
 ```
 
     Executive Order 66
+

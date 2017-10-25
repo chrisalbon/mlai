@@ -6,15 +6,21 @@ Category: SQL
 Tags: Basics  
 Authors: Chris Albon  
 
-Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, This tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
+Note: This tutorial was written using [Catherine Devlin's SQL in Jupyter Notebooks library](https://github.com/catherinedevlin/ipython-sql). If you have not using a Jupyter Notebook, you can ignore the two lines of code below and any line containing `%%sql`. Furthermore, this tutorial uses SQLite's flavor of SQL, your version might have some differences in syntax.
 
 
 ```python
 # Ignore
 %load_ext sql
 %sql sqlite://
-%config SqlMagic.feedback = False
 ```
+
+
+
+
+    'Connected: None@None'
+
+
 
 ## Create Data
 
@@ -36,17 +42,40 @@ INSERT INTO criminals VALUES (411, 'Bob Iton', NULL, 'M', 'San Francisco', 0);
 /* Create A Table Of Crimes */
 CREATE TABLE crimes (cid, crime, city, pid_arrested, cash_stolen);
 INSERT INTO crimes VALUES (1, 'fraud', 'Santa Rosa', 412, 40000);
-INSERT INTO crimes VALUES (2, 'burglary', 'Petaluma', 234, 2000);
-INSERT INTO crimes VALUES (3, 'burglary', 'Santa Rosa', 632, 2000);
-INSERT INTO crimes VALUES (4, NULL, NULL, 621, 3500); 
-INSERT INTO crimes VALUES (5, 'burglary', 'Santa Rosa', 162, 1000); 
-INSERT INTO crimes VALUES (6, NULL, 'Petaluma', 901, 50000); 
-INSERT INTO crimes VALUES (7, 'fraud', 'San Francisco', 412, 60000); 
-INSERT INTO crimes VALUES (8, 'burglary', 'Santa Rosa', 512, 7000); 
-INSERT INTO crimes VALUES (9, 'burglary', 'San Francisco', 411, 3000); 
-INSERT INTO crimes VALUES (10, 'robbery', 'Santa Rosa', 632, 2500); 
-INSERT INTO crimes VALUES (11, 'robbery', 'Santa Rosa', 512, 3000);
+INSERT INTO crimes VALUES (1, 'burglary', 'Petaluma', 234, 2000);
+INSERT INTO crimes VALUES (1, 'burglary', 'Santa Rosa', 632, 2000);
+INSERT INTO crimes VALUES (1, 'larcony', 'Petaluma', 621, 3500); 
+INSERT INTO crimes VALUES (1, 'burglary', 'Santa Rosa', 162, 1000); 
+INSERT INTO crimes VALUES (1, 'larcony', 'Petaluma', 901, 50000); 
+INSERT INTO crimes VALUES (1, 'fraud', 'San Francisco', 412, 60000); 
+INSERT INTO crimes VALUES (1, 'burglary', 'Santa Rosa', 512, 7000); 
+INSERT INTO crimes VALUES (1, 'burglary', 'San Francisco', 411, 3000); 
+INSERT INTO crimes VALUES (1, 'robbery', 'Santa Rosa', 632, 2500); 
+INSERT INTO crimes VALUES (1, 'robbery', 'Santa Rosa', 512, 3000);
 ```
+
+    Done.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    Done.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+    1 rows affected.
+
 
 
 
@@ -55,7 +84,7 @@ INSERT INTO crimes VALUES (11, 'robbery', 'Santa Rosa', 512, 3000);
 
 
 
-## Select Each Everything In Teach Table
+## View Both Tables
 
 
 ```python
@@ -67,6 +96,9 @@ SELECT *
 -- From the table 'criminals'
 FROM criminals
 ```
+
+    Done.
+
 
 
 
@@ -159,6 +191,9 @@ SELECT *
 FROM crimes
 ```
 
+    Done.
+
+
 
 
 
@@ -178,70 +213,70 @@ FROM crimes
         <td>40000</td>
     </tr>
     <tr>
-        <td>2</td>
+        <td>1</td>
         <td>burglary</td>
         <td>Petaluma</td>
         <td>234</td>
         <td>2000</td>
     </tr>
     <tr>
-        <td>3</td>
+        <td>1</td>
         <td>burglary</td>
         <td>Santa Rosa</td>
         <td>632</td>
         <td>2000</td>
     </tr>
     <tr>
-        <td>4</td>
-        <td>None</td>
-        <td>None</td>
+        <td>1</td>
+        <td>larcony</td>
+        <td>Petaluma</td>
         <td>621</td>
         <td>3500</td>
     </tr>
     <tr>
-        <td>5</td>
+        <td>1</td>
         <td>burglary</td>
         <td>Santa Rosa</td>
         <td>162</td>
         <td>1000</td>
     </tr>
     <tr>
-        <td>6</td>
-        <td>None</td>
+        <td>1</td>
+        <td>larcony</td>
         <td>Petaluma</td>
         <td>901</td>
         <td>50000</td>
     </tr>
     <tr>
-        <td>7</td>
+        <td>1</td>
         <td>fraud</td>
         <td>San Francisco</td>
         <td>412</td>
         <td>60000</td>
     </tr>
     <tr>
-        <td>8</td>
+        <td>1</td>
         <td>burglary</td>
         <td>Santa Rosa</td>
         <td>512</td>
         <td>7000</td>
     </tr>
     <tr>
-        <td>9</td>
+        <td>1</td>
         <td>burglary</td>
         <td>San Francisco</td>
         <td>411</td>
         <td>3000</td>
     </tr>
     <tr>
-        <td>10</td>
+        <td>1</td>
         <td>robbery</td>
         <td>Santa Rosa</td>
         <td>632</td>
         <td>2500</td>
     </tr>
     <tr>
-        <td>11</td>
+        <td>1</td>
         <td>robbery</td>
         <td>Santa Rosa</td>
         <td>512</td>

@@ -1,14 +1,12 @@
-Title: List Unique Values In A Pandas Column
-Slug: pandas_list_unique_values_in_column
-Summary: List Unique Values In A Pandas Column
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
+Title: List Unique Values In A Pandas Column  
+Slug: pandas_list_unique_values_in_column  
+Summary: List Unique Values In A Pandas Column  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 Special thanks to Bob Haffner for pointing out a better way of doing it.
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
 
 ## Preliminaries
 
@@ -29,8 +27,8 @@ pd.set_option('display.max_columns', 50)
 
 ```python
 # Create an example dataframe
-data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'year': [2012, 2012, 2013, 2014, 2014],
+data = {'name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'year': [2012, 2012, 2013, 2014, 2014], 
         'reports': [4, 24, 31, 2, 3]}
 df = pd.DataFrame(data, index = ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'])
 df
@@ -98,3 +96,5 @@ df.name.unique()
 
 
     array(['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], dtype=object)
+
+

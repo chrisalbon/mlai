@@ -4,7 +4,7 @@ Summary: Search Strings Using Regex Using Scala.
 Date: 2017-01-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 This tutorial was inspired by the awesome [Scala Cookbook](http://amzn.to/2lxbrxN).
 
@@ -51,3 +51,5 @@ find_numbers.findAllIn(attack_order).toArray
 
 
     Array(382, 28)
+
+

@@ -1,14 +1,12 @@
-Title: Histograms In MatPlotLib
-Slug: matplotlib_histogram
-Summary: Histograms In MatPlotLib
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Visualization
-Authors: Chris Albon
+Title: Histograms In MatPlotLib  
+Slug: matplotlib_histogram  
+Summary: Histograms In MatPlotLib  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Visualization  
+Authors: Chris Albon  
 
-**Note:** Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
 
 ## Preliminaries
 
@@ -230,16 +228,16 @@ data2 = df['defender_size'][df['attacker_size'] < 90000]
 bins = np.arange(data1.min(), data2.max(), 2000) # fixed bin size
 
 # Plot a histogram of attacker size
-plt.hist(data1,
-         bins=bins,
-         alpha=0.5,
+plt.hist(data1, 
+         bins=bins, 
+         alpha=0.5, 
          color='#EDD834',
          label='Attacker')
 
 # Plot a histogram of defender size
-plt.hist(data2,
-         bins=bins,
-         alpha=0.5,
+plt.hist(data2, 
+         bins=bins, 
+         alpha=0.5, 
          color='#887E43',
          label='Defender')
 
@@ -256,7 +254,7 @@ plt.show()
 ```
 
 
-![png]({filename}/images/matplotlib_histogram/output_6_0.png)
+![png](matplotlib_histogram_files/matplotlib_histogram_6_0.png)
 
 
 ## Make plot with fixed number of bins
@@ -268,31 +266,31 @@ plt.show()
 data1 = df['attacker_size'][df['attacker_size'] < 90000]
 data2 = df['defender_size'][df['attacker_size'] < 90000]
 
-# Create 10 bins with the minimum
-# being the smallest value of data1 and data2
-bins = np.linspace(min(data1 + data2),
+# Create 10 bins with the minimum 
+# being the smallest value of data1 and data2 
+bins = np.linspace(min(data1 + data2), 
                    # the max being the highest value
                    max(data1 + data2),
                    # and divided into 10 bins
                    10)
 
 # Plot a histogram of attacker size
-plt.hist(data1,
+plt.hist(data1, 
          # with bins defined as
-         bins=bins,
+         bins=bins, 
          # with alpha
-         alpha=0.5,
+         alpha=0.5, 
          # with color
          color='#EDD834',
          # labelled attacker
          label='Attacker')
 
 # Plot a histogram of defender size
-plt.hist(data2,
+plt.hist(data2, 
          # with bins defined as
-         bins=bins,
+         bins=bins, 
          # with alpha
-         alpha=0.5,
+         alpha=0.5, 
          # with color
          color='#887E43',
          # labeled defender
@@ -311,4 +309,5 @@ plt.show()
 ```
 
 
-![png]({filename}/images/matplotlib_histogram/output_8_0.png)
+![png](matplotlib_histogram_files/matplotlib_histogram_8_0.png)
+

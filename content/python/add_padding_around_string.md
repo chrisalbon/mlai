@@ -6,16 +6,14 @@ Category: Python
 Tags: Basics  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
-## Create Some Text
+## Create Some Text 
 
 
 ```python
 text = 'Chapter 1'
 ```
 
-## Add Padding Around Text
+## Add Padding Around Text 
 
 
 ```python
@@ -66,3 +64,5 @@ format(text, '*^20')
 
 
     '*****Chapter 1******'
+
+

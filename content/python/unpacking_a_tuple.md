@@ -6,13 +6,13 @@ Category: Python
 Tags: Basics    
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Interesting in learning more? Check out [Fluent Python](http://amzn.to/2jYU506)
 
 ## Create List Of Tuples
 
 
 ```python
-# Create a list of tuples where the first and second element of each
+# Create a list of tuples where the first and second element of each 
 # super is the first last names, respectively
 soldiers = [('Steve', 'Miller'), ('Stacy', 'Markov'), ('Sonya', 'Matthews'), ('Sally', 'Mako')]
 ```
@@ -31,3 +31,4 @@ for _, last_name in soldiers:
     Markov
     Matthews
     Mako
+

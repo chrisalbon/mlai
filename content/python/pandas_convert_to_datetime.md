@@ -1,12 +1,10 @@
-Title: Convert A Variable To A Time Variable In Pandas
-Slug: pandas_convert_to_datetime
-Summary: Convert A Variable To A Time Variable In Pandas
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Convert A Variable To A Time Variable In Pandas  
+Slug: pandas_convert_to_datetime  
+Summary: Convert A Variable To A Time Variable In Pandas  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 
 ```python
@@ -26,7 +24,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -38,18 +36,18 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> 2014-06-01T01:21:38.004053</td>
-      <td> 25</td>
+      <td>2014-06-01T01:21:38.004053</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> 2014-06-02T01:21:38.004053</td>
-      <td> 94</td>
+      <td>2014-06-02T01:21:38.004053</td>
+      <td>94</td>
     </tr>
     <tr>
       <th>2</th>
-      <td> 2014-06-03T01:21:38.004053</td>
-      <td> 57</td>
+      <td>2014-06-03T01:21:38.004053</td>
+      <td>57</td>
     </tr>
   </tbody>
 </table>
@@ -76,7 +74,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -94,18 +92,20 @@ df
     <tr>
       <th>2014-06-01 01:21:38.004053</th>
       <td>2014-06-01 01:21:38.004053</td>
-      <td> 25</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>2014-06-02 01:21:38.004053</th>
       <td>2014-06-02 01:21:38.004053</td>
-      <td> 94</td>
+      <td>94</td>
     </tr>
     <tr>
       <th>2014-06-03 01:21:38.004053</th>
       <td>2014-06-03 01:21:38.004053</td>
-      <td> 57</td>
+      <td>57</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+

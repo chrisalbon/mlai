@@ -1,12 +1,10 @@
-Title: Dictionary Basics
-Slug: dictionary_basics
-Summary: Dictionary Basics
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Basics
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Dictionary Basics  
+Slug: dictionary_basics  
+Summary: Dictionary Basics  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Basics  
+Authors: Chris Albon  
 
 ### Basics
 
@@ -100,3 +98,5 @@ unitas_org['url'][1]
 
 
     'http://unitas.int'
+
+

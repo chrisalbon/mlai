@@ -4,7 +4,7 @@ Summary: Iterate Over A Map Using Scala.
 Date: 2017-04-03 12:00  
 Category: Scala  
 Tags: Basics  
-Authors: Chris Albon
+Authors: Chris Albon 
 
 If you want to learn more, check out [Scala Cookbook](http://amzn.to/2lxbrxN) and [Programming in Scala](http://amzn.to/2lEtsLt).
 
@@ -48,3 +48,5 @@ prices.mapValues(_+1000)
 
 
     Map(Video Card -> 1200.0, Motherboard -> 1400.0, CPU -> 1100.0)
+
+

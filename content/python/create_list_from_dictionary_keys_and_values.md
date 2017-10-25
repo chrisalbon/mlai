@@ -1,19 +1,17 @@
-Title: Creating Lists From Dictionary Keys And Values
-Slug: create_list_from_dictionary_keys_and_values
-Summary: Creating Lists From Dictionary Keys And Values
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Creating Lists From Dictionary Keys And Values  
+Slug: create_list_from_dictionary_keys_and_values  
+Summary: Creating Lists From Dictionary Keys And Values  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ### Create a dictionary
 
 
 ```python
-dict = {'county': ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'],
-        'year': [2012, 2012, 2013, 2014, 2014],
+dict = {'county': ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'], 
+        'year': [2012, 2012, 2013, 2014, 2014], 
         'fireReports': [4, 24, 31, 2, 3]}
 ```
 
@@ -21,22 +19,14 @@ dict = {'county': ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'],
 
 
 ```python
-# Create a list to place the dictionary keys in
-dictionaryKeys = []
-
-# For each key in the dictionary's keys,
-for key in dict.keys():
-    # add the key to dictionaryKeys
-    dictionaryKeys.append(key)
-
-# View the dictionaryKeys list
-dictionaryKeys
+# Create a list of keys
+list(dict.keys())
 ```
 
 
 
 
-    ['year', 'county', 'fireReports']
+    ['fireReports', 'year', 'county']
 
 
 
@@ -44,21 +34,15 @@ dictionaryKeys
 
 
 ```python
-# Create a list to place the dictionary values in
-dictionaryValues = []
-
-# For each key in the dictionary's Values,
-for x in dict.values():
-    # add the key to dictionaryValues
-    dictionaryValues.append(x)
-
-# View the dictionaryValues list
-dictionaryValues
+# Create a list of values
+list(dict.values())
 ```
 
 
 
 
-    [[2012, 2012, 2013, 2014, 2014],
-     ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma'],
-     [4, 24, 31, 2, 3]]
+    [[4, 24, 31, 2, 3],
+     [2012, 2012, 2013, 2014, 2014],
+     ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma']]
+
+

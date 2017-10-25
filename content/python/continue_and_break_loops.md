@@ -4,9 +4,7 @@ Summary: Continue And Break Loops
 Date: 2016-05-01 12:00  
 Category: Python  
 Tags: Basics  
-Authors: Chris Albon# Continue And Break Loops  
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Authors: Chris Albon 
 
 ### Import the random module
 
@@ -53,3 +51,4 @@ while running:
     It is too small, starting over.
     It is too small, starting over.
     It is 5! Breaking Loop!
+

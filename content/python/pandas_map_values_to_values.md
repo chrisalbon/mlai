@@ -1,12 +1,10 @@
-Title: Map External Values To Dataframe Values in Pandas
-Slug: pandas_map_values_to_values
-Summary: Map External Values To Dataframe Values in Pandas
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Wrangling
-Authors: Chris Albon
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Title: Map External Values To Dataframe Values in Pandas  
+Slug: pandas_map_values_to_values  
+Summary: Map External Values To Dataframe Values in Pandas  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Wrangling  
+Authors: Chris Albon  
 
 ### import modules
 
@@ -19,9 +17,9 @@ import pandas as pd
 
 
 ```python
-raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'],
-        'last_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze'],
-        'age': [42, 52, 36, 24, 73],
+raw_data = {'first_name': ['Jason', 'Molly', 'Tina', 'Jake', 'Amy'], 
+        'last_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze'], 
+        'age': [42, 52, 36, 24, 73], 
         'city': ['San Francisco', 'Baltimore', 'Miami', 'Douglas', 'Boston']}
 df = pd.DataFrame(raw_data, columns = ['first_name', 'last_name', 'age', 'city'])
 df
@@ -30,7 +28,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -44,42 +42,41 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>   Miller</td>
-      <td> 42</td>
-      <td> San Francisco</td>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>42</td>
+      <td>San Francisco</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> Jacobson</td>
-      <td> 52</td>
-      <td>     Baltimore</td>
+      <td>Molly</td>
+      <td>Jacobson</td>
+      <td>52</td>
+      <td>Baltimore</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td>      Ali</td>
-      <td> 36</td>
-      <td>         Miami</td>
+      <td>Tina</td>
+      <td>Ali</td>
+      <td>36</td>
+      <td>Miami</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>   Milner</td>
-      <td> 24</td>
-      <td>       Douglas</td>
+      <td>Jake</td>
+      <td>Milner</td>
+      <td>24</td>
+      <td>Douglas</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>    Cooze</td>
-      <td> 73</td>
-      <td>        Boston</td>
+      <td>Amy</td>
+      <td>Cooze</td>
+      <td>73</td>
+      <td>Boston</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 4 columns</p>
 </div>
 
 
@@ -88,10 +85,10 @@ df
 
 
 ```python
-city_to_state = { 'San Francisco' : 'California',
-                  'Baltimore' : 'Maryland',
-                  'Miami' : 'Florida',
-                  'Douglas' : 'Arizona',
+city_to_state = { 'San Francisco' : 'California', 
+                  'Baltimore' : 'Maryland', 
+                  'Miami' : 'Florida', 
+                  'Douglas' : 'Arizona', 
                   'Boston' : 'Massachusetts'}
 ```
 
@@ -106,7 +103,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -121,45 +118,46 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>   Miller</td>
-      <td> 42</td>
-      <td> San Francisco</td>
-      <td>    California</td>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>42</td>
+      <td>San Francisco</td>
+      <td>California</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> Jacobson</td>
-      <td> 52</td>
-      <td>     Baltimore</td>
-      <td>      Maryland</td>
+      <td>Molly</td>
+      <td>Jacobson</td>
+      <td>52</td>
+      <td>Baltimore</td>
+      <td>Maryland</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td>      Ali</td>
-      <td> 36</td>
-      <td>         Miami</td>
-      <td>       Florida</td>
+      <td>Tina</td>
+      <td>Ali</td>
+      <td>36</td>
+      <td>Miami</td>
+      <td>Florida</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>   Milner</td>
-      <td> 24</td>
-      <td>       Douglas</td>
-      <td>       Arizona</td>
+      <td>Jake</td>
+      <td>Milner</td>
+      <td>24</td>
+      <td>Douglas</td>
+      <td>Arizona</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>    Cooze</td>
-      <td> 73</td>
-      <td>        Boston</td>
-      <td> Massachusetts</td>
+      <td>Amy</td>
+      <td>Cooze</td>
+      <td>73</td>
+      <td>Boston</td>
+      <td>Massachusetts</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 5 columns</p>
 </div>
+
+

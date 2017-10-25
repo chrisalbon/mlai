@@ -6,8 +6,6 @@ Category: Python
 Tags: Data Wrangling  
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
-
 ### import modules
 
 
@@ -19,11 +17,11 @@ import pandas as pd
 
 
 ```python
-raw_data = {'first_name': ['Jason', 'Jason', 'Tina', 'Jake', 'Amy'],
-        'last_name': ['Miller', 'Miller', 'Ali', 'Milner', 'Cooze'],
-        'age': [42, 42, 36, 24, 73],
-        'preTestScore': [4, 4, 31, 2, 3],
-        'postTestScore': [25, 25, 57, 62, 70]}
+raw_data = {'first_name': ['Jason', 'Jason', 'Jason','Tina', 'Jake', 'Amy'], 
+        'last_name': ['Miller', 'Miller', 'Miller','Ali', 'Milner', 'Cooze'], 
+        'age': [42, 42, 1111111, 36, 24, 73], 
+        'preTestScore': [4, 4, 4, 31, 2, 3],
+        'postTestScore': [25, 25, 25, 57, 62, 70]}
 df = pd.DataFrame(raw_data, columns = ['first_name', 'last_name', 'age', 'preTestScore', 'postTestScore'])
 df
 ```
@@ -32,6 +30,19 @@ df
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -62,6 +73,14 @@ df
     </tr>
     <tr>
       <th>2</th>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>1111111</td>
+      <td>4</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3</th>
       <td>Tina</td>
       <td>Ali</td>
       <td>36</td>
@@ -69,7 +88,7 @@ df
       <td>57</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>4</th>
       <td>Jake</td>
       <td>Milner</td>
       <td>24</td>
@@ -77,7 +96,7 @@ df
       <td>62</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>5</th>
       <td>Amy</td>
       <td>Cooze</td>
       <td>73</td>
@@ -105,6 +124,7 @@ df.duplicated()
     2    False
     3    False
     4    False
+    5    False
     dtype: bool
 
 
@@ -120,6 +140,19 @@ df.drop_duplicates()
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -142,6 +175,14 @@ df.drop_duplicates()
     </tr>
     <tr>
       <th>2</th>
+      <td>Jason</td>
+      <td>Miller</td>
+      <td>1111111</td>
+      <td>4</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3</th>
       <td>Tina</td>
       <td>Ali</td>
       <td>36</td>
@@ -149,7 +190,7 @@ df.drop_duplicates()
       <td>57</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>4</th>
       <td>Jake</td>
       <td>Milner</td>
       <td>24</td>
@@ -157,7 +198,7 @@ df.drop_duplicates()
       <td>62</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>5</th>
       <td>Amy</td>
       <td>Cooze</td>
       <td>73</td>
@@ -181,6 +222,19 @@ df.drop_duplicates(['first_name'], keep='last')
 
 
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -194,15 +248,15 @@ df.drop_duplicates(['first_name'], keep='last')
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
+      <th>2</th>
       <td>Jason</td>
       <td>Miller</td>
-      <td>42</td>
+      <td>1111111</td>
       <td>4</td>
       <td>25</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>3</th>
       <td>Tina</td>
       <td>Ali</td>
       <td>36</td>
@@ -210,7 +264,7 @@ df.drop_duplicates(['first_name'], keep='last')
       <td>57</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>4</th>
       <td>Jake</td>
       <td>Milner</td>
       <td>24</td>
@@ -218,7 +272,7 @@ df.drop_duplicates(['first_name'], keep='last')
       <td>62</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>5</th>
       <td>Amy</td>
       <td>Cooze</td>
       <td>73</td>
@@ -228,3 +282,5 @@ df.drop_duplicates(['first_name'], keep='last')
   </tbody>
 </table>
 </div>
+
+

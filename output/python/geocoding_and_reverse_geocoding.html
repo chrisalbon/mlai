@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Chris Albon - Data Science, Machine Learning, and Artificial Intelligence Categories RSS Feed" />    
+     <link href="http://chrisalbon.com/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Full RSS Feed" />         <link href="http://chrisalbon.com/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="Machine Learning and Artificial Intelligence Categories RSS Feed" />    
 
     <meta name="tags" content="Data Wrangling" />
 
@@ -55,27 +55,20 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Table Of Contents<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ML/AI Notes<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="..#Blog">Blog</a></li>
+                          <li><a href="..#Machine-Learning">Machine Learning</a></li>
+                          <li><a href="..#Deep-Learning">Deep Learning</a></li>
+                          <li><a href="..#Algorithms">Algorithms</a></li>
                           <li><a href="..#Python">Python</a></li>
-                          <li><a href="..#R_Stats">R Stats</a></li>
-                          <li><a href="..#Regex">Regex</a></li>
-                          <li><a href="..#Bash">Bash</a></li>
-                          <li><a href="..#Project_Juypter">Project Juypter</a></li>
-                          <li><a href="..#SQL">SQL</a></li>
-                          <li><a href="..#Mathematics">Mathematics</a></li>
+                          <li><a href="..#Statistics">Statistics</a></li>
+                          <li><a href="..#Cloud-Computing">Cloud Computing</a></li>
                           <li><a href="..#Javascript">Javascript</a></li>
-                          <li><a href="..#Probability">Probability</a></li>
-                          <li><a href="..#Frequentist_Statistics">Frequentist Statistics</a></li>
-                          <li><a href="..#Bayesian_Statistics">Bayesian Statistics</a></li>
-                          <li><a href="..#Machine_Learning">Machine Learning</a></li>
-                          <li><a href="..#GitHub">GitHub</a></li>
+                          <li><a href="..#SQL">SQL</a></li>
                           <li><a href="..#Scala">Scala</a></li>
-                          <li><a href="..#Spark">Spark</a></li>
-                          <li><a href="..#Amazon_Web_Services">Amazon Web Services</a></li>
-                          <li><a href="..#Kaggle">Kaggle</a></li>
-                          <li><a href="..#Projects">Projects</a></li>
+                          <li><a href="..#Regex">Regex</a></li>
+                          <li><a href="..#Mathematics">Mathematics</a></li>
                       </ul>
                   </li>
                     <li class="dropdown">
@@ -115,9 +108,8 @@
 
     <!-- end of header section -->
     <div class="container">
-<div class="alert alert-warning alert-dismissable" role="alert">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    Interested in machine learning? Check out my <a href="http://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
+<div class="alert alert-warning advert" role="alert">
+    Want to learn machine learning? Use my <a href="https://machinelearningflashcards.com" class="alert-link">machine learning flashcards</a>.
 </div>
 
 <section id="content" class="body">
@@ -136,11 +128,10 @@
 </ol>
 </header>
 <div class='article_content'>
-<p>Geocoding (converting a phyiscal address or location into latitude/longitude) and reverse geocoding (converting a lat/long to a phyiscal address or location) are common tasks when working with geo-data.</p>
+<p>Geocoding (converting a physical address or location into latitude/longitude) and reverse geocoding (converting a lat/long to a physical address or location) are common tasks when working with geo-data.</p>
 <p>Python offers a number of packages to make the task incredibly easy. In the tutorial below, I use pygeocoder, a wrapper for Google's geo-API, to both geocode and reverse geocode.</p>
-<p>Want to learn more? I recommend these Python books: <a href="http://amzn.to/2ljV9wY">Python for Data Analysis</a>, <a href="http://amzn.to/2m0mgMB">Python Data Science Handbook</a>, and <a href="http://amzn.to/2mjYiwK">Introduction to Machine Learning with Python</a>.</p>
 <h2>Preliminaries</h2>
-<p>First we want to load the packages we will want to use in the script. Specifically, I am loading pygeocoder for its geo-functionality, pandas for it's dataframe structures, and numpy for it's missing value (np.nan) functionality.</p>
+<p>First we want to load the packages we will want to use in the script. Specifically, I am loading pygeocoder for its geo-functionality, pandas for its dataframe structures, and numpy for its missing value (np.nan) functionality.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Load packages</span>
 <span class="kn">from</span> <span class="nn">pygeocoder</span> <span class="kn">import</span> <span class="n">Geocoder</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -149,7 +140,7 @@
 
 
 <h2>Create some simulated geo data</h2>
-<p>Geo-data comes in a wide variety of forms, in this case we have a Python dictionary of five latitude and longitude strings, with each coordinate in a coordinate pair seperated by a comma.</p>
+<p>Geo-data comes in a wide variety of forms, in this case we have a Python dictionary of five latitude and longitude strings, with each coordinate in a coordinate pair separated by a comma.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Create a dictionary of raw data</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Site 1&#39;</span><span class="p">:</span> <span class="s1">&#39;31.336968, -109.560959&#39;</span><span class="p">,</span>
         <span class="s1">&#39;Site 2&#39;</span><span class="p">:</span> <span class="s1">&#39;31.347745, -108.229963&#39;</span><span class="p">,</span>
@@ -159,7 +150,7 @@
 </pre></div>
 
 
-<p>While technically unneccesary, because I originally come from R, I am a big fan of dataframes, so let us turn the dictionary of simulated data into a dataframe.</p>
+<p>While technically unnecessary, because I originally come from R, I am a big fan of dataframes, so let us turn the dictionary of simulated data into a dataframe.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Convert the dictionary into a pandas dataframe</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
 </pre></div>
@@ -170,7 +161,20 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -180,24 +184,24 @@
   </thead>
   <tbody>
     <tr>
-      <th>Site 5</th>
-      <td> 30.295053, -104.014528</td>
-    </tr>
-    <tr>
-      <th>Site 1</th>
-      <td> 31.336968, -109.560959</td>
+      <th>Site 4</th>
+      <td>31.655494, -106.420484</td>
     </tr>
     <tr>
       <th>Site 3</th>
-      <td> 32.277621, -107.734724</td>
+      <td>32.277621, -107.734724</td>
     </tr>
     <tr>
-      <th>Site 4</th>
-      <td> 31.655494, -106.420484</td>
+      <th>Site 1</th>
+      <td>31.336968, -109.560959</td>
+    </tr>
+    <tr>
+      <th>Site 5</th>
+      <td>30.295053, -104.014528</td>
     </tr>
     <tr>
       <th>Site 2</th>
-      <td> 31.347745, -108.229963</td>
+      <td>31.347745, -108.229963</td>
     </tr>
   </tbody>
 </table>
@@ -237,7 +241,20 @@
 </pre></div>
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -249,33 +266,33 @@
   </thead>
   <tbody>
     <tr>
-      <th>Site 5</th>
-      <td> 30.295053, -104.014528</td>
-      <td> 30.295053</td>
-      <td>-104.014528</td>
-    </tr>
-    <tr>
-      <th>Site 1</th>
-      <td> 31.336968, -109.560959</td>
-      <td> 31.336968</td>
-      <td>-109.560959</td>
-    </tr>
-    <tr>
-      <th>Site 3</th>
-      <td> 32.277621, -107.734724</td>
-      <td> 32.277621</td>
-      <td>-107.734724</td>
-    </tr>
-    <tr>
       <th>Site 4</th>
-      <td> 31.655494, -106.420484</td>
-      <td> 31.655494</td>
+      <td>31.655494, -106.420484</td>
+      <td>31.655494</td>
       <td>-106.420484</td>
     </tr>
     <tr>
+      <th>Site 3</th>
+      <td>32.277621, -107.734724</td>
+      <td>32.277621</td>
+      <td>-107.734724</td>
+    </tr>
+    <tr>
+      <th>Site 1</th>
+      <td>31.336968, -109.560959</td>
+      <td>31.336968</td>
+      <td>-109.560959</td>
+    </tr>
+    <tr>
+      <th>Site 5</th>
+      <td>30.295053, -104.014528</td>
+      <td>30.295053</td>
+      <td>-104.014528</td>
+    </tr>
+    <tr>
       <th>Site 2</th>
-      <td> 31.347745, -108.229963</td>
-      <td> 31.347745</td>
+      <td>31.347745, -108.229963</td>
+      <td>31.347745</td>
       <td>-108.229963</td>
     </tr>
   </tbody>
@@ -284,7 +301,7 @@
 
 <p>Awesome. This is exactly what we want to see, one column of floats for latitude and one column of floats for longitude.</p>
 <h2>Reverse Geocoding</h2>
-<p>To reverse geocode, we feed a specific latitude and longitude pair, in this case the first row (indexed as '0') into pygeocoder's reverse_geocoder function.</p>
+<p>To reverse geocode, we feed a specific latitude and longitude pair, in this case the first row (indexed as '0') into pygeocoder's reverse_geocoder function. </p>
 <div class="codehilite"><pre><span></span><span class="c1"># Convert longitude and latitude to a location</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">Geocoder</span><span class="o">.</span><span class="n">reverse_geocode</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
@@ -296,7 +313,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>(30.30077769999999, -104.0129162)
+<div class="codehilite"><pre><span></span>(31.6556534, -106.4204309)
 </pre></div>
 
 
@@ -305,7 +322,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>&#39;Marfa&#39;
+<div class="codehilite"><pre><span></span>&#39;Ciudad Juárez&#39;
 </pre></div>
 
 
@@ -314,7 +331,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>&#39;United States&#39;
+<div class="codehilite"><pre><span></span>&#39;Mexico&#39;
 </pre></div>
 
 
@@ -328,14 +345,14 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>&#39;Texas&#39;
+<div class="codehilite"><pre><span></span>&#39;Chihuahua&#39;
 </pre></div>
 
 
 <h2>Geocoding</h2>
 <p>For geocoding, we need to submit a string containing an address or location (such as a city) into the geocode function. However, not all strings are formatted in a way that Google's geo-API can make sense of them. We can text if an input is valid by using the .geocode().valid_address function.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Verify that an address is valid (i.e. in Google&#39;s system)</span>
-<span class="n">Geocoder</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span><span class="s2">&quot;7250 South Tucson Boulevard, Tucson, AZ 85756&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">valid_address</span>
+<span class="n">Geocoder</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span><span class="s2">&quot;4207 N Washington Ave, Douglas, AZ 85607&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">valid_address</span>
 </pre></div>
 
 
@@ -349,11 +366,11 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>(30.30077769999999, -104.0129162)
+<div class="codehilite"><pre><span></span>(31.6556534, -106.4204309)
 </pre></div>
 
 
-<p>But even more interesting, once the address is processed by the Google geo API, we can parse it and easily seperate street numbers, street names, etc.</p>
+<p>But even more interesting, once the address is processed by the Google geo API, we can parse it and easily separate street numbers, street names, etc. </p>
 <div class="codehilite"><pre><span></span><span class="c1"># Find the lat/long of a certain address</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">Geocoder</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span><span class="s2">&quot;7250 South Tucson Boulevard, Tucson, AZ 85756&quot;</span><span class="p">)</span>
 </pre></div>
@@ -381,8 +398,8 @@
 </div>
     <aside>
     <div class="bug-reporting__panel">
-        <h3>Find an error or bug? Have a suggestion?</h3>
-        <p>Everything on this site is avaliable on GitHub. Head on over and <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>submit an issue.</a> You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
+        <h3>Find an error or bug?</h3>
+        <p>Everything on this site is available on GitHub. Head to <a href='https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence/issues/new'>and submit a suggested change</a>. You can also message me directly on <a href='https://twitter.com/chrisalbon'>Twitter</a>.</p>
     </div>
     </aside>
 </section>
@@ -392,10 +409,10 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                <center>This project contains 496 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
+                <center>This project contains 488 pages and is available on <a href="https://github.com/chrisalbon/notes_on_data_science_machine_learning_and_artificial_intelligence">GitHub</a>.
                 <br/>
                 Copyright &copy; Chris Albon,
-                    <time datetime="2016">2017</time>.
+                    <time datetime="2017">2017</time>.
                 </center>
             </p>
         </div>

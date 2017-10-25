@@ -1,16 +1,12 @@
-Title: Stacked Bar Plot In MatPlotLib
-Slug: matplotlib_stacked_bar_plot
-Summary: Stacked Bar Plot In MatPlotLib
-Date: 2016-05-01 12:00
-Category: Python
-Tags: Data Visualization
-Authors: Chris Albon
+Title: Scatterplot In MatPlotLib  
+Slug: matplotlib_stacked_bar_plot   
+Summary: Scatterplot In MatPlotLib  
+Date: 2016-05-01 12:00  
+Category: Python  
+Tags: Data Visualization  
+Authors: Chris Albon  
 
-
-
-- **Note:** Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
-
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Based on: [Sebastian Raschka](http://nbviewer.ipython.org/github/rasbt/matplotlib-gallery/blob/master/ipynb/barplots.ipynb).
 
 ## Preliminaries
 
@@ -37,7 +33,7 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -51,38 +47,38 @@ df
   <tbody>
     <tr>
       <th>0</th>
-      <td> Jason</td>
-      <td>  4</td>
-      <td> 25</td>
-      <td>  5</td>
+      <td>Jason</td>
+      <td>4</td>
+      <td>25</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td> Molly</td>
-      <td> 24</td>
-      <td> 94</td>
-      <td> 43</td>
+      <td>Molly</td>
+      <td>24</td>
+      <td>94</td>
+      <td>43</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>  Tina</td>
-      <td> 31</td>
-      <td> 57</td>
-      <td> 23</td>
+      <td>Tina</td>
+      <td>31</td>
+      <td>57</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>  Jake</td>
-      <td>  2</td>
-      <td> 62</td>
-      <td> 23</td>
+      <td>Jake</td>
+      <td>2</td>
+      <td>62</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>   Amy</td>
-      <td>  3</td>
-      <td> 70</td>
-      <td> 51</td>
+      <td>Amy</td>
+      <td>3</td>
+      <td>70</td>
+      <td>51</td>
     </tr>
   </tbody>
 </table>
@@ -101,51 +97,51 @@ f, ax1 = plt.subplots(1, figsize=(10,5))
 bar_width = 0.75
 
 # positions of the left bar-boundaries
-bar_l = [i+1 for i in range(len(df['pre_score']))]
+bar_l = [i+1 for i in range(len(df['pre_score']))] 
 
 # positions of the x-axis ticks (center of the bars as bar labels)
-tick_pos = [i+(bar_width/2) for i in bar_l]
+tick_pos = [i+(bar_width/2) for i in bar_l] 
 
 # Create a bar plot, in position bar_1
-ax1.bar(bar_l,
+ax1.bar(bar_l, 
         # using the pre_score data
-        df['pre_score'],
+        df['pre_score'], 
         # set the width
         width=bar_width,
         # with the label pre score
-        label='Pre Score',
+        label='Pre Score', 
         # with alpha 0.5
-        alpha=0.5,
+        alpha=0.5, 
         # with color
         color='#F4561D')
 
 # Create a bar plot, in position bar_1
-ax1.bar(bar_l,
+ax1.bar(bar_l, 
         # using the mid_score data
-        df['mid_score'],
+        df['mid_score'], 
         # set the width
         width=bar_width,
         # with pre_score on the bottom
-        bottom=df['pre_score'],
+        bottom=df['pre_score'], 
         # with the label mid score
-        label='Mid Score',
+        label='Mid Score', 
         # with alpha 0.5
-        alpha=0.5,
+        alpha=0.5, 
         # with color
         color='#F1911E')
 
 # Create a bar plot, in position bar_1
-ax1.bar(bar_l,
+ax1.bar(bar_l, 
         # using the post_score data
-        df['post_score'],
+        df['post_score'], 
         # set the width
         width=bar_width,
         # with pre_score and mid_score on the bottom
-        bottom=[i+j for i,j in zip(df['pre_score'],df['mid_score'])],
+        bottom=[i+j for i,j in zip(df['pre_score'],df['mid_score'])], 
         # with the label post score
-        label='Post Score',
+        label='Post Score', 
         # with alpha 0.5
-        alpha=0.5,
+        alpha=0.5, 
         # with color
         color='#F1BD1A')
 
@@ -169,4 +165,5 @@ plt.xlim([min(tick_pos)-bar_width, max(tick_pos)+bar_width])
 
 
 
-![png]({filename}/images/matplotlib_stacked_bar_plot/output_6_1.png)
+![png](matplotlib_stacked_bar_plot_files/matplotlib_stacked_bar_plot_6_1.png)
+

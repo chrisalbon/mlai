@@ -1,12 +1,10 @@
-Title: Match US Phone Numbers
-Slug: match_us_phone_numbers
-Summary: Match US Phone Numbers
-Date: 2016-05-01 12:00
-Category: Regex
-Tags: Basics
-Authors: Chris Albon
-
-
+Title: Match US Phone Numbers  
+Slug: match_us_phone_numbers  
+Summary: Match US Phone Numbers  
+Date: 2016-05-01 12:00  
+Category: Regex  
+Tags: Basics  
+Authors: Chris Albon  
 
 Based on: [Regular Expressions Cookbook](http://shop.oreilly.com/product/0636920023630.do)
 

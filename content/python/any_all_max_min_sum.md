@@ -6,11 +6,16 @@ Category: Python
 Tags: Basics    
 Authors: Chris Albon  
 
-Want to learn more? I recommend these Python books: [Python for Data Analysis](http://amzn.to/2ljV9wY), [Python Data Science Handbook](http://amzn.to/2m0mgMB), and [Introduction to Machine Learning with Python](http://amzn.to/2mjYiwK).
+Interesting in learning more? Check out [Fluent Python](http://amzn.to/2jYU506)
+
+## Create Data
+
 
 ```python
 data = [34, 54, 50, 20, 20]
 ```
+
+## any()
 
 
 ```python
@@ -25,6 +30,8 @@ any(data)
 
 
 
+## all()
+
 
 ```python
 # Return true if all elements are True
@@ -37,6 +44,8 @@ all(data)
     True
 
 
+
+## max()
 
 
 ```python
@@ -51,6 +60,8 @@ max(data)
 
 
 
+## min()
+
 
 ```python
 # Return the min value
@@ -64,6 +75,8 @@ min(data)
 
 
 
+## sum()
+
 
 ```python
 # Return the total value
@@ -74,3 +87,5 @@ sum(data)
 
 
     178
+
+

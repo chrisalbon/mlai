@@ -1,6 +1,6 @@
-Title: The Probability An Economy Seat Is An Aisle?
+Title: What Is The Probability An Economy Class Seat Is An Aisle Seat?
 Slug: aisle_seat_probabilities
-Summary: The Probability An Economy Seat Is An Aisle?
+Summary: What Is The Probability An Economy Class Seat Is An Aisle Seat?
 Date: 2016-05-01 12:00
 Category: Blog
 Tags:
@@ -29,10 +29,10 @@ import numpy as np
 I am a pretty frequently flyer on a variety of airlines and aircraft. There are a variety of seating configurations out there, but typically they follow some basic rules:
 
 - No window cluster of seats has more than three seats.
-- On small slights with three seats, the single seat is on the left side.
+- On small flights with three seats, the single seat is on the left side.
 - No flight has more than nine rows.
 
-Based on these rules, here are the "typical" seating configurations from aircraft with between two and nine seats per row. A '1' codifies that a seat is an aisle seat, a '0' codifies that it is a non-aisle seat (i.e. window or middle), and 'np.nan' denotes that the aircraft has less than nine seats (this is so all the list lengths are the same).
+Based on these rules, here are the "typical" seating configurations from aircraft with between two and nine seats per row. A '1' codifies that a seat is an aisle seat, a '0' codifies that it is a non-aisle seat (i.e. window or middle), and 'np.nan' denotes that the aircraft has less than nine seats (this is so all the list lengths are the same). 
 
 
 ```python
@@ -49,7 +49,7 @@ rows4 = [0,1,1,0, np.nan, np.nan, np.nan, np.nan, np.nan]
 rows5 = [0,1,1,0,0, np.nan, np.nan,np.nan, np.nan]
 
 # An aircraft with six seats per row
-rows6 = [0,1,1,0,1,0, np.nan, np.nan, np.nan]
+rows6 = [0,1,1,1,1,0, np.nan, np.nan, np.nan]
 
 # An aircraft with seven seats per row
 rows7 = [0,1,1,0,1,1,0, np.nan, np.nan]
@@ -84,7 +84,7 @@ seating_map = [rows2, rows3, rows4, rows5, rows6, rows7, rows8, rows9]
 
 ```python
 # Create a dataframe from the seating_map variable
-df = pd.DataFrame(seating_map,
+df = pd.DataFrame(seating_map, 
                   columns=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
                   index=['rows2', 'rows3', 'rows4', 'rows5', 'rows6', 'rows7', 'rows8', 'rows9'])
 ```
@@ -100,7 +100,20 @@ df
 
 
 
-<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -119,8 +132,8 @@ df
   <tbody>
     <tr>
       <th>rows2</th>
-      <td> 1</td>
-      <td> 1</td>
+      <td>1</td>
+      <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -131,9 +144,9 @@ df
     </tr>
     <tr>
       <th>rows3</th>
-      <td> 1</td>
-      <td> 1</td>
-      <td>  0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -143,10 +156,10 @@ df
     </tr>
     <tr>
       <th>rows4</th>
-      <td> 0</td>
-      <td> 1</td>
-      <td>  1</td>
-      <td>  0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -155,11 +168,11 @@ df
     </tr>
     <tr>
       <th>rows5</th>
-      <td> 0</td>
-      <td> 1</td>
-      <td>  1</td>
-      <td>  0</td>
-      <td>  0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -167,51 +180,51 @@ df
     </tr>
     <tr>
       <th>rows6</th>
-      <td> 0</td>
-      <td> 1</td>
-      <td>  1</td>
-      <td>  0</td>
-      <td>  1</td>
-      <td>  0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>rows7</th>
-      <td> 0</td>
-      <td> 1</td>
-      <td>  1</td>
-      <td>  0</td>
-      <td>  1</td>
-      <td>  1</td>
-      <td>  0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>rows8</th>
-      <td> 0</td>
-      <td> 0</td>
-      <td>  1</td>
-      <td>  1</td>
-      <td>  1</td>
-      <td>  1</td>
-      <td>  0</td>
-      <td>  0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>rows9</th>
-      <td> 0</td>
-      <td> 0</td>
-      <td>  1</td>
-      <td>  1</td>
-      <td>  0</td>
-      <td>  1</td>
-      <td>  1</td>
-      <td>  0</td>
-      <td>  0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -226,7 +239,7 @@ Because each aircraft seats-per-row configuration (i.e. row) is binary (1 if ais
 
 ```python
 # Create a list wherein each element is the mean value of a column
-aisle_probability = [df['A'].mean(),
+aisle_probability = [df['A'].mean(), 
                      df['B'].mean(),
                      df['C'].mean(),
                      df['D'].mean(),
@@ -246,15 +259,7 @@ aisle_probability
 
 
 
-    [0.25,
-     0.75,
-     0.8571428571428571,
-     0.33333333333333331,
-     0.59999999999999998,
-     0.75,
-     0.33333333333333331,
-     0.0,
-     0.0]
+    [0.25, 0.75, 0.8571428571428571, 0.5, 0.6, 0.75, 0.3333333333333333, 0.0, 0.0]
 
 
 
@@ -267,7 +272,7 @@ The most obvious visualization to convey the probabilities would be seat letters
 
 ```python
 # Create a list of strings to use as the x-axis labels
-seats = ['Seat A', 'Seat B', 'Seat C', 'Seat D',
+seats = ['Seat A', 'Seat B', 'Seat C', 'Seat D', 
          'Seat E', 'Seat F', 'Seat G', 'Seat H', 'Seat I']
 ```
 
@@ -285,12 +290,12 @@ pd.Series(aisle_probability, index=seats).plot(kind='bar', # set y to range betw
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1078300f0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x10f1231d0>
 
 
 
 
-![png]({filename}/images/aisle_seat_probabilities/output_20_1.png)
+![png](aisle_seat_probabilities_files/aisle_seat_probabilities_20_1.png)
 
 
 So there we have it! If given a boarding pass with seat C you have a 86% probability of being in an aisle seat!
