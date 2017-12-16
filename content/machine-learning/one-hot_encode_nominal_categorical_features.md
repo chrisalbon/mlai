@@ -15,7 +15,7 @@ Authors: Chris Albon
 
 ```python
 # Load libraries
-from sklearn.preprocessing import LabelBinarizerr
+from sklearn.preprocessing import LabelBinarizer
 import numpy as np
 import pandas as pd
 ```
